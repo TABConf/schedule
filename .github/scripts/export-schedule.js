@@ -5,7 +5,6 @@ const query = `
 {
   node(id: "PVT_kwDOAfWa-84Ae2cL") {
     ... on ProjectV2 {
-      title
       items(first: 100) {
         nodes {
           content {
@@ -20,9 +19,14 @@ const query = `
           }
           fieldValues(first: 20) {
             nodes {
+              __typename
               ... on ProjectV2ItemFieldSingleSelectValue {
-                field { name }
                 name
+                field {
+                  ... on ProjectV2SingleSelectField {
+                    name
+                  }
+                }
               }
             }
           }
@@ -47,7 +51,7 @@ fetch('https://api.github.com/graphql', {
       const c = item.content;
       const fields = {};
       item.fieldValues.nodes.forEach(f => {
-        if (f.field && f.name) {
+        if (f.__typename === 'ProjectV2ItemFieldSingleSelectValue' && f.field?.name && f.name) {
           fields[f.field.name] = f.name;
         }
       });
@@ -55,7 +59,7 @@ fetch('https://api.github.com/graphql', {
       return {
         title: c?.title || '',
         day: fields['Day'] || '',
-        time: fields['Time slot'] || '',
+        time: fields['Time Slot'] || '',
         village: fields['Village'] || '',
         assignees: c?.assignees?.nodes.map(a => a.login).join(', ') || '',
         summary: (c?.body || '').slice(0, 160),
