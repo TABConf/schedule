@@ -1,89 +1,149 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
 <head>
+    <meta charset="UTF-8">
     <title>TABConf Schedule</title>
     <style>
         body {
             font-family: 'Segoe UI', sans-serif;
-            background-color: #f9f9f9;
-            color: #333;
+            background-color: #121212;
+            color: #eaeaea;
             padding: 40px;
         }
 
         h1 {
             text-align: center;
-            color: #222;
+            margin-bottom: 30px;
+            color: #00d4ff;
         }
 
         table {
             width: 100%;
             border-collapse: collapse;
-            margin-top: 30px;
-            background: #fff;
-            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+            background-color: #1e1e1e;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+            border-radius: 8px;
+            overflow: hidden;
         }
 
         th,
         td {
-            padding: 14px 16px;
-            border-bottom: 1px solid #eee;
+            padding: 16px;
             text-align: left;
+            border-bottom: 1px solid #333;
         }
 
         th {
-            background-color: #004080;
-            color: #fff;
-            font-weight: 600;
+            background-color: #242424;
+            cursor: pointer;
+            position: relative;
+        }
+
+        th:hover {
+            background-color: #333;
+        }
+
+        th.sort-asc::after {
+            content: " ▲";
+        }
+
+        th.sort-desc::after {
+            content: " ▼";
         }
 
         tr:hover {
-            background-color: #f1f8ff;
+            background-color: #2a2a2a;
         }
 
         a {
-            color: #0066cc;
+            color: #00d4ff;
             text-decoration: none;
         }
 
         a:hover {
             text-decoration: underline;
         }
+
+        .table-wrapper {
+            overflow-x: auto;
+        }
     </style>
 </head>
 
 <body>
     <h1>TABConf 6 Schedule</h1>
-    <table id="schedule">
-        <thead>
-            <tr>
-                <th>Title</th>
-                <th>Day</th>
-                <th>Time</th>
-                <th>Village</th>
-                <th>Assignees</th>
-                <th>Summary</th>
-                <th>Link</th>
-            </tr>
-        </thead>
-        <tbody></tbody>
-    </table>
+    <div class="table-wrapper">
+        <table id="schedule">
+            <thead>
+                <tr>
+                    <th data-key="title">Title</th>
+                    <th data-key="day">Day</th>
+                    <th data-key="time">Time</th>
+                    <th data-key="village">Village</th>
+                    <th data-key="assignees">Assignees</th>
+                    <th data-key="summary">Summary</th>
+                    <th>Link</th>
+                </tr>
+            </thead>
+            <tbody></tbody>
+        </table>
+    </div>
+
     <script>
+        let sortKey = '';
+        let sortAsc = true;
+
+        function renderTable(data) {
+            const tbody = document.querySelector('#schedule tbody');
+            tbody.innerHTML = '';
+
+            data.forEach(i => {
+                const assignees = i.assignees
+                    ? i.assignees.split(', ').map(a => `<a href="https://github.com/${a}" target="_blank">@${a}</a>`).join(', ')
+                    : '';
+
+                const row = `<tr>
+          <td>${i.title}</td>
+          <td>${i.day}</td>
+          <td>${i.time}</td>
+          <td>${i.village}</td>
+          <td>${assignees}</td>
+          <td>${i.summary}</td>
+          <td><a href="${i.url}" target="_blank">View</a></td>
+        </tr>`;
+                tbody.insertAdjacentHTML('beforeend', row);
+            });
+        }
+
+        function sortData(data, key) {
+            return [...data].sort((a, b) => {
+                const valA = (a[key] || '').toLowerCase();
+                const valB = (b[key] || '').toLowerCase();
+                return sortAsc ? valA.localeCompare(valB) : valB.localeCompare(valA);
+            });
+        }
+
         fetch('data/schedule.json')
             .then(res => res.json())
-            .then(items => {
-                const tbody = document.querySelector('#schedule tbody');
-                items.forEach(i => {
-                    const row = `<tr>
-            <td>${i.title}</td>
-            <td>${i.day}</td>
-            <td>${i.time}</td>
-            <td>${i.village}</td>
-            <td>${i.assignees}</td>
-            <td>${i.summary}</td>
-            <td><a href="${i.url}" target="_blank">View</a></td>
-          </tr>`;
-                    tbody.insertAdjacentHTML('beforeend', row);
+            .then(data => {
+                renderTable(data);
+
+                document.querySelectorAll('th[data-key]').forEach(th => {
+                    th.addEventListener('click', () => {
+                        const key = th.dataset.key;
+                        if (sortKey === key) sortAsc = !sortAsc;
+                        else {
+                            sortKey = key;
+                            sortAsc = true;
+                        }
+
+                        document.querySelectorAll('th').forEach(th => th.classList.remove('sort-asc', 'sort-desc'));
+                        th.classList.add(sortAsc ? 'sort-asc' : 'sort-desc');
+
+                        const sorted = sortData(data, key);
+                        renderTable(sorted);
+                    });
                 });
             });
     </script>

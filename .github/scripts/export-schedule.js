@@ -65,7 +65,7 @@ fetch('https://api.github.com/graphql', {
         time: fields['Time Slot'] || '',
         village: fields['Village'] || '',
         assignees: c?.assignees?.nodes.map(a => a.login).join(', ') || '',
-        summary: (c?.body || '').slice(0, 160),
+        summary: (c?.body || '').replace(/<img[^>]*>/gi, '').slice(0, 160),
         url: c?.url
       };
     });
