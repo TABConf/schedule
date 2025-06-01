@@ -14,18 +14,18 @@
             margin: 0;
         }
 
-        h1 {
-            text-align: center;
+        .topbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
             margin-bottom: 20px;
-            color: #00d4ff;
         }
 
         .filters {
             display: flex;
-            flex-wrap: wrap;
             gap: 1rem;
-            justify-content: center;
-            margin-bottom: 20px;
+            flex-wrap: wrap;
         }
 
         .filters label {
@@ -40,6 +40,17 @@
             border: 1px solid #444;
             border-radius: 6px;
             font-size: 14px;
+        }
+
+        .title-area {
+            flex-grow: 1;
+            text-align: center;
+        }
+
+        h1 {
+            margin: 0;
+            color: #00d4ff;
+            font-size: 24px;
         }
 
         table {
@@ -111,44 +122,45 @@
             overflow-x: auto;
         }
 
-        @media (max-width: 600px) {
-            .filters {
+        @media (max-width: 768px) {
+            .topbar {
                 flex-direction: column;
-                align-items: stretch;
+                align-items: flex-start;
             }
 
-            th,
-            td {
-                padding: 12px;
-                font-size: 14px;
-            }
-
-            .filters label {
-                display: block;
-                margin-bottom: 5px;
+            .title-area {
+                text-align: left;
+                margin-top: 10px;
+                width: 100%;
             }
         }
     </style>
 </head>
 
 <body>
-    <h1>TABConf 6 Schedule</h1>
-    <div class="filters">
-        <div>
-            <label for="dayFilter">🗓️ Filter by Day:</label>
-            <select id="dayFilter">
-                <option value="all">All Days</option>
-                <option value="Day 1">Day 1</option>
-                <option value="Day 2">Day 2</option>
-                <option value="Day 3">Day 3</option>
-                <option value="Day 4">Day 4</option>
-            </select>
+    <a href="https://tabconf.com"
+        style="display: inline-block; margin-bottom: 10px; color: #00d4ff; font-weight: bold;">← Back to TABConf.com</a>
+    <div class="topbar">
+        <div class="filters">
+            <div>
+                <label for="dayFilter">🗓️ Filter by Day:</label>
+                <select id="dayFilter">
+                    <option value="all">All Days</option>
+                    <option value="Day 1">Day 1</option>
+                    <option value="Day 2">Day 2</option>
+                    <option value="Day 3">Day 3</option>
+                    <option value="Day 4">Day 4</option>
+                </select>
+            </div>
+            <div>
+                <label for="labelFilter">🏷️ Filter by Label:</label>
+                <select id="labelFilter">
+                    <option value="all">All Labels</option>
+                </select>
+            </div>
         </div>
-        <div>
-            <label for="labelFilter">🏷️ Filter by Label:</label>
-            <select id="labelFilter">
-                <option value="all">All Labels</option>
-            </select>
+        <div class="title-area">
+            <h1>TABConf 6 Schedule</h1>
         </div>
     </div>
 
@@ -282,6 +294,9 @@
                 });
             });
     </script>
+    <div style="margin-top: 30px; text-align: center;">
+        <a href="https://tabconf.com" style="color: #00d4ff; font-weight: bold;">← Back to TABConf.com</a>
+    </div>
 </body>
 
 </html>
