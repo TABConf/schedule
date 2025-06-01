@@ -15,6 +15,12 @@ const query = `
               assignees(first: 5) {
                 nodes { login }
               }
+              labels(first: 10) {
+                nodes {
+                  name
+                  color
+                }
+              }
             }
           }
           fieldValues(first: 20) {
@@ -23,9 +29,7 @@ const query = `
               ... on ProjectV2ItemFieldSingleSelectValue {
                 name
                 field {
-                  ... on ProjectV2SingleSelectField {
-                    name
-                  }
+                  name
                 }
               }
             }
@@ -47,10 +51,16 @@ fetch('https://api.github.com/graphql', {
 })
   .then(res => res.json())
   .then(data => {
+    if (!data || !data.data || !data.data.node) {
+      console.error('GraphQL response missing expected data:', JSON.stringify(data, null, 2));
+      process.exit(1);
+    }
+
     const items = data.data.node.items.nodes.map(item => {
       const c = item.content;
-
-      console.log('Raw field node:', JSON.stringify(item.fieldValues.nodes, null, 2));
+      const labels = c?.labels?.nodes || [];
+      const hasAccepted = labels.some(l => l.name === 'Accepted');
+      if (!hasAccepted) return null;
 
       const fields = {};
       item.fieldValues.nodes.forEach(f => {
@@ -65,10 +75,11 @@ fetch('https://api.github.com/graphql', {
         time: fields['Time Slot'] || '',
         village: fields['Village'] || '',
         assignees: c?.assignees?.nodes.map(a => a.login).join(', ') || '',
+        labels: labels.map(l => ({ name: l.name, color: `#${l.color}` })),
         summary: (c?.body || '').replace(/<img[^>]*>/gi, '').slice(0, 160),
         url: c?.url
       };
-    });
+    }).filter(Boolean);
 
     fs.writeFileSync('data/schedule.json', JSON.stringify(items, null, 2));
   })
