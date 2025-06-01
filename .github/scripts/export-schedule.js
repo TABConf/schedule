@@ -29,7 +29,9 @@ const query = `
               ... on ProjectV2ItemFieldSingleSelectValue {
                 name
                 field {
-                  name
+                  ... on ProjectV2SingleSelectField {
+                    name
+                  }
                 }
               }
             }
