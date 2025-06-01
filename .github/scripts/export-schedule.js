@@ -23,9 +23,7 @@ const query = `
               ... on ProjectV2ItemFieldSingleSelectValue {
                 name
                 field {
-                  ... on ProjectV2SingleSelectField {
-                    name
-                  }
+                  name
                 }
               }
             }
@@ -35,6 +33,7 @@ const query = `
     }
   }
 }`;
+
 
 fetch('https://api.github.com/graphql', {
   method: 'POST',
@@ -49,6 +48,9 @@ fetch('https://api.github.com/graphql', {
   .then(data => {
     const items = data.data.node.items.nodes.map(item => {
       const c = item.content;
+
+      console.log('Raw field node:', JSON.stringify(item.fieldValues.nodes, null, 2));
+
       const fields = {};
       item.fieldValues.nodes.forEach(f => {
         if (f.__typename === 'ProjectV2ItemFieldSingleSelectValue' && f.field?.name && f.name) {
