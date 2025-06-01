@@ -78,14 +78,11 @@
             font-weight: 600;
             border-radius: 2em;
             margin-right: 5px;
-            color: rgba(255, 255, 255, 0.95);
-            /* very bright text */
-            background-color: currentColor;
-            filter: brightness(0.3) saturate(2);
-            /* dark background */
-            border: 1px solid currentColor;
-            /* match text color */
+            color: #fff;
+            background-color: var(--label-bg, #555);
+            border: 1px solid var(--label-border, #fff);
         }
+
 
         .table-wrapper {
             overflow-x: auto;
@@ -138,10 +135,13 @@
                     : '';
 
                 const labels = i.labels?.map(l => {
-                    const bg = l.color;
-                    return `<span class="label" style="color:#${l.color}">${l.name}</span>
-`;
+                    const hex = l.color.startsWith('#') ? l.color : `#${l.color}`;
+                    return `<span class="label" style="
+                            --label-bg: ${hex}4d;
+                            --label-border: ${hex};
+                        ">${l.name}</span>`;
                 }).join('') || '';
+
 
                 const row = `<tr>
               <td>${i.title}</td>
