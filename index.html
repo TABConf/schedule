@@ -78,13 +78,14 @@
             font-weight: 600;
             border-radius: 2em;
             margin-right: 5px;
-            color: inherit;
+            color: rgba(255, 255, 255, 0.95);
+            /* very bright text */
             background-color: currentColor;
-            filter: brightness(0.35) saturate(2);
-            border: 1px solid rgba(255, 255, 255, 0.15);
+            filter: brightness(0.3) saturate(2);
+            /* dark background */
+            border: 1px solid currentColor;
+            /* match text color */
         }
-
-
 
         .table-wrapper {
             overflow-x: auto;
