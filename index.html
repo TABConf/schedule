@@ -4,18 +4,42 @@
 <head>
     <meta charset="UTF-8">
     <title>TABConf Schedule</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <style>
         body {
             font-family: 'Segoe UI', sans-serif;
             background-color: #121212;
             color: #eaeaea;
-            padding: 40px;
+            padding: 20px;
+            margin: 0;
         }
 
         h1 {
             text-align: center;
-            margin-bottom: 30px;
+            margin-bottom: 20px;
             color: #00d4ff;
+        }
+
+        .filters {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            justify-content: center;
+            margin-bottom: 20px;
+        }
+
+        .filters label {
+            font-weight: bold;
+            margin-right: 10px;
+        }
+
+        .filters select {
+            padding: 8px 12px;
+            background-color: #1e1e1e;
+            color: #eaeaea;
+            border: 1px solid #444;
+            border-radius: 6px;
+            font-size: 14px;
         }
 
         table {
@@ -86,26 +110,46 @@
         .table-wrapper {
             overflow-x: auto;
         }
+
+        @media (max-width: 600px) {
+            .filters {
+                flex-direction: column;
+                align-items: stretch;
+            }
+
+            th,
+            td {
+                padding: 12px;
+                font-size: 14px;
+            }
+
+            .filters label {
+                display: block;
+                margin-bottom: 5px;
+            }
+        }
     </style>
 </head>
 
 <body>
     <h1>TABConf 6 Schedule</h1>
-    <div style="margin-bottom: 20px;">
-        <label for="dayFilter" style="font-weight: bold; margin-right: 10px;">🗓️ Filter by Day:</label>
-        <select id="dayFilter">
-            <option value="all">All Days</option>
-            <option value="Day 1">Day 1</option>
-            <option value="Day 2">Day 2</option>
-            <option value="Day 3">Day 3</option>
-            <option value="Day 4">Day 4</option>
-        </select>
-    </div>
-    <div style="margin-bottom: 20px;">
-        <label for="labelFilter" style="font-weight: bold; margin-right: 10px;">🏷️ Filter by Label:</label>
-        <select id="labelFilter">
-            <option value="all">All Labels</option>
-        </select>
+    <div class="filters">
+        <div>
+            <label for="dayFilter">🗓️ Filter by Day:</label>
+            <select id="dayFilter">
+                <option value="all">All Days</option>
+                <option value="Day 1">Day 1</option>
+                <option value="Day 2">Day 2</option>
+                <option value="Day 3">Day 3</option>
+                <option value="Day 4">Day 4</option>
+            </select>
+        </div>
+        <div>
+            <label for="labelFilter">🏷️ Filter by Label:</label>
+            <select id="labelFilter">
+                <option value="all">All Labels</option>
+            </select>
+        </div>
     </div>
 
     <div class="table-wrapper">
