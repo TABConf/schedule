@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>TABConf Schedule</title>
+    <style>
+        body {
+            font-family: sans-serif;
+            padding: 20px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        th,
+        td {
+            border: 1px solid #ddd;
+            padding: 10px;
+        }
+
+        th {
+            background: #f4f4f4;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>TABConf 6 Schedule</h1>
+    <table id="schedule">
+        <thead>
+            <tr>
+                <th>Title</th>
+                <th>Status</th>
+                <th>Summary</th>
+                <th>Link</th>
+            </tr>
+        </thead>
+        <tbody></tbody>
+    </table>
+    <script>
+        fetch('data/schedule.json')
+            .then(res => res.json())
+            .then(items => {
+                const tbody = document.querySelector('#schedule tbody');
+                items.forEach(i => {
+                    const row = `<tr>
+            <td>${i.title}</td>
+            <td>${i.state}</td>
+            <td>${i.summary}</td>
+            <td><a href="${i.url}" target="_blank">View</a></td>
+          </tr>`;
+                    tbody.insertAdjacentHTML('beforeend', row);
+                });
+            });
+    </script>
+</body>
+
+</html>

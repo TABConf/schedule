@@ -1,0 +1,33 @@
+name: Export Project Schedule
+
+on:
+  workflow_dispatch:
+
+jobs:
+  export:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v3
+
+    - name: Set up Node.js
+      uses: actions/setup-node@v3
+      with:
+        node-version: '18'
+
+    - name: Install dependencies
+      run: npm install node-fetch@2
+
+    - name: Run export script
+      env:
+        GH_TOKEN: ${{ secrets.GH_TOKEN }}
+      run: |
+        mkdir -p data
+        node .github/scripts/export-schedule.js
+
+    - name: Commit schedule file
+      run: |
+        git config user.name "github-actions"
+        git config user.email "actions@github.com"
+        git add data/schedule.json
+        git commit -m "Update schedule from project" || echo "No changes"
+        git push
