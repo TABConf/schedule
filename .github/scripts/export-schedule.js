@@ -23,7 +23,9 @@ const query = `
               ... on ProjectV2ItemFieldSingleSelectValue {
                 name
                 field {
-                  name
+                  ... on ProjectV2SingleSelectField {
+                    name
+                  }
                 }
               }
             }
@@ -33,7 +35,6 @@ const query = `
     }
   }
 }`;
-
 
 fetch('https://api.github.com/graphql', {
   method: 'POST',
