@@ -83,7 +83,6 @@
             border: 1px solid var(--label-border, #fff);
         }
 
-
         .table-wrapper {
             overflow-x: auto;
         }
@@ -102,6 +101,13 @@
             <option value="Day 4">Day 4</option>
         </select>
     </div>
+    <div style="margin-bottom: 20px;">
+        <label for="labelFilter" style="font-weight: bold; margin-right: 10px;">🏷️ Filter by Label:</label>
+        <select id="labelFilter">
+            <option value="all">All Labels</option>
+        </select>
+    </div>
+
     <div class="table-wrapper">
         <table id="schedule">
             <thead>
@@ -123,6 +129,7 @@
     <script>
         let sortKey = '';
         let sortAsc = true;
+        let allData = [];
 
         function parseTimeRange(range) {
             const time = range.split(' - ')[0];
@@ -135,72 +142,42 @@
             return h * 60 + (m || 0);
         }
 
-        function renderTable(data, filterDay = 'all') {
+        function renderTable(data) {
             const tbody = document.querySelector('#schedule tbody');
             tbody.innerHTML = '';
 
-            const filtered = filterDay === 'all'
-                ? data
-                : data.filter(i => i.day === filterDay);
-
-            filtered.forEach(i => {
+            data.forEach(i => {
                 const assignees = i.assignees
                     ? i.assignees.split(', ').map(a => `<a href="https://github.com/${a}" target="_blank">@${a}</a>`).join(', ')
                     : '';
 
                 const labels = i.labels?.map(l => {
                     const hex = l.color.startsWith('#') ? l.color : `#${l.color}`;
-                    return `<span class="label" style="
-        --label-bg: ${hex}4d;
-        --label-border: ${hex};
-      ">${l.name}</span>`;
+                    return `<span class="label" style="--label-bg: ${hex}4d; --label-border: ${hex};">${l.name}</span>`;
                 }).join('') || '';
 
                 const row = `<tr>
-      <td>${i.title}</td>
-      <td>${i.day}</td>
-      <td>${i.time}</td>
-      <td>${i.village}</td>
-      <td>${assignees}</td>
-      <td>${labels}</td>
-      <td>${i.summary}</td>
-      <td><a href="${i.url}" target="_blank">View</a></td>
-    </tr>`;
+                    <td>${i.title}</td>
+                    <td>${i.day}</td>
+                    <td>${i.time}</td>
+                    <td>${i.village}</td>
+                    <td>${assignees}</td>
+                    <td>${labels}</td>
+                    <td>${i.summary}</td>
+                    <td><a href="${i.url}" target="_blank">View</a></td>
+                </tr>`;
                 tbody.insertAdjacentHTML('beforeend', row);
             });
         }
 
-        function shadeColor(hex, percent) {
-            const num = parseInt(hex.replace('#', ''), 16);
-            let r = (num >> 16) + percent;
-            let g = ((num >> 8) & 0x00FF) + percent;
-            let b = (num & 0x0000FF) + percent;
+        function applyFilters() {
+            const selectedDay = document.getElementById('dayFilter').value;
+            const selectedLabel = document.getElementById('labelFilter').value;
 
-            r = Math.max(Math.min(255, r), 0);
-            g = Math.max(Math.min(255, g), 0);
-            b = Math.max(Math.min(255, b), 0);
-
-            return `rgb(${r}, ${g}, ${b})`;
-        }
-
-        function sortData(data, key) {
-            return [...data].sort((a, b) => {
-                if (key === 'time') {
-                    return sortAsc
-                        ? parseTimeRange(a.time) - parseTimeRange(b.time)
-                        : parseTimeRange(b.time) - parseTimeRange(a.time);
-                }
-                const valA = (a[key] || '').toLowerCase();
-                const valB = (b[key] || '').toLowerCase();
-                return sortAsc ? valA.localeCompare(valB) : valB.localeCompare(valA);
-            });
-        }
-
-        fetch('data/schedule.json')
-            .then(res => res.json())
-            .then(data => {
-                // default sort by day then time
-                const sorted = [...data].sort((a, b) => {
+            const filteredSorted = [...allData]
+                .filter(i => (selectedDay === 'all' || i.day === selectedDay) &&
+                    (selectedLabel === 'all' || i.labels?.some(l => l.name === selectedLabel)))
+                .sort((a, b) => {
                     const dA = a.day?.toLowerCase() || '';
                     const dB = b.day?.toLowerCase() || '';
                     if (dA === dB) {
@@ -209,21 +186,29 @@
                     return dA.localeCompare(dB);
                 });
 
-                renderTable(sorted);
-                document.getElementById('dayFilter').addEventListener('change', (e) => {
-                    const filter = e.target.value;
-                    const sortedFiltered = [...data]
-                        .filter(i => filter === 'all' || i.day === filter)
-                        .sort((a, b) => {
-                            const dA = a.day?.toLowerCase() || '';
-                            const dB = b.day?.toLowerCase() || '';
-                            if (dA === dB) {
-                                return parseTimeRange(a.time) - parseTimeRange(b.time);
-                            }
-                            return dA.localeCompare(dB);
-                        });
-                    renderTable(sortedFiltered, filter);
+            renderTable(filteredSorted);
+        }
+
+        fetch('data/schedule.json')
+            .then(res => res.json())
+            .then(data => {
+                allData = data;
+
+                const allLabels = new Set();
+                data.forEach(item => item.labels?.forEach(l => allLabels.add(l.name)));
+                const labelFilter = document.getElementById('labelFilter');
+                [...allLabels].sort().forEach(label => {
+                    const opt = document.createElement('option');
+                    opt.value = label;
+                    opt.textContent = label;
+                    labelFilter.appendChild(opt);
                 });
+
+                applyFilters();
+
+                document.getElementById('dayFilter').addEventListener('change', applyFilters);
+                document.getElementById('labelFilter').addEventListener('change', applyFilters);
+
                 sortKey = 'day';
                 sortAsc = true;
                 document.querySelectorAll('th').forEach(th => {
@@ -247,13 +232,12 @@
                         );
                         th.classList.add(sortAsc ? 'sort-asc' : 'sort-desc');
 
-                        const sortedNew = sortData(data, key);
+                        const sortedNew = sortData(allData, key);
                         renderTable(sortedNew);
                     });
                 });
             });
     </script>
-
 </body>
 
 </html>
