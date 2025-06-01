@@ -60,13 +60,18 @@ fetch('https://api.github.com/graphql', {
 
     const items = data.data.node.items.nodes.map(item => {
       const c = item.content;
+
       const labels = c?.labels?.nodes || [];
       const hasAccepted = labels.some(l => l.name === 'Accepted');
       if (!hasAccepted) return null;
 
       const fields = {};
       item.fieldValues.nodes.forEach(f => {
-        if (f.__typename === 'ProjectV2ItemFieldSingleSelectValue' && f.field?.name && f.name) {
+        if (
+          f.__typename === 'ProjectV2ItemFieldSingleSelectValue' &&
+          f.field?.name &&
+          f.name
+        ) {
           fields[f.field.name] = f.name;
         }
       });
