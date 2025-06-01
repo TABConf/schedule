@@ -35,6 +35,11 @@
             vertical-align: top;
         }
 
+        td:nth-child(3) {
+            white-space: nowrap;
+            min-width: 140px;
+        }
+
         th {
             background-color: #242424;
             cursor: pointer;
@@ -74,7 +79,11 @@
             border-radius: 2em;
             margin-right: 5px;
             color: #fff;
+            background-color: #444;
+            border: 1px solid transparent;
+            filter: brightness(1.2);
         }
+
 
         .table-wrapper {
             overflow-x: auto;
@@ -106,6 +115,17 @@
         let sortKey = '';
         let sortAsc = true;
 
+        function parseTimeRange(range) {
+            const time = range.split(' - ')[0];
+            const [raw, period] = time.split(' ');
+            if (!raw || !period) return 0;
+
+            let [h, m] = raw.split(':').map(Number);
+            if (period.toUpperCase() === 'PM' && h !== 12) h += 12;
+            if (period.toUpperCase() === 'AM' && h === 12) h = 0;
+            return h * 60 + (m || 0);
+        }
+
         function renderTable(data) {
             const tbody = document.querySelector('#schedule tbody');
             tbody.innerHTML = '';
@@ -115,26 +135,49 @@
                     ? i.assignees.split(', ').map(a => `<a href="https://github.com/${a}" target="_blank">@${a}</a>`).join(', ')
                     : '';
 
-                const labels = i.labels?.map(l =>
-                    `<span class="label" style="background-color:${l.color}">${l.name}</span>`
-                ).join('') || '';
+                const labels = i.labels?.map(l => {
+                    const bg = l.color;
+                    return `<span class="label" style="
+                background-color: ${shadeColor(bg, -20)};
+                color: ${bg};
+                border: 1px solid ${bg};
+              ">${l.name}</span>`;
+                }).join('') || '';
 
                 const row = `<tr>
-          <td>${i.title}</td>
-          <td>${i.day}</td>
-          <td>${i.time}</td>
-          <td>${i.village}</td>
-          <td>${assignees}</td>
-          <td>${labels}</td>
-          <td>${i.summary}</td>
-          <td><a href="${i.url}" target="_blank">View</a></td>
-        </tr>`;
+              <td>${i.title}</td>
+              <td>${i.day}</td>
+              <td>${i.time}</td>
+              <td>${i.village}</td>
+              <td>${assignees}</td>
+              <td>${labels}</td>
+              <td>${i.summary}</td>
+              <td><a href="${i.url}" target="_blank">View</a></td>
+            </tr>`;
                 tbody.insertAdjacentHTML('beforeend', row);
             });
         }
 
+        function shadeColor(hex, percent) {
+            const num = parseInt(hex.replace('#', ''), 16);
+            let r = (num >> 16) + percent;
+            let g = ((num >> 8) & 0x00FF) + percent;
+            let b = (num & 0x0000FF) + percent;
+
+            r = Math.max(Math.min(255, r), 0);
+            g = Math.max(Math.min(255, g), 0);
+            b = Math.max(Math.min(255, b), 0);
+
+            return `rgb(${r}, ${g}, ${b})`;
+        }
+
         function sortData(data, key) {
             return [...data].sort((a, b) => {
+                if (key === 'time') {
+                    return sortAsc
+                        ? parseTimeRange(a.time) - parseTimeRange(b.time)
+                        : parseTimeRange(b.time) - parseTimeRange(a.time);
+                }
                 const valA = (a[key] || '').toLowerCase();
                 const valB = (b[key] || '').toLowerCase();
                 return sortAsc ? valA.localeCompare(valB) : valB.localeCompare(valA);
@@ -144,7 +187,25 @@
         fetch('data/schedule.json')
             .then(res => res.json())
             .then(data => {
-                renderTable(data);
+                // default sort by day then time
+                const sorted = [...data].sort((a, b) => {
+                    const dA = a.day?.toLowerCase() || '';
+                    const dB = b.day?.toLowerCase() || '';
+                    if (dA === dB) {
+                        return parseTimeRange(a.time) - parseTimeRange(b.time);
+                    }
+                    return dA.localeCompare(dB);
+                });
+
+                renderTable(sorted);
+                sortKey = 'day';
+                sortAsc = true;
+                document.querySelectorAll('th').forEach(th => {
+                    th.classList.remove('sort-asc', 'sort-desc');
+                    if (th.dataset.key === 'day') {
+                        th.classList.add('sort-asc');
+                    }
+                });
 
                 document.querySelectorAll('th[data-key]').forEach(th => {
                     th.addEventListener('click', () => {
@@ -155,15 +216,18 @@
                             sortAsc = true;
                         }
 
-                        document.querySelectorAll('th').forEach(th => th.classList.remove('sort-asc', 'sort-desc'));
+                        document.querySelectorAll('th').forEach(th =>
+                            th.classList.remove('sort-asc', 'sort-desc')
+                        );
                         th.classList.add(sortAsc ? 'sort-asc' : 'sort-desc');
 
-                        const sorted = sortData(data, key);
-                        renderTable(sorted);
+                        const sortedNew = sortData(data, key);
+                        renderTable(sortedNew);
                     });
                 });
             });
     </script>
+
 </body>
 
 </html>
