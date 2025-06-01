@@ -139,11 +139,8 @@
 
                 const labels = i.labels?.map(l => {
                     const bg = l.color;
-                    return `<span class="label" style="
-                background-color: ${shadeColor(bg, -20)};
-                color: ${bg};
-                border: 1px solid ${bg};
-              ">${l.name}</span>`;
+                    return `<span class="label" style="color:#${l.color}">${l.name}</span>
+`;
                 }).join('') || '';
 
                 const row = `<tr>
