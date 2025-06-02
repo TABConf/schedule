@@ -253,7 +253,7 @@
 
         Promise.all([
             fetch('data/schedule.json').then(res => res.json()),
-            fetch('config.json').then(res => res.json())
+            fetch(`config.json?cb=${Date.now()}`).then(res => res.json())
         ]).then(([data, config]) => {
             allData = data;
 
