@@ -22,11 +22,7 @@
             margin-bottom: 20px;
         }
 
-        .filters {
-            display: flex;
-            gap: 1rem;
-            flex-wrap: wrap;
-        }
+
 
         .filters label {
             font-weight: bold;
@@ -42,10 +38,7 @@
             font-size: 14px;
         }
 
-        .title-area {
-            flex-grow: 1;
-            text-align: center;
-        }
+
 
         h1 {
             margin: 0;
@@ -125,14 +118,64 @@
         @media (max-width: 768px) {
             .topbar {
                 flex-direction: column;
-                align-items: flex-start;
+                align-items: stretch;
             }
 
             .title-area {
-                text-align: left;
-                margin-top: 10px;
+                text-align: center;
+                margin-top: 20px;
                 width: 100%;
             }
+
+            .filters {
+                align-items: flex-start;
+                width: 100%;
+            }
+        }
+
+
+
+
+        .title-area {
+            text-align: center;
+            margin-top: 20px;
+            width: 100%;
+        }
+
+        .filters {
+            align-items: flex-start;
+            width: 100%;
+        }
+
+
+        .title-area {
+            text-align: center;
+            margin-top: 20px;
+            width: 100%;
+        }
+
+        .filters {
+            align-items: flex-start;
+            width: 100%;
+        }
+
+
+        .title-area {
+            text-align: center;
+            margin-top: 20px;
+            width: 100%;
+        }
+
+        .filters {
+            align-items: flex-start;
+            width: 100%;
+        }
+
+
+        .title-area {
+            text-align: left;
+            margin-top: 10px;
+            width: 100%;
         }
     </style>
 </head>
@@ -140,13 +183,11 @@
 <body>
     <a href="https://tabconf.com"
         style="display: inline-block; margin-bottom: 10px; color: #00d4ff; font-weight: bold;">← Back to TABConf.com</a>
-    <div class="topbar">
-        <div class="title-area">
-            <h1>TABConf 6 Schedule</h1>
-        </div>
-        <div class="filters">
+    <div class="topbar"
+        style="display: flex; align-items: flex-start; justify-content: center; gap: 40px; flex-wrap: wrap;">
+        <div class="filters" style="display: flex; flex-direction: column; gap: 10px;">
             <div>
-                <label for="dayFilter">🗓️ Filter by Day:</label>
+                <label for="dayFilter">🗓️ Filter by Day:</label><br>
                 <select id="dayFilter">
                     <option value="all">All Days</option>
                     <option value="Day 1">Day 1</option>
@@ -156,11 +197,14 @@
                 </select>
             </div>
             <div>
-                <label for="labelFilter">🏷️ Filter by Label:</label>
+                <label for="labelFilter">🏷️ Filter by Label:</label><br>
                 <select id="labelFilter">
                     <option value="all">All Labels</option>
                 </select>
             </div>
+        </div>
+        <div class="title-area" style="flex-grow: 1; text-align: center;">
+            <h1>TABConf 6 Schedule</h1>
         </div>
     </div>
     <div class="table-wrapper">
