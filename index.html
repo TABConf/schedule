@@ -166,7 +166,6 @@
             </div>
         </div>
     </div>
-    </div>
     <div class="table-wrapper">
         <table id="schedule">
             <thead>
@@ -217,20 +216,20 @@
                 }).join('') || '';
 
                 const row = `<tr>
-                    <td>${i.title}</td>
-                    <td>${i.day}</td>
-                    <td>${i.time}</td>
-                    <td>${i.village}</td>
-                    <td>${assignees}</td>
-                    <td>${labels}</td>
-                    <td>${i.summary}</td>
-                    <td><a href="${i.url}" target="_blank">View</a></td>
-                </tr>`;
+              <td>${i.title}</td>
+              <td>${i.day}</td>
+              <td>${i.time}</td>
+              <td>${i.village}</td>
+              <td>${assignees}</td>
+              <td>${labels}</td>
+              <td>${i.summary}</td>
+              <td><a href="${i.url}" target="_blank">View</a></td>
+            </tr>`;
                 tbody.insertAdjacentHTML('beforeend', row);
             });
         }
 
-        function applyFilters() {
+        function applyFilters(defaultDay, defaultLabel) {
             const selectedDay = document.getElementById('dayFilter').value;
             const selectedLabel = document.getElementById('labelFilter').value;
 
@@ -249,55 +248,75 @@
             renderTable(filteredSorted);
         }
 
-        fetch('data/schedule.json')
-            .then(res => res.json())
-            .then(data => {
-                allData = data;
+        Promise.all([
+            fetch('data/schedule.json').then(res => res.json()),
+            fetch('data/config.json').then(res => res.json())
+        ]).then(([data, config]) => {
+            allData = data;
 
-                const allLabels = new Set();
-                data.forEach(item => item.labels?.forEach(l => allLabels.add(l.name)));
-                const labelFilter = document.getElementById('labelFilter');
-                [...allLabels].sort().forEach(label => {
-                    const opt = document.createElement('option');
-                    opt.value = label;
-                    opt.textContent = label;
-                    labelFilter.appendChild(opt);
-                });
+            // Populate label filter
+            const allLabels = new Set();
+            data.forEach(item => item.labels?.forEach(l => allLabels.add(l.name)));
+            const labelFilter = document.getElementById('labelFilter');
+            [...allLabels].sort().forEach(label => {
+                const opt = document.createElement('option');
+                opt.value = label;
+                opt.textContent = label;
+                labelFilter.appendChild(opt);
+            });
 
-                applyFilters();
+            // Set defaults from config
+            const dayFilter = document.getElementById('dayFilter');
+            const labelFilterEl = document.getElementById('labelFilter');
 
-                document.getElementById('dayFilter').addEventListener('change', applyFilters);
-                document.getElementById('labelFilter').addEventListener('change', applyFilters);
+            if (config.defaultDay) {
+                dayFilter.value = config.defaultDay;
+            }
+            if (config.defaultLabel) {
+                labelFilterEl.value = config.defaultLabel;
+            }
 
-                sortKey = 'day';
-                sortAsc = true;
-                document.querySelectorAll('th').forEach(th => {
-                    th.classList.remove('sort-asc', 'sort-desc');
-                    if (th.dataset.key === 'day') {
-                        th.classList.add('sort-asc');
+            applyFilters();
+
+            dayFilter.addEventListener('change', applyFilters);
+            labelFilterEl.addEventListener('change', applyFilters);
+
+            // Sorting setup
+            sortKey = 'day';
+            sortAsc = true;
+            document.querySelectorAll('th').forEach(th => {
+                th.classList.remove('sort-asc', 'sort-desc');
+                if (th.dataset.key === 'day') {
+                    th.classList.add('sort-asc');
+                }
+            });
+
+            document.querySelectorAll('th[data-key]').forEach(th => {
+                th.addEventListener('click', () => {
+                    const key = th.dataset.key;
+                    if (sortKey === key) sortAsc = !sortAsc;
+                    else {
+                        sortKey = key;
+                        sortAsc = true;
                     }
-                });
 
-                document.querySelectorAll('th[data-key]').forEach(th => {
-                    th.addEventListener('click', () => {
-                        const key = th.dataset.key;
-                        if (sortKey === key) sortAsc = !sortAsc;
-                        else {
-                            sortKey = key;
-                            sortAsc = true;
-                        }
+                    document.querySelectorAll('th').forEach(th =>
+                        th.classList.remove('sort-asc', 'sort-desc')
+                    );
+                    th.classList.add(sortAsc ? 'sort-asc' : 'sort-desc');
 
-                        document.querySelectorAll('th').forEach(th =>
-                            th.classList.remove('sort-asc', 'sort-desc')
-                        );
-                        th.classList.add(sortAsc ? 'sort-asc' : 'sort-desc');
-
-                        const sortedNew = sortData(allData, key);
-                        renderTable(sortedNew);
+                    const sortedNew = [...allData].sort((a, b) => {
+                        const aVal = (a[key] || '').toLowerCase();
+                        const bVal = (b[key] || '').toLowerCase();
+                        return sortAsc ? aVal.localeCompare(bVal) : bVal.localeCompare(aVal);
                     });
+
+                    renderTable(sortedNew);
                 });
             });
+        });
     </script>
+
     <div style="margin-top: 30px; text-align: center;">
         <a href="https://tabconf.com" style="color: #00d4ff; font-weight: bold;">← Back to TABConf.com</a>
     </div>
