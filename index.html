@@ -22,8 +22,6 @@
             margin-bottom: 20px;
         }
 
-
-
         .filters label {
             font-weight: bold;
             margin-right: 10px;
@@ -37,8 +35,6 @@
             border-radius: 6px;
             font-size: 14px;
         }
-
-
 
         h1 {
             margin: 0;
@@ -115,6 +111,18 @@
             overflow-x: auto;
         }
 
+        .title-area {
+            text-align: center;
+            width: 100%;
+        }
+
+        .filters {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            gap: 10px;
+        }
+
         @media (max-width: 768px) {
             .topbar {
                 flex-direction: column;
@@ -122,70 +130,24 @@
             }
 
             .title-area {
-                text-align: center;
                 margin-top: 20px;
-                width: 100%;
             }
-
-            .filters {
-                align-items: flex-start;
-                width: 100%;
-            }
-        }
-
-
-
-
-        .title-area {
-            text-align: center;
-            margin-top: 20px;
-            width: 100%;
-        }
-
-        .filters {
-            align-items: flex-start;
-            width: 100%;
-        }
-
-
-        .title-area {
-            text-align: center;
-            margin-top: 20px;
-            width: 100%;
-        }
-
-        .filters {
-            align-items: flex-start;
-            width: 100%;
-        }
-
-
-        .title-area {
-            text-align: center;
-            margin-top: 20px;
-            width: 100%;
-        }
-
-        .filters {
-            align-items: flex-start;
-            width: 100%;
-        }
-
-
-        .title-area {
-            text-align: left;
-            margin-top: 10px;
-            width: 100%;
         }
     </style>
 </head>
 
 <body>
-    <a href="https://tabconf.com"
-        style="display: inline-block; margin-bottom: 10px; color: #00d4ff; font-weight: bold;">← Back to TABConf.com</a>
-    <div class="topbar"
-        style="display: flex; align-items: flex-start; justify-content: center; gap: 40px; flex-wrap: wrap;">
-        <div class="filters" style="display: flex; flex-direction: column; gap: 10px;">
+    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px;">
+        <div></div>
+        <div style="text-align: center; flex-grow: 1;">
+            <h1 style="margin: 0; color: #00d4ff; font-size: 24px;">TABConf 6 Schedule</h1>
+        </div>
+        <a href="https://tabconf.com" style="color: #00d4ff; font-weight: bold; text-decoration: none;">Home</a>
+    </div>
+
+    <div class="filters"
+        style="display: flex; justify-content: center; gap: 40px; flex-wrap: wrap; margin-bottom: 20px;">
+        <div style="display: flex; flex-direction: column; gap: 10px;">
             <div>
                 <label for="dayFilter">🗓️ Filter by Day:</label><br>
                 <select id="dayFilter">
@@ -203,9 +165,7 @@
                 </select>
             </div>
         </div>
-        <div class="title-area" style="flex-grow: 1; text-align: center;">
-            <h1>TABConf 6 Schedule</h1>
-        </div>
+    </div>
     </div>
     <div class="table-wrapper">
         <table id="schedule">
@@ -224,6 +184,7 @@
             <tbody></tbody>
         </table>
     </div>
+
 
     <script>
         let sortKey = '';
