@@ -132,21 +132,23 @@
             .title-area {
                 margin-top: 20px;
             }
+
+            a[href="https://tabconf.com"] {
+                font-size: 14px;
+            }
         }
     </style>
 </head>
 
 <body>
-    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px;">
-        <div></div>
-        <div style="text-align: center; flex-grow: 1;">
-            <h1 style="margin: 0; color: #00d4ff; font-size: 24px;">TABConf 6 Schedule</h1>
-        </div>
-        <a href="https://tabconf.com" style="color: #00d4ff; font-weight: bold; text-decoration: none;">Home</a>
+    <div style="position: relative; margin-bottom: 20px;">
+        <a href="https://tabconf.com"
+            style="position: absolute; right: 0; top: 0; color: #00d4ff; font-weight: bold; text-decoration: none;">Home</a>
+        <h1 style="text-align: center; margin: 0 0 20px 0; color: #00d4ff; font-size: 28px;">TABConf 6 Schedule</h1>
     </div>
 
     <div class="filters"
-        style="display: flex; justify-content: center; gap: 40px; flex-wrap: wrap; margin-bottom: 20px;">
+        style="display: flex; justify-content: center; gap: 40px; flex-wrap: wrap; margin-bottom: 30px;">
         <div style="display: flex; flex-direction: column; gap: 10px;">
             <div>
                 <label for="dayFilter">🗓️ Filter by Day:</label><br>
@@ -166,6 +168,7 @@
             </div>
         </div>
     </div>
+
     <div class="table-wrapper">
         <table id="schedule">
             <thead>
@@ -250,7 +253,7 @@
 
         Promise.all([
             fetch('data/schedule.json').then(res => res.json()),
-            fetch('data/config.json').then(res => res.json())
+            fetch('config.json').then(res => res.json())
         ]).then(([data, config]) => {
             allData = data;
 
@@ -276,7 +279,8 @@
                 labelFilterEl.value = config.defaultLabel;
             }
 
-            applyFilters();
+            applyFilters(config.defaultDay || 'all', config.defaultLabel || 'all');
+
 
             dayFilter.addEventListener('change', applyFilters);
             labelFilterEl.addEventListener('change', applyFilters);
