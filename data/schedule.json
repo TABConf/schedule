@@ -553,7 +553,7 @@
     "time": "4:00 PM - 6:00 PM",
     "startTime": "4:00 PM",
     "endTime": "6:00 PM",
-    "village": "Workshop Room 1",
+    "village": "Workshop Room 2",
     "assignees": "pinheadmz",
     "labels": [
       {
@@ -1298,7 +1298,7 @@
     "startTime": "2:30 PM",
     "endTime": "3:30 PM",
     "village": "Main Stage",
-    "assignees": "miketwenty1",
+    "assignees": "miketwenty1, ShoSugiura-Blocq",
     "labels": [
       {
         "name": "Accepted",
@@ -1604,31 +1604,6 @@
     "url": "https://github.com/TABConf/7.tabconf.com/issues/88"
   },
   {
-    "title": "Hardcore Trivia",
-    "day": "Day 4",
-    "time": "5:00 PM - 6:00 PM",
-    "startTime": "5:00 PM",
-    "endTime": "6:00 PM",
-    "village": "BitDevs Socratic Village",
-    "assignees": "btsea",
-    "labels": [
-      {
-        "name": "Accepted",
-        "color": "#0E8A16"
-      },
-      {
-        "name": "confirmed",
-        "color": "#bb1efb"
-      },
-      {
-        "name": "Unrecorded",
-        "color": "#c61ba0"
-      }
-    ],
-    "summary": "Each year the BitDevs Socratic Village hosts Hardcore Trivia! There will be a mix of technical and historical trivia questions. The questions will be a combinat",
-    "url": "https://github.com/TABConf/7.tabconf.com/issues/102"
-  },
-  {
     "title": "Socratic Panel: Mempool Policy and Payload Politics",
     "day": "Day 3",
     "time": "1:30 PM - 2:30 PM",
@@ -1654,7 +1629,7 @@
         "color": "#c61ba0"
       }
     ],
-    "summary": "### Description\nTBA\n\n### Format\nThis is a Socratic Panel, which means the event will be a two-way dialogue. It is expected for both panel participants and membe",
+    "summary": "### Description\nThe debate over OP_RETURN limits and network relay policies has dominated Bitcoin discourse in recent months, reigniting questions as old as Bit",
     "url": "https://github.com/TABConf/7.tabconf.com/issues/103"
   },
   {
@@ -1663,6 +1638,31 @@
     "time": "12:30 PM - 1:30 PM",
     "startTime": "12:30 PM",
     "endTime": "1:30 PM",
+    "village": "BitDevs Socratic Village",
+    "assignees": "mcelrath, vnprc, btsea, average-gary",
+    "labels": [
+      {
+        "name": "Accepted",
+        "color": "#0E8A16"
+      },
+      {
+        "name": "confirmed",
+        "color": "#bb1efb"
+      },
+      {
+        "name": "Unrecorded",
+        "color": "#c61ba0"
+      }
+    ],
+    "summary": "### Description\nBuilding on [last year's](https://github.com/TABConf/6.tabconf.com/issues/139) mining centralization panel, we'll take a closer look at some act",
+    "url": "https://github.com/TABConf/7.tabconf.com/issues/104"
+  },
+  {
+    "title": "Hardcore Trivia",
+    "day": "Day 4",
+    "time": "5:00 PM - 6:00 PM",
+    "startTime": "5:00 PM",
+    "endTime": "6:00 PM",
     "village": "BitDevs Socratic Village",
     "assignees": "btsea",
     "labels": [
@@ -1679,8 +1679,8 @@
         "color": "#c61ba0"
       }
     ],
-    "summary": "### Description\nTBA\n\n### Format\nThis is a Socratic Panel, which means the event will be a two-way dialogue. It is expected for both panel participants and membe",
-    "url": "https://github.com/TABConf/7.tabconf.com/issues/104"
+    "summary": "Each year the BitDevs Socratic Village hosts Hardcore Trivia! There will be a mix of technical and historical trivia questions. The questions will be a combinat",
+    "url": "https://github.com/TABConf/7.tabconf.com/issues/102"
   },
   {
     "title": "Ponce City After Party Roof Top - Must wear conference wristband for entry!",
