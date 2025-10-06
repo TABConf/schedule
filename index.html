@@ -257,6 +257,20 @@
             'D4 - Oct 16': ['Time', 'Socratic Bitdevs', 'Main Stage', 'General']
         };
 
+        // Map village to the proper column per rules
+        function mapToColumn(dayKey, village) {
+            const v = String(village || '').toLowerCase();
+            if (dayKey === 'D3 - Oct 15' || dayKey === 'D4 - Oct 16') {
+                if (v.includes('main stage')) return 'Main Stage';
+                if (v.includes('bitdevs') || v.includes('socratic')) return 'Socratic Bitdevs';
+                return 'General';
+            } else {
+                if (v.includes('workshop room 1')) return 'Workshop Room 1';
+                if (v.includes('workshop room 2')) return 'Workshop Room 2';
+                return 'General';
+            }
+        }
+
         const ACCEPTED_LABELS = new Set(['accepted', 'confirmed']);
 
         // Deterministic color from sorted labels string
@@ -387,7 +401,7 @@
                     // Bucket events per column by village name matching column, else General
                     const byCol = new Map(colNames.map(n => [n, []]));
                     for (const ev of list) {
-                        const target = colNames.find(n => (ev.village || '').toLowerCase() === n.toLowerCase()) || 'General';
+                        const target = mapToColumn(dayKey, ev.village);
                         if (!byCol.has(target)) byCol.set(target, []);
                         byCol.get(target).push(ev);
                     }
@@ -447,56 +461,61 @@
                             if (occupancy.get(col)[r]) continue;
 
                             // Find an event that starts at r in this column
-                            const evSpan = (placed.get(col) || []).find(x => x.si === r);
+                            const starters = (placed.get(col) || []).filter(x => x.si === r && !x.used);
                             const td = document.createElement('td');
 
-                            if (evSpan) {
-                                const span = evSpan.ei - evSpan.si;
-                                // Mark occupied rows for this column
-                                for (let k = r; k < evSpan.ei; k++) occupancy.get(col)[k] = true;
+                            if (starters.length) {
+                                // Group only those with the same end-index (common case for Builder Days)
+                                const commonEi = starters[0].ei;
+                                const group = starters.filter(x => x.ei === commonEi);
+                                const span = commonEi - r;
+                                for (let k = r; k < commonEi; k++) occupancy.get(col)[k] = true;
 
-                                const { hex, rgbaBg, border } = computeColorFromLabels(evSpan.ev);
-                                const box = document.createElement('div');
-                                box.className = 'slot';
-                                box.style.background = rgbaBg;
-                                box.style.borderColor = border;
+                                for (const g of group) {
+                                    const { rgbaBg, border } = computeColorFromLabels(g.ev);
+                                    const box = document.createElement('div');
+                                    box.className = 'slot';
+                                    box.style.background = rgbaBg;
+                                    box.style.borderColor = border;
+                                    box.style.marginBottom = '8px';
 
-                                const title = document.createElement('h4');
-                                const tlink = document.createElement('a');
-                                tlink.href = evSpan.ev.url || '#';
-                                tlink.target = '_blank';
-                                tlink.rel = 'noopener noreferrer';
-                                tlink.textContent = evSpan.ev.title || 'Untitled';
-                                title.appendChild(tlink);
-                                box.appendChild(title);
+                                    const title = document.createElement('h4');
+                                    const tlink = document.createElement('a');
+                                    tlink.href = g.ev.url || '#';
+                                    tlink.target = '_blank';
+                                    tlink.rel = 'noopener noreferrer';
+                                    tlink.textContent = g.ev.title || 'Untitled';
+                                    title.appendChild(tlink);
+                                    box.appendChild(title);
 
-                                const meta = document.createElement('div');
-                                meta.className = 'meta';
-                                const assignees = (evSpan.ev.assignees || '')
-                                    .split(',')
-                                    .map(s => s.trim())
-                                    .filter(Boolean)
-                                    .map(u => `<a href="https://github.com/${u}" target="_blank" rel="noopener noreferrer">@${u}</a>`)
-                                    .join(' ');
-                                meta.innerHTML = `${assignees}`;
-                                box.appendChild(meta);
+                                    const meta = document.createElement('div');
+                                    meta.className = 'meta';
+                                    const assignees = (g.ev.assignees || '')
+                                        .split(',')
+                                        .map(s => s.trim())
+                                        .filter(Boolean)
+                                        .map(u => `<a href="https://github.com/${u}" target="_blank" rel="noopener noreferrer">@${u}</a>`)
+                                        .join(' ');
+                                    meta.innerHTML = `${assignees}`;
+                                    box.appendChild(meta);
 
-                                // Badges for labels minus Accepted/confirmed
-                                const cleanLabels = (evSpan.ev.labels || [])
-                                    .filter(l => l && l.name && !ACCEPTED_LABELS.has(l.name.toLowerCase()));
-                                if (cleanLabels.length) {
-                                    const badges = document.createElement('div');
-                                    badges.className = 'badges';
-                                    cleanLabels.forEach(l => {
-                                        const b = document.createElement('span');
-                                        b.className = 'badge';
-                                        b.textContent = l.name;
-                                        badges.appendChild(b);
-                                    });
-                                    box.appendChild(badges);
+                                    const cleanLabels = (g.ev.labels || [])
+                                        .filter(l => l && l.name && !ACCEPTED_LABELS.has(l.name.toLowerCase()));
+                                    if (cleanLabels.length) {
+                                        const badges = document.createElement('div');
+                                        badges.className = 'badges';
+                                        cleanLabels.forEach(l => {
+                                            const b = document.createElement('span');
+                                            b.className = 'badge';
+                                            b.textContent = l.name;
+                                            badges.appendChild(b);
+                                        });
+                                        box.appendChild(badges);
+                                    }
+                                    td.appendChild(box);
+                                    g.used = true;
                                 }
-
-                                td.appendChild(box);
+                                if (td.lastElementChild) td.lastElementChild.style.marginBottom = '0';
                                 td.setAttribute('rowspan', String(span));
                                 row.appendChild(td);
                             } else {
