@@ -133,7 +133,7 @@
     "day": "Day 1",
     "time": "9:30 AM - 11:00 AM",
     "startTime": "9:30 AM",
-    "endTime": "11:30 AM",
+    "endTime": "11:00 AM",
     "village": "Workshop Room 1",
     "assignees": "MPins",
     "labels": [
@@ -190,7 +190,7 @@
     "title": "Mint, Melt, Repeat: Interactive E-cash for Bitcoiners",
     "day": "Day 1",
     "time": "1:00 PM - 2:30 PM",
-    "startTime": "2:30 PM",
+    "startTime": "1:00 PM",
     "endTime": "2:30 PM",
     "village": "Workshop Room 1",
     "assignees": "edilmedeiros",
@@ -1003,7 +1003,7 @@
     "startTime": "2:30 PM",
     "endTime": "4:00 PM",
     "village": "Builder Days Area",
-    "assignees": "iglesiasbrandon, miketwenty1",
+    "assignees": "ChrisKCBtcYolo",
     "labels": [
       {
         "name": "Accepted",
