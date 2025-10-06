@@ -164,7 +164,6 @@
             text-decoration: underline;
         }
 
-        /* Mobile responsiveness */
         @media (max-width: 800px) {
             thead {
                 display: none;
@@ -250,14 +249,13 @@
         };
 
         const DAY_COLUMNS = {
-            // [time, col2, col3, col4]
             'D1 - Oct 13': ['Time', 'Workshop Room 1', 'Workshop Room 2', 'General'],
             'D2 - Oct 14': ['Time', 'Workshop Room 1', 'Workshop Room 2', 'General'],
             'D3 - Oct 15': ['Time', 'Socratic Bitdevs', 'Main Stage', 'General'],
             'D4 - Oct 16': ['Time', 'Socratic Bitdevs', 'Main Stage', 'General']
         };
 
-        // Map village to the proper column per rules
+        // Map village to the proper column per your rules
         function mapToColumn(dayKey, village) {
             const v = String(village || '').toLowerCase();
             if (dayKey === 'D3 - Oct 15' || dayKey === 'D4 - Oct 16') {
@@ -275,8 +273,7 @@
 
         // Deterministic color from sorted labels string
         function hashColor(str) {
-            // djb2
-            let h = 5381;
+            let h = 5381; // djb2
             for (let i = 0; i < str.length; i++) h = ((h << 5) + h) + str.charCodeAt(i);
             const hex = (h >>> 0).toString(16).padStart(8, '0');
             const rgb = hex.slice(-6); // 24-bit
@@ -398,20 +395,20 @@
                     const cols = DAY_COLUMNS[dayKey];
                     const colNames = cols.slice(1); // exclude Time header
 
-                    // Bucket events per column by village name matching column, else General
+                    // Bucket events per column using village mapping
                     const byCol = new Map(colNames.map(n => [n, []]));
                     for (const ev of list) {
                         const target = mapToColumn(dayKey, ev.village);
-                        if (!byCol.has(target)) byCol.set(target, []);
-                        byCol.get(target).push(ev);
+                        const col = byCol.has(target) ? target : 'General';
+                        byCol.get(col).push(ev);
                     }
 
-                    // For each column, map events to startIndex/endIndex in sortedTicks
                     function toIdx(mins) { return sortedTicks.findIndex(x => x === mins); }
 
-                    const placed = new Map();
+                    // Group events by identical span to stack them within one cell
+                    const groupsByCol = new Map();
                     for (const [col, arr] of byCol.entries()) {
-                        const mapped = [];
+                        const gmap = new Map();
                         for (const ev of arr) {
                             const s = parseTime(ev.startTime || ev.time?.split('-')[0]);
                             const e = parseTime(ev.endTime || ev.time?.split('-')[1]);
@@ -419,11 +416,12 @@
                             const si = toIdx(s.minutes);
                             const ei = toIdx(e.minutes);
                             if (si === -1 || ei === -1 || ei <= si) continue;
-                            mapped.push({ ev, si, ei });
+                            const key = `${si}-${ei}`;
+                            if (!gmap.has(key)) gmap.set(key, { si, ei, items: [] });
+                            gmap.get(key).items.push(ev);
                         }
-                        // sort by start then end
-                        mapped.sort((a, b) => a.si - b.si || a.ei - b.ei);
-                        placed.set(col, mapped);
+                        const groups = Array.from(gmap.values()).sort((a, b) => a.si - b.si || a.ei - b.ei);
+                        groupsByCol.set(col, groups);
                     }
 
                     // Build table DOM
@@ -460,19 +458,17 @@
                             // If an existing spanning cell covers this row, skip creating a td
                             if (occupancy.get(col)[r]) continue;
 
-                            // Find an event that starts at r in this column
-                            const starters = (placed.get(col) || []).filter(x => x.si === r && !x.used);
                             const td = document.createElement('td');
 
-                            if (starters.length) {
-                                // Group only those with the same end-index (common case for Builder Days)
-                                const commonEi = starters[0].ei;
-                                const group = starters.filter(x => x.ei === commonEi);
-                                const span = commonEi - r;
-                                for (let k = r; k < commonEi; k++) occupancy.get(col)[k] = true;
+                            // Find a group that starts at this row
+                            const group = (groupsByCol.get(col) || []).find(g => g.si === r && !g.used);
+                            if (group) {
+                                const span = group.ei - group.si;
+                                for (let k = r; k < group.ei; k++) occupancy.get(col)[k] = true;
 
-                                for (const g of group) {
-                                    const { rgbaBg, border } = computeColorFromLabels(g.ev);
+                                // Render all events in this group stacked
+                                for (const ev of group.items) {
+                                    const { rgbaBg, border } = computeColorFromLabels(ev);
                                     const box = document.createElement('div');
                                     box.className = 'slot';
                                     box.style.background = rgbaBg;
@@ -481,16 +477,16 @@
 
                                     const title = document.createElement('h4');
                                     const tlink = document.createElement('a');
-                                    tlink.href = g.ev.url || '#';
+                                    tlink.href = ev.url || '#';
                                     tlink.target = '_blank';
                                     tlink.rel = 'noopener noreferrer';
-                                    tlink.textContent = g.ev.title || 'Untitled';
+                                    tlink.textContent = ev.title || 'Untitled';
                                     title.appendChild(tlink);
                                     box.appendChild(title);
 
                                     const meta = document.createElement('div');
                                     meta.className = 'meta';
-                                    const assignees = (g.ev.assignees || '')
+                                    const assignees = (ev.assignees || '')
                                         .split(',')
                                         .map(s => s.trim())
                                         .filter(Boolean)
@@ -499,7 +495,7 @@
                                     meta.innerHTML = `${assignees}`;
                                     box.appendChild(meta);
 
-                                    const cleanLabels = (g.ev.labels || [])
+                                    const cleanLabels = (ev.labels || [])
                                         .filter(l => l && l.name && !ACCEPTED_LABELS.has(l.name.toLowerCase()));
                                     if (cleanLabels.length) {
                                         const badges = document.createElement('div');
@@ -512,16 +508,15 @@
                                         });
                                         box.appendChild(badges);
                                     }
+
                                     td.appendChild(box);
-                                    g.used = true;
                                 }
                                 if (td.lastElementChild) td.lastElementChild.style.marginBottom = '0';
                                 td.setAttribute('rowspan', String(span));
-                                row.appendChild(td);
-                            } else {
-                                // empty cell
-                                row.appendChild(td);
+                                group.used = true;
                             }
+
+                            row.appendChild(td);
                         }
 
                         tbody.appendChild(row);
