@@ -1626,6 +1626,10 @@
         "color": "#0E8A16"
       },
       {
+        "name": "Panel",
+        "color": "#FEF2C0"
+      },
+      {
         "name": "confirmed",
         "color": "#bb1efb"
       }
