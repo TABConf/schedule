@@ -717,6 +717,10 @@
       {
         "name": "confirmed",
         "color": "#bb1efb"
+      },
+      {
+        "name": "Unrecorded",
+        "color": "#c61ba0"
       }
     ],
     "summary": "### Description\nA focused Socratic Seminar on Bitcoin protocol development. If you are curious about the latest updates in Bitcoin Core, this is the event for y",
@@ -746,6 +750,10 @@
       {
         "name": "confirmed",
         "color": "#bb1efb"
+      },
+      {
+        "name": "Unrecorded",
+        "color": "#c61ba0"
       }
     ],
     "summary": "# Description\n\nA focused Socratic Seminar on lightning protocol development. Topics will be selected from Delving Bitcoin, prominent Github repositories, networ",
@@ -1353,6 +1361,10 @@
       {
         "name": "confirmed",
         "color": "#bb1efb"
+      },
+      {
+        "name": "Unrecorded",
+        "color": "#c61ba0"
       }
     ],
     "summary": "### Description\nA focused Socratic Seminar on Bitcoin UX. If you are curious about the latest updates in Bitcoin UX, this is the event for you. We'll be attacki",
@@ -1607,6 +1619,10 @@
       {
         "name": "confirmed",
         "color": "#bb1efb"
+      },
+      {
+        "name": "Unrecorded",
+        "color": "#c61ba0"
       }
     ],
     "summary": "Each year the BitDevs Socratic Village hosts Hardcore Trivia! There will be a mix of technical and historical trivia questions. The questions will be a combinat",
@@ -1632,6 +1648,10 @@
       {
         "name": "confirmed",
         "color": "#bb1efb"
+      },
+      {
+        "name": "Unrecorded",
+        "color": "#c61ba0"
       }
     ],
     "summary": "### Description\nTBA\n\n### Format\nThis is a Socratic Panel, which means the event will be a two-way dialogue. It is expected for both panel participants and membe",
@@ -1653,6 +1673,10 @@
       {
         "name": "confirmed",
         "color": "#bb1efb"
+      },
+      {
+        "name": "Unrecorded",
+        "color": "#c61ba0"
       }
     ],
     "summary": "### Description\nTBA\n\n### Format\nThis is a Socratic Panel, which means the event will be a two-way dialogue. It is expected for both panel participants and membe",
