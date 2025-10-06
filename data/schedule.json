@@ -1,10 +1,905 @@
 [
   {
-    "title": "HODLween - Satellite After Party Oct 26th!",
+    "title": "Demystifying Bitcoin Tax: A Guide to the Current Regulatory Landscape",
+    "day": "Day 3",
+    "time": "4:30 PM - 5:00 PM",
+    "startTime": "4:30 PM",
+    "endTime": "5:00 PM",
+    "village": "Main Stage",
+    "assignees": "PatrickCamusoCPA",
+    "labels": [
+      {
+        "name": "Accepted",
+        "color": "#0E8A16"
+      },
+      {
+        "name": "Talk",
+        "color": "#BFD4F2"
+      },
+      {
+        "name": "confirmed",
+        "color": "#bb1efb"
+      }
+    ],
+    "summary": "# Description\n### What is this talk about? Give us as many details as possible. \n\nA guide and update to the key regulatory, tax and accounting issues realted to",
+    "url": "https://github.com/TABConf/7.tabconf.com/issues/1"
+  },
+  {
+    "title": "Stacker News TABConf Takeover!",
+    "day": "Day 1 & 2",
+    "time": "All Day",
+    "startTime": "10:00 AM",
+    "endTime": "5:00 PM",
+    "village": "Builder Days Area",
+    "assignees": "thrillerxx, CoderBoogs",
+    "labels": [
+      {
+        "name": "Accepted",
+        "color": "#0E8A16"
+      },
+      {
+        "name": "Builder Days Project",
+        "color": "#D4C5F9"
+      },
+      {
+        "name": "Needs Floor Space",
+        "color": "#d93f0b"
+      },
+      {
+        "name": "confirmed",
+        "color": "#bb1efb"
+      }
+    ],
+    "summary": "# Description\n### What is this idea? Give us as many details as possible. \n\nTo host a stacker news hangout spot at the conference. A table/booth will be set asi",
+    "url": "https://github.com/TABConf/7.tabconf.com/issues/10"
+  },
+  {
+    "title": "Pleb Underground NewsDesk/ Interview Station",
+    "day": "",
+    "time": "",
+    "startTime": "",
+    "endTime": "",
+    "village": "",
+    "assignees": "iglesiasbrandon, miketwenty1",
+    "labels": [
+      {
+        "name": "Accepted",
+        "color": "#0E8A16"
+      },
+      {
+        "name": "Needs Floor Space",
+        "color": "#d93f0b"
+      },
+      {
+        "name": "confirmed",
+        "color": "#bb1efb"
+      }
+    ],
+    "summary": "@coinicarus and @kobiduran would like to host a NewsDesk/ interview station for the conference. \n\nWe would like to provide commentary and interviews with mainst",
+    "url": "https://github.com/TABConf/7.tabconf.com/issues/12"
+  },
+  {
+    "title": "Building Bitcoin bridges with garbled circuits",
+    "day": "",
+    "time": "",
+    "startTime": "",
+    "endTime": "",
+    "village": "",
+    "assignees": "ekrembal",
+    "labels": [
+      {
+        "name": "Accepted",
+        "color": "#0E8A16"
+      },
+      {
+        "name": "Talk",
+        "color": "#BFD4F2"
+      },
+      {
+        "name": "confirmed",
+        "color": "#bb1efb"
+      }
+    ],
+    "summary": "# Description\n### What is this talk about? Give us as many details as possible. \n\nGarbled circuits are surprisingly straightforward, yet powerful cryptographic ",
+    "url": "https://github.com/TABConf/7.tabconf.com/issues/16"
+  },
+  {
+    "title": "DIY Selfcustody with Krux Firmware",
+    "day": "All Days",
+    "time": "All Day",
+    "startTime": "10:00 AM",
+    "endTime": "5:00 PM",
+    "village": "Builder Days Area",
+    "assignees": "kkdao",
+    "labels": [
+      {
+        "name": "Accepted",
+        "color": "#0E8A16"
+      },
+      {
+        "name": "Builder Days Project",
+        "color": "#D4C5F9"
+      },
+      {
+        "name": "confirmed",
+        "color": "#bb1efb"
+      }
+    ],
+    "summary": "# Description\n### What is this workshop about? Provide as many details as possible. \nKrux Firmware is multilingual FOSS bitcoin-only firmware which runs on K210",
+    "url": "https://github.com/TABConf/7.tabconf.com/issues/17"
+  },
+  {
+    "title": "Building Taproot Lightning Channels from Scratch",
+    "day": "Day 1",
+    "time": "9:30 AM - 11:00 AM",
+    "startTime": "9:30 AM",
+    "endTime": "11:30 AM",
+    "village": "Workshop Room 1",
+    "assignees": "MPins",
+    "labels": [
+      {
+        "name": "Accepted",
+        "color": "#0E8A16"
+      },
+      {
+        "name": "Workshop",
+        "color": "#BFDADC"
+      },
+      {
+        "name": "Advanced",
+        "color": "#F92A53"
+      },
+      {
+        "name": "confirmed",
+        "color": "#bb1efb"
+      }
+    ],
+    "summary": "## [Building Taproot Lightning Channels from Scratch](https://github.com/MPins/Taproot-Lightning-Channels-Workshop)\n\nThis workshop is designed for developers in",
+    "url": "https://github.com/TABConf/7.tabconf.com/issues/19"
+  },
+  {
+    "title": "Mario Kart: Double Sats Pick-Up Games",
+    "day": "All Days",
+    "time": "All Day",
+    "startTime": "10:00 AM",
+    "endTime": "5:00 PM",
+    "village": "Builder Days Area",
+    "assignees": "dplusplus1024",
+    "labels": [
+      {
+        "name": "Accepted",
+        "color": "#0E8A16"
+      },
+      {
+        "name": "Builder Days Project",
+        "color": "#D4C5F9"
+      },
+      {
+        "name": "Needs Floor Space",
+        "color": "#d93f0b"
+      },
+      {
+        "name": "confirmed",
+        "color": "#bb1efb"
+      }
+    ],
+    "summary": "\n\n# Description\n**Mario Kart: Double Sats** pays you bitcoin while you're in first place, in real time to your Lightning Address or BOLT 12-enabled wallet!\n\nThe",
+    "url": "https://github.com/TABConf/7.tabconf.com/issues/21"
+  },
+  {
+    "title": "Mint, Melt, Repeat: Interactive E-cash for Bitcoiners",
+    "day": "Day 1",
+    "time": "1:00 PM - 2:30 PM",
+    "startTime": "2:30 PM",
+    "endTime": "2:30 PM",
+    "village": "Workshop Room 1",
+    "assignees": "edilmedeiros",
+    "labels": [
+      {
+        "name": "Accepted",
+        "color": "#0E8A16"
+      },
+      {
+        "name": "Workshop",
+        "color": "#BFDADC"
+      },
+      {
+        "name": "Advanced",
+        "color": "#F92A53"
+      },
+      {
+        "name": "confirmed",
+        "color": "#bb1efb"
+      }
+    ],
+    "summary": "# Description\n\n### What is this workshop about? Provide as many details as possible.\n\n**This workshop is a live-fire introduction to digital bearer cash.**  \nPa",
+    "url": "https://github.com/TABConf/7.tabconf.com/issues/22"
+  },
+  {
+    "title": "DIY Bitcoin/Lightning nodes",
+    "day": "Day 1 & 2",
+    "time": "All Day",
+    "startTime": "10:00 AM",
+    "endTime": "5:00 PM",
+    "village": "Builder Days Area",
+    "assignees": "MattDHill",
+    "labels": [
+      {
+        "name": "Accepted",
+        "color": "#0E8A16"
+      },
+      {
+        "name": "Builder Days Project",
+        "color": "#D4C5F9"
+      },
+      {
+        "name": "confirmed",
+        "color": "#bb1efb"
+      }
+    ],
+    "summary": "<!-- All software-based projects submitted must be open source and freely available for public use -->\n\n## Project\nDIY Bitcoin/Lightning nodes\n\n#### Description",
+    "url": "https://github.com/TABConf/7.tabconf.com/issues/24"
+  },
+  {
+    "title": "Portal workshop proposal",
+    "day": "Day 1",
+    "time": "9:30 AM - 11:00 AM",
+    "startTime": "9:30 AM",
+    "endTime": "11:00 AM",
+    "village": "Workshop Room 2",
+    "assignees": "afilini",
+    "labels": [
+      {
+        "name": "Accepted",
+        "color": "#0E8A16"
+      },
+      {
+        "name": "Workshop",
+        "color": "#BFDADC"
+      },
+      {
+        "name": "Beginner",
+        "color": "#0744B1"
+      },
+      {
+        "name": "confirmed",
+        "color": "#bb1efb"
+      }
+    ],
+    "summary": "<!-- NOTE!! If you are intending to do a non-interactive demo, THIS IS NOT a workshop, please submit talk demo's under \"Solo Talks\". -->\n\n# Description\n### What",
+    "url": "https://github.com/TABConf/7.tabconf.com/issues/26"
+  },
+  {
+    "title": "What can physical hubs do to support FOSS devs/PJs?",
     "day": "Day 4",
-    "time": "8:00 PM - 2:00 AM",
+    "time": "10:30 AM - 11:00 AM",
+    "startTime": "10:30 AM",
+    "endTime": "11:00 AM",
+    "village": "Main Stage",
+    "assignees": "TerukoN",
+    "labels": [
+      {
+        "name": "Accepted",
+        "color": "#0E8A16"
+      },
+      {
+        "name": "Panel",
+        "color": "#FEF2C0"
+      },
+      {
+        "name": "confirmed",
+        "color": "#bb1efb"
+      }
+    ],
+    "summary": "# Description\n### What is this panel discussion about? Will there be multiple talking a points?\nPhysical Bitcoin hubs are popping up around the world. Some of t",
+    "url": "https://github.com/TABConf/7.tabconf.com/issues/27"
+  },
+  {
+    "title": "UX Workshop for builders",
+    "day": "Day 2",
+    "time": "2:30 PM - 4:00 PM",
+    "startTime": "2:30 PM",
+    "endTime": "4:00 PM",
+    "village": "Workshop Room 2",
+    "assignees": "mouxdesign",
+    "labels": [
+      {
+        "name": "Accepted",
+        "color": "#0E8A16"
+      },
+      {
+        "name": "Workshop",
+        "color": "#BFDADC"
+      },
+      {
+        "name": "Beginner",
+        "color": "#0744B1"
+      },
+      {
+        "name": "confirmed",
+        "color": "#bb1efb"
+      }
+    ],
+    "summary": "<!-- NOTE!! If you are intending to do a non-interactive demo, THIS IS NOT a workshop, please submit talk demo's under \"Solo Talks\". -->\n\n# Description\n### What",
+    "url": "https://github.com/TABConf/7.tabconf.com/issues/29"
+  },
+  {
+    "title": "Programming Lightning: Intro to Payment Channels",
+    "day": "Day 1",
+    "time": "11:00 AM - 12:30 PM",
+    "startTime": "11:00 AM",
+    "endTime": "12:30 PM",
+    "village": "Workshop Room 1",
+    "assignees": "Beige-Coffee",
+    "labels": [
+      {
+        "name": "Accepted",
+        "color": "#0E8A16"
+      },
+      {
+        "name": "Workshop",
+        "color": "#BFDADC"
+      },
+      {
+        "name": "Advanced",
+        "color": "#F92A53"
+      },
+      {
+        "name": "confirmed",
+        "color": "#bb1efb"
+      }
+    ],
+    "summary": "<!-- NOTE!! If you are intending to do a non-interactive demo, THIS IS NOT a workshop, please submit talk demo's under \"Solo Talks\". -->\n\n# Description\n\n#### He",
+    "url": "https://github.com/TABConf/7.tabconf.com/issues/30"
+  },
+  {
+    "title": "(CCN) Building your closed community network on Eve, and why you should care",
+    "day": "Day 1",
+    "time": "3:00 PM - 4:00 PM",
+    "startTime": "3:00 PM",
+    "endTime": "4:00 PM",
+    "village": "Workshop Room 2",
+    "assignees": "dannym-arx",
+    "labels": [
+      {
+        "name": "Accepted",
+        "color": "#0E8A16"
+      },
+      {
+        "name": "Workshop",
+        "color": "#BFDADC"
+      },
+      {
+        "name": "Beginner",
+        "color": "#0744B1"
+      },
+      {
+        "name": "confirmed",
+        "color": "#bb1efb"
+      }
+    ],
+    "summary": "# Description \n### What is this talk about? Give us as many details as possible.\n\nRemember when the internet felt like a cozy neighborhood? A place where commun",
+    "url": "https://github.com/TABConf/7.tabconf.com/issues/31"
+  },
+  {
+    "title": "Adding silent payments support to BDK",
+    "day": "Day 2",
+    "time": "1:30 PM - 3:00 PM",
+    "startTime": "1:30 PM",
+    "endTime": "3:00 PM",
+    "village": "Workshop Room 1",
+    "assignees": "nymius",
+    "labels": [
+      {
+        "name": "Accepted",
+        "color": "#0E8A16"
+      },
+      {
+        "name": "Workshop",
+        "color": "#BFDADC"
+      },
+      {
+        "name": "Advanced",
+        "color": "#F92A53"
+      },
+      {
+        "name": "confirmed",
+        "color": "#bb1efb"
+      }
+    ],
+    "summary": "## Description\n\nThis is a preview of the work being done to support silent payments in [BDK](https://bitcoindevkit.org/).\nThe [`bdk-sp`](https://github.com/bitc",
+    "url": "https://github.com/TABConf/7.tabconf.com/issues/32"
+  },
+  {
+    "title": "Merkle Trees is the Perfect Place for UTXOs: Floresta as a chain source for BDK",
+    "day": "Day 4",
+    "time": "10:00 AM - 10:30 AM",
+    "startTime": "10:00 AM",
+    "endTime": "10:30 AM",
+    "village": "Main Stage",
+    "assignees": "luisschwab",
+    "labels": [
+      {
+        "name": "Accepted",
+        "color": "#0E8A16"
+      },
+      {
+        "name": "Talk",
+        "color": "#BFD4F2"
+      },
+      {
+        "name": "confirmed",
+        "color": "#bb1efb"
+      }
+    ],
+    "summary": "# Description\n\n[`bdk-floresta`](https://github.com/luisschwab/bdk-floresta) is a work in progress chain source crate for BDK that leverages [`floresta-chain`](h",
+    "url": "https://github.com/TABConf/7.tabconf.com/issues/33"
+  },
+  {
+    "title": "Breaking Down Barriers: Making Taproot Assets Accessible to Web Developers",
+    "day": "Day 2",
+    "time": "11:00 AM - 12:30 PM",
+    "startTime": "11:00 AM",
+    "endTime": "12:30 PM",
+    "village": "Workshop Room 1",
+    "assignees": "kwsantiago",
+    "labels": [
+      {
+        "name": "Accepted",
+        "color": "#0E8A16"
+      },
+      {
+        "name": "Workshop",
+        "color": "#BFDADC"
+      },
+      {
+        "name": "Advanced",
+        "color": "#F92A53"
+      },
+      {
+        "name": "confirmed",
+        "color": "#bb1efb"
+      }
+    ],
+    "summary": "# Taproot Assets REST Gateway Workshop Application\n\n## Description\n\n### What is this workshop about? Provide as many details as possible.\n\nThis hands-on worksho",
+    "url": "https://github.com/TABConf/7.tabconf.com/issues/34"
+  },
+  {
+    "title": "Documenting BDK",
+    "day": "Day 4",
+    "time": "2:00 PM - 2:30 PM",
+    "startTime": "2:00 PM",
+    "endTime": "2:30 PM",
+    "village": "Main Stage",
+    "assignees": "thunderbiscuit",
+    "labels": [
+      {
+        "name": "Accepted",
+        "color": "#0E8A16"
+      },
+      {
+        "name": "Talk",
+        "color": "#BFD4F2"
+      },
+      {
+        "name": "confirmed",
+        "color": "#bb1efb"
+      }
+    ],
+    "summary": "Hi there! I'd love to submit a solo talk for the conference. Cheers!\n\n<br>\n\n# Description\n\n### What is this talk about? Give us as many details as possible\n\nThi",
+    "url": "https://github.com/TABConf/7.tabconf.com/issues/38"
+  },
+  {
+    "title": "101 Workshop - Self Custody Strategies for new Bitcoiners",
+    "day": "Day 1",
+    "time": "11:00 AM - 12:30 PM",
+    "startTime": "11:00 AM",
+    "endTime": "12:30 PM",
+    "village": "Workshop Room 2",
+    "assignees": "wksantiago",
+    "labels": [
+      {
+        "name": "Accepted",
+        "color": "#0E8A16"
+      },
+      {
+        "name": "Workshop",
+        "color": "#BFDADC"
+      },
+      {
+        "name": "Beginner",
+        "color": "#0744B1"
+      },
+      {
+        "name": "confirmed",
+        "color": "#bb1efb"
+      }
+    ],
+    "summary": "# 101 Workshop — Self Custody Strategies for new Bitcoiners\n\n## Description\n\n### What is this workshop about? Provide as many details as possible.\n* 101 on how ",
+    "url": "https://github.com/TABConf/7.tabconf.com/issues/39"
+  },
+  {
+    "title": "Bitcoin self-custody 101 for beginners",
+    "day": "Day 2",
+    "time": "1:30 PM - 2:30 PM",
+    "startTime": "1:30 PM",
+    "endTime": "2:30 PM",
+    "village": "Workshop Room 2",
+    "assignees": "kdmukai",
+    "labels": [
+      {
+        "name": "Accepted",
+        "color": "#0E8A16"
+      },
+      {
+        "name": "Workshop",
+        "color": "#BFDADC"
+      },
+      {
+        "name": "Beginner",
+        "color": "#0744B1"
+      },
+      {
+        "name": "confirmed",
+        "color": "#bb1efb"
+      }
+    ],
+    "summary": "# Description\n### What is this workshop about?\nPeople new to bitcoin mostly start off by buying a bit on Coinbase, Cash App, Robinhood, etc. But it's not really",
+    "url": "https://github.com/TABConf/7.tabconf.com/issues/40"
+  },
+  {
+    "title": "Warnet 2025: Lightning Crashes ⚡️🔥",
+    "day": "Day 2",
+    "time": "4:00 PM - 6:00 PM",
+    "startTime": "4:00 PM",
+    "endTime": "6:00 PM",
+    "village": "Workshop Room 1",
+    "assignees": "pinheadmz",
+    "labels": [
+      {
+        "name": "Accepted",
+        "color": "#0E8A16"
+      },
+      {
+        "name": "Workshop",
+        "color": "#BFDADC"
+      },
+      {
+        "name": "confirmed",
+        "color": "#bb1efb"
+      }
+    ],
+    "summary": "<!-- NOTE!! If you are intending to do a non-interactive demo, THIS IS NOT a workshop, please submit talk demo's under \"Solo Talks\". -->\n\n# Description\n### What",
+    "url": "https://github.com/TABConf/7.tabconf.com/issues/42"
+  },
+  {
+    "title": "Confidential Script: Emulating soft forks with stateless TEEs",
+    "day": "Day 4",
+    "time": "1:30 PM - 2:00 PM",
+    "startTime": "1:30 PM",
+    "endTime": "2:00 PM",
+    "village": "Main Stage",
+    "assignees": "joshdoman",
+    "labels": [
+      {
+        "name": "Accepted",
+        "color": "#0E8A16"
+      },
+      {
+        "name": "Talk",
+        "color": "#BFD4F2"
+      },
+      {
+        "name": "confirmed",
+        "color": "#bb1efb"
+      }
+    ],
+    "summary": "# Description\n### What is this talk about? Give us as many details as possible.\n\n[confidential-script-lib](https://github.com/joshdoman/confidential-script-lib)",
+    "url": "https://github.com/TABConf/7.tabconf.com/issues/44"
+  },
+  {
+    "title": "Lightning's (other) Toxic Waste Problem",
+    "day": "Day 3",
+    "time": "12:00 PM - 12:30 PM",
+    "startTime": "12:00 PM",
+    "endTime": "12:30 PM",
+    "village": "Main Stage",
+    "assignees": "petertodd",
+    "labels": [
+      {
+        "name": "Accepted",
+        "color": "#0E8A16"
+      },
+      {
+        "name": "Talk",
+        "color": "#BFD4F2"
+      },
+      {
+        "name": "confirmed",
+        "color": "#bb1efb"
+      }
+    ],
+    "summary": "# Description\n### What is this talk about? Give us as many details as possible.\n\nWhy do Lightning nodes keep logs? It would never be acceptable for a Tor router",
+    "url": "https://github.com/TABConf/7.tabconf.com/issues/46"
+  },
+  {
+    "title": "Solving payjoin UX challenges",
+    "day": "Day 2",
+    "time": "12:00 PM - 12:30 PM",
+    "startTime": "12:00 PM",
+    "endTime": "12:30 PM",
+    "village": "Workshop Room 2",
+    "assignees": "yashrajd",
+    "labels": [
+      {
+        "name": "Accepted",
+        "color": "#0E8A16"
+      },
+      {
+        "name": "Talk",
+        "color": "#BFD4F2"
+      },
+      {
+        "name": "confirmed",
+        "color": "#bb1efb"
+      }
+    ],
+    "summary": "# Description\n### What is this talk about? Give us as many details as possible. \n\nAsync payjoin gives every UTXO holder the ability to protect their privacy and",
+    "url": "https://github.com/TABConf/7.tabconf.com/issues/50"
+  },
+  {
+    "title": "Planning ahead: building transactions with complex spending conditions in BDK",
+    "day": "Day 4",
+    "time": "11:00 AM - 11:30 AM",
+    "startTime": "11:00 AM",
+    "endTime": "11:30 AM",
+    "village": "Main Stage",
+    "assignees": "ValuedMammal",
+    "labels": [
+      {
+        "name": "Accepted",
+        "color": "#0E8A16"
+      },
+      {
+        "name": "Talk",
+        "color": "#BFD4F2"
+      },
+      {
+        "name": "confirmed",
+        "color": "#bb1efb"
+      }
+    ],
+    "summary": "# Description\n\n**Planning ahead**: building transactions with complex spending conditions in BDK\n\n### What is this talk about? Give us as many details as possib",
+    "url": "https://github.com/TABConf/7.tabconf.com/issues/52"
+  },
+  {
+    "title": "BitDevs Socratic Village #5",
+    "day": "Day 3 & 4",
+    "time": "All Day",
+    "startTime": "10:00 AM",
+    "endTime": "5:00 PM",
+    "village": "BitDevs Socratic Village",
+    "assignees": "btsea",
+    "labels": [
+      {
+        "name": "Accepted",
+        "color": "#0E8A16"
+      },
+      {
+        "name": "confirmed",
+        "color": "#bb1efb"
+      }
+    ],
+    "summary": "Super excited to put together the fifth edition of the BitDevs Socratic Village! Our content will be consistent with the event styles available in prior years. ",
+    "url": "https://github.com/TABConf/7.tabconf.com/issues/54"
+  },
+  {
+    "title": "Socratic Session: Bitcoin Core - Project Updates and Cherry Picked PRs",
+    "day": "Day 3",
+    "time": "10:30 AM - 12:00 PM",
+    "startTime": "10:30 AM",
+    "endTime": "12:00 PM",
+    "village": "BitDevs Socratic Village",
+    "assignees": "btsea",
+    "labels": [
+      {
+        "name": "Accepted",
+        "color": "#0E8A16"
+      },
+      {
+        "name": "Talk",
+        "color": "#BFD4F2"
+      },
+      {
+        "name": "Panel",
+        "color": "#FEF2C0"
+      },
+      {
+        "name": "confirmed",
+        "color": "#bb1efb"
+      }
+    ],
+    "summary": "### Description\nA focused Socratic Seminar on Bitcoin protocol development. If you are curious about the latest updates in Bitcoin Core, this is the event for y",
+    "url": "https://github.com/TABConf/7.tabconf.com/issues/55"
+  },
+  {
+    "title": "Socratic Session: Lightning BOLT Spec and Implementation Updates",
+    "day": "Day 4",
+    "time": "10:30 AM - 12:00 PM",
+    "startTime": "10:30 AM",
+    "endTime": "12:00 PM",
+    "village": "BitDevs Socratic Village",
+    "assignees": "btsea",
+    "labels": [
+      {
+        "name": "Accepted",
+        "color": "#0E8A16"
+      },
+      {
+        "name": "Talk",
+        "color": "#BFD4F2"
+      },
+      {
+        "name": "Panel",
+        "color": "#FEF2C0"
+      },
+      {
+        "name": "confirmed",
+        "color": "#bb1efb"
+      }
+    ],
+    "summary": "# Description\n\nA focused Socratic Seminar on lightning protocol development. Topics will be selected from Delving Bitcoin, prominent Github repositories, networ",
+    "url": "https://github.com/TABConf/7.tabconf.com/issues/56"
+  },
+  {
+    "title": "(btcr2) How Self-Sovereign Identity makes Self-Custody safer",
+    "day": "Day 1",
+    "time": "4:00 PM - 4:30 PM",
+    "startTime": "4:00 PM",
+    "endTime": "4:30 PM",
+    "village": "Workshop Room 2",
+    "assignees": "dcdpr",
+    "labels": [
+      {
+        "name": "Accepted",
+        "color": "#0E8A16"
+      },
+      {
+        "name": "Talk",
+        "color": "#BFD4F2"
+      },
+      {
+        "name": "Beginner",
+        "color": "#0744B1"
+      },
+      {
+        "name": "confirmed",
+        "color": "#bb1efb"
+      }
+    ],
+    "summary": "# Description\n\n### What is this talk about? Give us as many details as possible. \n\nThis talk is about the collection of issues that go into custody design, why ",
+    "url": "https://github.com/TABConf/7.tabconf.com/issues/57"
+  },
+  {
+    "title": "👾 Saving Satoshi Workshop 🎮",
+    "day": "Day 2",
+    "time": "12:30 PM - 1:30 PM",
+    "startTime": "12:30 PM",
+    "endTime": "1:30 PM",
+    "village": "Workshop Room 2",
+    "assignees": "pinheadmz, mvuk",
+    "labels": [
+      {
+        "name": "Accepted",
+        "color": "#0E8A16"
+      },
+      {
+        "name": "Workshop",
+        "color": "#BFDADC"
+      },
+      {
+        "name": "Beginner",
+        "color": "#0744B1"
+      },
+      {
+        "name": "confirmed",
+        "color": "#bb1efb"
+      }
+    ],
+    "summary": "\n\n# Description\n### What is this workshop about? Provide as many details as possible. \n\nWe'd like to run [the same Saving Satoshi](https://github.com/TABConf/6.",
+    "url": "https://github.com/TABConf/7.tabconf.com/issues/62"
+  },
+  {
+    "title": "Can Bitcoin improve election integrity in Georgia?",
+    "day": "Day 4",
+    "time": "2:30 PM - 3:00 PM",
+    "startTime": "2:30 PM",
+    "endTime": "3:00 PM",
+    "village": "Main Stage",
+    "assignees": "carlossimpleproof",
+    "labels": [
+      {
+        "name": "Accepted",
+        "color": "#0E8A16"
+      },
+      {
+        "name": "Panel",
+        "color": "#FEF2C0"
+      },
+      {
+        "name": "confirmed",
+        "color": "#bb1efb"
+      }
+    ],
+    "summary": "# Description: \n### What is this panel discussion about? Will there be multiple talking a points?\nBitcoin was used during the November 2024 presidential electio",
+    "url": "https://github.com/TABConf/7.tabconf.com/issues/64"
+  },
+  {
+    "title": "Bitcoin Clients and Mobile: Challenges and possibilities",
+    "day": "Day 2",
+    "time": "11:30AM - 12:00PM",
+    "startTime": "11:30 AM",
+    "endTime": "12:00 PM",
+    "village": "Workshop Room 2",
+    "assignees": "Davidson-Souza",
+    "labels": [
+      {
+        "name": "Accepted",
+        "color": "#0E8A16"
+      },
+      {
+        "name": "Talk",
+        "color": "#BFD4F2"
+      },
+      {
+        "name": "Beginner",
+        "color": "#0744B1"
+      },
+      {
+        "name": "confirmed",
+        "color": "#bb1efb"
+      }
+    ],
+    "summary": "# Description\n\nBitcoin is a Peer-to-Peer network. This means that, to use the network in a fully sovereign way, you need to run a Bitcoin Client before particip",
+    "url": "https://github.com/TABConf/7.tabconf.com/issues/65"
+  },
+  {
+    "title": "Own Your Name, Own Your Destiny",
+    "day": "Day 1",
+    "time": "2:00 PM - 3:00 PM",
+    "startTime": "3:00 PM",
+    "endTime": "3:00 PM",
+    "village": "Workshop Room 2",
+    "assignees": "horologger",
+    "labels": [
+      {
+        "name": "Accepted",
+        "color": "#0E8A16"
+      },
+      {
+        "name": "Workshop",
+        "color": "#BFDADC"
+      },
+      {
+        "name": "Beginner",
+        "color": "#0744B1"
+      },
+      {
+        "name": "confirmed",
+        "color": "#bb1efb"
+      }
+    ],
+    "summary": "# Description\nThe names we use in the cyber world should be property we control not ephemeral place keepers that we rent for a time.\n\n### What is this workshop ",
+    "url": "https://github.com/TABConf/7.tabconf.com/issues/66"
+  },
+  {
+    "title": "ATL BTC MeatUp",
+    "day": "Day 2",
+    "time": "6:30 PM - 8:30 PM",
+    "startTime": "6:30 PM",
+    "endTime": "8:30 PM",
     "village": "Off Site",
-    "assignees": "babeswhobitcoin",
+    "assignees": "oksharp2",
     "labels": [
       {
         "name": "Accepted",
@@ -12,98 +907,49 @@
       },
       {
         "name": "Satellite Event",
-        "color": "#fbca04"
+        "color": "#FBCA04"
+      },
+      {
+        "name": "confirmed",
+        "color": "#bb1efb"
       }
     ],
-    "summary": "# Description\nHODLween  - Satellite After Party, SATurday, Oct 26th!\n\n\n### Event Description\nHODLween is a bitcoin themed halloween costume party, and is the lo",
-    "url": "https://github.com/TABConf/6.tabconf.com/issues/18"
+    "summary": "- A satellite event, Tuesday evening, \n\n### When\n- October 14, 2025\n- 6:30 - 8:30pm\n### Where \n- Fogo de Chao, Brazilian Steakhouse\n- 3101 Piedmont Rd NE, Atlan",
+    "url": "https://github.com/TABConf/7.tabconf.com/issues/68"
   },
   {
-    "title": "Branta Builder Day Table",
+    "title": "Builder Days Project Job Board",
     "day": "Day 1 & 2",
     "time": "All Day",
+    "startTime": "10:00 AM",
+    "endTime": "5:00 PM",
     "village": "Builder Days Area",
-    "assignees": "keith-gardner",
+    "assignees": "miketwenty1, horologger",
     "labels": [
       {
         "name": "Accepted",
         "color": "#0E8A16"
       },
       {
-        "name": "Builder Days Project",
-        "color": "#fbefff"
-      }
-    ],
-    "summary": "# Description\r\n[Branta](https://branta.pro/) - Guardrails for Bitcoin & Lightning\r\n\r\n### What is this project about? Please give us as many details as possible.",
-    "url": "https://github.com/TABConf/6.tabconf.com/issues/24"
-  },
-  {
-    "title": "ZBD x PlebLab TABconf Hackathon - Season 2",
-    "day": "Day 1 & 2",
-    "time": "All Day",
-    "village": "Builder Days Area",
-    "assignees": "sntslol",
-    "labels": [
-      {
-        "name": "Accepted",
-        "color": "#0E8A16"
+        "name": "Needs Floor Space",
+        "color": "#d93f0b"
       },
       {
-        "name": "Builder Days Project",
-        "color": "#fbefff"
+        "name": "confirmed",
+        "color": "#bb1efb"
       }
     ],
-    "summary": "![image](https://github.com/TABConf/6.tabconf.com/assets/127369669/d7881b11-caee-496a-9064-744352d56ae8)\r\n\r\n# Description\r\n### What is this workshop about? Prov",
-    "url": "https://github.com/TABConf/6.tabconf.com/issues/21"
+    "summary": "<!-- All software-based projects submitted must be open source and freely available for public use -->\n\n## Project\nJob Board\n\n#### Description:\nPhysical Job Boa",
+    "url": "https://github.com/TABConf/7.tabconf.com/issues/69"
   },
   {
-    "title": "SeedSigner New Developer Onboarding Workshop",
-    "day": "Day 1",
-    "time": "10:00 AM - 12:00 PM",
-    "village": "Workshop Room 1",
-    "assignees": "SeedSigner",
-    "labels": [
-      {
-        "name": "Accepted",
-        "color": "#0E8A16"
-      },
-      {
-        "name": "Workshop",
-        "color": "#ddf4ff"
-      },
-      {
-        "name": "Intermediate",
-        "color": "#CB5562"
-      }
-    ],
-    "summary": "<!-- NOTE!! If you are intending to do a non-interactive demo, THIS IS NOT a workshop, please submit talk demo's under \"Solo Talks\". -->\r\n\r\n# Description\r\nLearn",
-    "url": "https://github.com/TABConf/6.tabconf.com/issues/52"
-  },
-  {
-    "title": "Bitcoin Pumpkin Carving Competition",
+    "title": "Stratum v2 by the Numbers",
     "day": "Day 3",
-    "time": "All Day",
-    "village": "NextGen Village",
-    "assignees": "babeswhobitcoin",
-    "labels": [
-      {
-        "name": "Accepted",
-        "color": "#0E8A16"
-      },
-      {
-        "name": "Workshop",
-        "color": "#ddf4ff"
-      }
-    ],
-    "summary": "<!-- NOTE!! If you are intending to do a non-interactive demo, THIS IS NOT a workshop, please submit talk demo's under \"Solo Talks\". -->\n\n# Description\n### What",
-    "url": "https://github.com/TABConf/6.tabconf.com/issues/113"
-  },
-  {
-    "title": "Universal Computation on Bitcoin: a gentle introduction to BitVMX",
-    "day": "Day 3",
-    "time": "9:45 AM - 10:15 AM",
-    "village": "NextGen Village",
-    "assignees": "azavalla",
+    "time": "10:00 AM - 10:30 AM",
+    "startTime": "10:00 AM",
+    "endTime": "10:30 AM",
+    "village": "Main Stage",
+    "assignees": "average-gary",
     "labels": [
       {
         "name": "Accepted",
@@ -111,200 +957,23 @@
       },
       {
         "name": "Talk",
-        "color": "#DEFBE1"
-      }
-    ],
-    "summary": "# Description\r\n### What is this talk about? Give us as many details as possible.\r\nThe evolution of blockchain computation took a significant step forward in 201",
-    "url": "https://github.com/TABConf/6.tabconf.com/issues/104"
-  },
-  {
-    "title": "Intro to Digital Logic (Silas Pembroke)",
-    "day": "Day 4",
-    "time": "3:00 PM - 3:25 PM",
-    "village": "NextGen Village",
-    "assignees": "asherp",
-    "labels": [
-      {
-        "name": "Accepted",
-        "color": "#0E8A16"
+        "color": "#BFD4F2"
       },
       {
-        "name": "Talk",
-        "color": "#DEFBE1"
+        "name": "confirmed",
+        "color": "#bb1efb"
       }
     ],
-    "summary": "# Description\r\n### What is this talk about? Give us as many details as possible. \r\n\r\nSilas continues his interactive presentation on digital logic and the found",
-    "url": "https://github.com/TABConf/6.tabconf.com/issues/136"
+    "summary": "# Description\nI ran https://github.com/stratum-mining/benchmarking-tool and want to present my findings. \n\n### What is this talk about? Give us as many details ",
+    "url": "https://github.com/TABConf/7.tabconf.com/issues/70"
   },
   {
-    "title": "Hackathon Semifinalists Pitches",
+    "title": "Sovereign Stability: Stable Channels in Action",
     "day": "Day 3",
-    "time": "12:00 PM - 1:00 PM",
-    "village": "NextGen Village",
-    "assignees": "sntslol",
-    "labels": [
-      {
-        "name": "Accepted",
-        "color": "#0E8A16"
-      }
-    ],
-    "summary": "# Description\r\n### What is this idea? Give us as many details as possible. \r\nThis will be a hackathon pitches for the semifinalists to get selected to potential",
-    "url": "https://github.com/TABConf/6.tabconf.com/issues/143"
-  },
-  {
-    "title": "El Salvador: Real-world adoption pathways",
-    "day": "Day 3",
-    "time": "2:00 PM - 2:45 PM",
-    "village": "NextGen Village",
-    "assignees": "JordanPendley",
-    "labels": [
-      {
-        "name": "Accepted",
-        "color": "#0E8A16"
-      },
-      {
-        "name": "Talk",
-        "color": "#DEFBE1"
-      }
-    ],
-    "summary": "# Description\r\nEl Salvador: Real-world adoption pathways\r\n\r\n### What is this talk about? Give us as many details as possible. \r\n\r\nI have been visiting El Salvad",
-    "url": "https://github.com/TABConf/6.tabconf.com/issues/134"
-  },
-  {
-    "title": "k-12 bitcoin education Brainstorming Session",
-    "day": "Day 3",
-    "time": "3:00 PM - 3:45 PM",
-    "village": "NextGen Village",
-    "assignees": "JesseMarkowitz, EllyPembroke, SkyExile",
-    "labels": [
-      {
-        "name": "Accepted",
-        "color": "#0E8A16"
-      }
-    ],
-    "summary": "Bitcoin should be taught to future generations the way math, reading, history, etc. are. Starting in kindergarten, and advancing up through high school graduati",
-    "url": "https://github.com/TABConf/6.tabconf.com/issues/28"
-  },
-  {
-    "title": "Simulating Lightning Scenarios using Doppler",
-    "day": "Day 2",
-    "time": "10:00 AM - 11:00 AM",
-    "village": "Workshop Room 1",
-    "assignees": "tee8z",
-    "labels": [
-      {
-        "name": "Accepted",
-        "color": "#0E8A16"
-      },
-      {
-        "name": "Workshop",
-        "color": "#ddf4ff"
-      }
-    ],
-    "summary": "<!-- NOTE!! If you are intending to do a non-interactive demo, THIS IS NOT a workshop, please submit talk demo's under \"Solo Talks\". -->\r\n\r\n# Description\r\n### W",
-    "url": "https://github.com/TABConf/6.tabconf.com/issues/89"
-  },
-  {
-    "title": "Warnet Workshop",
-    "day": "Day 2",
-    "time": "11:00 AM - 12:00 PM",
-    "village": "Workshop Room 1",
-    "assignees": "mplsgrant",
-    "labels": [
-      {
-        "name": "Accepted",
-        "color": "#0E8A16"
-      },
-      {
-        "name": "Workshop",
-        "color": "#ddf4ff"
-      },
-      {
-        "name": "Advanced",
-        "color": "#6D043B"
-      }
-    ],
-    "summary": "# Preamble\r\n\r\nWe have two related submissions featuring [warnet](https://warnet.dev/): a Builder Day (#61) for exploring warnet and a more traditional workshop ",
-    "url": "https://github.com/TABConf/6.tabconf.com/issues/70"
-  },
-  {
-    "title": "Let's Analyze Tidwell's Chess",
-    "day": "Day 2",
-    "time": "12:00 PM - 12:45 PM",
-    "village": "Workshop Room 1",
-    "assignees": "ddustin",
-    "labels": [
-      {
-        "name": "Accepted",
-        "color": "#0E8A16"
-      },
-      {
-        "name": "Workshop",
-        "color": "#ddf4ff"
-      }
-    ],
-    "summary": "# Description\n### What is this workshop about? \n\nLet's go through Tidwell's public chess game and see what his strengths and weaknesses are. We'll use chess com",
-    "url": "https://github.com/TABConf/6.tabconf.com/issues/122"
-  },
-  {
-    "title": "Let's Save Satoshi!",
-    "day": "Day 2",
-    "time": "1:00 PM - 3:00 PM",
-    "village": "Workshop Room 1",
-    "assignees": "satsie, pinheadmz, benalleng",
-    "labels": [
-      {
-        "name": "Accepted",
-        "color": "#0E8A16"
-      },
-      {
-        "name": "Workshop",
-        "color": "#ddf4ff"
-      },
-      {
-        "name": "Beginner",
-        "color": "#d4c5f9"
-      },
-      {
-        "name": "Intermediate",
-        "color": "#CB5562"
-      },
-      {
-        "name": "Advanced",
-        "color": "#6D043B"
-      }
-    ],
-    "summary": "<!-- NOTE!! If you are intending to do a non-interactive demo, THIS IS NOT a workshop, please submit talk demo's under \"Solo Talks\". -->\r\n\r\n# Description\r\n\r\nFir",
-    "url": "https://github.com/TABConf/6.tabconf.com/issues/67"
-  },
-  {
-    "title": "Building Decentralized Web Apps",
-    "day": "Day 2",
-    "time": "3:00 PM - 4:30 PM",
-    "village": "Workshop Room 1",
-    "assignees": "csuwildcat",
-    "labels": [
-      {
-        "name": "Accepted",
-        "color": "#0E8A16"
-      },
-      {
-        "name": "Workshop",
-        "color": "#ddf4ff"
-      },
-      {
-        "name": "Intermediate",
-        "color": "#CB5562"
-      }
-    ],
-    "summary": "\r\n# Description\r\n\r\nBlock recently release a v1.0 of an open source, standards-based DWeb platform for working with decentralized identities and building decentr",
-    "url": "https://github.com/TABConf/6.tabconf.com/issues/93"
-  },
-  {
-    "title": "Stable Channels: Rust + LDK",
-    "day": "Day 2",
-    "time": "4:30 PM - 5:30 PM",
-    "village": "Workshop Room 1",
+    "time": "9:00 AM - 10:00 AM",
+    "startTime": "9:00 AM",
+    "endTime": "10:00 AM",
+    "village": "Main Stage",
     "assignees": "toneloc",
     "labels": [
       {
@@ -313,270 +982,49 @@
       },
       {
         "name": "Workshop",
-        "color": "#ddf4ff"
-      }
-    ],
-    "summary": "# Description\r\n### What is this workshop about? Provide as many details as possible.\r\n\r\nIn this workshop, participants will delve into the technology behind **S",
-    "url": "https://github.com/TABConf/6.tabconf.com/issues/167"
-  },
-  {
-    "title": "LDK Node: Simplifying development of self custodial Lightning Network Apps",
-    "day": "Day 2",
-    "time": "10:00 AM - 12:00 PM",
-    "village": "Workshop Room 2",
-    "assignees": "BitcoinZavior",
-    "labels": [
-      {
-        "name": "Accepted",
-        "color": "#0E8A16"
+        "color": "#BFDADC"
       },
       {
-        "name": "Workshop",
-        "color": "#ddf4ff"
+        "name": "Beginner",
+        "color": "#0744B1"
       },
       {
-        "name": "Intermediate",
-        "color": "#CB5562"
-      }
-    ],
-    "summary": "# Description\r\n\r\n### What is this workshop about? Provide as many details as possible.\r\n\r\nThis workshop is a hands-on session aimed at simplifying the process o",
-    "url": "https://github.com/TABConf/6.tabconf.com/issues/43"
-  },
-  {
-    "title": "Taproot Assets on Lightning Workshop",
-    "day": "Day 2",
-    "time": "1:00 PM - 3:00 PM",
-    "village": "Workshop Room 2",
-    "assignees": "HannahMR",
-    "labels": [
-      {
-        "name": "Accepted",
-        "color": "#0E8A16"
-      },
-      {
-        "name": "Workshop",
-        "color": "#ddf4ff"
-      },
-      {
-        "name": "Advanced",
-        "color": "#6D043B"
-      }
-    ],
-    "summary": "## Taproot Assets Workshop\r\n\r\nThis workshop will help developers who are thinking about building with Taproot Assets to get hands-on experience using the protoc",
-    "url": "https://github.com/TABConf/6.tabconf.com/issues/82"
-  },
-  {
-    "title": "Intro to Rust Workshop",
-    "day": "Day 2",
-    "time": "3:00 PM - 5:00 PM",
-    "village": "Workshop Room 2",
-    "assignees": "sb1752",
-    "labels": [
-      {
-        "name": "Accepted",
-        "color": "#0E8A16"
-      },
-      {
-        "name": "Workshop",
-        "color": "#ddf4ff"
-      },
-      {
-        "name": "Intermediate",
-        "color": "#CB5562"
-      }
-    ],
-    "summary": "<!-- NOTE!! If you are intending to do a non-interactive demo, THIS IS NOT a workshop, please submit talk demo's under \"Solo Talks\". -->\r\n\r\n# Description\r\nBased",
-    "url": "https://github.com/TABConf/6.tabconf.com/issues/63"
-  },
-  {
-    "title": "An Interactive Introduction to Secret Sharing",
-    "day": "Day 3",
-    "time": "10:00 AM - 11:00 AM",
-    "village": "Workshop Room 1",
-    "assignees": "nkohen",
-    "labels": [
-      {
-        "name": "Accepted",
-        "color": "#0E8A16"
-      },
-      {
-        "name": "Workshop",
-        "color": "#ddf4ff"
-      }
-    ],
-    "summary": "<!-- NOTE!! If you are intending to do a non-interactive demo, THIS IS NOT a workshop, please submit talk demo's under \"Solo Talks\". -->\r\n\r\n# Description\r\n### W",
-    "url": "https://github.com/TABConf/6.tabconf.com/issues/101"
-  },
-  {
-    "title": "nodebuilder",
-    "day": "Day 1 & 2",
-    "time": "All Day",
-    "village": "Builder Days Area",
-    "assignees": "epiccurious",
-    "labels": [
-      {
-        "name": "Accepted",
-        "color": "#0E8A16"
-      },
-      {
-        "name": "Builder Days Project",
-        "color": "#fbefff"
-      }
-    ],
-    "summary": "# Description\r\n\r\n### What is this project about? Please give us as many details as possible.\r\n\r\nThe tagline for [nodebuilder](https://github.com/bitcoin-tools/n",
-    "url": "https://github.com/TABConf/6.tabconf.com/issues/40"
-  },
-  {
-    "title": "Build a web wallet with BDK 1.0",
-    "day": "Day 1",
-    "time": "1:00 PM - 2:00 PM",
-    "village": "Workshop Room 1",
-    "assignees": "notmandatory",
-    "labels": [
-      {
-        "name": "Accepted",
-        "color": "#0E8A16"
-      },
-      {
-        "name": "Workshop",
-        "color": "#ddf4ff"
-      },
-      {
-        "name": "Intermediate",
-        "color": "#CB5562"
-      }
-    ],
-    "summary": "# Description\n\n### What is this project about? Please give us as many details as possible.\n\nThe [BDK](https://github.com/bitcoindevkit/bdk) project has been wor",
-    "url": "https://github.com/TABConf/6.tabconf.com/issues/54"
-  },
-  {
-    "title": "A Combinatorial Game Theory Adventure",
-    "day": "Day 1",
-    "time": "2:00 PM - 4:00 PM",
-    "village": "Workshop Room 1",
-    "assignees": "nkohen",
-    "labels": [
-      {
-        "name": "Accepted",
-        "color": "#0E8A16"
-      },
-      {
-        "name": "Workshop",
-        "color": "#ddf4ff"
-      }
-    ],
-    "summary": "<!-- NOTE!! If you are intending to do a non-interactive demo, THIS IS NOT a workshop, please submit talk demo's under \"Solo Talks\". -->\r\n\r\n# Description\r\n### W",
-    "url": "https://github.com/TABConf/6.tabconf.com/issues/102"
-  },
-  {
-    "title": "Building Smart Contracts with OP_CAT",
-    "day": "Day 1",
-    "time": "10:00 AM - 11:00 AM",
-    "village": "Workshop Room 2",
-    "assignees": "AllenAJ",
-    "labels": [
-      {
-        "name": "Accepted",
-        "color": "#0E8A16"
-      },
-      {
-        "name": "Workshop",
-        "color": "#ddf4ff"
-      },
-      {
-        "name": "Advanced",
-        "color": "#6D043B"
+        "name": "confirmed",
+        "color": "#bb1efb"
       }
     ],
     "summary": "<!-- NOTE!! If you are intending to do a non-interactive demo, THIS IS NOT a workshop, please submit talk demo's under \"Solo Talks\". -->\n\n# Description\n### What",
-    "url": "https://github.com/TABConf/6.tabconf.com/issues/66"
+    "url": "https://github.com/TABConf/7.tabconf.com/issues/71"
   },
   {
-    "title": "Nixify Bitcoin-related codebases",
-    "day": "Day 1",
-    "time": "11:00 AM - 12:00 PM",
-    "village": "Workshop Room 2",
-    "assignees": "storopoli",
+    "title": "Single Elimination Chess Tournament",
+    "day": "Day 4",
+    "time": "2:30 PM - 4:00 PM",
+    "startTime": "2:30 PM",
+    "endTime": "4:00 PM",
+    "village": "Builder Days Area",
+    "assignees": "iglesiasbrandon, miketwenty1",
     "labels": [
       {
         "name": "Accepted",
         "color": "#0E8A16"
       },
       {
-        "name": "Workshop",
-        "color": "#ddf4ff"
-      },
-      {
-        "name": "Intermediate",
-        "color": "#CB5562"
+        "name": "confirmed",
+        "color": "#bb1efb"
       }
     ],
-    "summary": "# Description\r\n\r\n### What is this workshop about? Provide as many details as possible.\r\n\r\nThis workshop will teach users how to incorporate [Nix](https://nixos.",
-    "url": "https://github.com/TABConf/6.tabconf.com/issues/41"
+    "summary": "# Description\n### What is this event about?\n\nA single elimination chess tournament is a competitive event where players face off against each other in a series ",
+    "url": "https://github.com/TABConf/7.tabconf.com/issues/72"
   },
   {
-    "title": "Testnet Bitcoin Giveaway Extravaganza! (also interactive sidechain demo)",
-    "day": "Day 1",
-    "time": "1:00 PM - 2:00 PM",
-    "village": "Workshop Room 2",
-    "assignees": "theblackmarble",
-    "labels": [
-      {
-        "name": "Accepted",
-        "color": "#0E8A16"
-      },
-      {
-        "name": "Workshop",
-        "color": "#ddf4ff"
-      }
-    ],
-    "summary": "# Description\r\n\r\nFree Bitcoin Testnet 3 & 4 faucets! (also sidechains)\r\n\r\n|Network| Amount|\r\n| -------- | ------- |\r\n|Testnet4|50 BTC!!!!|\r\n|Testnet3|.01 BTC|\r\n",
-    "url": "https://github.com/TABConf/6.tabconf.com/issues/114"
-  },
-  {
-    "title": "Coordinate L2 Sidechain 'Hello World'",
-    "day": "Day 1",
-    "time": "2:00 PM - 3:00 PM",
-    "village": "Workshop Room 2",
-    "assignees": "portlandhodl",
-    "labels": [
-      {
-        "name": "Accepted",
-        "color": "#0E8A16"
-      },
-      {
-        "name": "Workshop",
-        "color": "#ddf4ff"
-      }
-    ],
-    "summary": "<!-- NOTE!! If you are intending to do a non-interactive demo, THIS IS NOT a workshop, please submit talk demo's under \"Solo Talks\". -->\r\n\r\n# Description\r\n### W",
-    "url": "https://github.com/TABConf/6.tabconf.com/issues/94"
-  },
-  {
-    "title": "Codex32 hand-computed SSSS/Checksums Workshop",
-    "day": "Day 1",
-    "time": "4:00 PM - 6:00 PM",
-    "village": "Workshop Room 2",
-    "assignees": "apoelstra",
-    "labels": [
-      {
-        "name": "Accepted",
-        "color": "#0E8A16"
-      },
-      {
-        "name": "Workshop",
-        "color": "#ddf4ff"
-      }
-    ],
-    "summary": "# Description\r\n### What is this workshop about? Provide as many details as possible. \r\n\r\nThis workshop aims to provide an introduction to algorithms which can b",
-    "url": "https://github.com/TABConf/6.tabconf.com/issues/95"
-  },
-  {
-    "title": "Slipstream: Making impossible TXs, Possible",
-    "day": "Day 3",
-    "time": "9:00 AM - 9:30 AM",
+    "title": "Open Source is brutal - truth, collaboration, and facing your daemons.",
+    "day": "Day 4",
+    "time": "3:00 PM - 3:30 PM",
+    "startTime": "3:00 PM",
+    "endTime": "3:30 PM",
     "village": "Main Stage",
-    "assignees": "portlandhodl",
+    "assignees": "tcharding",
     "labels": [
       {
         "name": "Accepted",
@@ -584,131 +1032,81 @@
       },
       {
         "name": "Talk",
-        "color": "#DEFBE1"
-      }
-    ],
-    "summary": "# Description\r\n### What is this talk about? Give us as many details as possible. \r\n\r\nThis talk would be about the history, tradeoffs, and lessons learned regard",
-    "url": "https://github.com/TABConf/6.tabconf.com/issues/124"
-  },
-  {
-    "title": "Opening Remarks",
-    "day": "Day 3",
-    "time": "9:30 AM - 9:45 AM",
-    "village": "Main Stage",
-    "assignees": "iglesiasbrandon",
-    "labels": [
+        "color": "#BFD4F2"
+      },
       {
-        "name": "Accepted",
-        "color": "#0E8A16"
+        "name": "confirmed",
+        "color": "#bb1efb"
       }
     ],
-    "summary": "",
-    "url": "https://github.com/TABConf/6.tabconf.com/issues/126"
+    "summary": "# Description\n\n### What is this talk about? Give us as many details as possible. \n\nNon technical talk. Reflections on open source development, burnout, how we w",
+    "url": "https://github.com/TABConf/7.tabconf.com/issues/74"
   },
   {
-    "title": "Considering a career in bitcoin open source development",
-    "day": "Day 3",
-    "time": "9:45 AM - 10:15 AM",
-    "village": "Main Stage",
-    "assignees": "adamjonas",
+    "title": "NodeGaze: Unveiling Your Node's Universe",
+    "day": "Day 2",
+    "time": "9:30 AM - 10:30 AM",
+    "startTime": "9:30 AM",
+    "endTime": "10:30 AM",
+    "village": "Workshop Room 2",
+    "assignees": "kelvinator07",
     "labels": [
       {
         "name": "Accepted",
         "color": "#0E8A16"
       },
       {
-        "name": "Talk",
-        "color": "#DEFBE1"
+        "name": "Workshop",
+        "color": "#BFDADC"
+      },
+      {
+        "name": "Beginner",
+        "color": "#0744B1"
+      },
+      {
+        "name": "confirmed",
+        "color": "#bb1efb"
       }
     ],
-    "summary": "# Description\r\n### What is this talk about? Give us as many details as possible. \r\nThis talk is a recruiting pitch for choosing a career in bitcoin open source.",
-    "url": "https://github.com/TABConf/6.tabconf.com/issues/56"
+    "summary": "# Description\n### What is this workshop about? Provide as many details as possible. \nDo you know what’s happening behind the scenes of your Lightning node?\n\nOpe",
+    "url": "https://github.com/TABConf/7.tabconf.com/issues/75"
   },
   {
-    "title": "Make Bitcoin Cypherpunk Again!",
-    "day": "Day 3",
-    "time": "10:30 AM - 11:00 AM",
-    "village": "Main Stage",
-    "assignees": "RobinLinus",
+    "title": "An Interactive Introduction to Provable Security",
+    "day": "Day 2",
+    "time": "9:00 AM - 11:00 AM",
+    "startTime": "9:00 AM",
+    "endTime": "11:00 AM",
+    "village": "Workshop Room 1",
+    "assignees": "nkohen",
     "labels": [
       {
         "name": "Accepted",
         "color": "#0E8A16"
       },
       {
-        "name": "Talk",
-        "color": "#DEFBE1"
+        "name": "Workshop",
+        "color": "#BFDADC"
       },
       {
         "name": "Advanced",
-        "color": "#6D043B"
-      }
-    ],
-    "summary": "# Description\r\n\r\n### What is this talk about? Give us as many details as possible.\r\nThis talk is about the BitVM paradigm, our concrete implementation, and the ",
-    "url": "https://github.com/TABConf/6.tabconf.com/issues/42"
-  },
-  {
-    "title": "Opening Remarks",
-    "day": "Day 4",
-    "time": "9:30 AM - 9:45 AM",
-    "village": "Main Stage",
-    "assignees": "iglesiasbrandon",
-    "labels": [
-      {
-        "name": "Accepted",
-        "color": "#0E8A16"
-      }
-    ],
-    "summary": "",
-    "url": "https://github.com/TABConf/6.tabconf.com/issues/127"
-  },
-  {
-    "title": "Shielded CSV 🛡: Private & Efficient Client-Side Validation",
-    "day": "Day 4",
-    "time": "9:45 AM - 10:15 AM",
-    "village": "Main Stage",
-    "assignees": "jonasnick",
-    "labels": [
-      {
-        "name": "Accepted",
-        "color": "#0E8A16"
+        "color": "#F92A53"
       },
       {
-        "name": "Talk",
-        "color": "#DEFBE1"
-      },
-      {
-        "name": "Advanced",
-        "color": "#6D043B"
+        "name": "confirmed",
+        "color": "#bb1efb"
       }
     ],
-    "summary": "# Description\r\n### What is this talk about? Give us as many details as possible.\r\n\r\nThe client-side validation approach removes transaction verification from th",
-    "url": "https://github.com/TABConf/6.tabconf.com/issues/90"
+    "summary": "<!-- NOTE!! If you are intending to do a non-interactive demo, THIS IS NOT a workshop, please submit talk demo's under \"Solo Talks\". -->\n\n# Description\n### What",
+    "url": "https://github.com/TABConf/7.tabconf.com/issues/77"
   },
   {
-    "title": "Lightning Is Fixed Now",
-    "day": "Day 4",
-    "time": "10:30 AM - 11:00 AM",
-    "village": "Main Stage",
-    "assignees": "TheBlueMatt",
-    "labels": [
-      {
-        "name": "Accepted",
-        "color": "#0E8A16"
-      },
-      {
-        "name": "Talk",
-        "color": "#DEFBE1"
-      }
-    ],
-    "summary": "In 2022 I gave a talk about all the things that are broken about lightning, but since then instead of being bombastically optimistic about lightning, being over",
-    "url": "https://github.com/TABConf/6.tabconf.com/issues/44"
-  },
-  {
-    "title": "Cluster Mempool",
-    "day": "Day 4",
-    "time": "11:00 AM - 11:45 AM",
-    "village": "Main Stage",
+    "title": "Builder Days Project Bitcoin Core",
+    "day": "Day 1 & 2",
+    "time": "All Day",
+    "startTime": "10:00 AM",
+    "endTime": "5:00 PM",
+    "village": "Builder Days Area",
     "assignees": "murchandamus",
     "labels": [
       {
@@ -716,17 +1114,181 @@
         "color": "#0E8A16"
       },
       {
-        "name": "Talk",
-        "color": "#DEFBE1"
+        "name": "Builder Days Project",
+        "color": "#D4C5F9"
+      },
+      {
+        "name": "confirmed",
+        "color": "#bb1efb"
       }
     ],
-    "summary": "# Description\r\n### What is this talk about? Give us as many details as possible. \r\n\r\nCluster Mempool is an effort to rearchitect how Bitcoin Core stores unconfi",
-    "url": "https://github.com/TABConf/6.tabconf.com/issues/45"
+    "summary": "## Bitcoin Core\n\n#### Description:\n\nBitcoin Core is a full node implementation of the Bitcoin protocol.\n\n#### Link(s) to source Repos:\n\nhttps://github.com/bitco",
+    "url": "https://github.com/TABConf/7.tabconf.com/issues/78"
   },
   {
-    "title": "Beyond the Base Layer: A Discussion on Scaling Bitcoin ",
+    "title": "Use BIP360's Quantum-Resistant Addresses on Signet!",
+    "day": "Day 2",
+    "time": "3:00 PM - 4:00 PM",
+    "startTime": "3:00 PM",
+    "endTime": "4:00 PM",
+    "village": "Workshop Room 1",
+    "assignees": "cryptoquick",
+    "labels": [
+      {
+        "name": "Accepted",
+        "color": "#0E8A16"
+      },
+      {
+        "name": "Workshop",
+        "color": "#BFDADC"
+      },
+      {
+        "name": "Advanced",
+        "color": "#F92A53"
+      },
+      {
+        "name": "confirmed",
+        "color": "#bb1efb"
+      }
+    ],
+    "summary": "<!-- NOTE!! If you are intending to do a non-interactive demo, THIS IS NOT a workshop, please submit talk demo's under \"Solo Talks\". -->\n\n# Description\n### What",
+    "url": "https://github.com/TABConf/7.tabconf.com/issues/79"
+  },
+  {
+    "title": "Satoshi's Quantum-Vulnerable Coins (Interactive Audience Panel)",
+    "day": "Day 3",
+    "time": "10:30 AM - 11:00 AM",
+    "startTime": "10:30 AM",
+    "endTime": "11:00 AM",
+    "village": "Main Stage",
+    "assignees": "theblackmarble, Isabelfoxenduke",
+    "labels": [
+      {
+        "name": "Accepted",
+        "color": "#0E8A16"
+      },
+      {
+        "name": "Panel",
+        "color": "#FEF2C0"
+      }
+    ],
+    "summary": "# Description\n\n**The (3) possible paths will be defended by:**\n\n**Hunter Beast** - arguing for a pro-liquidation approach (a.k.a the \"do nothing\" approach)\n**Is",
+    "url": "https://github.com/TABConf/7.tabconf.com/issues/80"
+  },
+  {
+    "title": "Quantum-Proofing Roadmap",
     "day": "Day 4",
-    "time": "12:00 PM - 12:45 PM",
+    "time": "11:30 AM - 12:30 PM",
+    "startTime": "10:30 AM",
+    "endTime": "12:30 PM",
+    "village": "Main Stage",
+    "assignees": "ClaraShk",
+    "labels": [
+      {
+        "name": "Accepted",
+        "color": "#0E8A16"
+      },
+      {
+        "name": "Talk",
+        "color": "#BFD4F2"
+      },
+      {
+        "name": "confirmed",
+        "color": "#bb1efb"
+      }
+    ],
+    "summary": "# Description\n### What is this talk about? Give us as many details as possible. \n\nIn this talk we will give an overview of the main challenges that quantum comp",
+    "url": "https://github.com/TABConf/7.tabconf.com/issues/81"
+  },
+  {
+    "title": "Rewiring Burnout: the neuroscience of staying in flow",
+    "day": "Day 1",
+    "time": "1:00 PM - 2:00 PM",
+    "startTime": "1:00 PM",
+    "endTime": "2:00 PM",
+    "village": "Workshop Room 2",
+    "assignees": "amitiuttarwar",
+    "labels": [
+      {
+        "name": "Accepted",
+        "color": "#0E8A16"
+      },
+      {
+        "name": "Workshop",
+        "color": "#BFDADC"
+      },
+      {
+        "name": "Beginner",
+        "color": "#0744B1"
+      },
+      {
+        "name": "confirmed",
+        "color": "#bb1efb"
+      }
+    ],
+    "summary": "# Description\n### What is this workshop about? Provide as many details as possible. \nBurnout isn’t just “being tired”—it’s your nervous system stuck in overdriv",
+    "url": "https://github.com/TABConf/7.tabconf.com/issues/82"
+  },
+  {
+    "title": "Fedimint: Solving p2p Connectivity with Iroh",
+    "day": "Day 1",
+    "time": "12:30 PM - 1:00 PM",
+    "startTime": "12:30 PM",
+    "endTime": "1:00 PM",
+    "village": "Workshop Room 2",
+    "assignees": "m1sterc001guy",
+    "labels": [
+      {
+        "name": "Accepted",
+        "color": "#0E8A16"
+      },
+      {
+        "name": "Workshop",
+        "color": "#BFDADC"
+      },
+      {
+        "name": "Beginner",
+        "color": "#0744B1"
+      },
+      {
+        "name": "confirmed",
+        "color": "#bb1efb"
+      }
+    ],
+    "summary": "# Description\n### What is this workshop about? Provide as many details as possible. \nThe beginning part of this workshop will give a high level overview of Fedi",
+    "url": "https://github.com/TABConf/7.tabconf.com/issues/83"
+  },
+  {
+    "title": "Builder Days Project did:btcr2 Decentralized Identifier Method",
+    "day": "Day 1 & 2",
+    "time": "All Day",
+    "startTime": "10:00 AM",
+    "endTime": "5:00 PM",
+    "village": "Builder Days Area",
+    "assignees": "dcdpr",
+    "labels": [
+      {
+        "name": "Accepted",
+        "color": "#0E8A16"
+      },
+      {
+        "name": "Builder Days Project",
+        "color": "#D4C5F9"
+      },
+      {
+        "name": "confirmed",
+        "color": "#bb1efb"
+      }
+    ],
+    "summary": "<!-- All software-based projects submitted must be open source and freely available for public use -->\n\n## Project\n#### Description:\n\nStarting with toy seed wor",
+    "url": "https://github.com/TABConf/7.tabconf.com/issues/85"
+  },
+  {
+    "title": "Quantum Rotating Debate Panel",
+    "day": "Day 3",
+    "time": "2:30 PM - 3:30 PM",
+    "startTime": "2:30 PM",
+    "endTime": "3:30 PM",
     "village": "Main Stage",
     "assignees": "miketwenty1",
     "labels": [
@@ -736,64 +1298,24 @@
       },
       {
         "name": "Panel",
-        "color": "#fff8c5"
+        "color": "#FEF2C0"
+      },
+      {
+        "name": "confirmed",
+        "color": "#bb1efb"
       }
     ],
-    "summary": "Willem Schroe, CEO & Co-Founder, Botanix Labs\r\n\r\n# Description\r\n### What is this panel discussion about? Please give us as many details as possible. \r\nThe past ",
-    "url": "https://github.com/TABConf/6.tabconf.com/issues/51"
+    "summary": "# Description\nRotating debate panel inspired by last years panel that was brainstormed here:\nhttps://github.com/TABConf/6.tabconf.com/issues/48#issuecomment-227",
+    "url": "https://github.com/TABConf/7.tabconf.com/issues/86"
   },
   {
-    "title": "Covenants and STARK proof verification with OP_CAT",
-    "day": "Day 4",
-    "time": "1:00 PM - 1:45 PM",
-    "village": "Main Stage",
-    "assignees": "weikengchen",
-    "labels": [
-      {
-        "name": "Accepted",
-        "color": "#0E8A16"
-      },
-      {
-        "name": "Talk",
-        "color": "#DEFBE1"
-      },
-      {
-        "name": "Advanced",
-        "color": "#6D043B"
-      }
-    ],
-    "summary": "# Description\r\n### What is this talk about? Give us as many details as possible. \r\n\r\nThis talk will be a summary of the progress of covenants and verifying STAR",
-    "url": "https://github.com/TABConf/6.tabconf.com/issues/55"
-  },
-  {
-    "title": "Bitcoin rollups 101",
-    "day": "Day 4",
-    "time": "2:00 PM - 2:45 PM",
-    "village": "Main Stage",
-    "assignees": "john-light",
-    "labels": [
-      {
-        "name": "Accepted",
-        "color": "#0E8A16"
-      },
-      {
-        "name": "Talk",
-        "color": "#DEFBE1"
-      },
-      {
-        "name": "Beginner",
-        "color": "#d4c5f9"
-      }
-    ],
-    "summary": "# Description\r\n### What is this talk about? Give us as many details as possible. \r\n\r\nSince the [earliest](https://tr3y.io/articles/crypto/bitcoin-zk-rollups.htm",
-    "url": "https://github.com/TABConf/6.tabconf.com/issues/81"
-  },
-  {
-    "title": "FROST: The Production Impact and Why It Matters",
+    "title": "Rapid Explainer Game Show",
     "day": "Day 3",
-    "time": "11:00 AM - 11:45 AM",
+    "time": "5:00 PM - 6:00 PM",
+    "startTime": "5:00 PM",
+    "endTime": "6:00 PM",
     "village": "Main Stage",
-    "assignees": "satsie, jonasnick, jurvis, jesseposner, 0xBEEFCAF3",
+    "assignees": "miketwenty1",
     "labels": [
       {
         "name": "Accepted",
@@ -801,37 +1323,24 @@
       },
       {
         "name": "Panel",
-        "color": "#fff8c5"
-      }
-    ],
-    "summary": "Armin Sabouri, CTO, Botanix Labs - PANEL\r\nOther Guests: Nick Farrow, Jesse Posner, Chelsea Komlo\r\nModerator (Suggestion): Satsie\r\n\r\n# Description\r\n### What is t",
-    "url": "https://github.com/TABConf/6.tabconf.com/issues/50"
-  },
-  {
-    "title": "Hedging Hashrate: A Market Solution to Miner Variance",
-    "day": "Day 3",
-    "time": "1:00 PM - 1:45 PM",
-    "village": "Main Stage",
-    "assignees": "jamespierog",
-    "labels": [
-      {
-        "name": "Accepted",
-        "color": "#0E8A16"
+        "color": "#FEF2C0"
       },
       {
-        "name": "Talk",
-        "color": "#DEFBE1"
+        "name": "confirmed",
+        "color": "#bb1efb"
       }
     ],
-    "summary": "# Description\n### What is this talk about?\nVariance of winning the block reward has caused miners to aggregate hashrate into pools. Now the top 4 pools control ",
-    "url": "https://github.com/TABConf/6.tabconf.com/issues/46"
+    "summary": "# Description\n\nLast year this experiment went really well. https://github.com/orgs/TABConf/projects/4/views/1?pane=issue&itemId=83852084&issue=TABConf%7C6.tabco",
+    "url": "https://github.com/TABConf/7.tabconf.com/issues/87"
   },
   {
-    "title": "Matt Debates the Audience - MEV, MEVil, and Mining Centralization",
+    "title": "Socratic Session: Bitcoin UX",
     "day": "Day 3",
-    "time": "2:00 PM - 2:45 PM",
-    "village": "Main Stage",
-    "assignees": "TheBlueMatt",
+    "time": "3:30 PM - 5:00 PM",
+    "startTime": "3:30 PM",
+    "endTime": "5:00 PM",
+    "village": "BitDevs Socratic Village",
+    "assignees": "sbddesign, btsea, mouxdesign",
     "labels": [
       {
         "name": "Accepted",
@@ -839,18 +1348,24 @@
       },
       {
         "name": "Panel",
-        "color": "#fff8c5"
+        "color": "#FEF2C0"
+      },
+      {
+        "name": "confirmed",
+        "color": "#bb1efb"
       }
     ],
-    "summary": "If one talk is good, is two talks better? I'd like to give a talk on Mining Centralization and the risks of MEVil, basically an in-person version of https://blu",
-    "url": "https://github.com/TABConf/6.tabconf.com/issues/48"
+    "summary": "### Description\nA focused Socratic Seminar on Bitcoin UX. If you are curious about the latest updates in Bitcoin UX, this is the event for you. We'll be attacki",
+    "url": "https://github.com/TABConf/7.tabconf.com/issues/89"
   },
   {
-    "title": "Bitcoin Core Builder Day",
+    "title": "Builder Days Project: Warnet Setup & Support",
     "day": "Day 1 & 2",
     "time": "All Day",
+    "startTime": "10:00 AM",
+    "endTime": "5:00 PM",
     "village": "Builder Days Area",
-    "assignees": "murchandamus",
+    "assignees": "pinheadmz",
     "labels": [
       {
         "name": "Accepted",
@@ -858,18 +1373,24 @@
       },
       {
         "name": "Builder Days Project",
-        "color": "#fbefff"
+        "color": "#D4C5F9"
+      },
+      {
+        "name": "confirmed",
+        "color": "#bb1efb"
       }
     ],
-    "summary": "# Description\r\n### What is this project about? Please give us as many details as possible.\r\n\r\nBitcoin Core is a full node implementation of the Bitcoin protocol",
-    "url": "https://github.com/TABConf/6.tabconf.com/issues/53"
+    "summary": "In advance of the [Warnet Workshop Event](https://github.com/TABConf/7.tabconf.com/issues/42) we should have a table setup for participants to learn about Warne",
+    "url": "https://github.com/TABConf/7.tabconf.com/issues/90"
   },
   {
-    "title": "Warnet Builder Day",
+    "title": "Solo/Home Miners Builder Days Project",
     "day": "Day 1 & 2",
     "time": "All Day",
+    "startTime": "10:00 AM",
+    "endTime": "5:00 PM",
     "village": "Builder Days Area",
-    "assignees": "m3dwards, pinheadmz, josibake, mplsgrant",
+    "assignees": "SoloSatoshi",
     "labels": [
       {
         "name": "Accepted",
@@ -877,56 +1398,24 @@
       },
       {
         "name": "Builder Days Project",
-        "color": "#fbefff"
-      }
-    ],
-    "summary": "# Preamble\r\n\r\nWe have two related submissions featuring [warnet](https://warnet.dev/): a Builder Day for exploring warnet and a more traditional workshop (#70) ",
-    "url": "https://github.com/TABConf/6.tabconf.com/issues/61"
-  },
-  {
-    "title": "Demystifying Bitcoin Tax: A Guide to the Current Regulatory Landscape",
-    "day": "Day 4",
-    "time": "9:45 AM - 10:15 AM",
-    "village": "NextGen Village",
-    "assignees": "PatrickCamusoCPA",
-    "labels": [
-      {
-        "name": "Accepted",
-        "color": "#0E8A16"
+        "color": "#D4C5F9"
       },
       {
-        "name": "Talk",
-        "color": "#DEFBE1"
+        "name": "confirmed",
+        "color": "#bb1efb"
       }
     ],
-    "summary": "# Description\r\n### What is this talk about? Give us as many details as possible.   ****Demystifying Crypto Tax: A Guide to the Current Regulatory Landscape****\r",
-    "url": "https://github.com/TABConf/6.tabconf.com/issues/62"
+    "summary": "Project:\nSolo/Home Miners Builder Days Project\n\nDescription:\nJoin the Solo Satoshi crew for a hands-on 4-days dedicated to solo mining and home mining. Meet our",
+    "url": "https://github.com/TABConf/7.tabconf.com/issues/92"
   },
   {
-    "title": "Distributed Charge - BIKE + BitAxe",
-    "day": "Day 1 & 2",
-    "time": "All Day",
-    "village": "Builder Days Area",
-    "assignees": "AndySchroder",
-    "labels": [
-      {
-        "name": "Accepted",
-        "color": "#0E8A16"
-      },
-      {
-        "name": "Builder Days Project",
-        "color": "#fbefff"
-      }
-    ],
-    "summary": "# Description\r\n\r\nLast year we had Distributed Charge - BIKE where riders could generate electricity and be paid for the work that they input into the system usi",
-    "url": "https://github.com/TABConf/6.tabconf.com/issues/68"
-  },
-  {
-    "title": "Introduction To Hashrate Accounting",
+    "title": "Aggeus: permissionless prediction markets, explained and demo'd",
     "day": "Day 3",
-    "time": "10:30 AM - 11:00 AM",
-    "village": "NextGen Village",
-    "assignees": "asherp",
+    "time": "11:00 AM - 11:30 AM",
+    "startTime": "11:00 AM",
+    "endTime": "11:30 AM",
+    "village": "Main Stage",
+    "assignees": "supertestnet",
     "labels": [
       {
         "name": "Accepted",
@@ -934,18 +1423,24 @@
       },
       {
         "name": "Talk",
-        "color": "#DEFBE1"
+        "color": "#BFD4F2"
+      },
+      {
+        "name": "confirmed",
+        "color": "#bb1efb"
       }
     ],
-    "summary": "\r\n# Description\r\n### What is this talk about? Give us as many details as possible. \r\n\r\nHashrate accounting is an often overlooked aspect of both mining operatio",
-    "url": "https://github.com/TABConf/6.tabconf.com/issues/160"
+    "summary": "# Description\nAggeus is an open protocol for building permissionless prediction markets on bitcoin. Combining ideas from DLCs, lightning, and PSBT auctions, Agg",
+    "url": "https://github.com/TABConf/7.tabconf.com/issues/93"
   },
   {
-    "title": "Wen Mainstream?  Put Devs Magic at Center Stage with V4V Music",
-    "day": "Day 4",
-    "time": "12:00 PM - 12:30 PM",
-    "village": "NextGen Village",
-    "assignees": "caineroad",
+    "title": "Time spent on Lightning is a waste - Rotating Debate Panel (Paul Sztorc vs the LNers)",
+    "day": "Day 3",
+    "time": "12:30 PM - 1:30 PM",
+    "startTime": "12:30 PM",
+    "endTime": "1:30 PM",
+    "village": "Main Stage",
+    "assignees": "psztorc, miketwenty1",
     "labels": [
       {
         "name": "Accepted",
@@ -953,35 +1448,22 @@
       },
       {
         "name": "Panel",
-        "color": "#fff8c5"
-      }
-    ],
-    "summary": "### What is this panel discussion about? \r\nV4V.  Bitcoin.  Nostr.  We all love talking about them, and the idea of mass adoption, but what does it really mean f",
-    "url": "https://github.com/TABConf/6.tabconf.com/issues/133"
-  },
-  {
-    "title": "streaming lightning payments with rolling HOLD invoices",
-    "day": "Day 4",
-    "time": "1:00 PM - 1:25 PM",
-    "village": "NextGen Village",
-    "assignees": "AndySchroder",
-    "labels": [
-      {
-        "name": "Accepted",
-        "color": "#0E8A16"
+        "color": "#FEF2C0"
       },
       {
-        "name": "Talk",
-        "color": "#DEFBE1"
+        "name": "confirmed",
+        "color": "#bb1efb"
       }
     ],
-    "summary": "# Description\r\n\r\nThere are many products and services that are continuously delivered by a seller and consumed by the buyer. The quantity of the product and the",
-    "url": "https://github.com/TABConf/6.tabconf.com/issues/69"
+    "summary": "# Description\nRotating debate panel inspired by last years panel that was brainstormed here:\nhttps://github.com/TABConf/6.tabconf.com/issues/48#issuecomment-227",
+    "url": "https://github.com/TABConf/7.tabconf.com/issues/95"
   },
   {
-    "title": "SeedSigner core team dev time + new contributor onboarding",
+    "title": "Builder Days Project: SeedSigner",
     "day": "Day 1 & 2",
     "time": "All Day",
+    "startTime": "10:00 AM",
+    "endTime": "5:00 PM",
     "village": "Builder Days Area",
     "assignees": "kdmukai",
     "labels": [
@@ -991,173 +1473,102 @@
       },
       {
         "name": "Builder Days Project",
-        "color": "#fbefff"
+        "color": "#D4C5F9"
+      },
+      {
+        "name": "confirmed",
+        "color": "#bb1efb"
       }
     ],
-    "summary": "# Description\r\n### What is this project about?\r\ntldr: SeedSigner is a fully open-source bitcoin signing device that you can build yourself from off-the-shelf pa",
-    "url": "https://github.com/TABConf/6.tabconf.com/issues/77"
+    "summary": "## Project\nSeedSigner\n\n#### Description:\nThe goal of SeedSigner is to lower the cost and complexity of Bitcoin multisignature wallet use. To accomplish this goa",
+    "url": "https://github.com/TABConf/7.tabconf.com/issues/96"
   },
   {
-    "title": "UX Design for FOSS: SeedSigner Case Study",
-    "day": "Day 3",
-    "time": "1:00 PM - 1:30 PM",
-    "village": "NextGen Village",
-    "assignees": "easyuxd",
+    "title": "Accelerating Bitcoin Transactions (Beginner-Friendly)",
+    "day": "Day 2",
+    "time": "10:30 AM - 11:30 AM",
+    "startTime": "10:30 AM",
+    "endTime": "11:30 AM",
+    "village": "Workshop Room 2",
+    "assignees": "pratyakxx",
     "labels": [
       {
         "name": "Accepted",
         "color": "#0E8A16"
       },
       {
-        "name": "Talk",
-        "color": "#DEFBE1"
-      }
-    ],
-    "summary": "Link to presentation:\r\nhttps://www.canva.com/design/DAGUs34sgIU/iGk3NlCWCPbDWmH8U8redw/view\r\n\r\n### What is this talk about?\r\n\r\nHow UI/UX Design impacted the See",
-    "url": "https://github.com/TABConf/6.tabconf.com/issues/78"
-  },
-  {
-    "title": "BitDevs Socratic Village #4",
-    "day": "Day 3 & 4",
-    "time": "All Day",
-    "village": "BitDevs Socratic Village",
-    "assignees": "btsea",
-    "labels": [
-      {
-        "name": "Accepted",
-        "color": "#0E8A16"
+        "name": "Workshop",
+        "color": "#BFDADC"
       },
       {
-        "name": "Village",
-        "color": "#D8D1C3"
-      }
-    ],
-    "summary": "Super excited to put together the fourth edition of the BitDevs Socratic Village! Our content will be consistent with the event styles available in prior years.",
-    "url": "https://github.com/TABConf/6.tabconf.com/issues/83"
-  },
-  {
-    "title": "Socratic Village: Welcome Ceremony and 🌝 Mystery 🌝 Announcements",
-    "day": "Day 3",
-    "time": "10:30 AM - 10:45 AM",
-    "village": "BitDevs Socratic Village",
-    "assignees": "btsea",
-    "labels": [
-      {
-        "name": "Accepted",
-        "color": "#0E8A16"
+        "name": "Beginner",
+        "color": "#0744B1"
       },
       {
-        "name": "Socratic",
-        "color": "#1d76db"
+        "name": "confirmed",
+        "color": "#bb1efb"
       }
     ],
-    "summary": "# Description\r\n\r\nThis year's Socratic Village is sponsored by two projects that are coming out of stealth mode! Come learn about these projects and all the exci",
-    "url": "https://github.com/TABConf/6.tabconf.com/issues/156"
+    "summary": "\n### What is this workshop about? Provide as many details as possible.\nThis workshop introduces participants to the **basics of Bitcoin transactions** — from in",
+    "url": "https://github.com/TABConf/7.tabconf.com/issues/98"
   },
   {
-    "title": "Socratic Session: Bitcoin Core - Project Updates and Cherry Picked PRs",
-    "day": "Day 3",
-    "time": "11:30 AM - 12:45 PM",
-    "village": "BitDevs Socratic Village",
-    "assignees": "davidgumberg, murchandamus, btsea",
-    "labels": [
-      {
-        "name": "Accepted",
-        "color": "#0E8A16"
-      },
-      {
-        "name": "Socratic",
-        "color": "#1d76db"
-      }
-    ],
-    "summary": "# Description\r\n\r\nA focused Socratic Seminar on Bitcoin protocol development. If you are curious about the latest updates in Bitcoin Core, this is the event for ",
-    "url": "https://github.com/TABConf/6.tabconf.com/issues/147"
-  },
-  {
-    "title": "Hashpools: A Peer-to-peer Free Market for Bitcoin Mining",
+    "title": "TabConf Hack’n Tell",
     "day": "Day 4",
-    "time": "9:00 AM - 9:30 AM",
-    "village": "BitDevs Socratic Village",
-    "assignees": "vnprc",
+    "time": "3:30 PM - 4:30 PM",
+    "startTime": "3:30 PM",
+    "endTime": "4:30 PM",
+    "village": "Main Stage",
+    "assignees": "thrillerxx",
     "labels": [
       {
         "name": "Accepted",
         "color": "#0E8A16"
       },
       {
-        "name": "Talk",
-        "color": "#DEFBE1"
+        "name": "confirmed",
+        "color": "#bb1efb"
       }
     ],
-    "summary": "# Description\r\n### What is this talk about? Give us as many details as possible. \r\nMining bitcoin has come to rely almost exclusively on incumbent mining pools ",
-    "url": "https://github.com/TABConf/6.tabconf.com/issues/87"
+    "summary": "# Description\n\nWhat is this idea? Give us as many details as possible.\n\nHack’n Tell is a fast, builder first showcase that PlebLab runs in Austin. It is a live ",
+    "url": "https://github.com/TABConf/7.tabconf.com/issues/99"
   },
   {
-    "title": "An Exposition of Pathfinding Strategies Within Lightning Network Clients",
-    "day": "Day 4",
-    "time": "10:00 AM - 10:30 AM",
-    "village": "BitDevs Socratic Village",
-    "assignees": "sindurasaraswathi",
+    "title": "Sad State of Decentralized Identity, and What To Do About It",
+    "day": "Day 1",
+    "time": "4:30 PM - 5:30 PM",
+    "startTime": "4:30 PM",
+    "endTime": "5:30 PM",
+    "village": "Workshop Room 2",
+    "assignees": "ChristopherA",
     "labels": [
       {
         "name": "Accepted",
         "color": "#0E8A16"
       },
       {
-        "name": "Talk",
-        "color": "#DEFBE1"
-      }
-    ],
-    "summary": "# Description\r\n### What is this talk about? Give us as many details as possible. \r\nDue to a source-based routing of payments, different pathfinding strategies a",
-    "url": "https://github.com/TABConf/6.tabconf.com/issues/109"
-  },
-  {
-    "title": "Socratic Session: Lightning BOLT Spec and Implementation Updates",
-    "day": "Day 4",
-    "time": "10:45 AM - 12:00 PM",
-    "village": "BitDevs Socratic Village",
-    "assignees": "Randy808, vnprc",
-    "labels": [
-      {
-        "name": "Accepted",
-        "color": "#0E8A16"
-      },
-      {
-        "name": "Socratic",
-        "color": "#1d76db"
-      }
-    ],
-    "summary": "# Description\r\n\r\nA focused Socratic Seminar on lightning protocol development. Topics will be selected from the lightning-dev mailing lists, prominent Github re",
-    "url": "https://github.com/TABConf/6.tabconf.com/issues/148"
-  },
-  {
-    "title": "Socratic Panel: Mining Centralization in 2024 - Risks and Mitigations",
-    "day": "Day 4",
-    "time": "12:30 PM - 1:30 PM",
-    "village": "BitDevs Socratic Village",
-    "assignees": "skot, TheBlueMatt, vnprc, btsea, average-gary",
-    "labels": [
-      {
-        "name": "Accepted",
-        "color": "#0E8A16"
+        "name": "Workshop",
+        "color": "#BFDADC"
       },
       {
         "name": "Panel",
-        "color": "#fff8c5"
+        "color": "#FEF2C0"
       },
       {
-        "name": "Socratic",
-        "color": "#1d76db"
+        "name": "confirmed",
+        "color": "#bb1efb"
       }
     ],
-    "summary": "# Description\r\n\r\nThe degree of mining centralization in the Bitcoin network is at an all time high. Between custody providers, hashrate laundering, FPPS payout ",
-    "url": "https://github.com/TABConf/6.tabconf.com/issues/139"
+    "summary": "# Description\n### What is this panel discussion about? Will there be multiple talking a points?\n\nDecentralized Identity is loosing in the marketplace: European ",
+    "url": "https://github.com/TABConf/7.tabconf.com/issues/100"
   },
   {
-    "title": "Building an interactive Bitcoin Hacker Badge. While supplies last.",
-    "day": "Day 1 & 2",
-    "time": "All Day",
-    "village": "Builder Days Area",
+    "title": "Interactive collaboration on coming up with a Web of Trust Idea for TABConf",
+    "day": "Day 1",
+    "time": "5:30 PM - 7:00 PM",
+    "startTime": "5:30 PM",
+    "endTime": "7:00 PM",
+    "village": "Workshop Room 2",
     "assignees": "miketwenty1",
     "labels": [
       {
@@ -1165,300 +1576,82 @@
         "color": "#0E8A16"
       },
       {
-        "name": "Builder Days Project",
-        "color": "#fbefff"
-      }
-    ],
-    "summary": "<!-- NOTE!! If you are intending to do a non-interactive demo, THIS IS NOT a workshop, please submit talk demo's under \"Solo Talks\". -->\r\n\r\n# Description\r\n### W",
-    "url": "https://github.com/TABConf/6.tabconf.com/issues/106"
-  },
-  {
-    "title": "Build Your Own Layer Two",
-    "day": "Day 4",
-    "time": "11:00 AM - 12:00 PM",
-    "village": "Workshop Room 1",
-    "assignees": "supertestnet",
-    "labels": [
-      {
-        "name": "Accepted",
-        "color": "#0E8A16"
-      },
-      {
         "name": "Workshop",
-        "color": "#ddf4ff"
+        "color": "#BFDADC"
       },
       {
         "name": "Beginner",
-        "color": "#d4c5f9"
-      }
-    ],
-    "summary": "# Description\r\n\r\nThere seem to be about 50 fake bitcoin \"layer two\"s out there, and lightning is the only \"real\" one. In this workshop you'll \"learn by doing.\" ",
-    "url": "https://github.com/TABConf/6.tabconf.com/issues/35"
-  },
-  {
-    "title": "BOLT12-Prisms",
-    "day": "Day 4",
-    "time": "1:00 PM - 2:00 PM",
-    "village": "Workshop Room 1",
-    "assignees": "farscapian",
-    "labels": [
-      {
-        "name": "Accepted",
-        "color": "#0E8A16"
+        "color": "#0744B1"
       },
       {
-        "name": "Workshop",
-        "color": "#ddf4ff"
+        "name": "confirmed",
+        "color": "#bb1efb"
       }
     ],
-    "summary": "# BOLT12-Prisms\n\n### Description \n\nThis talk will cover the fascinating world of BOLT12-prisms [a concept first described by gigi](https://dergigi.com/2023/03/1",
-    "url": "https://github.com/TABConf/6.tabconf.com/issues/38"
+    "summary": "# Description\n\nCompletely interactive web of trust discussion event.\nFormat Suggested:\nParticipants with ideas will go on stage and pitch for up to 5 minutes, w",
+    "url": "https://github.com/TABConf/7.tabconf.com/issues/88"
   },
   {
-    "title": "Forging your own decentralized ID without doxxing yourself.",
+    "title": "Hardcore Trivia",
     "day": "Day 4",
-    "time": "2:00 PM - 3:00 PM",
-    "village": "Workshop Room 1",
-    "assignees": "andrewlunde",
-    "labels": [
-      {
-        "name": "Accepted",
-        "color": "#0E8A16"
-      },
-      {
-        "name": "Workshop",
-        "color": "#ddf4ff"
-      }
-    ],
-    "summary": "# Description\r\n### Interactive discussion of the rationality, tools and process for creating/verifying a distributed ID solely on the Bitcoin blockchain.\r\nEarli",
-    "url": "https://github.com/TABConf/6.tabconf.com/issues/88"
-  },
-  {
-    "title": "Build a compact block filter wallet with BDK",
-    "day": "Day 4",
-    "time": "3:00 PM - 4:00 PM",
-    "village": "Workshop Room 1",
-    "assignees": "rustaceanrob",
-    "labels": [
-      {
-        "name": "Accepted",
-        "color": "#0E8A16"
-      },
-      {
-        "name": "Workshop",
-        "color": "#ddf4ff"
-      }
-    ],
-    "summary": "<!-- NOTE!! If you are intending to do a non-interactive demo, THIS IS NOT a workshop, please submit talk demo's under \"Solo Talks\". -->\r\n\r\n# Description\r\n### W",
-    "url": "https://github.com/TABConf/6.tabconf.com/issues/116"
-  },
-  {
-    "title": "Build a DLC wallet and bet on the presidential election",
-    "day": "Day 4",
-    "time": "4:00 PM - 5:30 PM",
-    "village": "Workshop Room 1",
-    "assignees": "matthewjablack",
-    "labels": [
-      {
-        "name": "Accepted",
-        "color": "#0E8A16"
-      },
-      {
-        "name": "Workshop",
-        "color": "#ddf4ff"
-      }
-    ],
-    "summary": "# Description\r\n\r\n[Atomic Finance](https://github.com/orgs/AtomicFinance) has been developing the [Bitcoin Abstraction Layer](https://github.com/AtomicFinance/bi",
-    "url": "https://github.com/TABConf/6.tabconf.com/issues/117"
-  },
-  {
-    "title": "Next Gen Village",
-    "day": "Day 3 & 4",
-    "time": "All Day",
-    "village": "NextGen Village",
-    "assignees": "asherp",
-    "labels": [
-      {
-        "name": "Accepted",
-        "color": "#0E8A16"
-      }
-    ],
-    "summary": "\r\n## Description\r\n\r\nThe NextGen Village is a fun interactive space for bitcoiners of all ages.\r\nOur village focuses on activities and talks that expand Bitcoin ",
-    "url": "https://github.com/TABConf/6.tabconf.com/issues/91"
-  },
-  {
-    "title": "Running Bitcoin",
-    "day": "Day 2",
     "time": "5:00 PM - 6:00 PM",
-    "village": "Off Site",
-    "assignees": "EllyPembroke",
+    "startTime": "5:00 PM",
+    "endTime": "6:00 PM",
+    "village": "BitDevs Socratic Village",
+    "assignees": "btsea",
     "labels": [
       {
         "name": "Accepted",
         "color": "#0E8A16"
       },
       {
-        "name": "Satellite Event",
-        "color": "#fbca04"
+        "name": "confirmed",
+        "color": "#bb1efb"
       }
     ],
-    "summary": "Join us for a 5k social run down the parks and streets of Atlanta GA.\r\n\r\nWHAT\r\n5km easy social run for all abilities.\r\n\r\nWHEN\r\nThursday, October 24th at 5pm\r\n\r\n",
-    "url": "https://github.com/TABConf/6.tabconf.com/issues/92"
+    "summary": "Each year the BitDevs Socratic Village hosts Hardcore Trivia! There will be a mix of technical and historical trivia questions. The questions will be a combinat",
+    "url": "https://github.com/TABConf/7.tabconf.com/issues/102"
   },
   {
-    "title": "Running Bitcoin",
+    "title": "Socratic Panel: Mempool Policy and Payload Politics",
     "day": "Day 3",
-    "time": "5:00 PM - 6:00 PM",
-    "village": "Off Site",
-    "assignees": "EllyPembroke",
+    "time": "1:30 PM - 2:30 PM",
+    "startTime": "1:30 PM",
+    "endTime": "2:30 PM",
+    "village": "BitDevs Socratic Village",
+    "assignees": "btsea",
     "labels": [
       {
         "name": "Accepted",
         "color": "#0E8A16"
       },
       {
-        "name": "Satellite Event",
-        "color": "#fbca04"
+        "name": "confirmed",
+        "color": "#bb1efb"
       }
     ],
-    "summary": "Join us for a 5k social run down the parks and streets of Atlanta GA.\r\n\r\nWHAT\r\n5km easy social run for all abilities.\r\n\r\nWHEN\r\nFriday, October 25th at 5pm\r\n\r\nWH",
-    "url": "https://github.com/TABConf/6.tabconf.com/issues/97"
+    "summary": "### Description\nTBA\n\n### Format\nThis is a Socratic Panel, which means the event will be a two-way dialogue. It is expected for both panel participants and membe",
+    "url": "https://github.com/TABConf/7.tabconf.com/issues/103"
   },
   {
-    "title": "Bitcoin Changes - Soft Fork History and Theory",
-    "day": "Day 3",
-    "time": "3:00 PM - 3:45 PM",
-    "village": "Main Stage",
-    "assignees": "psztorc",
+    "title": "Socratic Panel: Techniques for Diffusing Mining Centralization Pressures",
+    "day": "Day 4",
+    "time": "12:30 PM - 1:30 PM",
+    "startTime": "12:30 PM",
+    "endTime": "1:30 PM",
+    "village": "BitDevs Socratic Village",
+    "assignees": "btsea",
     "labels": [
       {
         "name": "Accepted",
         "color": "#0E8A16"
       },
       {
-        "name": "Talk",
-        "color": "#DEFBE1"
+        "name": "confirmed",
+        "color": "#bb1efb"
       }
     ],
-    "summary": "# Description\r\n### What is this talk about?\r\n- There is a lot of talking new softforks that are needed to enable sidechains. \r\n- There's the great restoration p",
-    "url": "https://github.com/TABConf/6.tabconf.com/issues/120"
-  },
-  {
-    "title": "Supercharging Transactions with Async Payjoin",
-    "day": "Day 3",
-    "time": "4:00 PM - 4:45 PM",
-    "village": "Main Stage",
-    "assignees": "thebrandonlucas",
-    "labels": [
-      {
-        "name": "Accepted",
-        "color": "#0E8A16"
-      },
-      {
-        "name": "Talk",
-        "color": "#DEFBE1"
-      }
-    ],
-    "summary": "# Description\r\n### What is this talk about? Give us as many details as possible. \r\n\r\nLevel: **Beginner**\r\n\r\nPayjoin is a simple, flexible, and powerful protocol",
-    "url": "https://github.com/TABConf/6.tabconf.com/issues/98"
-  },
-  {
-    "title": "Writing smart contracts in Rust using Simfony workshop",
-    "day": "Day 3",
-    "time": "1:00 PM - 3:00 PM",
-    "village": "Workshop Room 1",
-    "assignees": "uncomputable",
-    "labels": [
-      {
-        "name": "Accepted",
-        "color": "#0E8A16"
-      },
-      {
-        "name": "Workshop",
-        "color": "#ddf4ff"
-      }
-    ],
-    "summary": "# Description\r\n### What is this workshop about? Provide as many details as possible. \r\nThis workshop introduces Simfony, a language that looks and feels like Ru",
-    "url": "https://github.com/TABConf/6.tabconf.com/issues/99"
-  },
-  {
-    "title": "Workshop: Learning Real-World Pinning Attacks on Lightning Nodes",
-    "day": "Day 3",
-    "time": "3:00 PM - 5:00 PM",
-    "village": "Workshop Room 1",
-    "assignees": "ariard",
-    "labels": [
-      {
-        "name": "Accepted",
-        "color": "#0E8A16"
-      },
-      {
-        "name": "Workshop",
-        "color": "#ddf4ff"
-      },
-      {
-        "name": "Advanced",
-        "color": "#6D043B"
-      }
-    ],
-    "summary": "This talk is about teaching attendees how to do real-world pinning attacks on lightning nodes.\r\n\r\n## The workshop\r\n\r\nDuring this talk, we'll explore the well-kn",
-    "url": "https://github.com/TABConf/6.tabconf.com/issues/75"
-  },
-  {
-    "title": "The Bitaxe: open source mining table",
-    "day": "Day 1 & 2",
-    "time": "All Day",
-    "village": "Builder Days Area",
-    "assignees": "skot",
-    "labels": [
-      {
-        "name": "Accepted",
-        "color": "#0E8A16"
-      },
-      {
-        "name": "Builder Days Project",
-        "color": "#fbefff"
-      }
-    ],
-    "summary": "\r\n\r\n## Project\r\n[The Bitaxe](https://bitaxe.org) is a fully open source permissionless Bitcoin mining project. It's a small miner that you can buy from a global",
-    "url": "https://github.com/TABConf/6.tabconf.com/issues/108"
-  },
-  {
-    "title": "BitDevs: Bitcoin Socratic Seminar #33 @ Manuel's Tavern",
-    "day": "Day 1",
-    "time": "6:00 PM - 9:00 PM",
-    "village": "Off Site",
-    "assignees": "sbddesign",
-    "labels": [
-      {
-        "name": "Accepted",
-        "color": "#0E8A16"
-      },
-      {
-        "name": "Satellite Event",
-        "color": "#fbca04"
-      }
-    ],
-    "summary": "![atlanta-bitdevs-bitcoin-socratic-seminar-33](https://github.com/user-attachments/assets/944f9701-7d69-4a70-8ed7-bf181efd86b6)\r\n\r\n# Description\r\n\r\nI need you t",
-    "url": "https://github.com/TABConf/6.tabconf.com/issues/110"
-  },
-  {
-    "title": "Live Conceptual Sketches: Capturing TABConf in Art",
-    "day": "All Days",
-    "time": "All Day",
-    "village": "NextGen Village",
-    "assignees": "SatoshiBuilds",
-    "labels": [
-      {
-        "name": "Accepted",
-        "color": "#0E8A16"
-      },
-      {
-        "name": "Satellite Event",
-        "color": "#fbca04"
-      }
-    ],
-    "summary": "# Description\r\n\r\n### What is this idea?\r\nI propose to create live conceptual sketches during TABConf sessions. These sketches will visually capture the key idea",
-    "url": "https://github.com/TABConf/6.tabconf.com/issues/111"
+    "summary": "### Description\nTBA\n\n### Format\nThis is a Socratic Panel, which means the event will be a two-way dialogue. It is expected for both panel participants and membe",
+    "url": "https://github.com/TABConf/7.tabconf.com/issues/104"
   }
 ]
