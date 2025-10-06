@@ -3,7 +3,7 @@ const fetch = require('node-fetch');
 
 const query = `
 {
-  node(id: "PVT_kwDOAfWa-84Ae2cL") {
+  node(id: "PVT_kwDOAfWa-84Awu-M") {
     ... on ProjectV2 {
       items(first: 100) {
         nodes {
@@ -23,7 +23,7 @@ const query = `
               }
             }
           }
-          fieldValues(first: 20) {
+          fieldValues(first: 30) {
             nodes {
               __typename
               ... on ProjectV2ItemFieldSingleSelectValue {
@@ -60,7 +60,6 @@ fetch('https://api.github.com/graphql', {
 
     const items = data.data.node.items.nodes.map(item => {
       const c = item.content;
-
       const labels = c?.labels?.nodes || [];
       const hasAccepted = labels.some(l => l.name === 'Accepted');
       if (!hasAccepted) return null;
@@ -80,6 +79,8 @@ fetch('https://api.github.com/graphql', {
         title: c?.title || '',
         day: fields['Day'] || '',
         time: fields['Time Slot'] || '',
+        startTime: fields['Start Time'] || '',
+        endTime: fields['End Time'] || '',
         village: fields['Village'] || '',
         assignees: c?.assignees?.nodes.map(a => a.login).join(', ') || '',
         labels: labels.map(l => ({ name: l.name, color: `#${l.color}` })),
