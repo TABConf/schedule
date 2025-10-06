@@ -2,92 +2,161 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>TABConf Schedule</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <style>
+        :root {
+            --bg: #0f1115;
+            --card: #171a21;
+            --muted: #aab2c0;
+            --text: #e6e9ef;
+            --accent: #4da3ff;
+            --border: #2a2f3a;
+        }
+
+        html,
         body {
-            font-family: 'Segoe UI', sans-serif;
-            background-color: #121212;
-            color: #eaeaea;
-            padding: 20px;
+            background: var(--bg);
+            color: var(--text);
+            font-family: system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, Noto Sans, Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji";
             margin: 0;
+            padding: 0;
         }
 
-        .topbar {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            flex-wrap: wrap;
-            margin-bottom: 20px;
+        .wrap {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 24px 16px 48px;
         }
 
-        .filters label {
-            font-weight: bold;
-            margin-right: 10px;
-        }
-
-        .filters select {
-            padding: 8px 12px;
-            background-color: #1e1e1e;
-            color: #eaeaea;
-            border: 1px solid #444;
-            border-radius: 6px;
-            font-size: 14px;
+        header {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 12px;
+            margin-bottom: 16px;
         }
 
         h1 {
-            margin: 0;
-            color: #00d4ff;
             font-size: 24px;
+            margin: 0 0 4px 0;
+        }
+
+        .filters {
+            display: flex;
+            gap: 12px;
+            flex-wrap: wrap;
+            align-items: center;
+            background: var(--card);
+            padding: 12px;
+            border: 1px solid var(--border);
+            border-radius: 12px;
+        }
+
+        .filters label {
+            font-size: 14px;
+            color: var(--muted);
+        }
+
+        select {
+            background: #0d0f14;
+            color: var(--text);
+            border: 1px solid var(--border);
+            border-radius: 10px;
+            padding: 8px 10px;
+            font-size: 14px;
+        }
+
+        .legend {
+            font-size: 12px;
+            color: var(--muted);
+            margin-left: auto;
+        }
+
+        .day-card {
+            background: var(--card);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            overflow: hidden;
+            margin-top: 18px;
+        }
+
+        .day-title {
+            padding: 12px 14px;
+            border-bottom: 1px solid var(--border);
+            font-weight: 600;
+            background: #11141a;
         }
 
         table {
             width: 100%;
-            border-collapse: collapse;
-            background-color: #1e1e1e;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
-            border-radius: 8px;
-            overflow: hidden;
+            border-collapse: separate;
+            border-spacing: 0;
+            table-layout: fixed;
         }
 
-        th,
-        td {
-            padding: 16px;
-            text-align: left;
-            border-bottom: 1px solid #333;
+        thead th {
+            position: sticky;
+            top: 0;
+            background: #11141a;
+            z-index: 1;
+            border-bottom: 1px solid var(--border);
+            font-weight: 600;
+            font-size: 13px;
+            padding: 10px;
+        }
+
+        tbody td,
+        tbody th {
+            border-bottom: 1px solid var(--border);
             vertical-align: top;
+            padding: 8px;
+            font-size: 13px;
+            word-wrap: break-word;
         }
 
-        td:nth-child(3) {
+        tbody th.timecell {
+            color: var(--muted);
+            width: 90px;
+            font-weight: 500;
             white-space: nowrap;
-            min-width: 140px;
         }
 
-        th {
-            background-color: #242424;
-            cursor: pointer;
-            position: relative;
+        .slot {
+            border: 1px solid transparent;
+            border-radius: 10px;
+            padding: 8px;
+            backdrop-filter: saturate(120%);
         }
 
-        th:hover {
-            background-color: #333;
+        .slot h4 {
+            margin: 0 0 6px 0;
+            font-size: 14px;
+            line-height: 1.25;
         }
 
-        th.sort-asc::after {
-            content: " ▲";
+        .slot .meta {
+            font-size: 12px;
+            color: var(--muted);
         }
 
-        th.sort-desc::after {
-            content: " ▼";
+        .badges {
+            display: inline-flex;
+            gap: 6px;
+            flex-wrap: wrap;
+            margin: 6px 0 0 0;
         }
 
-        tr:hover {
-            background-color: #2a2a2a;
+        .badge {
+            border: 1px solid var(--border);
+            background: rgba(255, 255, 255, 0.05);
+            font-size: 11px;
+            padding: 2px 6px;
+            border-radius: 999px;
         }
 
         a {
-            color: #00d4ff;
+            color: var(--accent);
             text-decoration: none;
         }
 
@@ -95,235 +164,368 @@
             text-decoration: underline;
         }
 
-        .label {
-            display: inline-block;
-            padding: 2px 8px;
-            font-size: 12px;
-            font-weight: 600;
-            border-radius: 2em;
-            margin-right: 5px;
-            color: #fff;
-            background-color: var(--label-bg, #555);
-            border: 1px solid var(--label-border, #fff);
-        }
-
-        .table-wrapper {
-            overflow-x: auto;
-        }
-
-        .title-area {
-            text-align: center;
-            width: 100%;
-        }
-
-        .filters {
-            display: flex;
-            flex-direction: column;
-            align-items: flex-start;
-            gap: 10px;
-        }
-
-        @media (max-width: 768px) {
-            .topbar {
-                flex-direction: column;
-                align-items: stretch;
+        /* Mobile responsiveness */
+        @media (max-width: 800px) {
+            thead {
+                display: none;
             }
 
-            .title-area {
-                margin-top: 20px;
+            table,
+            tbody,
+            tr,
+            td,
+            th {
+                display: block;
+                width: 100%;
             }
 
-            a[href="https://tabconf.com"] {
-                font-size: 14px;
+            tbody th.timecell {
+                width: auto;
+            }
+
+            tbody tr {
+                border-bottom: 1px solid var(--border);
+                padding: 8px 0;
+            }
+
+            tbody td {
+                padding: 6px 0;
+            }
+
+            .col-label {
+                display: block;
+                font-size: 11px;
+                color: var(--muted);
+                margin-bottom: 4px;
             }
         }
     </style>
 </head>
 
 <body>
-    <div style="position: relative; margin-bottom: 20px;">
-        <a href="https://tabconf.com"
-            style="position: absolute; right: 0; top: 0; color: #00d4ff; font-weight: bold; text-decoration: none;">Home</a>
-        <h1 style="text-align: center; margin: 0 0 20px 0; color: #00d4ff; font-size: 28px;">TABConf 6 Schedule</h1>
-    </div>
-
-    <div class="filters"
-        style="display: flex; justify-content: center; gap: 40px; flex-wrap: wrap; margin-bottom: 30px;">
-        <div style="display: flex; flex-direction: column; gap: 10px;">
+    <div class="wrap">
+        <header>
             <div>
-                <label for="dayFilter">🗓️ Filter by Day:</label><br>
-                <select id="dayFilter">
-                    <option value="all">All Days</option>
-                    <option value="Day 1">Day 1</option>
-                    <option value="Day 2">Day 2</option>
-                    <option value="Day 3">Day 3</option>
-                    <option value="Day 4">Day 4</option>
-                </select>
-            </div>
-            <div>
-                <label for="labelFilter">🏷️ Filter by Label:</label><br>
-                <select id="labelFilter">
-                    <option value="all">All Labels</option>
-                </select>
-            </div>
-        </div>
-    </div>
+                <h1>TABConf Schedule</h1>
+                <div class="filters">
+                    <label for="dayFilter">Day:</label>
+                    <select id="dayFilter">
+                        <option value="all">All days</option>
+                        <option value="D1 - Oct 13">D1 - Oct 13</option>
+                        <option value="D2 - Oct 14">D2 - Oct 14</option>
+                        <option value="D3 - Oct 15">D3 - Oct 15</option>
+                        <option value="D4 - Oct 16">D4 - Oct 16</option>
+                    </select>
 
-    <div class="table-wrapper">
-        <table id="schedule">
-            <thead>
-                <tr>
-                    <th data-key="title">Title</th>
-                    <th data-key="day">Day</th>
-                    <th data-key="time">Time</th>
-                    <th data-key="village">Village</th>
-                    <th data-key="assignees">Assignees</th>
-                    <th data-key="labels">Labels</th>
-                    <th data-key="summary">Summary</th>
-                    <th>Link</th>
-                </tr>
-            </thead>
-            <tbody></tbody>
-        </table>
-    </div>
+                    <label for="typeFilter">Type:</label>
+                    <select id="typeFilter">
+                        <option value="all">All types</option>
+                        <option>Workshop</option>
+                        <option>Talk</option>
+                        <option>Panel</option>
+                        <option>Debate</option>
+                        <option>Unrecorded</option>
+                        <option>Beginner</option>
+                        <option>Advanced</option>
+                        <option>Builder Days</option>
+                        <option>Events</option>
+                    </select>
 
+                    <div class="legend">Select filters to refine. Days without matches are hidden.</div>
+                </div>
+            </div>
+        </header>
+
+        <div id="days"></div>
+    </div>
 
     <script>
-        let sortKey = '';
-        let sortAsc = true;
-        let allData = [];
+        const DAY_LABELS = {
+            'D1 - Oct 13': 'Day 1 - October 13',
+            'D2 - Oct 14': 'Day 2 - October 14',
+            'D3 - Oct 15': 'Day 3 - October 15',
+            'D4 - Oct 16': 'Day 4 - October 16'
+        };
 
-        function parseTimeRange(range) {
-            const time = range.split(' - ')[0];
-            const [raw, period] = time.split(' ');
-            if (!raw || !period) return 0;
+        const DAY_COLUMNS = {
+            // [time, col2, col3, col4]
+            'D1 - Oct 13': ['Time', 'Workshop Room 1', 'Workshop Room 2', 'General'],
+            'D2 - Oct 14': ['Time', 'Workshop Room 1', 'Workshop Room 2', 'General'],
+            'D3 - Oct 15': ['Time', 'Socratic Bitdevs', 'Main Stage', 'General'],
+            'D4 - Oct 16': ['Time', 'Socratic Bitdevs', 'Main Stage', 'General']
+        };
 
-            let [h, m] = raw.split(':').map(Number);
-            if (period.toUpperCase() === 'PM' && h !== 12) h += 12;
-            if (period.toUpperCase() === 'AM' && h === 12) h = 0;
-            return h * 60 + (m || 0);
+        const ACCEPTED_LABELS = new Set(['accepted', 'confirmed']);
+
+        // Deterministic color from sorted labels string
+        function hashColor(str) {
+            // djb2
+            let h = 5381;
+            for (let i = 0; i < str.length; i++) h = ((h << 5) + h) + str.charCodeAt(i);
+            const hex = (h >>> 0).toString(16).padStart(8, '0');
+            const rgb = hex.slice(-6); // 24-bit
+            return `#${rgb}`;
         }
 
-        function renderTable(data) {
-            const tbody = document.querySelector('#schedule tbody');
-            tbody.innerHTML = '';
-
-            data.forEach(i => {
-                const assignees = i.assignees
-                    ? i.assignees.split(', ').map(a => `<a href="https://github.com/${a}" target="_blank">@${a}</a>`).join(', ')
-                    : '';
-
-                const labels = i.labels?.map(l => {
-                    const hex = l.color.startsWith('#') ? l.color : `#${l.color}`;
-                    return `<span class="label" style="--label-bg: ${hex}4d; --label-border: ${hex};">${l.name}</span>`;
-                }).join('') || '';
-
-                const row = `<tr>
-              <td>${i.title}</td>
-              <td>${i.day}</td>
-              <td>${i.time}</td>
-              <td>${i.village}</td>
-              <td>${assignees}</td>
-              <td>${labels}</td>
-              <td>${i.summary}</td>
-              <td><a href="${i.url}" target="_blank">View</a></td>
-            </tr>`;
-                tbody.insertAdjacentHTML('beforeend', row);
-            });
+        function hexToRgb(hex) {
+            const v = hex.replace('#', '');
+            const r = parseInt(v.slice(0, 2), 16);
+            const g = parseInt(v.slice(2, 4), 16);
+            const b = parseInt(v.slice(4, 6), 16);
+            return { r, g, b };
         }
 
-        function applyFilters(defaultDay, defaultLabel) {
-            const selectedDay = document.getElementById('dayFilter').value;
-            const selectedLabel = document.getElementById('labelFilter').value;
-
-            const filteredSorted = [...allData]
-                .filter(i => (selectedDay === 'all' || i.day === selectedDay) &&
-                    (selectedLabel === 'all' || i.labels?.some(l => l.name === selectedLabel)))
-                .sort((a, b) => {
-                    const dA = a.day?.toLowerCase() || '';
-                    const dB = b.day?.toLowerCase() || '';
-                    if (dA === dB) {
-                        return parseTimeRange(a.time) - parseTimeRange(b.time);
-                    }
-                    return dA.localeCompare(dB);
-                });
-
-            renderTable(filteredSorted);
+        function parseTime(t) {
+            if (!t) return null;
+            // Accept formats like "7", "7am", "7:00", "7:00 AM", "07:30", "19:00"
+            const s = String(t).trim().toUpperCase();
+            const m = s.match(/^(\d{1,2})(?::(\d{2}))?\s*(AM|PM)?$/);
+            if (!m) return null;
+            let hour = parseInt(m[1], 10);
+            let min = m[2] ? parseInt(m[2], 10) : 0;
+            const ap = m[3] || null;
+            if (ap === 'PM' && hour < 12) hour += 12;
+            if (ap === 'AM' && hour === 12) hour = 0;
+            return { h: hour, m: min, minutes: hour * 60 + min };
         }
 
-        Promise.all([
-            fetch('data/schedule.json').then(res => res.json()),
-            fetch(`config.json?cb=${Date.now()}`).then(res => res.json())
-        ]).then(([data, config]) => {
-            allData = data;
+        function fmtTime(mins) {
+            const h24 = Math.floor(mins / 60);
+            const m = mins % 60;
+            const ampm = h24 >= 12 ? 'PM' : 'AM';
+            let h = h24 % 12; if (h === 0) h = 12;
+            return `${h}:${String(m).padStart(2, '0')} ${ampm}`;
+        }
 
-            // Populate label filter
-            const allLabels = new Set();
-            data.forEach(item => item.labels?.forEach(l => allLabels.add(l.name)));
-            const labelFilter = document.getElementById('labelFilter');
-            [...allLabels].sort().forEach(label => {
-                const opt = document.createElement('option');
-                opt.value = label;
-                opt.textContent = label;
-                labelFilter.appendChild(opt);
-            });
-
-            // Set defaults from config
-            const dayFilter = document.getElementById('dayFilter');
-            const labelFilterEl = document.getElementById('labelFilter');
-
-            if (config.defaultDay) {
-                dayFilter.value = config.defaultDay;
+        function normalizeDayKey(dayValue) {
+            if (!dayValue) return null;
+            const s = String(dayValue).toLowerCase();
+            if (s.startsWith('d1')) return 'D1 - Oct 13';
+            if (s.startsWith('d2')) return 'D2 - Oct 14';
+            if (s.startsWith('d3')) return 'D3 - Oct 15';
+            if (s.startsWith('d4')) return 'D4 - Oct 16';
+            // Attempt matching full titles
+            for (const [k, v] of Object.entries(DAY_LABELS)) {
+                if (s.includes(v.toLowerCase().split(' - ')[0])) return k;
             }
-            if (config.defaultLabel) {
-                labelFilterEl.value = config.defaultLabel;
-            }
+            return null;
+        }
 
-            applyFilters(config.defaultDay || 'all', config.defaultLabel || 'all');
+        function eventMatchesType(ev, typeVal) {
+            if (typeVal === 'all') return true;
+            const names = (ev.labels || []).map(l => (l.name || '').toLowerCase());
+            return names.includes(typeVal.toLowerCase());
+        }
 
+        function computeColorFromLabels(ev) {
+            const names = (ev.labels || [])
+                .map(l => l.name)
+                .filter(Boolean)
+                .map(x => x.trim())
+                .filter(x => !ACCEPTED_LABELS.has(x.toLowerCase()))
+                .sort((a, b) => a.localeCompare(b));
+            const key = names.join('|');
+            const hex = hashColor(key.length ? key : 'default');
+            const { r, g, b } = hexToRgb(hex);
+            return { hex, rgbaBg: `rgba(${r}, ${g}, ${b}, 0.18)`, border: `rgba(${r}, ${g}, ${b}, 0.45)` };
+        }
 
-            dayFilter.addEventListener('change', applyFilters);
-            labelFilterEl.addEventListener('change', applyFilters);
+        async function load() {
+            const res = await fetch('data/schedule.json', { cache: 'no-store' });
+            const all = await res.json();
 
-            // Sorting setup
-            sortKey = 'day';
-            sortAsc = true;
-            document.querySelectorAll('th').forEach(th => {
-                th.classList.remove('sort-asc', 'sort-desc');
-                if (th.dataset.key === 'day') {
-                    th.classList.add('sort-asc');
+            const daySel = document.getElementById('dayFilter');
+            const typeSel = document.getElementById('typeFilter');
+            const daysEl = document.getElementById('days');
+
+            function render() {
+                const dayVal = daySel.value;
+                const typeVal = typeSel.value;
+
+                // Filter and bucket by normalized day key
+                const buckets = new Map();
+                for (const item of all) {
+                    const dayKey = normalizeDayKey(item.day) || item.day || '';
+                    if (!DAY_COLUMNS[dayKey]) continue;
+                    if (dayVal !== 'all' && dayKey !== dayVal) continue;
+                    if (!eventMatchesType(item, typeVal)) continue;
+                    if (!buckets.has(dayKey)) buckets.set(dayKey, []);
+                    buckets.get(dayKey).push(item);
                 }
-            });
 
-            document.querySelectorAll('th[data-key]').forEach(th => {
-                th.addEventListener('click', () => {
-                    const key = th.dataset.key;
-                    if (sortKey === key) sortAsc = !sortAsc;
-                    else {
-                        sortKey = key;
-                        sortAsc = true;
+                // Clear
+                daysEl.innerHTML = '';
+
+                // Sort days in the known order
+                const order = Object.keys(DAY_COLUMNS);
+                for (const dayKey of order) {
+                    const list = buckets.get(dayKey) || [];
+                    if (list.length === 0) continue; // hide day with no matches
+
+                    // Compute time grid for this day from Start Time and End Time
+                    const times = new Set();
+                    let minStart = Infinity, maxEnd = -Infinity;
+                    for (const ev of list) {
+                        const start = parseTime(ev.startTime || ev.time?.split('-')[0]);
+                        const end = parseTime(ev.endTime || ev.time?.split('-')[1]);
+                        if (!start || !end) continue;
+                        times.add(start.minutes);
+                        times.add(end.minutes);
+                        minStart = Math.min(minStart, start.minutes);
+                        maxEnd = Math.max(maxEnd, end.minutes);
+                    }
+                    if (!isFinite(minStart) || !isFinite(maxEnd)) continue;
+
+                    const sortedTicks = Array.from(times).sort((a, b) => a - b);
+
+                    // Build occupancy grid to manage rowSpans per column
+                    const cols = DAY_COLUMNS[dayKey];
+                    const colNames = cols.slice(1); // exclude Time header
+
+                    // Bucket events per column by village name matching column, else General
+                    const byCol = new Map(colNames.map(n => [n, []]));
+                    for (const ev of list) {
+                        const target = colNames.find(n => (ev.village || '').toLowerCase() === n.toLowerCase()) || 'General';
+                        if (!byCol.has(target)) byCol.set(target, []);
+                        byCol.get(target).push(ev);
                     }
 
-                    document.querySelectorAll('th').forEach(th =>
-                        th.classList.remove('sort-asc', 'sort-desc')
-                    );
-                    th.classList.add(sortAsc ? 'sort-asc' : 'sort-desc');
+                    // For each column, map events to startIndex/endIndex in sortedTicks
+                    function toIdx(mins) { return sortedTicks.findIndex(x => x === mins); }
 
-                    const sortedNew = [...allData].sort((a, b) => {
-                        const aVal = (a[key] || '').toLowerCase();
-                        const bVal = (b[key] || '').toLowerCase();
-                        return sortAsc ? aVal.localeCompare(bVal) : bVal.localeCompare(aVal);
-                    });
+                    const placed = new Map();
+                    for (const [col, arr] of byCol.entries()) {
+                        const mapped = [];
+                        for (const ev of arr) {
+                            const s = parseTime(ev.startTime || ev.time?.split('-')[0]);
+                            const e = parseTime(ev.endTime || ev.time?.split('-')[1]);
+                            if (!s || !e) continue;
+                            const si = toIdx(s.minutes);
+                            const ei = toIdx(e.minutes);
+                            if (si === -1 || ei === -1 || ei <= si) continue;
+                            mapped.push({ ev, si, ei });
+                        }
+                        // sort by start then end
+                        mapped.sort((a, b) => a.si - b.si || a.ei - b.ei);
+                        placed.set(col, mapped);
+                    }
 
-                    renderTable(sortedNew);
-                });
-            });
+                    // Build table DOM
+                    const card = document.createElement('div');
+                    card.className = 'day-card';
+                    card.innerHTML = `<div class="day-title">${DAY_LABELS[dayKey] || dayKey}</div>`;
+
+                    const table = document.createElement('table');
+                    const thead = document.createElement('thead');
+                    const trh = document.createElement('tr');
+                    for (const head of cols) {
+                        const th = document.createElement('th');
+                        th.textContent = head;
+                        trh.appendChild(th);
+                    }
+                    thead.appendChild(trh);
+                    table.appendChild(thead);
+
+                    const tbody = document.createElement('tbody');
+
+                    // Track occupied rows per column to place rowSpans
+                    const occupancy = new Map(colNames.map(n => [n, Array(sortedTicks.length - 1).fill(false)]));
+
+                    for (let r = 0; r < sortedTicks.length - 1; r++) {
+                        const row = document.createElement('tr');
+
+                        // Time label for this interval
+                        const tcell = document.createElement('th');
+                        tcell.className = 'timecell';
+                        tcell.textContent = `${fmtTime(sortedTicks[r])} - ${fmtTime(sortedTicks[r + 1])}`;
+                        row.appendChild(tcell);
+
+                        for (const col of colNames) {
+                            // If an existing spanning cell covers this row, skip creating a td
+                            if (occupancy.get(col)[r]) continue;
+
+                            // Find an event that starts at r in this column
+                            const evSpan = (placed.get(col) || []).find(x => x.si === r);
+                            const td = document.createElement('td');
+
+                            if (evSpan) {
+                                const span = evSpan.ei - evSpan.si;
+                                // Mark occupied rows for this column
+                                for (let k = r; k < evSpan.ei; k++) occupancy.get(col)[k] = true;
+
+                                const { hex, rgbaBg, border } = computeColorFromLabels(evSpan.ev);
+                                const box = document.createElement('div');
+                                box.className = 'slot';
+                                box.style.background = rgbaBg;
+                                box.style.borderColor = border;
+
+                                const title = document.createElement('h4');
+                                const tlink = document.createElement('a');
+                                tlink.href = evSpan.ev.url || '#';
+                                tlink.target = '_blank';
+                                tlink.rel = 'noopener noreferrer';
+                                tlink.textContent = evSpan.ev.title || 'Untitled';
+                                title.appendChild(tlink);
+                                box.appendChild(title);
+
+                                const meta = document.createElement('div');
+                                meta.className = 'meta';
+                                const assignees = (evSpan.ev.assignees || '')
+                                    .split(',')
+                                    .map(s => s.trim())
+                                    .filter(Boolean)
+                                    .map(u => `<a href="https://github.com/${u}" target="_blank" rel="noopener noreferrer">@${u}</a>`)
+                                    .join(' ');
+                                meta.innerHTML = `${assignees}`;
+                                box.appendChild(meta);
+
+                                // Badges for labels minus Accepted/confirmed
+                                const cleanLabels = (evSpan.ev.labels || [])
+                                    .filter(l => l && l.name && !ACCEPTED_LABELS.has(l.name.toLowerCase()));
+                                if (cleanLabels.length) {
+                                    const badges = document.createElement('div');
+                                    badges.className = 'badges';
+                                    cleanLabels.forEach(l => {
+                                        const b = document.createElement('span');
+                                        b.className = 'badge';
+                                        b.textContent = l.name;
+                                        badges.appendChild(b);
+                                    });
+                                    box.appendChild(badges);
+                                }
+
+                                td.appendChild(box);
+                                td.setAttribute('rowspan', String(span));
+                                row.appendChild(td);
+                            } else {
+                                // empty cell
+                                row.appendChild(td);
+                            }
+                        }
+
+                        tbody.appendChild(row);
+                    }
+
+                    table.appendChild(tbody);
+                    card.appendChild(table);
+                    daysEl.appendChild(card);
+                }
+
+                if (!daysEl.children.length) {
+                    daysEl.innerHTML = '<div class="day-card"><div class="day-title">No matching sessions</div></div>';
+                }
+            }
+
+            daySel.addEventListener('change', render);
+            typeSel.addEventListener('change', render);
+            render();
+        }
+
+        load().catch(err => {
+            document.getElementById('days').innerHTML = `<div class="day-card"><div class="day-title">Error loading schedule</div><div style="padding:12px;color:#f99;">${String(err)}</div></div>`;
+            console.error(err);
         });
     </script>
-
-    <div style="margin-top: 30px; text-align: center;">
-        <a href="https://tabconf.com" style="color: #00d4ff; font-weight: bold;">← Back to TABConf.com</a>
-    </div>
 </body>
 
 </html>
