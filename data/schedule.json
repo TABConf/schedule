@@ -1681,5 +1681,30 @@
     ],
     "summary": "### Description\nTBA\n\n### Format\nThis is a Socratic Panel, which means the event will be a two-way dialogue. It is expected for both panel participants and membe",
     "url": "https://github.com/TABConf/7.tabconf.com/issues/104"
+  },
+  {
+    "title": "Ponce City After Party Roof Top - Must wear conference wristband for entry!",
+    "day": "Day 3",
+    "time": "7:00 PM - 11:00 PM",
+    "startTime": "7:00 PM",
+    "endTime": "10:00 PM",
+    "village": "Off Site",
+    "assignees": "miketwenty1",
+    "labels": [
+      {
+        "name": "Accepted",
+        "color": "#0E8A16"
+      },
+      {
+        "name": "Satellite Event",
+        "color": "#FBCA04"
+      },
+      {
+        "name": "confirmed",
+        "color": "#bb1efb"
+      }
+    ],
+    "summary": "# Description\n### Event Description\n### Date and time\n### Location\n### Anything people should know before coming?\n### Relevant Links\n",
+    "url": "https://github.com/TABConf/7.tabconf.com/issues/112"
   }
 ]
