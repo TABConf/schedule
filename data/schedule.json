@@ -550,7 +550,7 @@
   {
     "title": "Warnet 2025: Lightning Crashes ⚡️🔥",
     "day": "Day 2",
-    "time": "4:00 PM - 6:00 PM",
+    "time": "4:00 PM - 7:00 PM",
     "startTime": "4:00 PM",
     "endTime": "7:00 PM",
     "village": "Workshop Room 2",
@@ -700,7 +700,7 @@
     "startTime": "10:30 AM",
     "endTime": "12:00 PM",
     "village": "BitDevs Socratic Village",
-    "assignees": "btsea",
+    "assignees": "davidgumberg, murchandamus, btsea",
     "labels": [
       {
         "name": "Accepted",
@@ -733,7 +733,7 @@
     "startTime": "10:30 AM",
     "endTime": "12:00 PM",
     "village": "BitDevs Socratic Village",
-    "assignees": "btsea",
+    "assignees": "Beige-Coffee, tankyleo",
     "labels": [
       {
         "name": "Accepted",
@@ -1348,7 +1348,7 @@
     "startTime": "3:30 PM",
     "endTime": "5:00 PM",
     "village": "BitDevs Socratic Village",
-    "assignees": "sbddesign, btsea, mouxdesign",
+    "assignees": "sbddesign, mouxdesign",
     "labels": [
       {
         "name": "Accepted",
@@ -1610,7 +1610,7 @@
     "startTime": "1:30 PM",
     "endTime": "2:30 PM",
     "village": "BitDevs Socratic Village",
-    "assignees": "btsea",
+    "assignees": "pinheadmz, murchandamus, btsea",
     "labels": [
       {
         "name": "Accepted",
@@ -1664,7 +1664,7 @@
     "startTime": "5:00 PM",
     "endTime": "6:00 PM",
     "village": "BitDevs Socratic Village",
-    "assignees": "btsea",
+    "assignees": "lclhostresearch",
     "labels": [
       {
         "name": "Accepted",
