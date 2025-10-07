@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=yes" />
     <title>TABConf Schedule</title>
     <style>
         :root {
@@ -164,40 +164,7 @@
             text-decoration: underline;
         }
 
-        @media (max-width: 800px) {
-            thead {
-                display: none;
-            }
-
-            table,
-            tbody,
-            tr,
-            td,
-            th {
-                display: block;
-                width: 100%;
-            }
-
-            tbody th.timecell {
-                width: auto;
-            }
-
-            tbody tr {
-                border-bottom: 1px solid var(--border);
-                padding: 8px 0;
-            }
-
-            tbody td {
-                padding: 6px 0;
-            }
-
-            .col-label {
-                display: block;
-                font-size: 11px;
-                color: var(--muted);
-                margin-bottom: 4px;
-            }
-        }
+        /* Important: no mobile stacking styles so the desktop table remains on phones and users can pinch-zoom */
     </style>
 </head>
 
@@ -230,9 +197,10 @@
                         <option>Events</option>
                     </select>
 
-                    <div class="legend">Select filters to refine. Days without matches are hidden. <a
-                            href="https://github.com/orgs/TABConf/projects/9" target="_blank"
-                            rel="noopener noreferrer">See the project schedule on Github</a>.</div>
+                    <div class="legend">Select filters to refine. Days without matches are hidden.
+                        <a href="https://github.com/orgs/TABConf/projects/9" target="_blank"
+                            rel="noopener noreferrer">See the project schedule on Github</a>.
+                    </div>
                 </div>
             </div>
         </header>
