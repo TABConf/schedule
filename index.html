@@ -6,6 +6,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=yes" />
     <title>TABConf Schedule</title>
     <style>
+        @media (max-width: 420px) {
+            tbody th.timecell {
+                width: 68px;
+                /* tweak as needed */
+                white-space: normal;
+                line-height: 1.2;
+                font-size: 12px;
+                text-align: right;
+                /* optional: keeps times tidy */
+            }
+        }
+
         :root {
             --bg: #0f1115;
             --card: #171a21;
@@ -419,8 +431,10 @@
                         // Time label for this interval
                         const tcell = document.createElement('th');
                         tcell.className = 'timecell';
-                        tcell.textContent = `${fmtTime(sortedTicks[r])} - ${fmtTime(sortedTicks[r + 1])}`;
-                        row.appendChild(tcell);
+                        const compact = matchMedia('(max-width: 420px)').matches;
+                        tcell.innerHTML = compact
+                            ? `${fmtTime(sortedTicks[r])}<br>${fmtTime(sortedTicks[r + 1])}`
+                            : `${fmtTime(sortedTicks[r])} - ${fmtTime(sortedTicks[r + 1])}`; row.appendChild(tcell);
 
                         for (const col of colNames) {
                             // If an existing spanning cell covers this row, skip creating a td
