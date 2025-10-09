@@ -447,9 +447,8 @@
                             if (occupancy.get(col)[r]) continue;
 
                             const td = document.createElement('td');
-                            cell.style.display = 'flex';
-                            cell.style.flexDirection = 'column';
-                            cell.style.height = '100%';
+                            td.style.display = 'flex';
+                            td.style.flexDirection = 'column';
 
                             const group = (groupsByCol.get(col) || []).find(g => g.si === r && !g.used);
                             if (group) {
@@ -510,7 +509,6 @@
                                 group.used = true;
                             }
 
-                            td.appendChild(cell);
                             row.appendChild(td);
                         }
 
