@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=yes" />
-    <title>TABConf Schedule</title>
+    <title>TABConf Schedule (Simple)</title>
     <style>
         :root {
             --bg: #0f1115;
@@ -122,11 +122,12 @@
             white-space: nowrap;
         }
 
-        tbody td {
-            position: static;
+        /* keep <td> as table cells; stack cards inside with a simple wrapper */
+        .stack {
             display: flex;
             flex-direction: column;
             gap: 8px;
+            height: 100%;
         }
 
         .slot {
@@ -140,6 +141,11 @@
             overflow: hidden;
         }
 
+        .slot.single {
+            height: 100%;
+        }
+
+        /* single item fills the whole rowspan cell */
         .slot h4 {
             margin: 0 0 6px 0;
             font-size: 14px;
@@ -218,7 +224,7 @@
                     </select>
 
                     <div class="legend">
-                        Select filters to refine. Days without matches are hidden.
+                        Everything is rendered generically from start/end times.
                         <a href="https://github.com/orgs/TABConf/projects/9" target="_blank"
                             rel="noopener noreferrer">See the project schedule on Github</a>.
                     </div>
@@ -230,6 +236,7 @@
     </div>
 
     <script>
+        /* === Simple constants === */
         const DAY_LABELS = {
             'D0 - Oct 12': 'Day 0 - October 12',
             'D1 - Oct 13': 'Day 1 - October 13',
@@ -237,82 +244,74 @@
             'D3 - Oct 15': 'Day 3 - October 15',
             'D4 - Oct 16': 'Day 4 - October 16'
         };
-
+        const DAY_ORDER = ['D0 - Oct 12', 'D1 - Oct 13', 'D2 - Oct 14', 'D3 - Oct 15', 'D4 - Oct 16'];
         const DAY_COLUMNS = {
-            'D0 - Oct 12': ['Time', 'General'], // Day 0 single column
+            'D0 - Oct 12': ['Time', 'General'], // keep D0 one lane (still generic)
             'D1 - Oct 13': ['Time', 'Workshop Room 1', 'Workshop Room 2', 'General'],
             'D2 - Oct 14': ['Time', 'Workshop Room 1', 'Workshop Room 2', 'General'],
             'D3 - Oct 15': ['Time', 'Socratic Bitdevs', 'Main Stage', 'General'],
             'D4 - Oct 16': ['Time', 'Socratic Bitdevs', 'Main Stage', 'General']
         };
-
-        const DAY_KEYS_IN_ORDER = ['D0 - Oct 12', 'D1 - Oct 13', 'D2 - Oct 14', 'D3 - Oct 15', 'D4 - Oct 16'];
         const ACCEPTED_LABELS = new Set(['accepted', 'confirmed']);
-        const norm = s => String(s || '').trim().toLowerCase();
+        const norm = (s) => String(s || '').trim().toLowerCase();
 
+        /* === Tiny color util based on labels === */
         function hashColor(str) { let h = 5381; for (let i = 0; i < str.length; i++)h = ((h << 5) + h) + str.charCodeAt(i); const hex = (h >>> 0).toString(16).padStart(8, '0'); return `#${hex.slice(-6)}`; }
         function hexToRgb(hex) { const v = hex.replace('#', ''); return { r: parseInt(v.slice(0, 2), 16), g: parseInt(v.slice(2, 4), 16), b: parseInt(v.slice(4, 6), 16) }; }
-        function computeColorFromLabels(ev) {
-            const names = (ev.labels || []).map(l => l && l.name ? l.name : '').filter(Boolean).map(x => x.trim()).filter(x => !ACCEPTED_LABELS.has(x.toLowerCase())).sort((a, b) => a.localeCompare(b));
-            const key = names.join('|') || 'default'; const hex = hashColor(key); const { r, g, b } = hexToRgb(hex);
-            return { rgbaBg: `rgba(${r}, ${g}, ${b}, 0.18)`, border: `rgba(${r}, ${g}, ${b}, 0.45)` };
-        }
+        function colorFromLabels(ev) { const names = (ev.labels || []).map(l => l?.name || '').filter(Boolean).map(s => s.trim()).filter(n => !ACCEPTED_LABELS.has(n.toLowerCase())).sort(); const key = names.join('|') || 'default'; const hex = hashColor(key); const { r, g, b } = hexToRgb(hex); return { bg: `rgba(${r}, ${g}, ${b}, 0.18)`, br: `rgba(${r}, ${g}, ${b}, 0.45)` }; }
 
-        // ONLY startTime / endTime are used
+        /* === Parse ONLY startTime / endTime === */
         function parseTime(t) {
             if (!t) return null;
-            const s = String(t).trim().toUpperCase().replace(/\s/g, ''); // allow "11:30 AM" or "11:30AM"
-            const m = s.match(/^(\d{1,2})(?::(\d{2}))?(AM|PM)$/); // require AM/PM for clarity
+            const s = String(t).trim().toUpperCase().replace(/\s+/g, ''); // allow "11:30AM" & "11:30 AM"
+            const m = s.match(/^(\d{1,2})(?::(\d{2}))?(AM|PM)$/);
             if (!m) return null;
-            let hour = parseInt(m[1], 10); let min = m[2] ? parseInt(m[2], 10) : 0; const ap = m[3];
-            if (ap === 'PM' && hour < 12) hour += 12; if (ap === 'AM' && hour === 12) hour = 0;
-            return { h: hour, m: min, minutes: hour * 60 + min };
+            let h = parseInt(m[1], 10); const min = m[2] ? parseInt(m[2], 10) : 0; const ap = m[3];
+            if (ap === 'PM' && h < 12) h += 12; if (ap === 'AM' && h === 12) h = 0;
+            return { minutes: h * 60 + min };
         }
-        function fmtTime(mins) { const h24 = Math.floor(mins / 60); const m = mins % 60; const ampm = h24 >= 12 ? 'PM' : 'AM'; let h = h24 % 12; if (h === 0) h = 12; return `${h}:${String(m).padStart(2, '0')} ${ampm}`; }
+        function fmtTime(mins) { const h24 = Math.floor(mins / 60), m = mins % 60, ap = h24 >= 12 ? 'PM' : 'AM'; let h = h24 % 12; if (h === 0) h = 12; return `${h}:${String(m).padStart(2, '0')} ${ap}`; }
 
-        function normalizeSingleDayKey(dayValue) {
-            const s = norm(dayValue);
-            if (s.startsWith('day 0')) return 'D0 - Oct 12';
-            if (s.startsWith('day 1')) return 'D1 - Oct 13';
-            if (s.startsWith('day 2')) return 'D2 - Oct 14';
-            if (s.startsWith('day 3')) return 'D3 - Oct 15';
-            if (s.startsWith('day 4')) return 'D4 - Oct 16';
+        /* === Days expansion (generic) === */
+        function dayKeyFromNum(n) {
+            if (n === 0) return 'D0 - Oct 12';
+            if (n === 1) return 'D1 - Oct 13';
+            if (n === 2) return 'D2 - Oct 14';
+            if (n === 3) return 'D3 - Oct 15';
+            if (n === 4) return 'D4 - Oct 16';
             return null;
         }
-
-        // "All Days" -> D1..D4; "Day X & Y" -> [X,Y]; "Day N" -> [N]; else []
-        function expandItemToDays(item) {
-            const s = norm(item.day);
-            if (s === 'all days' || s === 'alldays' || s === 'all') return ['D1 - Oct 13', 'D2 - Oct 14', 'D3 - Oct 15', 'D4 - Oct 16']; // never Day 0
-            const m = s.match(/^day\s*([0-4])\s*(?:&|and)\s*([0-4])$/);
-            if (m) {
-                const a = Math.min(+m[1], +m[2]); const b = Math.max(+m[1], +m[2]);
-                return [normalizeSingleDayKey(`Day ${a}`), normalizeSingleDayKey(`Day ${b}`)].filter(Boolean);
-            }
-            const single = normalizeSingleDayKey(item.day);
-            return single ? [single] : [];
-        }
-        function isMultiOrAllDayItem(item) {
-            const days = expandItemToDays(item);
-            if (days.length > 1) return true;
-            const s = norm(item.day);
-            return (s === 'all days' || s === 'alldays' || s === 'all');
+        function expandDays(dayStr) {
+            const s = norm(dayStr);
+            if (!s) return [];
+            if (s.includes('all')) return ['D1 - Oct 13', 'D2 - Oct 14', 'D3 - Oct 15', 'D4 - Oct 16']; // generic choice
+            const nums = Array.from(s.matchAll(/day\s*([0-4])/g)).map(m => parseInt(m[1], 10));
+            const keys = [...new Set(nums.map(dayKeyFromNum).filter(Boolean))];
+            return keys.length ? keys : [];
         }
 
-        // Robust village -> column mapper; fall back to General
-        function mapToValidColumn(dayKey, village, colNames) {
-            if (dayKey === 'D0 - Oct 12') return 'General'; // Day 0: single column
-            const v = norm(village).replace(/\s+/g, '');
-            let out = 'General';
-            if (dayKey === 'D3 - Oct 15' || dayKey === 'D4 - Oct 16') {
-                if (/main(stage)?/.test(v)) out = 'Main Stage';
-                else if (/(bitdevs|socratic)/.test(v)) out = 'Socratic Bitdevs';
-            } else {
-                if (/(workshop)?room?1|wr1|workshop1/.test(v)) out = 'Workshop Room 1';
-                else if (/(workshop)?room?2|wr2|workshop2/.test(v)) out = 'Workshop Room 2';
+        /* === Simple village→column mapping (generic synonyms) === */
+        function mapToColumn(dayKey, village) {
+            const cols = DAY_COLUMNS[dayKey] || ['Time', 'General'];
+            const colNames = cols.slice(1); // skip Time
+            const v = norm(village);
+            // direct matches by name
+            for (const name of colNames) {
+                if (v.includes(norm(name))) return name;
             }
-            if (!colNames.includes(out)) out = colNames.includes('General') ? 'General' : colNames[0];
-            return out;
+            // friendly synonyms
+            if ((v.includes('bitdev') || v.includes('socratic')) && colNames.includes('Socratic Bitdevs')) return 'Socratic Bitdevs';
+            if ((v.includes('mainstage') || v.includes('main stage')) && colNames.includes('Main Stage')) return 'Main Stage';
+            if ((v.includes('room1') || v.includes('workshop room 1') || v.includes('wr1')) && colNames.includes('Workshop Room 1')) return 'Workshop Room 1';
+            if ((v.includes('room2') || v.includes('workshop room 2') || v.includes('wr2')) && colNames.includes('Workshop Room 2')) return 'Workshop Room 2';
+            return colNames.includes('General') ? 'General' : colNames[0] || 'General';
+        }
+
+        /* === Type filter === */
+        function matchesType(ev, typeVal) {
+            if (typeVal === 'all') return true;
+            const names = (ev.labels || []).map(l => (l?.name || '').toLowerCase());
+            return names.includes(typeVal.toLowerCase());
         }
 
         async function load() {
@@ -323,91 +322,73 @@
             const typeSel = document.getElementById('typeFilter');
             const daysEl = document.getElementById('days');
 
-            function eventMatchesType(ev, typeVal) {
-                if (typeVal === 'all') return true;
-                const names = (ev.labels || []).map(l => (l.name || '').toLowerCase());
-                return names.includes(typeVal.toLowerCase());
-            }
-
             function render() {
                 const dayVal = daySel.value;
                 const typeVal = typeSel.value;
 
-                // Build per-day buckets using expansion rules
-                const byDay = new Map();
-                for (const item of all) {
-                    const dayKeys = expandItemToDays(item);
+                // Expand each item into one or more day buckets (no special casing)
+                const perDay = new Map();
+                for (const ev of all) {
+                    const dayKeys = expandDays(ev.day);
                     if (!dayKeys.length) continue;
+                    // times must parse
+                    const s = parseTime(ev.startTime), e = parseTime(ev.endTime);
+                    if (!s || !e || e.minutes <= s.minutes) continue;
+                    if (!matchesType(ev, typeVal)) continue;
+
                     for (const dk of dayKeys) {
-                        if (!DAY_COLUMNS[dk]) continue;
                         if (dayVal !== 'all' && dk !== dayVal) continue;
-                        if (!eventMatchesType(item, typeVal)) continue;
-                        if (!byDay.has(dk)) byDay.set(dk, []);
-                        byDay.get(dk).push(item);
+                        if (!perDay.has(dk)) perDay.set(dk, []);
+                        perDay.get(dk).push(ev);
                     }
                 }
 
                 daysEl.innerHTML = '';
 
-                for (const dayKey of DAY_KEYS_IN_ORDER) {
-                    const list = byDay.get(dayKey) || [];
-                    if (!list.length) continue;
+                for (const dayKey of DAY_ORDER) {
+                    const items = perDay.get(dayKey) || [];
+                    if (!items.length) continue;
 
                     const cols = DAY_COLUMNS[dayKey];
                     const colNames = cols.slice(1);
 
-                    // Split per your rules
-                    const regularItems = [];
-                    const specialGeneral = [];
-                    for (const ev of list) {
-                        if (isMultiOrAllDayItem(ev)) specialGeneral.push(ev);
-                        else regularItems.push(ev);
+                    // Build time ticks
+                    const tickSet = new Set();
+                    let minT = Infinity, maxT = -Infinity;
+                    for (const ev of items) {
+                        const s = parseTime(ev.startTime).minutes, e = parseTime(ev.endTime).minutes;
+                        tickSet.add(s); tickSet.add(e);
+                        if (s < minT) minT = s; if (e > maxT) maxT = e;
                     }
+                    const ticks = Array.from(tickSet).sort((a, b) => a - b);
+                    if (ticks.length < 2) continue;
+                    const idxOf = (m) => ticks.indexOf(m);
 
-                    // Build time ticks strictly from startTime/endTime
-                    const times = new Set();
-                    let minStart = Infinity, maxEnd = -Infinity;
-                    const addBoundsFrom = (ev) => {
-                        const s = parseTime(ev.startTime);
-                        const e = parseTime(ev.endTime);
-                        if (s) { times.add(s.minutes); minStart = Math.min(minStart, s.minutes); }
-                        if (e) { times.add(e.minutes); maxEnd = Math.max(maxEnd, e.minutes); }
-                    };
-                    for (const ev of regularItems) addBoundsFrom(ev);
-                    for (const ev of specialGeneral) addBoundsFrom(ev);
-
-                    // If nothing had valid times, skip this day
-                    if (!isFinite(minStart) || !isFinite(maxEnd)) continue;
-
-                    const sortedTicks = Array.from(times).sort((a, b) => a - b);
-                    const toIdx = (mins) => sortedTicks.findIndex(x => x === mins);
-
-                    // Bucket regulars into columns
+                    // bucket items by column
                     const byCol = new Map(colNames.map(n => [n, []]));
-                    for (const ev of regularItems) {
-                        const target = mapToValidColumn(dayKey, ev.village, colNames);
-                        byCol.get(target).push(ev);
+                    for (const ev of items) {
+                        const col = mapToColumn(dayKey, ev.village);
+                        if (!byCol.has(col)) byCol.set(col, []);
+                        byCol.get(col).push(ev);
                     }
 
-                    // Build groups (identical span) per column
+                    // groups per column by identical span
                     const groupsByCol = new Map();
                     for (const [col, arr] of byCol.entries()) {
                         const gmap = new Map();
                         for (const ev of arr) {
-                            const s = parseTime(ev.startTime);
-                            const e = parseTime(ev.endTime);
-                            if (!s || !e) continue;
-                            const si = toIdx(s.minutes), ei = toIdx(e.minutes);
-                            if (si === -1 || ei === -1 || ei <= si) continue;
-                            const key = `${si}-${ei}`;
-                            if (!gmap.has(key)) gmap.set(key, { si, ei, items: [] });
+                            const s = idxOf(parseTime(ev.startTime).minutes);
+                            const e = idxOf(parseTime(ev.endTime).minutes);
+                            if (s === -1 || e === -1 || e <= s) continue;
+                            const key = `${s}-${e}`;
+                            if (!gmap.has(key)) gmap.set(key, { si: s, ei: e, items: [] });
                             gmap.get(key).items.push(ev);
                         }
                         const groups = Array.from(gmap.values()).sort((a, b) => a.si - b.si || a.ei - b.ei);
                         groupsByCol.set(col, groups);
                     }
 
-                    // Table DOM
+                    // Build table
                     const card = document.createElement('div');
                     card.className = 'day-card';
                     card.innerHTML = `<div class="day-title">${DAY_LABELS[dayKey] || dayKey}</div>`;
@@ -419,159 +400,76 @@
                     thead.appendChild(trh); table.appendChild(thead);
                     const tbody = document.createElement('tbody');
 
-                    // Track occupancy for rowspans
-                    const occupancy = new Map(colNames.map(n => [n, Array(sortedTicks.length - 1).fill(false)]));
+                    // occupancy grid: for each column, mark rows covered by a rowspan
+                    const occ = new Map(colNames.map(n => [n, Array(ticks.length - 1).fill(false)]));
 
-                    for (let r = 0; r < sortedTicks.length - 1; r++) {
-                        const row = document.createElement('tr');
+                    for (let r = 0; r < ticks.length - 1; r++) {
+                        const tr = document.createElement('tr');
 
-                        const tcell = document.createElement('th');
-                        tcell.className = 'timecell';
+                        const th = document.createElement('th');
+                        th.className = 'timecell';
                         const compact = matchMedia('(max-width: 640px)').matches;
-                        tcell.innerHTML = compact ? `${fmtTime(sortedTicks[r])}<br>${fmtTime(sortedTicks[r + 1])}` : `${fmtTime(sortedTicks[r])} - ${fmtTime(sortedTicks[r + 1])}`;
-                        row.appendChild(tcell);
+                        th.innerHTML = compact ? `${fmtTime(ticks[r])}<br>${fmtTime(ticks[r + 1])}` : `${fmtTime(ticks[r])} - ${fmtTime(ticks[r + 1])}`;
+                        tr.appendChild(th);
 
                         for (const col of colNames) {
-                            if (occupancy.get(col)[r]) continue; // covered by a rowspan
+                            if (occ.get(col)[r]) continue; // covered by rowspan from earlier row
 
                             const td = document.createElement('td');
+                            const stack = document.createElement('div');
+                            stack.className = 'stack';
 
-                            // regular group starting here?
+                            // group that starts exactly at this row?
                             const group = (groupsByCol.get(col) || []).find(g => g.si === r && !g.used);
                             if (group) {
                                 const span = group.ei - group.si;
-                                for (let k = r; k < group.ei; k++) occupancy.get(col)[k] = true;
+                                for (let k = r; k < group.ei; k++) occ.get(col)[k] = true;
 
-                                const isSingle = group.items.length === 1;
+                                const single = group.items.length === 1;
                                 for (const ev of group.items) {
-                                    const { rgbaBg, border } = computeColorFromLabels(ev);
+                                    const { bg, br } = colorFromLabels(ev);
                                     const box = document.createElement('div');
-                                    box.className = 'slot';
-                                    box.style.background = rgbaBg;
-                                    box.style.borderColor = border;
+                                    box.className = 'slot' + (single ? ' single' : '');
+                                    box.style.background = bg;
+                                    box.style.borderColor = br;
                                     box.style.borderStyle = 'solid';
-                                    box.style.marginBottom = '8px';
-                                    if (isSingle) box.style.flex = '1';
 
-                                    const title = document.createElement('h4');
-                                    const tlink = document.createElement('a');
-                                    tlink.href = ev.url || '#'; tlink.target = '_blank'; tlink.rel = 'noopener noreferrer';
-                                    tlink.textContent = ev.title || 'Untitled';
-                                    title.appendChild(tlink); box.appendChild(title);
+                                    const h = document.createElement('h4');
+                                    const a = document.createElement('a');
+                                    a.href = ev.url || '#'; a.target = '_blank'; a.rel = 'noopener noreferrer';
+                                    a.textContent = ev.title || 'Untitled';
+                                    h.appendChild(a); box.appendChild(h);
 
                                     const meta = document.createElement('div');
                                     meta.className = 'meta';
-                                    const assignees = (ev.assignees || '')
-                                        .split(',').map(s => s.trim()).filter(Boolean)
-                                        .map(u => `<a href="https://github.com/${u}" target="_blank" rel="noopener noreferrer">@${u}</a>`)
-                                        .join(' ');
-                                    meta.innerHTML = assignees;
-                                    box.appendChild(meta);
+                                    const assignees = (ev.assignees || '').split(',').map(s => s.trim()).filter(Boolean)
+                                        .map(u => `<a href="https://github.com/${u}" target="_blank" rel="noopener noreferrer">@${u}</a>`).join(' ');
+                                    meta.innerHTML = assignees; box.appendChild(meta);
 
-                                    const cleanLabels = (ev.labels || []).filter(l => l && l.name && !ACCEPTED_LABELS.has(l.name.toLowerCase()));
-                                    if (cleanLabels.length) {
+                                    const clean = (ev.labels || []).filter(l => l?.name && !ACCEPTED_LABELS.has(l.name.toLowerCase()));
+                                    if (clean.length) {
                                         const badges = document.createElement('div'); badges.className = 'badges';
-                                        cleanLabels.forEach(l => { const b = document.createElement('span'); b.className = 'badge'; b.textContent = l.name; badges.appendChild(b); });
+                                        clean.forEach(l => { const b = document.createElement('span'); b.className = 'badge'; b.textContent = l.name; badges.appendChild(b); });
                                         box.appendChild(badges);
                                     }
 
-                                    td.appendChild(box);
+                                    stack.appendChild(box);
                                 }
-                                if (td.lastElementChild) td.lastElementChild.style.marginBottom = '0';
+
                                 td.setAttribute('rowspan', String(span));
                                 group.used = true;
                             }
 
-                            row.appendChild(td);
+                            td.appendChild(stack);
+                            tr.appendChild(td);
                         }
 
-                        tbody.appendChild(row);
-                    }
-
-                    // SPECIAL: place multi/all-day items into General with “next available” stacking
-                    if (colNames.includes('General') && specialGeneral.length) {
-                        const generalGroups = [];
-                        for (const ev of specialGeneral) {
-                            const s = parseTime(ev.startTime);
-                            const e = parseTime(ev.endTime);
-                            if (!s || !e) continue;
-                            const si = toIdx(s.minutes), ei = toIdx(e.minutes);
-                            if (si === -1 || ei === -1 || ei <= si) continue;
-
-                            // find the earliest row >= si that is unoccupied in General
-                            const genOcc = occupancy.get('General');
-                            let placeStart = si;
-                            while (placeStart < ei && genOcc[placeStart]) placeStart++; // shift down if blocked
-                            if (placeStart >= ei) continue; // no room
-
-                            // mark occupancy from placeStart..ei
-                            for (let k = placeStart; k < ei; k++) genOcc[k] = true;
-                            generalGroups.push({ si: placeStart, ei, items: [ev] });
-                        }
-
-                        // Inject these into the DOM (walk rows and append cells with rowspan)
-                        for (const g of generalGroups) {
-                            const span = g.ei - g.si;
-                            // find tbody row at index g.si (skip header row)
-                            const row = tbody.children[g.si];
-                            if (!row) continue;
-
-                            // find the insertion point (after time cell, find correct td slot for General)
-                            const idxOfGeneral = DAY_COLUMNS[dayKey].indexOf('General'); // header index
-                            if (idxOfGeneral === -1) continue;
-
-                            // Count how many cells already exist before “General” in this row (time header + earlier cols minus any skipped due to rowspans)
-                            let insertBefore = null;
-                            let seen = 0;
-                            for (const node of row.children) {
-                                // th(time) counts as first header column
-                                if (node.tagName === 'TH') { seen++; continue; }
-                                // td corresponds to next visible column slot
-                                seen++;
-                                if (seen === idxOfGeneral + 1) { insertBefore = node; break; }
-                            }
-
-                            const td = document.createElement('td');
-                            td.style.display = 'flex'; td.style.flexDirection = 'column';
-
-                            const ev = g.items[0];
-                            const { rgbaBg, border } = computeColorFromLabels(ev);
-                            const box = document.createElement('div');
-                            box.className = 'slot';
-                            box.style.background = rgbaBg; box.style.borderColor = border; box.style.borderStyle = 'solid';
-                            box.style.flex = '1';
-
-                            const title = document.createElement('h4');
-                            const tlink = document.createElement('a');
-                            tlink.href = ev.url || '#'; tlink.target = '_blank'; tlink.rel = 'noopener noreferrer';
-                            tlink.textContent = ev.title || 'Untitled';
-                            title.appendChild(tlink); box.appendChild(title);
-
-                            const meta = document.createElement('div'); meta.className = 'meta';
-                            const assignees = (ev.assignees || '')
-                                .split(',').map(s => s.trim()).filter(Boolean)
-                                .map(u => `<a href="https://github.com/${u}" target="_blank" rel="noopener noreferrer">@${u}</a>`)
-                                .join(' ');
-                            meta.innerHTML = assignees; box.appendChild(meta);
-
-                            const cleanLabels = (ev.labels || []).filter(l => l && l.name && !ACCEPTED_LABELS.has(l.name.toLowerCase()));
-                            if (cleanLabels.length) {
-                                const badges = document.createElement('div'); badges.className = 'badges';
-                                cleanLabels.forEach(l => { const b = document.createElement('span'); b.className = 'badge'; b.textContent = l.name; badges.appendChild(b); });
-                                box.appendChild(badges);
-                            }
-
-                            td.appendChild(box);
-                            td.setAttribute('rowspan', String(span));
-
-                            if (insertBefore) row.insertBefore(td, insertBefore);
-                            else row.appendChild(td);
-                        }
+                        tbody.appendChild(tr);
                     }
 
                     table.appendChild(tbody);
                     card.appendChild(table);
-                    daysEl.appendChild(card);
+                    document.getElementById('days').appendChild(card);
                 }
 
                 if (!daysEl.children.length) {
@@ -579,8 +477,8 @@
                 }
             }
 
-            daySel.addEventListener('change', render);
-            typeSel.addEventListener('change', render);
+            document.getElementById('dayFilter').addEventListener('change', render);
+            document.getElementById('typeFilter').addEventListener('change', render);
             render();
         }
 
