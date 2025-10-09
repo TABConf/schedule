@@ -115,6 +115,11 @@
             word-wrap: break-word;
         }
 
+        tbody td {
+            display: flex;
+            flex-direction: column;
+        }
+
         tbody th.timecell {
             color: var(--muted);
             width: 90px;
@@ -139,13 +144,6 @@
             display: flex;
             flex-direction: column;
             overflow: hidden;
-        }
-
-        .stack {
-            display: flex;
-            flex-direction: column;
-            gap: 8px;
-            height: 100%;
         }
 
         .slot.single {
@@ -423,6 +421,10 @@
                             if (occ.get(col)[r]) continue; // covered by rowspan from earlier row
 
                             const td = document.createElement('td');
+                            // ensure every td is a flex column (rowspan height becomes the flex container height)
+                            td.style.display = 'flex';
+                            td.style.flexDirection = 'column';
+
                             const stack = document.createElement('div');
                             stack.className = 'stack';
 
