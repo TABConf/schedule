@@ -189,6 +189,7 @@
                     <label for="dayFilter">Day:</label>
                     <select id="dayFilter">
                         <option value="all">All days</option>
+                        <option value="D0 - Oct 12">D0 - Oct 12</option>
                         <option value="D1 - Oct 13">D1 - Oct 13</option>
                         <option value="D2 - Oct 14">D2 - Oct 14</option>
                         <option value="D3 - Oct 15">D3 - Oct 15</option>
@@ -222,6 +223,7 @@
 
     <script>
         const DAY_LABELS = {
+            'D0 - Oct 12': 'Day 0 - October 12',
             'D1 - Oct 13': 'Day 1 - October 13',
             'D2 - Oct 14': 'Day 2 - October 14',
             'D3 - Oct 15': 'Day 3 - October 15',
@@ -229,6 +231,7 @@
         };
 
         const DAY_COLUMNS = {
+            'D0 - Oct 12': ['Time', 'General'],
             'D1 - Oct 13': ['Time', 'Workshop Room 1', 'Workshop Room 2', 'General'],
             'D2 - Oct 14': ['Time', 'Workshop Room 1', 'Workshop Room 2', 'General'],
             'D3 - Oct 15': ['Time', 'Socratic Bitdevs', 'Main Stage', 'General'],
@@ -293,6 +296,7 @@
         function normalizeDayKey(dayValue) {
             if (!dayValue) return null;
             const s = String(dayValue).toLowerCase();
+            if (s.startsWith('d0')) return 'D0 - Oct 12';
             if (s.startsWith('d1')) return 'D1 - Oct 13';
             if (s.startsWith('d2')) return 'D2 - Oct 14';
             if (s.startsWith('d3')) return 'D3 - Oct 15';
@@ -441,6 +445,8 @@
                             if (occupancy.get(col)[r]) continue;
 
                             const td = document.createElement('td');
+                            td.style.display = 'flex';
+                            td.style.flexDirection = 'column';
 
                             // Find a group that starts at this row
                             const group = (groupsByCol.get(col) || []).find(g => g.si === r && !g.used);
@@ -449,6 +455,8 @@
                                 for (let k = r; k < group.ei; k++) occupancy.get(col)[k] = true;
 
                                 // Render all events in this group stacked
+                                const isSingle = group.items.length === 1;
+
                                 for (const ev of group.items) {
                                     const { rgbaBg, border } = computeColorFromLabels(ev);
                                     const box = document.createElement('div');
@@ -456,6 +464,11 @@
                                     box.style.background = rgbaBg;
                                     box.style.borderColor = border;
                                     box.style.marginBottom = '8px';
+
+                                    if (isSingle) {
+                                        box.style.flex = '1 1 auto';
+                                        box.style.minHeight = '100%';
+                                    }
 
                                     const title = document.createElement('h4');
                                     const tlink = document.createElement('a');
