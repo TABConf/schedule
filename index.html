@@ -122,22 +122,25 @@
             white-space: nowrap;
         }
 
+        /* ensure default positioning so content can size rows naturally */
         tbody td {
-            position: relative;
-            /* enable slot full fill */
+            position: static;
         }
 
+        /* cards */
         .slot {
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
             border: 1px solid transparent;
             border-radius: 10px;
             padding: 8px;
             backdrop-filter: saturate(120%);
             box-sizing: border-box;
+
+            display: flex;
+            flex-direction: column;
+            height: auto;
+            /* will be set to 100% by JS only for single-item groups */
+            overflow: hidden;
+            /* contain long content */
         }
 
         .slot h4 {
@@ -185,8 +188,9 @@
             }
         }
 
-        /* No mobile stacking so desktop layout stays intact */
+        /* keep desktop table on phones for pinch-zoom */
     </style>
+
 
 </head>
 
@@ -464,8 +468,10 @@
                                     box.style.marginBottom = '8px';
 
                                     if (isSingle) {
-                                        box.style.flex = '1 1 auto';
-                                        box.style.minHeight = '100%';
+                                        box.style.height = '100%';  // fill the rowspan cell
+                                    } else {
+                                        // stacked cards - keep natural height and spacing
+                                        box.style.marginBottom = '8px';
                                     }
 
                                     const title = document.createElement('h4');
