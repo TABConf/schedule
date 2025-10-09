@@ -167,16 +167,14 @@
         @media (max-width: 640px) {
             tbody th.timecell {
                 width: 68px;
-                /* tweak as needed */
                 white-space: normal;
                 line-height: 1.2;
                 font-size: 12px;
                 text-align: right;
-                /* optional: keeps times tidy */
             }
         }
 
-        /* Important: no mobile stacking styles so the desktop table remains on phones and users can pinch-zoom */
+        /* No mobile stacking; keep table for pinch-zoom */
     </style>
 </head>
 
@@ -210,7 +208,8 @@
                         <option>Events</option>
                     </select>
 
-                    <div class="legend">Select filters to refine. Days without matches are hidden.
+                    <div class="legend">
+                        Select filters to refine. Days without matches are hidden.
                         <a href="https://github.com/orgs/TABConf/projects/9" target="_blank"
                             rel="noopener noreferrer">See the project schedule on Github</a>.
                     </div>
@@ -238,7 +237,7 @@
             'D4 - Oct 16': ['Time', 'Socratic Bitdevs', 'Main Stage', 'General']
         };
 
-        // Map village to the proper column per your rules
+        // Map village to proper column
         function mapToColumn(dayKey, village) {
             const v = String(village || '').toLowerCase();
             if (dayKey === 'D3 - Oct 15' || dayKey === 'D4 - Oct 16') {
@@ -254,12 +253,11 @@
 
         const ACCEPTED_LABELS = new Set(['accepted', 'confirmed']);
 
-        // Deterministic color from sorted labels string
         function hashColor(str) {
-            let h = 5381; // djb2
+            let h = 5381;
             for (let i = 0; i < str.length; i++) h = ((h << 5) + h) + str.charCodeAt(i);
             const hex = (h >>> 0).toString(16).padStart(8, '0');
-            const rgb = hex.slice(-6); // 24-bit
+            const rgb = hex.slice(-6);
             return `#${rgb}`;
         }
 
@@ -273,7 +271,6 @@
 
         function parseTime(t) {
             if (!t) return null;
-            // Accept formats like "7", "7am", "7:00", "7:00 AM", "07:30", "19:00"
             const s = String(t).trim().toUpperCase();
             const m = s.match(/^(\d{1,2})(?::(\d{2}))?\s*(AM|PM)?$/);
             if (!m) return null;
@@ -301,7 +298,6 @@
             if (s.startsWith('d2')) return 'D2 - Oct 14';
             if (s.startsWith('d3')) return 'D3 - Oct 15';
             if (s.startsWith('d4')) return 'D4 - Oct 16';
-            // Attempt matching full titles
             for (const [k, v] of Object.entries(DAY_LABELS)) {
                 if (s.includes(v.toLowerCase().split(' - ')[0])) return k;
             }
@@ -339,7 +335,6 @@
                 const dayVal = daySel.value;
                 const typeVal = typeSel.value;
 
-                // Filter and bucket by normalized day key
                 const buckets = new Map();
                 for (const item of all) {
                     const dayKey = normalizeDayKey(item.day) || item.day || '';
@@ -350,16 +345,13 @@
                     buckets.get(dayKey).push(item);
                 }
 
-                // Clear
                 daysEl.innerHTML = '';
 
-                // Sort days in the known order
                 const order = Object.keys(DAY_COLUMNS);
                 for (const dayKey of order) {
                     const list = buckets.get(dayKey) || [];
-                    if (list.length === 0) continue; // hide day with no matches
+                    if (list.length === 0) continue;
 
-                    // Compute time grid for this day from Start Time and End Time
                     const times = new Set();
                     let minStart = Infinity, maxEnd = -Infinity;
                     for (const ev of list) {
@@ -375,11 +367,9 @@
 
                     const sortedTicks = Array.from(times).sort((a, b) => a - b);
 
-                    // Build occupancy grid to manage rowSpans per column
                     const cols = DAY_COLUMNS[dayKey];
-                    const colNames = cols.slice(1); // exclude Time header
+                    const colNames = cols.slice(1);
 
-                    // Bucket events per column using village mapping
                     const byCol = new Map(colNames.map(n => [n, []]));
                     for (const ev of list) {
                         const target = mapToColumn(dayKey, ev.village);
@@ -389,7 +379,6 @@
 
                     function toIdx(mins) { return sortedTicks.findIndex(x => x === mins); }
 
-                    // Group events by identical span to stack them within one cell
                     const groupsByCol = new Map();
                     for (const [col, arr] of byCol.entries()) {
                         const gmap = new Map();
@@ -408,7 +397,6 @@
                         groupsByCol.set(col, groups);
                     }
 
-                    // Build table DOM
                     const card = document.createElement('div');
                     card.className = 'day-card';
                     card.innerHTML = `<div class="day-title">${DAY_LABELS[dayKey] || dayKey}</div>`;
@@ -426,35 +414,33 @@
 
                     const tbody = document.createElement('tbody');
 
-                    // Track occupied rows per column to place rowSpans
                     const occupancy = new Map(colNames.map(n => [n, Array(sortedTicks.length - 1).fill(false)]));
 
                     for (let r = 0; r < sortedTicks.length - 1; r++) {
                         const row = document.createElement('tr');
 
-                        // Time label for this interval
                         const tcell = document.createElement('th');
                         tcell.className = 'timecell';
                         const compact = matchMedia('(max-width: 640px)').matches;
                         tcell.innerHTML = compact
                             ? `${fmtTime(sortedTicks[r])}<br>${fmtTime(sortedTicks[r + 1])}`
-                            : `${fmtTime(sortedTicks[r])} - ${fmtTime(sortedTicks[r + 1])}`; row.appendChild(tcell);
+                            : `${fmtTime(sortedTicks[r])} - ${fmtTime(sortedTicks[r + 1])}`;
+                        row.appendChild(tcell);
 
                         for (const col of colNames) {
-                            // If an existing spanning cell covers this row, skip creating a td
                             if (occupancy.get(col)[r]) continue;
 
                             const td = document.createElement('td');
-                            td.style.display = 'flex';
-                            td.style.flexDirection = 'column';
+                            const cell = document.createElement('div');
+                            cell.style.display = 'flex';
+                            cell.style.flexDirection = 'column';
+                            cell.style.height = '100%';
 
-                            // Find a group that starts at this row
                             const group = (groupsByCol.get(col) || []).find(g => g.si === r && !g.used);
                             if (group) {
                                 const span = group.ei - group.si;
                                 for (let k = r; k < group.ei; k++) occupancy.get(col)[k] = true;
 
-                                // Render all events in this group stacked
                                 const isSingle = group.items.length === 1;
 
                                 for (const ev of group.items) {
@@ -482,12 +468,10 @@
                                     const meta = document.createElement('div');
                                     meta.className = 'meta';
                                     const assignees = (ev.assignees || '')
-                                        .split(',')
-                                        .map(s => s.trim())
-                                        .filter(Boolean)
+                                        .split(',').map(s => s.trim()).filter(Boolean)
                                         .map(u => `<a href="https://github.com/${u}" target="_blank" rel="noopener noreferrer">@${u}</a>`)
                                         .join(' ');
-                                    meta.innerHTML = `${assignees}`;
+                                    meta.innerHTML = assignees;
                                     box.appendChild(meta);
 
                                     const cleanLabels = (ev.labels || [])
@@ -504,13 +488,15 @@
                                         box.appendChild(badges);
                                     }
 
-                                    td.appendChild(box);
+                                    cell.appendChild(box);
                                 }
-                                if (td.lastElementChild) td.lastElementChild.style.marginBottom = '0';
+
+                                if (cell.lastElementChild) cell.lastElementChild.style.marginBottom = '0';
                                 td.setAttribute('rowspan', String(span));
                                 group.used = true;
                             }
 
+                            td.appendChild(cell);
                             row.appendChild(td);
                         }
 
@@ -533,7 +519,8 @@
         }
 
         load().catch(err => {
-            document.getElementById('days').innerHTML = `<div class="day-card"><div class="day-title">Error loading schedule</div><div style="padding:12px;color:#f99;">${String(err)}</div></div>`;
+            document.getElementById('days').innerHTML =
+                `<div class="day-card"><div class="day-title">Error loading schedule</div><div style="padding:12px;color:#f99;">${String(err)}</div></div>`;
             console.error(err);
         });
     </script>
