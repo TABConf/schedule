@@ -437,10 +437,10 @@
   },
   {
     "title": "Breaking Down Barriers: Making Taproot Assets Accessible to Web Developers",
-    "day": "Day 2",
-    "time": "11:00 AM - 12:30 PM",
-    "startTime": "11:00 AM",
-    "endTime": "12:30 PM",
+    "day": "Day 1",
+    "time": "2:00 PM - 3:30 PM",
+    "startTime": "2:00 PM",
+    "endTime": "3:30 PM",
     "village": "Workshop Room 1",
     "assignees": "kwsantiago",
     "labels": [
@@ -1423,9 +1423,9 @@
   {
     "title": "Aggeus: permissionless prediction markets, explained and demo'd",
     "day": "Day 2",
-    "time": "11:30 AM - 12:30 PM",
-    "startTime": "11:30 AM",
-    "endTime": "12:30 PM",
+    "time": "11:00 AM - 12:00 PM",
+    "startTime": "11:00 AM",
+    "endTime": "12:00 PM",
     "village": "Workshop Room 1",
     "assignees": "supertestnet",
     "labels": [
