@@ -141,8 +141,15 @@
             overflow: hidden;
         }
 
-        .slot.single {
+        .stack {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
             height: 100%;
+        }
+
+        .slot.single {
+            flex: 1 1 auto;
         }
 
         /* single item fills the whole rowspan cell */
