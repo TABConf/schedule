@@ -449,6 +449,7 @@
                             const td = document.createElement('td');
                             td.style.display = 'flex';
                             td.style.flexDirection = 'column';
+                            td.style.height = '100%';
 
                             const group = (groupsByCol.get(col) || []).find(g => g.si === r && !g.used);
                             if (group) {
