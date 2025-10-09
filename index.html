@@ -122,30 +122,23 @@
             white-space: nowrap;
         }
 
-        /* ensure default positioning so content can size rows naturally */
+        /* let table cells act as flex columns so single-event cards can fill height */
         tbody td {
             position: static;
+            display: flex;
+            flex-direction: column;
         }
 
-        tbody td[rowspan] {
-            height: 1px;
-            /* forces td to stretch across rowspan */
-        }
-
-        /* cards */
         .slot {
             border: 1px solid transparent;
             border-radius: 10px;
             padding: 8px;
             backdrop-filter: saturate(120%);
             box-sizing: border-box;
-
             display: flex;
             flex-direction: column;
             height: auto;
-            /* will be set to 100% by JS only for single-item groups */
             overflow: hidden;
-            /* contain long content */
         }
 
         .slot h4 {
@@ -192,11 +185,7 @@
                 text-align: right;
             }
         }
-
-        /* keep desktop table on phones for pinch-zoom */
     </style>
-
-
 </head>
 
 <body>
@@ -258,18 +247,45 @@
             'D4 - Oct 16': ['Time', 'Socratic Bitdevs', 'Main Stage', 'General']
         };
 
-        // Map village to proper column
-        function mapToColumn(dayKey, village) {
-            const v = String(village || '').toLowerCase();
-            if (dayKey === 'D3 - Oct 15' || dayKey === 'D4 - Oct 16') {
-                if (v.includes('main stage')) return 'Main Stage';
-                if (v.includes('bitdevs') || v.includes('socratic')) return 'Socratic Bitdevs';
-                return 'General';
-            } else {
-                if (v.includes('workshop room 1')) return 'Workshop Room 1';
-                if (v.includes('workshop room 2')) return 'Workshop Room 2';
-                return 'General';
+        // Robust column mapping per day (prevents "everything in General" issue)
+        function norm(x) { return String(x || '').trim().toLowerCase(); }
+
+        const COLUMN_MAP = {
+            'D0 - Oct 12': { default: 'General' },
+            'D1 - Oct 13': {
+                'workshop room 1': 'Workshop Room 1',
+                'workshop room 2': 'Workshop Room 2',
+                default: 'General'
+            },
+            'D2 - Oct 14': {
+                'workshop room 1': 'Workshop Room 1',
+                'workshop room 2': 'Workshop Room 2',
+                default: 'General'
+            },
+            'D3 - Oct 15': {
+                'main stage': 'Main Stage',
+                'socratic bitdevs': 'Socratic Bitdevs',
+                'bitdevs socratic village': 'Socratic Bitdevs',
+                default: 'General'
+            },
+            'D4 - Oct 16': {
+                'main stage': 'Main Stage',
+                'socratic bitdevs': 'Socratic Bitdevs',
+                'bitdevs socratic village': 'Socratic Bitdevs',
+                default: 'General'
             }
+        };
+
+        function mapToColumn(dayKey, village) {
+            const m = COLUMN_MAP[dayKey] || { default: 'General' };
+            const v = norm(village);
+            if (m[v]) return m[v];
+            // tolerant aliases
+            if (v.includes('workshop room 1')) return m['workshop room 1'] || m.default;
+            if (v.includes('workshop room 2')) return m['workshop room 2'] || m.default;
+            if (v.includes('main stage')) return m['main stage'] || m.default;
+            if (v.includes('bitdevs') || v.includes('socratic')) return m['socratic bitdevs'] || m.default;
+            return m.default;
         }
 
         const ACCEPTED_LABELS = new Set(['accepted', 'confirmed']);
@@ -319,8 +335,9 @@
             if (s.startsWith('d2')) return 'D2 - Oct 14';
             if (s.startsWith('d3')) return 'D3 - Oct 15';
             if (s.startsWith('d4')) return 'D4 - Oct 16';
+            // try matching generic "Day N"
             for (const [k, v] of Object.entries(DAY_LABELS)) {
-                if (s.includes(v.toLowerCase().split(' - ')[0])) return k;
+                if (s.includes(v.toLowerCase().split(' - ')[0])) return k; // matches "Day 1", "Day 2", etc
             }
             return null;
         }
@@ -333,9 +350,7 @@
 
         function computeColorFromLabels(ev) {
             const names = (ev.labels || [])
-                .map(l => l.name)
-                .filter(Boolean)
-                .map(x => x.trim())
+                .map(l => l.name).filter(Boolean).map(x => x.trim())
                 .filter(x => !ACCEPTED_LABELS.has(x.toLowerCase()))
                 .sort((a, b) => a.localeCompare(b));
             const key = names.join('|');
@@ -391,11 +406,12 @@
                     const cols = DAY_COLUMNS[dayKey];
                     const colNames = cols.slice(1);
 
+                    // column buckets constrained to the actual columns of the day
                     const byCol = new Map(colNames.map(n => [n, []]));
                     for (const ev of list) {
-                        const target = mapToColumn(dayKey, ev.village);
-                        const col = byCol.has(target) ? target : 'General';
-                        byCol.get(col).push(ev);
+                        const mapped = mapToColumn(dayKey, ev.village);
+                        const finalCol = byCol.has(mapped) ? mapped : 'General';
+                        byCol.get(finalCol).push(ev);
                     }
 
                     function toIdx(mins) { return sortedTicks.findIndex(x => x === mins); }
@@ -472,8 +488,9 @@
                                     box.style.marginBottom = '8px';
 
                                     if (isSingle) {
-                                        box.style.flex = '1' // fill the rowspan cell
-                                        box.style.minHeight = '0';
+                                        box.style.flex = '1 1 auto'; // fill the rowspan cell
+                                    } else {
+                                        box.style.flex = '0 0 auto';
                                     }
 
                                     const title = document.createElement('h4');
