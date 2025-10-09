@@ -447,7 +447,6 @@
                             if (occupancy.get(col)[r]) continue;
 
                             const td = document.createElement('td');
-                            const cell = document.createElement('div');
                             cell.style.display = 'flex';
                             cell.style.flexDirection = 'column';
                             cell.style.height = '100%';
@@ -468,10 +467,7 @@
                                     box.style.marginBottom = '8px';
 
                                     if (isSingle) {
-                                        box.style.height = '100%';  // fill the rowspan cell
-                                    } else {
-                                        // stacked cards - keep natural height and spacing
-                                        box.style.marginBottom = '8px';
+                                        box.style.flex = '1' // fill the rowspan cell
                                     }
 
                                     const title = document.createElement('h4');
@@ -506,7 +502,7 @@
                                         box.appendChild(badges);
                                     }
 
-                                    cell.appendChild(box);
+                                    td.appendChild(box);
                                 }
 
                                 if (cell.lastElementChild) cell.lastElementChild.style.marginBottom = '0';
