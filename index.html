@@ -122,11 +122,22 @@
             white-space: nowrap;
         }
 
+        tbody td {
+            position: relative;
+            /* enable slot full fill */
+        }
+
         .slot {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
             border: 1px solid transparent;
             border-radius: 10px;
             padding: 8px;
             backdrop-filter: saturate(120%);
+            box-sizing: border-box;
         }
 
         .slot h4 {
@@ -174,8 +185,9 @@
             }
         }
 
-        /* No mobile stacking; keep table for pinch-zoom */
+        /* No mobile stacking so desktop layout stays intact */
     </style>
+
 </head>
 
 <body>
