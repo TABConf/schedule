@@ -127,6 +127,11 @@
             position: static;
         }
 
+        tbody td[rowspan] {
+            height: 1px;
+            /* forces td to stretch across rowspan */
+        }
+
         /* cards */
         .slot {
             border: 1px solid transparent;
@@ -468,6 +473,7 @@
 
                                     if (isSingle) {
                                         box.style.flex = '1' // fill the rowspan cell
+                                        box.style.minHeight = '0';
                                     }
 
                                     const title = document.createElement('h4');
