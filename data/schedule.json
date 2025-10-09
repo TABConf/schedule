@@ -105,7 +105,7 @@
   },
   {
     "title": "DIY Selfcustody with Krux Firmware",
-    "day": "All Days",
+    "day": "Day 1-4",
     "time": "All Day",
     "startTime": "10:00 AM",
     "endTime": "5:00 PM",
@@ -159,7 +159,7 @@
   },
   {
     "title": "Mario Kart: Double Sats Pick-Up Games",
-    "day": "All Days",
+    "day": "Day 1-4",
     "time": "All Day",
     "startTime": "10:00 AM",
     "endTime": "5:00 PM",
@@ -189,9 +189,9 @@
   {
     "title": "Mint, Melt, Repeat: Interactive E-cash for Bitcoiners",
     "day": "Day 1",
-    "time": "1:00 PM - 2:30 PM",
-    "startTime": "1:00 PM",
-    "endTime": "2:30 PM",
+    "time": "12:30 PM - 1:45 PM",
+    "startTime": "12:30 PM",
+    "endTime": "2:00 PM",
     "village": "Workshop Room 1",
     "assignees": "edilmedeiros",
     "labels": [
@@ -1768,7 +1768,7 @@
     "startTime": "11:00 AM",
     "endTime": "12:00 PM",
     "village": "Main Stage",
-    "assignees": "",
+    "assignees": "ssrivatsan97, ekrembal, AaronFeickert",
     "labels": [
       {
         "name": "Accepted",
