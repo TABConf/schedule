@@ -1422,11 +1422,11 @@
   },
   {
     "title": "Aggeus: permissionless prediction markets, explained and demo'd",
-    "day": "Day 3",
+    "day": "Day 2",
     "time": "11:00 AM - 11:30 AM",
-    "startTime": "11:00 AM",
-    "endTime": "11:30 AM",
-    "village": "Main Stage",
+    "startTime": "12:30 PM",
+    "endTime": "1:30 PM",
+    "village": "Workshop Room 1",
     "assignees": "supertestnet",
     "labels": [
       {
@@ -1440,6 +1440,10 @@
       {
         "name": "confirmed",
         "color": "#bb1efb"
+      },
+      {
+        "name": "demo",
+        "color": "#e8243c"
       }
     ],
     "summary": "# Description\nAggeus is an open protocol for building permissionless prediction markets on bitcoin. Combining ideas from DLCs, lightning, and PSBT auctions, Agg",
@@ -1756,5 +1760,30 @@
     ],
     "summary": "If you’re in Atlanta on Sunday, Oct 12 before TabConf, [@_austin_f](https://x.com/_austin_f) is hosting a full-day Programming Lightning workshop at [ATL BitLab",
     "url": "https://github.com/TABConf/7.tabconf.com/issues/114"
+  },
+  {
+    "title": "BitVM - Garbled Circuits, Trustless Bridges, Oh My! Building Bitcoin’s Next Generation Infrastructure",
+    "day": "Day 3",
+    "time": "11:00 AM - 12:00 PM",
+    "startTime": "11:00 AM",
+    "endTime": "12:00 PM",
+    "village": "Main Stage",
+    "assignees": "",
+    "labels": [
+      {
+        "name": "Accepted",
+        "color": "#0E8A16"
+      },
+      {
+        "name": "Panel",
+        "color": "#FEF2C0"
+      },
+      {
+        "name": "confirmed",
+        "color": "#bb1efb"
+      }
+    ],
+    "summary": "## **Session Overview**\nFrom BitVM2 -> BitVM3, garbled circuits, fully trustless vaults, Bitcoin’s emerging compute layer is advancing fast. This session brings",
+    "url": "https://github.com/TABConf/7.tabconf.com/issues/119"
   }
 ]
