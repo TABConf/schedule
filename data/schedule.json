@@ -824,7 +824,7 @@
     "startTime": "2:30 PM",
     "endTime": "3:00 PM",
     "village": "Main Stage",
-    "assignees": "carlossimpleproof",
+    "assignees": "bjacoutot",
     "labels": [
       {
         "name": "Accepted",
@@ -1704,7 +1704,57 @@
         "color": "#bb1efb"
       }
     ],
-    "summary": "# Description\n### Event Description\n### Date and time\n### Location\n### Anything people should know before coming?\n### Relevant Links\n",
+    "summary": "# Description\nPonce City Roof top (The Roof)\nMust bring your wristband from tabconf for free access!\n\n### Event Description\n### Date and time\nOct 15 (7 pm -10 p",
     "url": "https://github.com/TABConf/7.tabconf.com/issues/112"
+  },
+  {
+    "title": "🍖 BitDevs: Bitcoin Socratic Seminar #44 - BBQ Edition - RSVP Required",
+    "day": "Day 0",
+    "time": "",
+    "startTime": "6:00 PM",
+    "endTime": "9:00 PM",
+    "village": "Off Site",
+    "assignees": "",
+    "labels": [
+      {
+        "name": "Accepted",
+        "color": "#0E8A16"
+      },
+      {
+        "name": "Satellite Event",
+        "color": "#FBCA04"
+      },
+      {
+        "name": "confirmed",
+        "color": "#bb1efb"
+      }
+    ],
+    "summary": "**[RSVP REQUIRED](https://www.meetup.com/atlbitlab/events/305303588/)** - Spots are limited!\n\n### October 12 (Sunday)\n\n\n\n---\n\n[Join the Atlanta BitDevs](https:/",
+    "url": "https://github.com/TABConf/7.tabconf.com/issues/113"
+  },
+  {
+    "title": "⚡️ Programming Lightning with Austin Krauss @ ATL BitLab - Application Required",
+    "day": "Day 0",
+    "time": "",
+    "startTime": "10:00 AM",
+    "endTime": "5:00 PM",
+    "village": "Off Site",
+    "assignees": "",
+    "labels": [
+      {
+        "name": "Accepted",
+        "color": "#0E8A16"
+      },
+      {
+        "name": "Satellite Event",
+        "color": "#FBCA04"
+      },
+      {
+        "name": "confirmed",
+        "color": "#bb1efb"
+      }
+    ],
+    "summary": "If you’re in Atlanta on Sunday, Oct 12 before TabConf, [@_austin_f](https://x.com/_austin_f) is hosting a full-day Programming Lightning workshop at [ATL BitLab",
+    "url": "https://github.com/TABConf/7.tabconf.com/issues/114"
   }
 ]
