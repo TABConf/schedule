@@ -550,7 +550,12 @@
                     timeline.className = 'timeline';
                     timeline.style.setProperty('--cols', numCols);
 
-                    const colTitles = ["Time", "Workshop Room 1 / BitDevs", "Main Stage / Workshop Room 2", "General"];
+                    const colTitles = (d === 1 || d === 2)
+                        ? ["Time", "Workshop 1", "Workshop 2", "General"]
+                        : (d === 3 || d === 4)
+                            ? ["Time", "Socratic BitDevs", "MainStage", "General"]
+                            : ["Time", "Workshop Room 1 / BitDevs", "Main Stage / Workshop Room 2", "General"];
+
 
                     // Header row
                     // If we have scheduled items, compute time rows; else keep only header
