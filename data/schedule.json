@@ -1311,6 +1311,10 @@
       {
         "name": "confirmed",
         "color": "#bb1efb"
+      },
+      {
+        "name": "debate",
+        "color": "#231d2a"
       }
     ],
     "summary": "# Description\nRotating debate panel inspired by last years panel that was brainstormed here:\nhttps://github.com/TABConf/6.tabconf.com/issues/48#issuecomment-227",
@@ -1469,6 +1473,10 @@
       {
         "name": "confirmed",
         "color": "#bb1efb"
+      },
+      {
+        "name": "debate",
+        "color": "#231d2a"
       }
     ],
     "summary": "# Description\nRotating debate panel inspired by last years panel that was brainstormed here:\nhttps://github.com/TABConf/6.tabconf.com/issues/48#issuecomment-227",
