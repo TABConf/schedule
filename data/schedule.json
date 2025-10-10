@@ -1590,7 +1590,7 @@
     "title": "Interactive collaboration on coming up with a Web of Trust Idea for TABConf",
     "day": "Day 1",
     "time": "5:30 PM - 7:00 PM",
-    "startTime": "5:30 PM",
+    "startTime": "6:00 PM",
     "endTime": "7:00 PM",
     "village": "Workshop Room 2",
     "assignees": "miketwenty1",
@@ -1768,6 +1768,31 @@
     ],
     "summary": "If you’re in Atlanta on Sunday, Oct 12 before TabConf, [@_austin_f](https://x.com/_austin_f) is hosting a full-day Programming Lightning workshop at [ATL BitLab",
     "url": "https://github.com/TABConf/7.tabconf.com/issues/114"
+  },
+  {
+    "title": "Talk: Beyond Bitcoin - Engineering Exodus Protocols for Coordination & Identity",
+    "day": "Day 1",
+    "time": "",
+    "startTime": "5:30 PM",
+    "endTime": "6:00 PM",
+    "village": "Main Stage",
+    "assignees": "",
+    "labels": [
+      {
+        "name": "Accepted",
+        "color": "#0E8A16"
+      },
+      {
+        "name": "Talk",
+        "color": "#1867f4"
+      },
+      {
+        "name": "confirmed",
+        "color": "#bb1efb"
+      }
+    ],
+    "summary": "# Description\n### What is this talk about? Give us as many details as possible.\n\nPlatforms can freeze your account, change the rules, or disappear with your dat",
+    "url": "https://github.com/TABConf/7.tabconf.com/issues/115"
   },
   {
     "title": "Satellite Event - TAB QUANTUM KICKOFF with Anduro (& Isabel+Shelly) - register with luma link",
