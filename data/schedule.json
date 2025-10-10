@@ -1785,5 +1785,26 @@
     ],
     "summary": "## **Session Overview**\nFrom BitVM2 -> BitVM3, garbled circuits, fully trustless vaults, Bitcoin’s emerging compute layer is advancing fast. This session brings",
     "url": "https://github.com/TABConf/7.tabconf.com/issues/119"
+  },
+  {
+    "title": "Closing Announcements",
+    "day": "Day 4",
+    "time": "4:30 PM - 5:00 PM",
+    "startTime": "4:30 PM",
+    "endTime": "5:00 PM",
+    "village": "Main Stage",
+    "assignees": "miketwenty1",
+    "labels": [
+      {
+        "name": "Accepted",
+        "color": "#0E8A16"
+      },
+      {
+        "name": "confirmed",
+        "color": "#bb1efb"
+      }
+    ],
+    "summary": "",
+    "url": "https://github.com/TABConf/7.tabconf.com/issues/120"
   }
 ]
