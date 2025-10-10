@@ -1770,6 +1770,56 @@
     "url": "https://github.com/TABConf/7.tabconf.com/issues/114"
   },
   {
+    "title": "Satellite Event - TAB QUANTUM KICKOFF with Anduro (& Isabel+Shelly) - register with luma link",
+    "day": "Day 1",
+    "time": "",
+    "startTime": "8:00 PM",
+    "endTime": "10:30 PM",
+    "village": "Off Site",
+    "assignees": "Isabelfoxenduke",
+    "labels": [
+      {
+        "name": "Accepted",
+        "color": "#0E8A16"
+      },
+      {
+        "name": "Satellite Event",
+        "color": "#FBCA04"
+      },
+      {
+        "name": "confirmed",
+        "color": "#bb1efb"
+      }
+    ],
+    "summary": "# Description\n\nMonday, October 13\n8:00 PM - 10:30 PM\n\nW Atlanta \n45 Ivan Allen Jr Blvd NW, Atlanta, GA 30308, United States\n\nMake sure to register on the Luma >",
+    "url": "https://github.com/TABConf/7.tabconf.com/issues/116"
+  },
+  {
+    "title": "💃🏽 Bitcoiner Salsa Night",
+    "day": "Day 4",
+    "time": "",
+    "startTime": "8:00 PM",
+    "endTime": "11:30 PM",
+    "village": "Off Site",
+    "assignees": "",
+    "labels": [
+      {
+        "name": "Accepted",
+        "color": "#0E8A16"
+      },
+      {
+        "name": "Satellite Event",
+        "color": "#FBCA04"
+      },
+      {
+        "name": "confirmed",
+        "color": "#bb1efb"
+      }
+    ],
+    "summary": "Thursday, Oct 16 · 8:00 PM to 11:30 PM EDT\n\nWe're hosting a special salsa night at [ATL BitLab](https://atlbitlab.com/) after TABConf has wrapped for the day. C",
+    "url": "https://github.com/TABConf/7.tabconf.com/issues/117"
+  },
+  {
     "title": "BitVM - Garbled Circuits, Trustless Bridges, Oh My! Building Bitcoin’s Next Generation Infrastructure",
     "day": "Day 3",
     "time": "11:00 AM - 12:00 PM",
