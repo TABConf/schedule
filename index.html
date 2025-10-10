@@ -2,60 +2,59 @@
 <html lang="en">
 
 <head>
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=yes" />
-    <title>TABConf Schedule (Simple)</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>TABConf Schedule</title>
     <style>
         :root {
             --bg: #0f1115;
+            --surface: #11141a;
             --card: #171a21;
-            --muted: #aab2c0;
+            --muted: #9aa3b2;
             --text: #e6e9ef;
             --accent: #4da3ff;
             --border: #2a2f3a;
+            --col-gap: 10px;
+            --row-gap: 2px;
+            --px-per-min: 0.8;
         }
 
         html,
         body {
+            overflow-x: auto;
+            /* desktop layout preserved on mobile via horizontal scroll */
+        }
+
+        body {
+            margin: 0;
             background: var(--bg);
             color: var(--text);
-            font-family: system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, Noto Sans, Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji";
-            margin: 0;
-            padding: 0;
+            font-family: system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, Noto Sans, Helvetica, Arial;
         }
 
         .wrap {
             max-width: 1200px;
             margin: 0 auto;
             padding: 24px 16px 48px;
-        }
-
-        header {
-            display: grid;
-            grid-template-columns: 1fr;
-            gap: 12px;
-            margin-bottom: 16px;
+            min-width: 900px;
+            /* preserve 3-column layout; mobile can scroll horizontally */
         }
 
         h1 {
+            margin: 0 0 12px 0;
             font-size: 24px;
-            margin: 0 0 4px 0;
         }
 
-        .filters {
+        .controls {
             display: flex;
             gap: 12px;
-            flex-wrap: wrap;
             align-items: center;
+            flex-wrap: wrap;
             background: var(--card);
-            padding: 12px;
             border: 1px solid var(--border);
             border-radius: 12px;
-        }
-
-        .filters label {
-            font-size: 14px;
-            color: var(--muted);
+            padding: 12px;
         }
 
         select {
@@ -64,16 +63,13 @@
             border: 1px solid var(--border);
             border-radius: 10px;
             padding: 8px 10px;
-            font-size: 14px;
         }
 
-        .legend {
-            font-size: 12px;
-            color: var(--muted);
-            margin-left: auto;
+        .days {
+            margin-top: 18px;
         }
 
-        .day-card {
+        .day {
             background: var(--card);
             border: 1px solid var(--border);
             border-radius: 12px;
@@ -81,100 +77,91 @@
             margin-top: 18px;
         }
 
-        .day-title {
-            padding: 12px 14px;
+        .day-h {
+            padding: 14px;
             border-bottom: 1px solid var(--border);
-            font-weight: 600;
-            background: #11141a;
+            font-weight: 700;
+            background: var(--surface);
+            text-align: center;
+            font-size: 28px;
         }
 
-        table {
-            width: 100%;
-            border-collapse: separate;
-            border-spacing: 0;
-            table-layout: fixed;
+        .timeline {
+            display: grid;
+            grid-template-columns: 100px repeat(var(--cols), 1fr);
+            gap: var(--row-gap) var(--col-gap);
+            background: var(--surface);
+            align-items: start;
+            align-content: start;
+            position: relative;
+            padding-bottom: 20px;
         }
 
-        thead th {
-            position: sticky;
-            top: 0;
-            background: #11141a;
-            z-index: 1;
+        .col-head {
+            background: var(--surface);
             border-bottom: 1px solid var(--border);
             font-weight: 600;
             font-size: 13px;
-            padding: 10px;
+            padding: 6px 8px;
+            text-align: center;
         }
 
-        tbody td,
-        tbody th {
-            border-bottom: 1px solid var(--border);
-            vertical-align: top;
-            padding: 8px;
-            font-size: 13px;
-            word-wrap: break-word;
+        .col-head.time {
+            text-align: left;
         }
 
-        tbody td {
-            display: flex;
-            flex-direction: column;
-            align-items: stretch;
-        }
-
-        tbody th.timecell {
-            color: var(--muted);
-            width: 90px;
-            font-weight: 500;
-            white-space: nowrap;
-        }
-
-        /* keep <td> as table cells; stack cards inside with a simple wrapper */
-        .stack {
-            display: flex;
-            flex-direction: column;
-            gap: 8px;
-            height: 100%;
-            width: 100%;
-        }
-
-        .slot {
-            border: 1px solid transparent;
-            border-radius: 10px;
-            padding: 8px;
-            backdrop-filter: saturate(120%);
-            box-sizing: border-box;
-            display: flex;
-            flex-direction: column;
-            overflow: hidden;
-            width: 100%;
-        }
-
-        .slot.single {
-            flex: 1 1 auto;
-        }
-
-        /* single item fills the whole rowspan cell */
-        .slot h4 {
-            margin: 0 0 6px 0;
-            font-size: 14px;
-            line-height: 1.25;
-        }
-
-        .slot .meta {
+        .time-label {
             font-size: 12px;
             color: var(--muted);
+            align-self: start;
+            padding-top: 4px;
+        }
+
+        .hour-line {
+            grid-column: 1 / -1;
+            border-top: 1px solid rgba(255, 255, 255, 0.06);
+            height: 0;
+        }
+
+        .event {
+            border: 1px solid var(--border);
+            border-radius: 10px;
+            padding: 10px;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            overflow: visible;
+            align-self: stretch;
+            height: 100%;
+            box-sizing: border-box;
+        }
+
+        .event * {
+            min-height: 0;
+        }
+
+        .event h4 {
+            margin: 0 0 6px 0;
+            font-size: 14px;
+            line-height: 1.3;
+        }
+
+        .meta {
+            font-size: 12px;
+            color: var(--muted);
+            margin-bottom: 6px;
         }
 
         .badges {
-            display: inline-flex;
+            display: flex;
             gap: 6px;
             flex-wrap: wrap;
-            margin: 6px 0 0 0;
+            margin-top: auto;
         }
 
         .badge {
             border: 1px solid var(--border);
-            background: rgba(255, 255, 255, 0.05);
+            background: rgba(255, 255, 255, 0.06);
             font-size: 11px;
             padding: 2px 6px;
             border-radius: 999px;
@@ -189,13 +176,82 @@
             text-decoration: underline;
         }
 
-        @media (max-width:640px) {
-            tbody th.timecell {
-                width: 68px;
-                white-space: normal;
-                line-height: 1.2;
-                font-size: 12px;
-                text-align: right;
+        /* Day 0 compact styling */
+        .day.day0 .event {
+            padding: 8px;
+        }
+
+        .day.day0 .event h4 {
+            font-size: 13px;
+            margin-bottom: 4px;
+        }
+
+        .day.day0 .meta {
+            font-size: 11px;
+            margin-bottom: 4px;
+        }
+
+        .day.day0 .badge {
+            font-size: 10px;
+            padding: 1px 5px;
+        }
+
+        /* ---------- Overlay for all-day / unscheduled (Days 1–4) ---------- */
+        .overlay-col {
+            position: relative;
+            /* containing block for overlay stack */
+            grid-column: 4;
+            /* General column (time rail is col 1) */
+            grid-row: 1 / -1;
+            /* span header + all time rows */
+            z-index: 10;
+            /* above scheduled events */
+            pointer-events: none;
+            /* don't block grid scroll/clicks */
+        }
+
+        .overlay-stack {
+            position: sticky;
+            /* keeps stack under the header */
+            top: 40px;
+            /* adjust if your header row height changes */
+            display: flex;
+            flex-direction: column;
+            gap: var(--row-gap);
+            padding: 6px;
+        }
+
+        .event.overlay-card {
+            pointer-events: auto;
+            /* clickable cards */
+            width: 100%;
+            z-index: 11;
+            /* above scheduled cards */
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.25);
+        }
+
+        /* Mobile zoom-out (keeps multi-column view) */
+        @media(max-width:900px) {
+            body {
+                transform: scale(0.8);
+                transform-origin: top left;
+                width: 125%;
+            }
+        }
+
+        @media(max-width:700px) {
+            body {
+                transform: scale(0.7);
+                transform-origin: top left;
+                width: 143%;
+            }
+        }
+
+        @media(max-width:500px) {
+            body {
+                transform: scale(0.6);
+                transform-origin: top left;
+                width: 167%;
             }
         }
     </style>
@@ -203,301 +259,398 @@
 
 <body>
     <div class="wrap">
-        <header>
-            <div>
-                <h1>TABConf Schedule</h1>
-                <div class="filters">
-                    <label for="dayFilter">Day:</label>
-                    <select id="dayFilter">
-                        <option value="all">All days</option>
-                        <option value="D0 - Oct 12">D0 - Oct 12</option>
-                        <option value="D1 - Oct 13">D1 - Oct 13</option>
-                        <option value="D2 - Oct 14">D2 - Oct 14</option>
-                        <option value="D3 - Oct 15">D3 - Oct 15</option>
-                        <option value="D4 - Oct 16">D4 - Oct 16</option>
-                    </select>
-
-                    <label for="typeFilter">Type:</label>
-                    <select id="typeFilter">
-                        <option value="all">All types</option>
-                        <option>Workshop</option>
-                        <option>Talk</option>
-                        <option>Panel</option>
-                        <option>Debate</option>
-                        <option>Unrecorded</option>
-                        <option>Beginner</option>
-                        <option>Advanced</option>
-                        <option>Builder Days Project</option>
-                        <option>Events</option>
-                    </select>
-
-                    <div class="legend">
-                        Everything is rendered generically from start/end times.
-                        <a href="https://github.com/orgs/TABConf/projects/9" target="_blank"
-                            rel="noopener noreferrer">See the project schedule on Github</a>.
-                    </div>
-                </div>
-            </div>
-        </header>
-
-        <div id="days"></div>
+        <h1>TABConf Schedule</h1>
+        <div class="controls">
+            <label for="daySel">Day:</label>
+            <select id="daySel">
+                <option value="all">All</option>
+                <option value="0">Day 0 - Oct 12</option>
+                <option value="1">Day 1 - Oct 13</option>
+                <option value="2">Day 2 - Oct 14</option>
+                <option value="3">Day 3 - Oct 15</option>
+                <option value="4">Day 4 - Oct 16</option>
+            </select>
+            <label for="typeSel">Type:</label>
+            <select id="typeSel">
+                <option value="all">All</option>
+                <option>Workshop</option>
+                <option>Talk</option>
+                <option>Panel</option>
+                <option>Debate</option>
+                <option>Unrecorded</option>
+                <option>Beginner</option>
+                <option>Advanced</option>
+                <option>Builder Days Project</option>
+                <option>Satellite Event</option>
+                <option>Events</option>
+            </select>
+            <span style="margin-left:auto;font-size:12px;color:var(--muted)">Day 0 = Offsite Pre Events</span>
+        </div>
+        <div id="days" class="days"></div>
     </div>
 
     <script>
-        /* === Simple constants === */
-        const DAY_LABELS = {
-            'D0 - Oct 12': 'Day 0 - October 12',
-            'D1 - Oct 13': 'Day 1 - October 13',
-            'D2 - Oct 14': 'Day 2 - October 14',
-            'D3 - Oct 15': 'Day 3 - October 15',
-            'D4 - Oct 16': 'Day 4 - October 16'
-        };
-        const DAY_ORDER = ['D0 - Oct 12', 'D1 - Oct 13', 'D2 - Oct 14', 'D3 - Oct 15', 'D4 - Oct 16'];
-        const DAY_COLUMNS = {
-            'D0 - Oct 12': ['Time', 'General'], // keep D0 one lane (still generic)
-            'D1 - Oct 13': ['Time', 'Workshop Room 1', 'Workshop Room 2', 'General'],
-            'D2 - Oct 14': ['Time', 'Workshop Room 1', 'Workshop Room 2', 'General'],
-            'D3 - Oct 15': ['Time', 'Socratic Bitdevs', 'Main Stage', 'General'],
-            'D4 - Oct 16': ['Time', 'Socratic Bitdevs', 'Main Stage', 'General']
-        };
-        const ACCEPTED_LABELS = new Set(['accepted', 'confirmed']);
-        const norm = (s) => String(s || '').trim().toLowerCase();
+        const norm = s => String(s || "").trim().toLowerCase();
 
-        /* === Tiny color util based on labels === */
-        function hashColor(str) { let h = 5381; for (let i = 0; i < str.length; i++)h = ((h << 5) + h) + str.charCodeAt(i); const hex = (h >>> 0).toString(16).padStart(8, '0'); return `#${hex.slice(-6)}`; }
-        function hexToRgb(hex) { const v = hex.replace('#', ''); return { r: parseInt(v.slice(0, 2), 16), g: parseInt(v.slice(2, 4), 16), b: parseInt(v.slice(4, 6), 16) }; }
-        function colorFromLabels(ev) { const names = (ev.labels || []).map(l => l?.name || '').filter(Boolean).map(s => s.trim()).filter(n => !ACCEPTED_LABELS.has(n.toLowerCase())).sort(); const key = names.join('|') || 'default'; const hex = hashColor(key); const { r, g, b } = hexToRgb(hex); return { bg: `rgba(${r}, ${g}, ${b}, 0.18)`, br: `rgba(${r}, ${g}, ${b}, 0.45)` }; }
-
-        /* === Parse ONLY startTime / endTime === */
-        function parseTime(t) {
-            if (!t) return null;
-            const s = String(t).trim().toUpperCase().replace(/\s+/g, ''); // allow "11:30AM" & "11:30 AM"
+        const parseAmPm = t => {
+            if (!t) return NaN;
+            const s = String(t).toUpperCase().replace(/\s+/g, '');
             const m = s.match(/^(\d{1,2})(?::(\d{2}))?(AM|PM)$/);
-            if (!m) return null;
-            let h = parseInt(m[1], 10); const min = m[2] ? parseInt(m[2], 10) : 0; const ap = m[3];
+            if (!m) return NaN;
+            let h = parseInt(m[1], 10);
+            const min = m[2] ? parseInt(m[2], 10) : 0; const ap = m[3];
             if (ap === 'PM' && h < 12) h += 12; if (ap === 'AM' && h === 12) h = 0;
-            return { minutes: h * 60 + min };
-        }
-        function fmtTime(mins) { const h24 = Math.floor(mins / 60), m = mins % 60, ap = h24 >= 12 ? 'PM' : 'AM'; let h = h24 % 12; if (h === 0) h = 12; return `${h}:${String(m).padStart(2, '0')} ${ap}`; }
+            return h * 60 + min;
+        };
 
-        /* === Days expansion (generic) === */
-        function dayKeyFromNum(n) {
-            if (n === 0) return 'D0 - Oct 12';
-            if (n === 1) return 'D1 - Oct 13';
-            if (n === 2) return 'D2 - Oct 14';
-            if (n === 3) return 'D3 - Oct 15';
-            if (n === 4) return 'D4 - Oct 16';
-            return null;
-        }
+        const fmtHour = m => `${((Math.floor(m / 60) % 12) || 12)}:${(m % 60).toString().padStart(2, '0')} ${m < 720 ? 'AM' : 'PM'}`;
+
         function expandDays(dayStr) {
-            const s = norm(dayStr);
+            const s = String(dayStr || "").toLowerCase();
             if (!s) return [];
-            if (s.includes('all')) return ['D1 - Oct 13', 'D2 - Oct 14', 'D3 - Oct 15', 'D4 - Oct 16']; // generic choice
-            const nums = Array.from(s.matchAll(/day\s*([0-4])/g)).map(m => parseInt(m[1], 10));
-            const keys = [...new Set(nums.map(dayKeyFromNum).filter(Boolean))];
-            return keys.length ? keys : [];
-        }
+            if (s.includes("all")) return [0, 1, 2, 3, 4];
 
-        /* === Simple village→column mapping (generic synonyms) === */
-        function mapToColumn(dayKey, village) {
-            const cols = DAY_COLUMNS[dayKey] || ['Time', 'General'];
-            const colNames = cols.slice(1); // skip Time
-            const v = norm(village);
-            // direct matches by name
-            for (const name of colNames) {
-                if (v.includes(norm(name))) return name;
+            const nums = new Set();
+            let m;
+
+            // Ranges: "day 1-4", "days 2–3", "d 1—2"
+            const rangeRe = /(day|days|d)\s*([0-4])\s*[-–—]\s*([0-4])/g;
+            while ((m = rangeRe.exec(s))) {
+                const a = parseInt(m[2], 10);
+                const b = parseInt(m[3], 10);
+                const start = Math.min(a, b);
+                const end = Math.max(a, b);
+                for (let i = start; i <= end; i++) nums.add(i);
             }
-            // friendly synonyms
-            if ((v.includes('bitdev') || v.includes('socratic')) && colNames.includes('Socratic Bitdevs')) return 'Socratic Bitdevs';
-            if ((v.includes('mainstage') || v.includes('main stage')) && colNames.includes('Main Stage')) return 'Main Stage';
-            if ((v.includes('room1') || v.includes('workshop room 1') || v.includes('wr1')) && colNames.includes('Workshop Room 1')) return 'Workshop Room 1';
-            if ((v.includes('room2') || v.includes('workshop room 2') || v.includes('wr2')) && colNames.includes('Workshop Room 2')) return 'Workshop Room 2';
-            return colNames.includes('General') ? 'General' : colNames[0] || 'General';
+
+            // Singles
+            const singleRe = /(day|days|d)\s*([0-4])/g;
+            while ((m = singleRe.exec(s))) nums.add(parseInt(m[2], 10));
+
+            return nums.size ? Array.from(nums).sort((a, b) => a - b) : [];
         }
 
-        /* === Type filter === */
-        function matchesType(ev, typeVal) {
-            if (typeVal === 'all') return true;
-            const names = (ev.labels || []).map(l => (l?.name || '').toLowerCase());
-            return names.includes(typeVal.toLowerCase());
+        const mapVillageToCol = v => {
+            const n = norm(v);
+            if (n.includes('workshop room 1') || n.includes('bitdevs socratic village')) return 1;
+            if (n.includes('workshop room 2') || n.includes('main stage')) return 2;
+            return 3; // general
+        };
+
+        // Unique color generator based on label combo (card background/border)
+        function djb2(str) { let h = 5381; for (let i = 0; i < str.length; i++) h = ((h << 5) + h) + str.charCodeAt(i); return h >>> 0; }
+        function colorFromLabels(labels) {
+            const clean = (labels || []).map(l => norm(l?.name)).filter(Boolean);
+
+            // Priority 1: Advanced
+            const adv = (labels || []).find(l => /advanced/i.test(l.name) && l.color);
+            if (adv) return { bg: adv.color + '20', br: adv.color };
+
+            // Priority 2: Beginner
+            const beg = (labels || []).find(l => /beginner/i.test(l.name) && l.color);
+            if (beg) return { bg: beg.color + '20', br: beg.color };
+
+            // Priority 3: Talk → fixed light purple
+            const talk = clean.includes('talk');
+            if (talk) return { bg: 'hsla(270, 70%, 60%, 0.15)', br: 'hsl(270, 70%, 60%)' };
+
+            // Fallback for unlabeled or other labels
+            if (clean.length === 0) {
+                return { bg: `hsla(210, 60%, 50%, 0.12)`, br: `hsl(210, 60%, 50%)` };
+            }
+
+            // Hash-based unique color for everything else
+            const key = clean.sort().join('|');
+            const hue = djb2(key) % 360;
+            return { bg: `hsla(${hue}, 70%, 45%, 0.12)`, br: `hsl(${hue}, 70%, 45%)` };
         }
 
-        async function load() {
+
+
+        // Safer hex parsing for label text contrast (supports #abc and #aabbcc)
+        function hexToRGB(hex) {
+            if (!hex) return [200, 200, 200];
+            let h = hex.replace('#', '').trim();
+            if (h.length === 3) h = h.split('').map(ch => ch + ch).join('');
+            const r = parseInt(h.slice(0, 2), 16);
+            const g = parseInt(h.slice(2, 4), 16);
+            const b = parseInt(h.slice(4, 6), 16);
+            return [r, g, b].map(v => (isNaN(v) ? 0 : v));
+        }
+
+        async function main() {
             const res = await fetch('data/schedule.json', { cache: 'no-store' });
             const all = await res.json();
 
-            const daySel = document.getElementById('dayFilter');
-            const typeSel = document.getElementById('typeFilter');
-            const daysEl = document.getElementById('days');
+            const mount = document.getElementById('days');
+            const daySel = document.getElementById('daySel');
+            const typeSel = document.getElementById('typeSel');
+
+
+            // Auto-select day based on current date
+            //const today = new Date();
+            const today = new Date(2025, 9, 12);
+            const month = today.getMonth() + 1; // 1–12
+            const day = today.getDate();
+
+            const dayMap = {
+                13: '1',
+                14: '2',
+                15: '3',
+                16: '4'
+            };
+
+            if (month === 10 && dayMap[day]) {
+                daySel.value = dayMap[day];
+            }
 
             function render() {
-                const dayVal = daySel.value;
-                const typeVal = typeSel.value;
+                mount.innerHTML = '';
+                const dayFilter = daySel.value;
+                const typeFilter = norm(typeSel.value);
+                const pxPerMin = parseFloat(getComputedStyle(document.documentElement).getPropertyValue('--px-per-min'));
 
-                // Expand each item into one or more day buckets (no special casing)
-                const perDay = new Map();
-                for (const ev of all) {
-                    const dayKeys = expandDays(ev.day);
-                    if (!dayKeys.length) continue;
-                    // times must parse
-                    const s = parseTime(ev.startTime), e = parseTime(ev.endTime);
-                    if (!s || !e || e.minutes <= s.minutes) continue;
-                    if (!matchesType(ev, typeVal)) continue;
+                for (let d = 0; d <= 4; d++) {
+                    if (dayFilter !== 'all' && String(d) !== dayFilter) continue;
 
-                    for (const dk of dayKeys) {
-                        if (dayVal !== 'all' && dk !== dayVal) continue;
-                        if (!perDay.has(dk)) perDay.set(dk, []);
-                        perDay.get(dk).push(ev);
-                    }
-                }
+                    // Map then split into scheduled / unscheduled (no time means unscheduled)
+                    const mapped = all
+                        .filter(ev => expandDays(ev.day).includes(d))
+                        .filter(ev => typeFilter === 'all' || (ev.labels || []).some(l => norm(l.name) === typeFilter))
+                        .map(ev => ({ ...ev, _s: parseAmPm(ev.startTime), _e: parseAmPm(ev.endTime) }));
 
-                daysEl.innerHTML = '';
+                    const scheduled = mapped.filter(ev => !isNaN(ev._s) && !isNaN(ev._e) && ev._e > ev._s);
+                    const unscheduled = mapped.filter(ev => !(!isNaN(ev._s) && !isNaN(ev._e) && ev._e > ev._s));
 
-                for (const dayKey of DAY_ORDER) {
-                    const items = perDay.get(dayKey) || [];
-                    if (!items.length) continue;
+                    if (scheduled.length === 0 && unscheduled.length === 0) continue;
 
-                    const cols = DAY_COLUMNS[dayKey];
-                    const colNames = cols.slice(1);
+                    const dayDiv = document.createElement('div');
+                    dayDiv.className = 'day';
+                    const dayDates = ["October 12", "October 13", "October 14", "October 15", "October 16"];
+                    dayDiv.innerHTML = `<div class="day-h">Day ${d} - ${dayDates[d] || ""}</div>`;
 
-                    // Build time ticks
-                    const tickSet = new Set();
-                    let minT = Infinity, maxT = -Infinity;
-                    for (const ev of items) {
-                        const s = parseTime(ev.startTime).minutes, e = parseTime(ev.endTime).minutes;
-                        tickSet.add(s); tickSet.add(e);
-                        if (s < minT) minT = s; if (e > maxT) maxT = e;
-                    }
-                    const ticks = Array.from(tickSet).sort((a, b) => a - b);
-                    if (ticks.length < 2) continue;
-                    const idxOf = (m) => ticks.indexOf(m);
+                    // --- Day 0 (single column, compact). Scheduled first, then unscheduled ---
+                    if (d === 0) {
+                        dayDiv.classList.add('day0');
+                        const timeline = document.createElement('div');
+                        timeline.className = 'timeline';
+                        timeline.style.gridTemplateColumns = '1fr';
+                        timeline.style.setProperty('--cols', 1);
 
-                    // bucket items by column
-                    const byCol = new Map(colNames.map(n => [n, []]));
-                    for (const ev of items) {
-                        const col = mapToColumn(dayKey, ev.village);
-                        if (!byCol.has(col)) byCol.set(col, []);
-                        byCol.get(col).push(ev);
-                    }
+                        const head = document.createElement('div');
+                        head.className = 'col-head';
+                        head.textContent = 'Offsite Pre Events';
+                        head.style.gridColumn = '1';
+                        timeline.appendChild(head);
 
-                    // groups per column by identical span
-                    const groupsByCol = new Map();
-                    for (const [col, arr] of byCol.entries()) {
-                        const gmap = new Map();
-                        for (const ev of arr) {
-                            const s = idxOf(parseTime(ev.startTime).minutes);
-                            const e = idxOf(parseTime(ev.endTime).minutes);
-                            if (s === -1 || e === -1 || e <= s) continue;
-                            const key = `${s}-${e}`;
-                            if (!gmap.has(key)) gmap.set(key, { si: s, ei: e, items: [] });
-                            gmap.get(key).items.push(ev);
-                        }
-                        const groups = Array.from(gmap.values()).sort((a, b) => a.si - b.si || a.ei - b.ei);
-                        groupsByCol.set(col, groups);
-                    }
+                        const stack = [
+                            ...scheduled.sort((a, b) => (a._s || 0) - (b._s || 0)),
+                            ...unscheduled // show unscheduled after scheduled for Day 0
+                        ];
 
-                    // Build table
-                    const card = document.createElement('div');
-                    card.className = 'day-card';
-                    card.innerHTML = `<div class="day-title">${DAY_LABELS[dayKey] || dayKey}</div>`;
+                        stack.forEach(ev => {
+                            const card = document.createElement('div');
+                            card.className = 'event';
+                            const { bg, br } = colorFromLabels(ev.labels || []);
+                            card.style.background = bg; card.style.borderColor = br;
+                            card.style.zIndex = isNaN(ev._s) || isNaN(ev._e) ? '1' : '2';
 
-                    const table = document.createElement('table');
-                    const thead = document.createElement('thead');
-                    const trh = document.createElement('tr');
-                    for (const head of cols) { const th = document.createElement('th'); th.textContent = head; trh.appendChild(th); }
-                    thead.appendChild(trh); table.appendChild(thead);
-                    const tbody = document.createElement('tbody');
+                            const h4 = document.createElement('h4');
+                            const a = document.createElement('a');
+                            a.href = ev.url || '#'; a.target = '_blank'; a.textContent = ev.title || 'Untitled';
+                            h4.appendChild(a); card.appendChild(h4);
 
-                    // occupancy grid: for each column, mark rows covered by a rowspan
-                    const occ = new Map(colNames.map(n => [n, Array(ticks.length - 1).fill(false)]));
+                            const meta = document.createElement('div');
+                            meta.className = 'meta';
+                            const timeText = 'General';
+                            meta.textContent = `${timeText}${ev.village ? ' • ' + ev.village : ''}`;
+                            card.appendChild(meta);
 
-                    for (let r = 0; r < ticks.length - 1; r++) {
-                        const tr = document.createElement('tr');
-
-                        const th = document.createElement('th');
-                        th.className = 'timecell';
-                        const compact = matchMedia('(max-width: 640px)').matches;
-                        th.innerHTML = compact ? `${fmtTime(ticks[r])}<br>${fmtTime(ticks[r + 1])}` : `${fmtTime(ticks[r])} - ${fmtTime(ticks[r + 1])}`;
-                        tr.appendChild(th);
-
-                        for (const col of colNames) {
-                            if (occ.get(col)[r]) continue; // covered by rowspan from earlier row
-
-                            const td = document.createElement('td');
-                            // ensure every td is a flex column (rowspan height becomes the flex container height)
-                            td.style.display = 'flex';
-                            td.style.flexDirection = 'column';
-
-                            const stack = document.createElement('div');
-                            stack.className = 'stack';
-
-                            // group that starts exactly at this row?
-                            const group = (groupsByCol.get(col) || []).find(g => g.si === r && !g.used);
-                            if (group) {
-                                const span = group.ei - group.si;
-                                for (let k = r; k < group.ei; k++) occ.get(col)[k] = true;
-
-                                const single = group.items.length === 1;
-                                for (const ev of group.items) {
-                                    const { bg, br } = colorFromLabels(ev);
-                                    const box = document.createElement('div');
-                                    box.className = 'slot' + (single ? ' single' : '');
-                                    box.style.background = bg;
-                                    box.style.borderColor = br;
-                                    box.style.borderStyle = 'solid';
-
-                                    const h = document.createElement('h4');
-                                    const a = document.createElement('a');
-                                    a.href = ev.url || '#'; a.target = '_blank'; a.rel = 'noopener noreferrer';
-                                    a.textContent = ev.title || 'Untitled';
-                                    h.appendChild(a); box.appendChild(h);
-
-                                    const meta = document.createElement('div');
-                                    meta.className = 'meta';
-                                    const assignees = (ev.assignees || '').split(',').map(s => s.trim()).filter(Boolean)
-                                        .map(u => `<a href="https://github.com/${u}" target="_blank" rel="noopener noreferrer">@${u}</a>`).join(' ');
-                                    meta.innerHTML = assignees; box.appendChild(meta);
-
-                                    const clean = (ev.labels || []).filter(l => l?.name && !ACCEPTED_LABELS.has(l.name.toLowerCase()));
-                                    if (clean.length) {
-                                        const badges = document.createElement('div'); badges.className = 'badges';
-                                        clean.forEach(l => { const b = document.createElement('span'); b.className = 'badge'; b.textContent = l.name; badges.appendChild(b); });
-                                        box.appendChild(badges);
+                            const labels = (ev.labels || []).filter(l => l.name && !['accepted', 'confirmed'].includes(norm(l.name)));
+                            if (labels.length) {
+                                const badges = document.createElement('div'); badges.className = 'badges';
+                                labels.forEach(l => {
+                                    const span = document.createElement('span'); span.className = 'badge'; span.textContent = l.name;
+                                    if (l.color) {
+                                        span.style.backgroundColor = l.color; span.style.borderColor = l.color;
+                                        const [r, g, b] = hexToRGB(l.color);
+                                        span.style.color = ((r * 299 + g * 587 + b * 114) / 1000) > 160 ? '#000' : '#fff';
                                     }
-
-                                    stack.appendChild(box);
-                                }
-
-                                td.setAttribute('rowspan', String(span));
-                                group.used = true;
+                                    badges.appendChild(span);
+                                });
+                                card.appendChild(badges);
                             }
 
-                            td.appendChild(stack);
-                            tr.appendChild(td);
-                        }
+                            timeline.appendChild(card);
+                        });
 
-                        tbody.appendChild(tr);
+                        dayDiv.appendChild(timeline);
+                        mount.appendChild(dayDiv);
+                        continue;
                     }
 
-                    table.appendChild(tbody);
-                    card.appendChild(table);
-                    document.getElementById('days').appendChild(card);
-                }
+                    // --- Days 1–4 (time grid + overlay for unscheduled in General) ---
+                    const timeline = document.createElement('div');
+                    const numCols = 3;
+                    timeline.className = 'timeline';
+                    timeline.style.setProperty('--cols', numCols);
 
-                if (!daysEl.children.length) {
-                    daysEl.innerHTML = '<div class="day-card"><div class="day-title">No matching sessions</div></div>';
+                    const colTitles = ["Time", "Workshop Room 1 / BitDevs", "Main Stage / Workshop Room 2", "General"];
+
+                    // Header row
+                    timeline.style.gridTemplateRows = 'auto';
+
+                    // If we have scheduled items, compute time rows; else keep only header
+                    let minT = Infinity, maxT = -Infinity, totalMins = 0;
+                    if (scheduled.length > 0) {
+                        minT = Math.min(...scheduled.map(e => e._s));
+                        maxT = Math.max(...scheduled.map(e => e._e));
+                        totalMins = Math.max(0, maxT - minT);
+                        const minuteRows = Array.from({ length: totalMins }, () => `minmax(${pxPerMin}px,auto)`).join(' ');
+                        timeline.style.gridTemplateRows = `auto ${minuteRows}`;
+                    }
+
+                    const rowOffset = 1; // header row index
+
+                    // Header cells (row 1)
+                    for (let i = 0; i <= numCols; i++) {
+                        const head = document.createElement('div');
+                        head.className = 'col-head' + (i === 0 ? ' time' : '');
+                        head.textContent = colTitles[i] || '';
+                        head.style.gridColumn = String(i + 1);
+                        head.style.gridRow = '1';
+                        timeline.appendChild(head);
+                    }
+
+                    // Hour lines + labels only if we have scheduled items
+                    if (scheduled.length > 0) {
+                        for (let t = Math.ceil(minT / 60) * 60; t < maxT; t += 60) {
+                            const hourLine = document.createElement('div');
+                            hourLine.className = 'hour-line';
+                            hourLine.style.gridRow = String((t - minT + 1) + rowOffset);
+                            timeline.appendChild(hourLine);
+
+                            const label = document.createElement('div');
+                            label.className = 'time-label';
+                            label.textContent = fmtHour(t);
+                            label.style.gridColumn = '1';
+                            label.style.gridRow = String((t - minT + 1) + rowOffset);
+                            timeline.appendChild(label);
+                        }
+                    }
+
+                    // Scheduled events (time-based placement)
+                    scheduled.forEach(ev => {
+                        const col = mapVillageToCol(ev.village);
+                        const card = document.createElement('div');
+                        card.className = 'event';
+                        card.style.gridColumn = String(col + 1);
+                        const { bg, br } = colorFromLabels(ev.labels || []);
+                        card.style.background = bg; card.style.borderColor = br;
+                        card.style.zIndex = '2'; // below overlay but above base
+
+                        const startRow = ev._s - minT + 1;
+                        const endRow = ev._e - minT + 1;
+                        card.style.gridRow = `${startRow + rowOffset} / ${endRow + rowOffset}`;
+
+                        const h4 = document.createElement('h4');
+                        const a = document.createElement('a');
+                        a.href = ev.url || '#'; a.target = '_blank'; a.textContent = ev.title || 'Untitled';
+                        h4.appendChild(a); card.appendChild(h4);
+
+                        const meta = document.createElement('div');
+                        meta.className = 'meta';
+                        meta.textContent = `${ev.startTime} - ${ev.endTime}${ev.village ? ' • ' + ev.village : ''}`;
+                        card.appendChild(meta);
+
+                        const labels = (ev.labels || []).filter(l => l.name && !['accepted', 'confirmed'].includes(norm(l.name)));
+                        if (labels.length) {
+                            const badges = document.createElement('div'); badges.className = 'badges';
+                            labels.forEach(l => {
+                                const span = document.createElement('span'); span.className = 'badge'; span.textContent = l.name;
+                                if (l.color) {
+                                    span.style.backgroundColor = l.color; span.style.borderColor = l.color;
+                                    const [r, g, b] = hexToRGB(l.color);
+                                    span.style.color = ((r * 299 + g * 587 + b * 114) / 1000) > 160 ? '#000' : '#fff';
+                                }
+                                badges.appendChild(span);
+                            });
+                            card.appendChild(badges);
+                        }
+
+                        timeline.appendChild(card);
+                    });
+
+                    // ---------- Overlay stack in the General column for all-day/unscheduled ----------
+                    if (unscheduled.length > 0) {
+                        const overlay = document.createElement('div');
+                        overlay.className = 'overlay-col';
+                        overlay.style.gridColumn = String(3 + 1);  // General col = 4
+                        overlay.style.gridRow = '1 / -1';
+
+                        const overlayStack = document.createElement('div');
+                        overlayStack.className = 'overlay-stack';
+                        overlay.appendChild(overlayStack);
+
+                        // Optional header for the pile
+                        const overlayHdr = document.createElement('div');
+                        overlayHdr.className = 'col-head';
+                        overlayHdr.textContent = 'General';
+                        overlayHdr.style.textAlign = 'center';
+                        overlayStack.appendChild(overlayHdr);
+
+                        // Put unscheduled at the TOP (above scheduled), order as they appear
+                        unscheduled.forEach(ev => {
+                            const card = document.createElement('div');
+                            card.className = 'event overlay-card';
+                            const { bg, br } = colorFromLabels(ev.labels || []);
+                            card.style.background = bg; card.style.borderColor = br;
+
+                            const h4 = document.createElement('h4');
+                            const a = document.createElement('a');
+                            a.href = ev.url || '#'; a.target = '_blank'; a.textContent = ev.title || 'Untitled';
+                            h4.appendChild(a); card.appendChild(h4);
+
+                            const meta = document.createElement('div');
+                            meta.className = 'meta';
+                            const village = ev.village ? ' • ' + ev.village : '';
+                            meta.textContent = `${village}`;
+                            card.appendChild(meta);
+
+                            const labels = (ev.labels || []).filter(l => l.name && !['accepted', 'confirmed'].includes(norm(l.name)));
+                            if (labels.length) {
+                                const badges = document.createElement('div'); badges.className = 'badges';
+                                labels.forEach(l => {
+                                    const span = document.createElement('span'); span.className = 'badge'; span.textContent = l.name;
+                                    if (l.color) {
+                                        span.style.backgroundColor = l.color; span.style.borderColor = l.color;
+                                        const [r, g, b] = hexToRGB(l.color);
+                                        span.style.color = ((r * 299 + g * 587 + b * 114) / 1000) > 160 ? '#000' : '#fff';
+                                    }
+                                    badges.appendChild(span);
+                                });
+                                card.appendChild(badges);
+                            }
+
+                            overlayStack.appendChild(card);
+                        });
+
+                        // Add overlay last so it paints above the grid
+                        timeline.appendChild(overlay);
+                    }
+
+                    dayDiv.appendChild(timeline);
+                    mount.appendChild(dayDiv);
                 }
             }
 
-            document.getElementById('dayFilter').addEventListener('change', render);
-            document.getElementById('typeFilter').addEventListener('change', render);
+            daySel.addEventListener('change', render);
+            typeSel.addEventListener('change', render);
             render();
         }
 
-        load().catch(err => {
-            document.getElementById('days').innerHTML = `<div class="day-card"><div class="day-title">Error loading schedule</div><div style="padding:12px;color:#f99;">${String(err)}</div></div>`;
-            console.error(err);
-        });
+        main();
+
     </script>
 </body>
 
