@@ -927,10 +927,10 @@
   },
   {
     "title": "Builder Days Project Job Board",
-    "day": "Day 1 & 2",
+    "day": "Day 1",
     "time": "All Day",
-    "startTime": "10:00 AM",
-    "endTime": "5:00 PM",
+    "startTime": "",
+    "endTime": "",
     "village": "Builder Days Area",
     "assignees": "miketwenty1, horologger",
     "labels": [
