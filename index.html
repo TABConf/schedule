@@ -553,16 +553,18 @@
                     const colTitles = ["Time", "Workshop Room 1 / BitDevs", "Main Stage / Workshop Room 2", "General"];
 
                     // Header row
-                    timeline.style.gridTemplateRows = 'auto';
-
                     // If we have scheduled items, compute time rows; else keep only header
                     let minT = Infinity, maxT = -Infinity, totalMins = 0;
                     if (scheduled.length > 0) {
                         minT = Math.min(...scheduled.map(e => e._s));
                         maxT = Math.max(...scheduled.map(e => e._e));
                         totalMins = Math.max(0, maxT - minT);
-                        const minuteRows = Array.from({ length: totalMins }, () => `minmax(${pxPerMin}px,auto)`).join(' ');
-                        timeline.style.gridTemplateRows = `auto ${minuteRows}`;
+                        const minuteRows = [];
+                        for (let t = minT; t < maxT; t++) {
+                            const hasEvent = scheduled.some(e => e._s <= t && e._e > t);
+                            minuteRows.push(hasEvent ? `minmax(${pxPerMin}px,auto)` : `minmax(0.2px,auto)`);
+                        }
+                        timeline.style.gridTemplateRows = `auto ${minuteRows.join(' ')}`; timeline.style.gridTemplateRows = `auto ${minuteRows}`;
                     }
 
                     const rowOffset = 1; // header row index
