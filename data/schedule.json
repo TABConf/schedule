@@ -733,7 +733,7 @@
     "startTime": "10:30 AM",
     "endTime": "12:00 PM",
     "village": "BitDevs Socratic Village",
-    "assignees": "Beige-Coffee, tankyleo",
+    "assignees": "niftynei, Beige-Coffee, tankyleo",
     "labels": [
       {
         "name": "Accepted",
@@ -1591,7 +1591,7 @@
     "day": "Day 1",
     "time": "5:30 PM - 7:00 PM",
     "startTime": "6:00 PM",
-    "endTime": "7:00 PM",
+    "endTime": "7:30 PM",
     "village": "Workshop Room 2",
     "assignees": "miketwenty1",
     "labels": [
@@ -1851,7 +1851,7 @@
     "startTime": "11:00 AM",
     "endTime": "12:00 PM",
     "village": "Main Stage",
-    "assignees": "ssrivatsan97, ekrembal, AaronFeickert",
+    "assignees": "RobinLinus, ssrivatsan97, ekrembal, AaronFeickert",
     "labels": [
       {
         "name": "Accepted",
