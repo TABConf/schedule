@@ -17,6 +17,10 @@
         "color": "#1867f4"
       },
       {
+        "name": "website",
+        "color": "#aaaaaa"
+      },
+      {
         "name": "confirmed",
         "color": "#bb1efb"
       }
@@ -55,11 +59,11 @@
   },
   {
     "title": "Pleb Underground NewsDesk/ Interview Station",
-    "day": "",
-    "time": "",
+    "day": "All Days",
+    "time": "All Day",
     "startTime": "",
     "endTime": "",
-    "village": "",
+    "village": "Builder Days Area",
     "assignees": "iglesiasbrandon, miketwenty1",
     "labels": [
       {
@@ -150,6 +154,10 @@
         "color": "#F92A53"
       },
       {
+        "name": "website",
+        "color": "#aaaaaa"
+      },
+      {
         "name": "confirmed",
         "color": "#bb1efb"
       }
@@ -206,6 +214,10 @@
       {
         "name": "Advanced",
         "color": "#F92A53"
+      },
+      {
+        "name": "website",
+        "color": "#aaaaaa"
       },
       {
         "name": "confirmed",
@@ -287,6 +299,10 @@
         "color": "#FEF2C0"
       },
       {
+        "name": "website",
+        "color": "#aaaaaa"
+      },
+      {
         "name": "confirmed",
         "color": "#bb1efb"
       }
@@ -314,6 +330,10 @@
       {
         "name": "Beginner",
         "color": "#0744B1"
+      },
+      {
+        "name": "website",
+        "color": "#aaaaaa"
       },
       {
         "name": "confirmed",
@@ -374,6 +394,10 @@
         "color": "#0744B1"
       },
       {
+        "name": "website",
+        "color": "#aaaaaa"
+      },
+      {
         "name": "confirmed",
         "color": "#bb1efb"
       }
@@ -403,6 +427,10 @@
         "color": "#F92A53"
       },
       {
+        "name": "website",
+        "color": "#aaaaaa"
+      },
+      {
         "name": "confirmed",
         "color": "#bb1efb"
       }
@@ -426,6 +454,10 @@
       {
         "name": "Talk",
         "color": "#1867f4"
+      },
+      {
+        "name": "website",
+        "color": "#aaaaaa"
       },
       {
         "name": "confirmed",
@@ -457,8 +489,16 @@
         "color": "#F92A53"
       },
       {
+        "name": "website",
+        "color": "#aaaaaa"
+      },
+      {
         "name": "confirmed",
         "color": "#bb1efb"
+      },
+      {
+        "name": "Stand By",
+        "color": "#fbca04"
       }
     ],
     "summary": "# Taproot Assets REST Gateway Workshop Application\n\n## Description\n\n### What is this workshop about? Provide as many details as possible.\n\nThis hands-on worksho",
@@ -480,6 +520,10 @@
       {
         "name": "Talk",
         "color": "#1867f4"
+      },
+      {
+        "name": "website",
+        "color": "#aaaaaa"
       },
       {
         "name": "confirmed",
@@ -511,6 +555,10 @@
         "color": "#0744B1"
       },
       {
+        "name": "website",
+        "color": "#aaaaaa"
+      },
+      {
         "name": "confirmed",
         "color": "#bb1efb"
       }
@@ -540,6 +588,10 @@
         "color": "#0744B1"
       },
       {
+        "name": "website",
+        "color": "#aaaaaa"
+      },
+      {
         "name": "confirmed",
         "color": "#bb1efb"
       }
@@ -565,6 +617,10 @@
         "color": "#d10359"
       },
       {
+        "name": "website",
+        "color": "#aaaaaa"
+      },
+      {
         "name": "confirmed",
         "color": "#bb1efb"
       }
@@ -588,6 +644,10 @@
       {
         "name": "Talk",
         "color": "#1867f4"
+      },
+      {
+        "name": "website",
+        "color": "#aaaaaa"
       },
       {
         "name": "confirmed",
@@ -640,6 +700,10 @@
         "color": "#1867f4"
       },
       {
+        "name": "website",
+        "color": "#aaaaaa"
+      },
+      {
         "name": "confirmed",
         "color": "#bb1efb"
       }
@@ -663,6 +727,10 @@
       {
         "name": "Talk",
         "color": "#1867f4"
+      },
+      {
+        "name": "website",
+        "color": "#aaaaaa"
       },
       {
         "name": "confirmed",
@@ -715,6 +783,10 @@
         "color": "#FEF2C0"
       },
       {
+        "name": "website",
+        "color": "#aaaaaa"
+      },
+      {
         "name": "confirmed",
         "color": "#bb1efb"
       },
@@ -746,6 +818,10 @@
       {
         "name": "Panel",
         "color": "#FEF2C0"
+      },
+      {
+        "name": "website",
+        "color": "#aaaaaa"
       },
       {
         "name": "confirmed",
@@ -781,6 +857,10 @@
         "color": "#0744B1"
       },
       {
+        "name": "website",
+        "color": "#aaaaaa"
+      },
+      {
         "name": "confirmed",
         "color": "#bb1efb"
       }
@@ -808,6 +888,10 @@
       {
         "name": "Beginner",
         "color": "#0744B1"
+      },
+      {
+        "name": "website",
+        "color": "#aaaaaa"
       },
       {
         "name": "confirmed",
@@ -864,6 +948,10 @@
         "color": "#0744B1"
       },
       {
+        "name": "website",
+        "color": "#aaaaaa"
+      },
+      {
         "name": "confirmed",
         "color": "#bb1efb"
       }
@@ -918,6 +1006,10 @@
         "color": "#FBCA04"
       },
       {
+        "name": "website",
+        "color": "#aaaaaa"
+      },
+      {
         "name": "confirmed",
         "color": "#bb1efb"
       }
@@ -968,6 +1060,10 @@
         "color": "#1867f4"
       },
       {
+        "name": "website",
+        "color": "#aaaaaa"
+      },
+      {
         "name": "confirmed",
         "color": "#bb1efb"
       }
@@ -997,6 +1093,10 @@
         "color": "#0744B1"
       },
       {
+        "name": "website",
+        "color": "#aaaaaa"
+      },
+      {
         "name": "confirmed",
         "color": "#bb1efb"
       }
@@ -1016,6 +1116,10 @@
       {
         "name": "Accepted",
         "color": "#0E8A16"
+      },
+      {
+        "name": "website",
+        "color": "#aaaaaa"
       },
       {
         "name": "confirmed",
@@ -1041,6 +1145,10 @@
       {
         "name": "Talk",
         "color": "#1867f4"
+      },
+      {
+        "name": "website",
+        "color": "#aaaaaa"
       },
       {
         "name": "confirmed",
@@ -1072,6 +1180,10 @@
         "color": "#0744B1"
       },
       {
+        "name": "website",
+        "color": "#aaaaaa"
+      },
+      {
         "name": "confirmed",
         "color": "#bb1efb"
       }
@@ -1101,6 +1213,10 @@
         "color": "#F92A53"
       },
       {
+        "name": "website",
+        "color": "#aaaaaa"
+      },
+      {
         "name": "confirmed",
         "color": "#bb1efb"
       }
@@ -1124,6 +1240,10 @@
       {
         "name": "Builder Days Project",
         "color": "#D4C5F9"
+      },
+      {
+        "name": "website",
+        "color": "#aaaaaa"
       },
       {
         "name": "confirmed",
@@ -1153,6 +1273,10 @@
       {
         "name": "Advanced",
         "color": "#F92A53"
+      },
+      {
+        "name": "website",
+        "color": "#aaaaaa"
       },
       {
         "name": "confirmed",
@@ -1201,6 +1325,10 @@
         "color": "#1867f4"
       },
       {
+        "name": "website",
+        "color": "#aaaaaa"
+      },
+      {
         "name": "confirmed",
         "color": "#bb1efb"
       }
@@ -1228,6 +1356,10 @@
       {
         "name": "Beginner",
         "color": "#0744B1"
+      },
+      {
+        "name": "website",
+        "color": "#aaaaaa"
       },
       {
         "name": "confirmed",
@@ -1259,6 +1391,10 @@
         "color": "#0744B1"
       },
       {
+        "name": "website",
+        "color": "#aaaaaa"
+      },
+      {
         "name": "confirmed",
         "color": "#bb1efb"
       }
@@ -1284,6 +1420,10 @@
         "color": "#D4C5F9"
       },
       {
+        "name": "website",
+        "color": "#aaaaaa"
+      },
+      {
         "name": "confirmed",
         "color": "#bb1efb"
       }
@@ -1307,6 +1447,10 @@
       {
         "name": "Panel",
         "color": "#FEF2C0"
+      },
+      {
+        "name": "website",
+        "color": "#aaaaaa"
       },
       {
         "name": "confirmed",
@@ -1338,6 +1482,10 @@
         "color": "#FEF2C0"
       },
       {
+        "name": "website",
+        "color": "#aaaaaa"
+      },
+      {
         "name": "confirmed",
         "color": "#bb1efb"
       }
@@ -1361,6 +1509,10 @@
       {
         "name": "Panel",
         "color": "#FEF2C0"
+      },
+      {
+        "name": "website",
+        "color": "#aaaaaa"
       },
       {
         "name": "confirmed",
@@ -1417,6 +1569,10 @@
         "color": "#D4C5F9"
       },
       {
+        "name": "website",
+        "color": "#aaaaaa"
+      },
+      {
         "name": "confirmed",
         "color": "#bb1efb"
       }
@@ -1471,6 +1627,10 @@
         "color": "#FEF2C0"
       },
       {
+        "name": "website",
+        "color": "#aaaaaa"
+      },
+      {
         "name": "confirmed",
         "color": "#bb1efb"
       },
@@ -1498,6 +1658,10 @@
       {
         "name": "Builder Days Project",
         "color": "#D4C5F9"
+      },
+      {
+        "name": "website",
+        "color": "#aaaaaa"
       },
       {
         "name": "confirmed",
@@ -1529,6 +1693,10 @@
         "color": "#0744B1"
       },
       {
+        "name": "website",
+        "color": "#aaaaaa"
+      },
+      {
         "name": "confirmed",
         "color": "#bb1efb"
       }
@@ -1548,6 +1716,10 @@
       {
         "name": "Accepted",
         "color": "#0E8A16"
+      },
+      {
+        "name": "website",
+        "color": "#aaaaaa"
       },
       {
         "name": "confirmed",
@@ -1579,6 +1751,10 @@
         "color": "#FEF2C0"
       },
       {
+        "name": "website",
+        "color": "#aaaaaa"
+      },
+      {
         "name": "confirmed",
         "color": "#bb1efb"
       }
@@ -1606,6 +1782,10 @@
       {
         "name": "Beginner",
         "color": "#0744B1"
+      },
+      {
+        "name": "website",
+        "color": "#aaaaaa"
       },
       {
         "name": "confirmed",
@@ -1658,6 +1838,10 @@
         "color": "#0E8A16"
       },
       {
+        "name": "website",
+        "color": "#aaaaaa"
+      },
+      {
         "name": "confirmed",
         "color": "#bb1efb"
       },
@@ -1695,6 +1879,31 @@
     "url": "https://github.com/TABConf/7.tabconf.com/issues/102"
   },
   {
+    "title": "Post-Quantum Signature Aggregation",
+    "day": "Day 4",
+    "time": "",
+    "startTime": "9:00 AM",
+    "endTime": "9:30 AM",
+    "village": "Main Stage",
+    "assignees": "adiabat",
+    "labels": [
+      {
+        "name": "Accepted",
+        "color": "#0E8A16"
+      },
+      {
+        "name": "Talk",
+        "color": "#1867f4"
+      },
+      {
+        "name": "confirmed",
+        "color": "#bb1efb"
+      }
+    ],
+    "summary": "# Description\n### What is this talk about? Give us as many details as possible. \n\nCross-Input Signature Aggregation (CISA) is an idea that's been around for a w",
+    "url": "https://github.com/TABConf/7.tabconf.com/issues/106"
+  },
+  {
     "title": "Ponce City After Party Roof Top - Must wear conference wristband for entry!",
     "day": "Day 3",
     "time": "7:00 PM - 11:00 PM",
@@ -1712,6 +1921,10 @@
         "color": "#FBCA04"
       },
       {
+        "name": "website",
+        "color": "#aaaaaa"
+      },
+      {
         "name": "confirmed",
         "color": "#bb1efb"
       }
@@ -1726,7 +1939,7 @@
     "startTime": "6:00 PM",
     "endTime": "9:00 PM",
     "village": "Off Site",
-    "assignees": "",
+    "assignees": "sbddesign",
     "labels": [
       {
         "name": "Accepted",
@@ -1751,7 +1964,7 @@
     "startTime": "10:00 AM",
     "endTime": "5:00 PM",
     "village": "Off Site",
-    "assignees": "",
+    "assignees": "sbddesign",
     "labels": [
       {
         "name": "Accepted",
@@ -1776,7 +1989,7 @@
     "startTime": "5:30 PM",
     "endTime": "6:00 PM",
     "village": "Main Stage",
-    "assignees": "",
+    "assignees": "ChristopherA",
     "labels": [
       {
         "name": "Accepted",
