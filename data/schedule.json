@@ -50,6 +50,10 @@
         "color": "#d93f0b"
       },
       {
+        "name": "website",
+        "color": "#aaaaaa"
+      },
+      {
         "name": "confirmed",
         "color": "#bb1efb"
       }
@@ -73,6 +77,10 @@
       {
         "name": "Needs Floor Space",
         "color": "#d93f0b"
+      },
+      {
+        "name": "website",
+        "color": "#aaaaaa"
       },
       {
         "name": "confirmed",
@@ -123,6 +131,10 @@
       {
         "name": "Builder Days Project",
         "color": "#D4C5F9"
+      },
+      {
+        "name": "website",
+        "color": "#aaaaaa"
       },
       {
         "name": "confirmed",
@@ -187,6 +199,10 @@
         "color": "#d93f0b"
       },
       {
+        "name": "website",
+        "color": "#aaaaaa"
+      },
+      {
         "name": "confirmed",
         "color": "#bb1efb"
       }
@@ -245,6 +261,10 @@
         "color": "#D4C5F9"
       },
       {
+        "name": "website",
+        "color": "#aaaaaa"
+      },
+      {
         "name": "confirmed",
         "color": "#bb1efb"
       }
@@ -272,6 +292,10 @@
       {
         "name": "Beginner",
         "color": "#0744B1"
+      },
+      {
+        "name": "website",
+        "color": "#aaaaaa"
       },
       {
         "name": "confirmed",
@@ -363,6 +387,10 @@
       {
         "name": "Advanced",
         "color": "#F92A53"
+      },
+      {
+        "name": "website",
+        "color": "#aaaaaa"
       },
       {
         "name": "confirmed",
@@ -675,6 +703,10 @@
         "color": "#1867f4"
       },
       {
+        "name": "website",
+        "color": "#aaaaaa"
+      },
+      {
         "name": "confirmed",
         "color": "#bb1efb"
       }
@@ -919,6 +951,10 @@
         "color": "#FEF2C0"
       },
       {
+        "name": "website",
+        "color": "#aaaaaa"
+      },
+      {
         "name": "confirmed",
         "color": "#bb1efb"
       }
@@ -979,6 +1015,10 @@
       {
         "name": "Beginner",
         "color": "#0744B1"
+      },
+      {
+        "name": "website",
+        "color": "#aaaaaa"
       },
       {
         "name": "confirmed",
@@ -1544,6 +1584,10 @@
         "color": "#D4C5F9"
       },
       {
+        "name": "website",
+        "color": "#aaaaaa"
+      },
+      {
         "name": "confirmed",
         "color": "#bb1efb"
       }
@@ -1596,6 +1640,10 @@
       {
         "name": "Talk",
         "color": "#1867f4"
+      },
+      {
+        "name": "website",
+        "color": "#aaaaaa"
       },
       {
         "name": "confirmed",
@@ -1813,6 +1861,10 @@
         "color": "#FEF2C0"
       },
       {
+        "name": "website",
+        "color": "#aaaaaa"
+      },
+      {
         "name": "confirmed",
         "color": "#bb1efb"
       },
@@ -1867,6 +1919,10 @@
         "color": "#0E8A16"
       },
       {
+        "name": "website",
+        "color": "#aaaaaa"
+      },
+      {
         "name": "confirmed",
         "color": "#bb1efb"
       },
@@ -1894,6 +1950,10 @@
       {
         "name": "Talk",
         "color": "#1867f4"
+      },
+      {
+        "name": "website",
+        "color": "#aaaaaa"
       },
       {
         "name": "confirmed",
@@ -2000,6 +2060,10 @@
         "color": "#1867f4"
       },
       {
+        "name": "website",
+        "color": "#aaaaaa"
+      },
+      {
         "name": "confirmed",
         "color": "#bb1efb"
       }
@@ -2075,6 +2139,10 @@
         "color": "#FEF2C0"
       },
       {
+        "name": "website",
+        "color": "#aaaaaa"
+      },
+      {
         "name": "confirmed",
         "color": "#bb1efb"
       }
@@ -2094,6 +2162,10 @@
       {
         "name": "Accepted",
         "color": "#0E8A16"
+      },
+      {
+        "name": "website",
+        "color": "#aaaaaa"
       },
       {
         "name": "confirmed",
