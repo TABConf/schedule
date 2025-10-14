@@ -63,7 +63,7 @@
   },
   {
     "title": "Pleb Underground NewsDesk/ Interview Station",
-    "day": "Day 1-4",
+    "day": "All Days",
     "time": "All Day",
     "startTime": "",
     "endTime": "",
@@ -116,35 +116,6 @@
     "url": "https://github.com/TABConf/7.tabconf.com/issues/16"
   },
   {
-    "title": "DIY Selfcustody with Krux Firmware",
-    "day": "Day 1-4",
-    "time": "All Day",
-    "startTime": "",
-    "endTime": "",
-    "village": "Builder Days Area",
-    "assignees": "kkdao",
-    "labels": [
-      {
-        "name": "Accepted",
-        "color": "#0E8A16"
-      },
-      {
-        "name": "Builder Days Project",
-        "color": "#D4C5F9"
-      },
-      {
-        "name": "website",
-        "color": "#aaaaaa"
-      },
-      {
-        "name": "confirmed",
-        "color": "#bb1efb"
-      }
-    ],
-    "summary": "# Description\n### What is this workshop about? Provide as many details as possible. \nKrux Firmware is multilingual FOSS bitcoin-only firmware which runs on K210",
-    "url": "https://github.com/TABConf/7.tabconf.com/issues/17"
-  },
-  {
     "title": "Building Taproot Lightning Channels from Scratch",
     "day": "Day 1",
     "time": "9:30 AM - 11:00 AM",
@@ -179,7 +150,7 @@
   },
   {
     "title": "Mario Kart: Double Sats Pick-Up Games",
-    "day": "Day 1-4",
+    "day": "All Days",
     "time": "All Day",
     "startTime": "",
     "endTime": "",
@@ -1059,7 +1030,7 @@
   },
   {
     "title": "Builder Days Project Job Board",
-    "day": "Day 1",
+    "day": "All Days",
     "time": "All Day",
     "startTime": "",
     "endTime": "",
@@ -1937,7 +1908,7 @@
   {
     "title": "Post-Quantum Signature Aggregation",
     "day": "Day 4",
-    "time": "",
+    "time": "9:30 AM - 9:30 AM",
     "startTime": "9:00 AM",
     "endTime": "9:30 AM",
     "village": "Main Stage",
@@ -2048,7 +2019,7 @@
     "time": "",
     "startTime": "5:30 PM",
     "endTime": "6:00 PM",
-    "village": "Main Stage",
+    "village": "Workshop Room 2",
     "assignees": "ChristopherA",
     "labels": [
       {
