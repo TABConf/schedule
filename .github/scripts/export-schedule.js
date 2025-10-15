@@ -13,6 +13,7 @@ query($projectId: ID!, $after: String) {
           content {
             ... on Issue {
               title
+              state
               body
               url
               assignees(first: 5) { nodes { login } }
@@ -72,6 +73,9 @@ function sanitizeSummary(md) {
 
     const items = nodes.map(item => {
       const c = item.content;
+
+      // exclude closed issues
+      if ((c?.state || '').toUpperCase() === 'CLOSED') return null;
 
       const labels = c?.labels?.nodes || [];
       const hasAccepted = labels.some(l => (l.name || '').toLowerCase() === 'accepted');
