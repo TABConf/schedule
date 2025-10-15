@@ -30,7 +30,7 @@
   },
   {
     "title": "Stacker News TABConf Takeover!",
-    "day": "Day 1 & 2",
+    "day": "Day 3 & 4",
     "time": "All Day",
     "startTime": "",
     "endTime": "",
@@ -63,7 +63,7 @@
   },
   {
     "title": "Pleb Underground NewsDesk/ Interview Station",
-    "day": "All Days",
+    "day": "Day 3 & 4",
     "time": "All Day",
     "startTime": "",
     "endTime": "",
@@ -92,7 +92,7 @@
   },
   {
     "title": "Mario Kart: Double Sats Pick-Up Games",
-    "day": "All Days",
+    "day": "Day 3 & 4",
     "time": "All Day",
     "startTime": "",
     "endTime": "",
@@ -125,7 +125,7 @@
   },
   {
     "title": "DIY Bitcoin/Lightning nodes",
-    "day": "Day 1 & 2",
+    "day": "Day 3 & 4",
     "time": "All Day",
     "startTime": "",
     "endTime": "",
@@ -238,35 +238,6 @@
     ],
     "summary": "Hi there! I'd love to submit a solo talk for the conference. Cheers!\n\n<br>\n\n# Description\n\n### What is this talk about? Give us as many details as possible\n\nThi",
     "url": "https://github.com/TABConf/7.tabconf.com/issues/38"
-  },
-  {
-    "title": "Warnet 2025: Lightning Crashes ⚡️🔥",
-    "day": "Day 2",
-    "time": "4:00 PM - 7:00 PM",
-    "startTime": "4:00 PM",
-    "endTime": "7:00 PM",
-    "village": "Workshop Room 2",
-    "assignees": "pinheadmz",
-    "labels": [
-      {
-        "name": "Accepted",
-        "color": "#0E8A16"
-      },
-      {
-        "name": "Workshop",
-        "color": "#d10359"
-      },
-      {
-        "name": "website",
-        "color": "#aaaaaa"
-      },
-      {
-        "name": "confirmed",
-        "color": "#bb1efb"
-      }
-    ],
-    "summary": "<!-- NOTE!! If you are intending to do a non-interactive demo, THIS IS NOT a workshop, please submit talk demo's under \"Solo Talks\". -->\n\n# Description\n### What",
-    "url": "https://github.com/TABConf/7.tabconf.com/issues/42"
   },
   {
     "title": "Confidential Script: Emulating soft forks with stateless TEEs",
@@ -459,60 +430,6 @@
     "url": "https://github.com/TABConf/7.tabconf.com/issues/64"
   },
   {
-    "title": "ATL BTC MeatUp",
-    "day": "Day 2",
-    "time": "6:30 PM - 8:30 PM",
-    "startTime": "6:30 PM",
-    "endTime": "8:30 PM",
-    "village": "Off Site",
-    "assignees": "oksharp2",
-    "labels": [
-      {
-        "name": "Accepted",
-        "color": "#0E8A16"
-      },
-      {
-        "name": "Satellite Event",
-        "color": "#FBCA04"
-      },
-      {
-        "name": "website",
-        "color": "#aaaaaa"
-      },
-      {
-        "name": "confirmed",
-        "color": "#bb1efb"
-      }
-    ],
-    "summary": "- A satellite event, Tuesday evening, \n\n### When\n- October 14, 2025\n- 6:30 - 8:30pm\n### Where \n- Fogo de Chao, Brazilian Steakhouse\n- 3101 Piedmont Rd NE, Atlan",
-    "url": "https://github.com/TABConf/7.tabconf.com/issues/68"
-  },
-  {
-    "title": "Builder Days Project Job Board",
-    "day": "All Days",
-    "time": "All Day",
-    "startTime": "",
-    "endTime": "",
-    "village": "Builder Days Area",
-    "assignees": "miketwenty1, horologger",
-    "labels": [
-      {
-        "name": "Accepted",
-        "color": "#0E8A16"
-      },
-      {
-        "name": "Needs Floor Space",
-        "color": "#d93f0b"
-      },
-      {
-        "name": "confirmed",
-        "color": "#bb1efb"
-      }
-    ],
-    "summary": "<!-- All software-based projects submitted must be open source and freely available for public use -->\n\n## Project\nJob Board\n\n#### Description:\nPhysical Job Boa",
-    "url": "https://github.com/TABConf/7.tabconf.com/issues/69"
-  },
-  {
     "title": "Stratum v2 by the Numbers",
     "day": "Day 3",
     "time": "10:00 AM - 10:30 AM",
@@ -629,35 +546,6 @@
     "url": "https://github.com/TABConf/7.tabconf.com/issues/74"
   },
   {
-    "title": "Builder Days Project Bitcoin Core",
-    "day": "Day 1 & 2",
-    "time": "All Day",
-    "startTime": "",
-    "endTime": "",
-    "village": "Builder Days Area",
-    "assignees": "murchandamus",
-    "labels": [
-      {
-        "name": "Accepted",
-        "color": "#0E8A16"
-      },
-      {
-        "name": "Builder Days Project",
-        "color": "#D4C5F9"
-      },
-      {
-        "name": "website",
-        "color": "#aaaaaa"
-      },
-      {
-        "name": "confirmed",
-        "color": "#bb1efb"
-      }
-    ],
-    "summary": "## Bitcoin Core\n\n#### Description:\n\nBitcoin Core is a full node implementation of the Bitcoin protocol.\n\n#### Link(s) to source Repos:\n\nhttps://github.com/bitco",
-    "url": "https://github.com/TABConf/7.tabconf.com/issues/78"
-  },
-  {
     "title": "Satoshi's Quantum-Vulnerable Coins (Interactive Audience Panel)",
     "day": "Day 3",
     "time": "10:30 AM - 11:00 AM",
@@ -706,35 +594,6 @@
     ],
     "summary": "# Description\n### What is this talk about? Give us as many details as possible. \n\nIn this talk we will give an overview of the main challenges that quantum comp",
     "url": "https://github.com/TABConf/7.tabconf.com/issues/81"
-  },
-  {
-    "title": "Builder Days Project did:btcr2 Decentralized Identifier Method",
-    "day": "Day 1 & 2",
-    "time": "All Day",
-    "startTime": "",
-    "endTime": "",
-    "village": "Builder Days Area",
-    "assignees": "dcdpr",
-    "labels": [
-      {
-        "name": "Accepted",
-        "color": "#0E8A16"
-      },
-      {
-        "name": "Builder Days Project",
-        "color": "#D4C5F9"
-      },
-      {
-        "name": "website",
-        "color": "#aaaaaa"
-      },
-      {
-        "name": "confirmed",
-        "color": "#bb1efb"
-      }
-    ],
-    "summary": "<!-- All software-based projects submitted must be open source and freely available for public use -->\n\n## Project\n#### Description:\n\nStarting with toy seed wor",
-    "url": "https://github.com/TABConf/7.tabconf.com/issues/85"
   },
   {
     "title": "Quantum Rotating Debate Panel",
@@ -832,37 +691,8 @@
     "url": "https://github.com/TABConf/7.tabconf.com/issues/89"
   },
   {
-    "title": "Builder Days Project: Warnet Setup & Support",
-    "day": "Day 1 & 2",
-    "time": "All Day",
-    "startTime": "",
-    "endTime": "",
-    "village": "Builder Days Area",
-    "assignees": "pinheadmz",
-    "labels": [
-      {
-        "name": "Accepted",
-        "color": "#0E8A16"
-      },
-      {
-        "name": "Builder Days Project",
-        "color": "#D4C5F9"
-      },
-      {
-        "name": "website",
-        "color": "#aaaaaa"
-      },
-      {
-        "name": "confirmed",
-        "color": "#bb1efb"
-      }
-    ],
-    "summary": "In advance of the [Warnet Workshop Event](https://github.com/TABConf/7.tabconf.com/issues/42) we should have a table setup for participants to learn about Warne",
-    "url": "https://github.com/TABConf/7.tabconf.com/issues/90"
-  },
-  {
     "title": "Solo/Home Miners Builder Days Project",
-    "day": "Day 1 & 2",
+    "day": "Day 3 & 4",
     "time": "All Day",
     "startTime": "",
     "endTime": "",
@@ -921,35 +751,6 @@
     ],
     "summary": "# Description\nRotating debate panel inspired by last years panel that was brainstormed here:\nhttps://github.com/TABConf/6.tabconf.com/issues/48#issuecomment-227",
     "url": "https://github.com/TABConf/7.tabconf.com/issues/95"
-  },
-  {
-    "title": "Builder Days Project: SeedSigner",
-    "day": "Day 1 & 2",
-    "time": "All Day",
-    "startTime": "",
-    "endTime": "",
-    "village": "Builder Days Area",
-    "assignees": "kdmukai",
-    "labels": [
-      {
-        "name": "Accepted",
-        "color": "#0E8A16"
-      },
-      {
-        "name": "Builder Days Project",
-        "color": "#D4C5F9"
-      },
-      {
-        "name": "website",
-        "color": "#aaaaaa"
-      },
-      {
-        "name": "confirmed",
-        "color": "#bb1efb"
-      }
-    ],
-    "summary": "## Project\nSeedSigner\n\n#### Description:\nThe goal of SeedSigner is to lower the cost and complexity of Bitcoin multisignature wallet use. To accomplish this goa",
-    "url": "https://github.com/TABConf/7.tabconf.com/issues/96"
   },
   {
     "title": "TabConf Hack’n Tell",
