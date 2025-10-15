@@ -840,6 +840,31 @@
     "url": "https://github.com/TABConf/7.tabconf.com/issues/104"
   },
   {
+    "title": "Bitcoin Builder Kit: expressing UX principles as code for humans and agents",
+    "day": "Day 4",
+    "time": "2:00 PM - 3:00 PM",
+    "startTime": "",
+    "endTime": "",
+    "village": "BitDevs Socratic Village",
+    "assignees": "sbddesign",
+    "labels": [
+      {
+        "name": "Accepted",
+        "color": "#0E8A16"
+      },
+      {
+        "name": "Talk",
+        "color": "#1867f4"
+      },
+      {
+        "name": "confirmed",
+        "color": "#bb1efb"
+      }
+    ],
+    "summary": "# Description\n\nI don't think we have the bitcoin experience we want. Maybe there are individual products we can point to that we love, but the overall user expe",
+    "url": "https://github.com/TABConf/7.tabconf.com/issues/121"
+  },
+  {
     "title": "Hardcore Trivia",
     "day": "Day 4",
     "time": "5:00 PM - 6:00 PM",
