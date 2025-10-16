@@ -1,7 +1,7 @@
 [
   {
     "title": "Stacker News TABConf Takeover!",
-    "day": "Day 3 & 4",
+    "day": "Day 4",
     "time": "All Day",
     "startTime": "",
     "endTime": "",
@@ -34,7 +34,7 @@
   },
   {
     "title": "Pleb Underground NewsDesk/ Interview Station",
-    "day": "Day 3 & 4",
+    "day": "Day 4",
     "time": "All Day",
     "startTime": "",
     "endTime": "",
@@ -63,7 +63,7 @@
   },
   {
     "title": "Mario Kart: Double Sats Pick-Up Games",
-    "day": "Day 3 & 4",
+    "day": "Day 4",
     "time": "All Day",
     "startTime": "",
     "endTime": "",
@@ -96,7 +96,7 @@
   },
   {
     "title": "DIY Bitcoin/Lightning nodes",
-    "day": "Day 3 & 4",
+    "day": "Day 4",
     "time": "All Day",
     "startTime": "",
     "endTime": "",
@@ -124,91 +124,8 @@
     "url": "https://github.com/TABConf/7.tabconf.com/issues/24"
   },
   {
-    "title": "Can Bitcoin improve election integrity in Georgia?",
-    "day": "Day 4",
-    "time": "2:30 PM - 3:00 PM",
-    "startTime": "2:30 PM",
-    "endTime": "3:00 PM",
-    "village": "Main Stage",
-    "assignees": "bjacoutot",
-    "labels": [
-      {
-        "name": "Accepted",
-        "color": "#0E8A16"
-      },
-      {
-        "name": "Panel",
-        "color": "#FEF2C0"
-      },
-      {
-        "name": "website",
-        "color": "#aaaaaa"
-      },
-      {
-        "name": "confirmed",
-        "color": "#bb1efb"
-      }
-    ],
-    "summary": "# Description: \n### What is this panel discussion about? Will there be multiple talking a points?\nBitcoin was used during the November 2024 presidential electio",
-    "url": "https://github.com/TABConf/7.tabconf.com/issues/64"
-  },
-  {
-    "title": "Single Elimination Chess Tournament",
-    "day": "Day 4",
-    "time": "2:30 PM - 4:00 PM",
-    "startTime": "2:30 PM",
-    "endTime": "4:00 PM",
-    "village": "Builder Days Area",
-    "assignees": "ChrisKCBtcYolo",
-    "labels": [
-      {
-        "name": "Accepted",
-        "color": "#0E8A16"
-      },
-      {
-        "name": "website",
-        "color": "#aaaaaa"
-      },
-      {
-        "name": "confirmed",
-        "color": "#bb1efb"
-      }
-    ],
-    "summary": "# Description\n### What is this event about?\n\nA single elimination chess tournament is a competitive event where players face off against each other in a series ",
-    "url": "https://github.com/TABConf/7.tabconf.com/issues/72"
-  },
-  {
-    "title": "Open Source is brutal - truth, collaboration, and facing your daemons.",
-    "day": "Day 4",
-    "time": "3:00 PM - 3:30 PM",
-    "startTime": "3:00 PM",
-    "endTime": "3:30 PM",
-    "village": "Main Stage",
-    "assignees": "tcharding",
-    "labels": [
-      {
-        "name": "Accepted",
-        "color": "#0E8A16"
-      },
-      {
-        "name": "Talk",
-        "color": "#1867f4"
-      },
-      {
-        "name": "website",
-        "color": "#aaaaaa"
-      },
-      {
-        "name": "confirmed",
-        "color": "#bb1efb"
-      }
-    ],
-    "summary": "# Description\n\n### What is this talk about? Give us as many details as possible. \n\nNon technical talk. Reflections on open source development, burnout, how we w",
-    "url": "https://github.com/TABConf/7.tabconf.com/issues/74"
-  },
-  {
     "title": "Solo/Home Miners Builder Days Project",
-    "day": "Day 3 & 4",
+    "day": "Day 4",
     "time": "All Day",
     "startTime": "",
     "endTime": "",
@@ -338,5 +255,30 @@
     ],
     "summary": "",
     "url": "https://github.com/TABConf/7.tabconf.com/issues/120"
+  },
+  {
+    "title": "Pizza Party",
+    "day": "Day 4",
+    "time": "",
+    "startTime": "7:00 PM",
+    "endTime": "9:00 PM",
+    "village": "Off Site",
+    "assignees": "iglesiasbrandon",
+    "labels": [
+      {
+        "name": "Accepted",
+        "color": "#0E8A16"
+      },
+      {
+        "name": "Satellite Event",
+        "color": "#FBCA04"
+      },
+      {
+        "name": "confirmed",
+        "color": "#bb1efb"
+      }
+    ],
+    "summary": "Come celebrate the end of TABConf 7 at Antico Pizza Napoletana! (roughly 5 minutes away) \n1093 Hemphill Ave NW, Atlanta, GA 30318\n7-9 PM! Or after Bitcoin Trivi",
+    "url": "https://github.com/TABConf/7.tabconf.com/issues/123"
   }
 ]
