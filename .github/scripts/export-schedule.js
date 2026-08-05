@@ -1,7 +1,17 @@
 const fs = require('fs');
 const fetch = require('node-fetch');
 
-const PROJECT_ID = 'PVT_kwDOAfWa-84Awu-M'; // TABConf project v2 id
+// !! THIS IS THE TABCONF 7 PROJECT (org project #9). !!
+// As of 2026-08-05 no TABConf 8 project exists; the org only has projects for
+// TABConf 7 (#9), TABConf 6 (#4) and TABConf 2023 (#1). Running this workflow as-is
+// will republish last year's schedule over data/schedule.json.
+//
+// TO FIX: create the TABConf 8 project, add the accepted issues from
+// TABConf/8.tabconf.com, then replace the id below with the new project's node id and
+// update the project link in index.html. Get the node id with:
+//   gh api graphql -f query='{organization(login:"TABConf"){projectV2(number:N){id}}}'
+// DO NOT run the Export Project Schedule workflow until this is changed.
+const PROJECT_ID = 'PVT_kwDOAfWa-84Awu-M'; // TABConf 7 project v2 id, STALE
 
 const QUERY = `
 query($projectId: ID!, $after: String) {
