@@ -40,13 +40,11 @@ h1{margin:0;font-size:26px;letter-spacing:-.02em}
 input[type=search]{flex:1;min-width:170px;padding:9px 12px;font:inherit;font-size:14px;border:1px solid var(--line);
   border-radius:7px;background:var(--card);color:var(--ink)}
 input[type=search]:focus{outline:2px solid var(--accent);outline-offset:-1px}
-.chip{border:1px solid var(--line);background:var(--card);color:var(--muted);font:inherit;font-size:13px;
-  padding:7px 13px;border-radius:20px;cursor:pointer;white-space:nowrap}
-.chip:hover{border-color:var(--accent);color:var(--ink)}
-.chip[aria-pressed=true]{background:var(--accent);border-color:var(--accent);color:#fff;font-weight:600}
-.seg{display:inline-flex;border:1px solid var(--line);border-radius:20px;overflow:hidden;background:var(--card)}
-.seg button{border:0;background:transparent;color:var(--muted);font:inherit;font-size:13px;padding:7px 15px;cursor:pointer}
-.seg button[aria-pressed=true]{background:var(--ink);color:var(--bg);font-weight:600}
+.seg{display:inline-flex;border:2px solid var(--accent);border-radius:9px;overflow:hidden;background:var(--card);flex:0 0 auto}
+.seg button{border:0;background:transparent;color:var(--accent);font:inherit;font-size:14px;font-weight:600;
+  padding:9px 22px;cursor:pointer;letter-spacing:.01em;transition:background .12s,color .12s}
+.seg button:hover{background:var(--accent-soft)}
+.seg button[aria-pressed=true]{background:var(--accent);color:#fff}
 
 .day{margin:0 0 30px}
 .dayhead{position:sticky;top:61px;background:var(--bg);padding:14px 0 8px;z-index:10;
@@ -67,8 +65,8 @@ input[type=search]:focus{outline:2px solid var(--accent);outline-offset:-1px}
 .title a:hover{color:var(--accent);text-decoration:underline}
 .summary{margin:0;color:var(--muted);font-size:13.5px}
 .tags{display:flex;gap:6px;flex-wrap:wrap;margin-top:8px;align-items:center}
-.tag{font-size:11px;padding:2px 8px;border-radius:11px;border:1px solid var(--line);color:var(--muted)}
-.tag.kind{border-color:var(--accent);color:var(--accent);font-weight:600}
+.tag{display:inline-block;font-size:11px;padding:2px 9px;border-radius:11px;border:1px solid transparent;
+  font-weight:600;white-space:nowrap;line-height:1.6;vertical-align:1px}
 .who{font-family:var(--mono);font-size:11.5px;color:var(--muted)}
 .num{font-family:var(--mono);font-size:11px;color:var(--muted)}
 
@@ -82,6 +80,7 @@ input[type=search]:focus{outline:2px solid var(--accent);outline-offset:-1px}
 .grid .c-loc{color:var(--muted);white-space:nowrap;width:110px}
 .grid .c-who{font-family:var(--mono);font-size:12px;color:var(--muted);white-space:nowrap;width:150px}
 .grid .c-title{font-weight:600}
+.grid .c-title .tag{margin-left:7px}
 .grid .c-title a{text-decoration:none}
 .grid .c-title a:hover{color:var(--accent);text-decoration:underline}
 
@@ -118,9 +117,6 @@ footer{margin-top:40px;padding-top:18px;border-top:1px solid var(--line);color:v
       <button id="v-details" aria-pressed="true">Details</button>
       <button id="v-calendar" aria-pressed="false">Calendar</button>
     </span>
-    <button class="chip" id="f-all" aria-pressed="true">All</button>
-    <button class="chip" id="f-stage" aria-pressed="false">Sessions</button>
-    <button class="chip" id="f-allday" aria-pressed="false">All day</button>
   </div>
   <div id="out"><p class="empty">Loading the schedule…</p></div>
   <footer id="foot"></footer>
@@ -140,11 +136,37 @@ const dayLabel = iso => iso ? DAY_FMT.format(new Date(iso+'T00:00:00Z')) : 'Not 
 const dur = m => m==null ? '' : (m>=60 ? (m%60 ? (m/60|0)+'h '+(m%60)+'m' : (m/60|0)+'h') : m+'m');
 // There is one stage this year, so location is derivable rather than stored.
 const place = s => isAllDay(s) ? 'Expo floor' : 'Main stage';
-const kindOf = s => (s.labels.find(l=>/workshop|talk|panel|demo|socratic/i.test(l.name))||{}).name || '';
+const kindOf = s => s.labels.find(l=>/workshop|talk|panel|demo|socratic/i.test(l.name)) || null;
+
+/* GitHub gives each label a hex. Use it, but pick the text colour from the
+   background's luminance so a pale yellow and a deep navy are both readable.
+   Same maths GitHub uses on its own label chips. */
+function hexRGB(hex){
+  const h=String(hex||'').replace('#','').trim();
+  const s=h.length===3 ? h.split('').map(c=>c+c).join('') : h;
+  if(!/^[0-9a-f]{6}$/i.test(s)) return null;
+  return [parseInt(s.slice(0,2),16),parseInt(s.slice(2,4),16),parseInt(s.slice(4,6),16)];
+}
+function luminance([r,g,b]){
+  const f=v=>{v/=255; return v<=0.03928 ? v/12.92 : Math.pow((v+0.055)/1.055,2.4);};
+  return 0.2126*f(r)+0.7152*f(g)+0.0722*f(b);
+}
+function labelChip(label){
+  const span=el('span','tag',label.name);
+  const rgb=hexRGB(label.color);
+  if(rgb){
+    span.style.background=label.color;
+    span.style.color = luminance(rgb) > 0.45 ? '#14131a' : '#ffffff';
+    span.style.borderColor='rgba(0,0,0,.18)';
+  }else{
+    span.style.borderColor='var(--line)';
+    span.style.color='var(--muted)';
+  }
+  return span;
+}
+const SKIP_LABEL=/^accepted$|needs to be scheduled|^under consideration$|^details need to be confirmed$/i;
 
 function matches(s){
-  if(S.track==='stage' && isAllDay(s)) return false;
-  if(S.track==='allday' && !isAllDay(s)) return false;
   const q=S.q.trim().toLowerCase();
   if(!q) return true;
   return (s.title+' '+s.summary+' '+s.speakers.join(' ')+' '+s.labels.map(l=>l.name).join(' '))
@@ -188,8 +210,7 @@ function detailsNode(s){
   if(s.summary) body.appendChild(el('p','summary',s.summary));
 
   const tags=el('div','tags');
-  s.labels.filter(l=>!/^accepted$|needs to be scheduled/i.test(l.name))
-          .forEach(l=>tags.appendChild(el('span','tag kind',l.name)));
+  s.labels.filter(l=>!SKIP_LABEL.test(l.name)).forEach(l=>tags.appendChild(labelChip(l)));
   if(s.speakers.length) tags.appendChild(el('span','who','@'+s.speakers.join(', @')));
   tags.appendChild(el('span','num','#'+s.number));
   body.appendChild(tags);
@@ -211,7 +232,7 @@ function calendarTable(items){
     const td=el('td','c-title');
     const a=el('a',null,s.title); a.href=s.url; a.target='_blank'; a.rel='noopener';
     td.appendChild(a);
-    const k=kindOf(s); if(k) td.appendChild(el('span','tag',' '+k));
+    const k=kindOf(s); if(k) td.appendChild(labelChip(k));
     tr.appendChild(td);
     tr.appendChild(el('td','c-who', s.speakers.length ? '@'+s.speakers.join(', @') : ''));
     tr.appendChild(el('td','c-loc', place(s)));
@@ -257,15 +278,6 @@ function bind(){
     });
   });
 
-  const filters={all:'f-all',stage:'f-stage',allday:'f-allday'};
-  Object.entries(filters).forEach(([track,id])=>{
-    document.getElementById(id).addEventListener('click',()=>{
-      S.track=track;
-      Object.values(filters).forEach(b=>
-        document.getElementById(b).setAttribute('aria-pressed',String(b===id)));
-      render();
-    });
-  });
 }
 
 fetch('data/schedule.json?v='+Date.now())
