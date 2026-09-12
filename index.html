@@ -11,52 +11,53 @@
   color-scheme: light dark;
   --bg:#faf8f5; --card:#fff; --ink:#161615; --muted:#6c6862;
   --line:#e6e1d9; --accent:#c2410c; --accent-soft:#fdf1e7;
-  --stage:#c2410c; --floor:#0f766e; --floor-soft:#e6f4f1;
+  --allday:#0f766e; --allday-soft:#e6f4f1;
   --mono:ui-monospace,SFMono-Regular,"SF Mono",Menlo,monospace;
   --sans:-apple-system,BlinkMacSystemFont,"Segoe UI",system-ui,sans-serif;
-  --radius:10px;
 }
 @media (prefers-color-scheme:dark){
   :root:not([data-theme=light]){
     --bg:#14131a; --card:#1d1c24; --ink:#eceaf0; --muted:#9b97a6;
     --line:#2f2d3a; --accent:#fb923c; --accent-soft:#2a1d14;
-    --stage:#fb923c; --floor:#5eead4; --floor-soft:#14302c;
+    --allday:#5eead4; --allday-soft:#14302c;
   }
 }
 *{box-sizing:border-box}
 body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--sans);font-size:15px;line-height:1.5}
-.wrap{max-width:940px;margin:0 auto;padding:0 20px 80px}
+.wrap{max-width:960px;margin:0 auto;padding:0 20px 80px}
 a{color:inherit}
 
-header{border-bottom:1px solid var(--line);background:var(--card);margin-bottom:26px}
-header .wrap{padding-top:26px;padding-bottom:22px}
+header{border-bottom:1px solid var(--line);background:var(--card)}
+header .wrap{padding-top:26px;padding-bottom:20px}
 h1{margin:0;font-size:26px;letter-spacing:-.02em}
 .sub{margin:5px 0 0;color:var(--muted);font-size:14px}
 .final{display:inline-block;margin-top:10px;font-size:11px;text-transform:uppercase;letter-spacing:.09em;
   font-weight:700;color:var(--accent);background:var(--accent-soft);border:1px solid var(--accent);
   padding:3px 9px;border-radius:3px}
 
-.stats{display:flex;gap:22px;flex-wrap:wrap;margin-top:16px}
-.stat .n{font-family:var(--mono);font-size:19px;font-weight:600}
-.stat .l{font-size:11px;color:var(--muted);text-transform:uppercase;letter-spacing:.05em}
-
-.controls{display:flex;gap:9px;flex-wrap:wrap;align-items:center;margin:0 0 22px;position:sticky;top:0;
+.controls{display:flex;gap:9px;flex-wrap:wrap;align-items:center;margin:0 0 6px;position:sticky;top:0;
   background:var(--bg);padding:12px 0;z-index:20;border-bottom:1px solid var(--line)}
-input[type=search]{flex:1;min-width:190px;padding:9px 12px;font:inherit;font-size:14px;border:1px solid var(--line);
+input[type=search]{flex:1;min-width:170px;padding:9px 12px;font:inherit;font-size:14px;border:1px solid var(--line);
   border-radius:7px;background:var(--card);color:var(--ink)}
 input[type=search]:focus{outline:2px solid var(--accent);outline-offset:-1px}
 .chip{border:1px solid var(--line);background:var(--card);color:var(--muted);font:inherit;font-size:13px;
   padding:7px 13px;border-radius:20px;cursor:pointer;white-space:nowrap}
 .chip:hover{border-color:var(--accent);color:var(--ink)}
 .chip[aria-pressed=true]{background:var(--accent);border-color:var(--accent);color:#fff;font-weight:600}
+.seg{display:inline-flex;border:1px solid var(--line);border-radius:20px;overflow:hidden;background:var(--card)}
+.seg button{border:0;background:transparent;color:var(--muted);font:inherit;font-size:13px;padding:7px 15px;cursor:pointer}
+.seg button[aria-pressed=true]{background:var(--ink);color:var(--bg);font-weight:600}
 
-.day{margin:0 0 34px}
-.dayhead{position:sticky;top:61px;background:var(--bg);padding:12px 0 9px;z-index:10;
+.day{margin:0 0 30px}
+.dayhead{position:sticky;top:61px;background:var(--bg);padding:14px 0 8px;z-index:10;
   border-bottom:2px solid var(--ink);margin-bottom:2px}
 .dayhead h2{margin:0;font-size:17px;letter-spacing:-.01em}
-.dayhead .meta{font-size:12px;color:var(--muted);font-family:var(--mono);margin-top:2px}
+.dayhead .badge{font-size:11px;text-transform:uppercase;letter-spacing:.07em;font-weight:700;
+  color:var(--allday);background:var(--allday-soft);border:1px solid var(--allday);
+  padding:2px 8px;border-radius:3px;vertical-align:3px;margin-left:9px}
 
-.session{display:grid;grid-template-columns:92px 1fr;gap:16px;padding:15px 0;border-bottom:1px solid var(--line)}
+/* ---------- details view ---------- */
+.session{display:grid;grid-template-columns:96px 1fr;gap:16px;padding:15px 0;border-bottom:1px solid var(--line)}
 .session:last-child{border-bottom:none}
 .when{font-family:var(--mono);font-size:12.5px;line-height:1.45;padding-top:2px}
 .when .s{font-weight:600}
@@ -67,22 +68,36 @@ input[type=search]:focus{outline:2px solid var(--accent);outline-offset:-1px}
 .summary{margin:0;color:var(--muted);font-size:13.5px}
 .tags{display:flex;gap:6px;flex-wrap:wrap;margin-top:8px;align-items:center}
 .tag{font-size:11px;padding:2px 8px;border-radius:11px;border:1px solid var(--line);color:var(--muted)}
-.tag.kind{border-color:var(--stage);color:var(--stage);font-weight:600}
-.tag.floor{border-color:var(--floor);color:var(--floor);font-weight:600;background:var(--floor-soft)}
+.tag.kind{border-color:var(--accent);color:var(--accent);font-weight:600}
 .who{font-family:var(--mono);font-size:11.5px;color:var(--muted)}
 .num{font-family:var(--mono);font-size:11px;color:var(--muted)}
 
+/* ---------- calendar view ---------- */
+.grid{width:100%;border-collapse:collapse;font-size:13.5px}
+.grid th{text-align:left;font-size:10.5px;text-transform:uppercase;letter-spacing:.05em;color:var(--muted);
+  font-weight:600;padding:9px 10px;border-bottom:1px solid var(--line);white-space:nowrap}
+.grid td{padding:9px 10px;border-bottom:1px solid var(--line);vertical-align:top}
+.grid tr:hover td{background:var(--accent-soft)}
+.grid .c-time{font-family:var(--mono);font-size:12.5px;white-space:nowrap;width:150px}
+.grid .c-loc{color:var(--muted);white-space:nowrap;width:110px}
+.grid .c-who{font-family:var(--mono);font-size:12px;color:var(--muted);white-space:nowrap;width:150px}
+.grid .c-title{font-weight:600}
+.grid .c-title a{text-decoration:none}
+.grid .c-title a:hover{color:var(--accent);text-decoration:underline}
+
 .note{background:var(--accent-soft);border:1px solid var(--line);border-left:3px solid var(--accent);
-  border-radius:6px;padding:12px 15px;margin:0 0 22px;font-size:13.5px}
+  border-radius:6px;padding:12px 15px;margin:14px 0 0;font-size:13.5px}
 .empty{color:var(--muted);padding:48px 0;text-align:center}
 footer{margin-top:40px;padding-top:18px;border-top:1px solid var(--line);color:var(--muted);font-size:12px}
 
-@media(max-width:620px){
+@media(max-width:640px){
+  h1{font-size:22px}
   .session{grid-template-columns:1fr;gap:5px}
   .when{padding-top:0}
   .when .e,.when .d{display:inline;margin-right:9px}
-  h1{font-size:22px}
   .dayhead{top:57px}
+  .grid .c-who,.grid .c-loc{display:none}
+  .grid .c-time{width:auto}
 }
 </style>
 </head>
@@ -93,16 +108,19 @@ footer{margin-top:40px;padding-top:18px;border-top:1px solid var(--line);color:v
     <h1>TABConf 8 Schedule</h1>
     <p class="sub">October 12-15, 2026 · Georgia Tech Exhibition Hall, Atlanta</p>
     <div class="final">The final TABConf</div>
-    <div class="stats" id="stats"></div>
   </div>
 </header>
 
 <div class="wrap">
   <div class="controls">
     <input type="search" id="q" placeholder="Search sessions, speakers, topics…" autocomplete="off">
-    <button class="chip" id="f-all"  aria-pressed="true">All</button>
-    <button class="chip" id="f-stage" aria-pressed="false">Stage</button>
-    <button class="chip" id="f-floor" aria-pressed="false">Floor</button>
+    <span class="seg" role="group" aria-label="View">
+      <button id="v-details" aria-pressed="true">Details</button>
+      <button id="v-calendar" aria-pressed="false">Calendar</button>
+    </span>
+    <button class="chip" id="f-all" aria-pressed="true">All</button>
+    <button class="chip" id="f-stage" aria-pressed="false">Sessions</button>
+    <button class="chip" id="f-allday" aria-pressed="false">All day</button>
   </div>
   <div id="out"><p class="empty">Loading the schedule…</p></div>
   <footer id="foot"></footer>
@@ -110,31 +128,48 @@ footer{margin-top:40px;padding-top:18px;border-top:1px solid var(--line);color:v
 
 <script>
 /* Renders data/schedule.json. All parsing, sorting and clash detection happens
-   in the export script, so this file only decides what things look like. */
-const S = { data:null, q:"", track:"all" };
+   in the export script, so this file only decides what things look like.
+   The export still calls all-day items track:"floor"; they are presented as
+   "All day" because that is what they are to somebody reading a schedule. */
+const S = { data:null, q:"", track:"all", view:"details" };
 const el = (t,c,x)=>{const e=document.createElement(t); if(c)e.className=c; if(x!=null)e.textContent=x; return e;};
+const isAllDay = s => s.track === 'floor';
 
 const DAY_FMT = new Intl.DateTimeFormat('en-US',{weekday:'long',month:'long',day:'numeric',timeZone:'UTC'});
 const dayLabel = iso => iso ? DAY_FMT.format(new Date(iso+'T00:00:00Z')) : 'Not yet scheduled';
 const dur = m => m==null ? '' : (m>=60 ? (m%60 ? (m/60|0)+'h '+(m%60)+'m' : (m/60|0)+'h') : m+'m');
+// There is one stage this year, so location is derivable rather than stored.
+const place = s => isAllDay(s) ? 'Expo floor' : 'Main stage';
+const kindOf = s => (s.labels.find(l=>/workshop|talk|panel|demo|socratic/i.test(l.name))||{}).name || '';
 
 function matches(s){
-  if(S.track!=="all" && s.track!==S.track) return false;
+  if(S.track==='stage' && isAllDay(s)) return false;
+  if(S.track==='allday' && !isAllDay(s)) return false;
   const q=S.q.trim().toLowerCase();
   if(!q) return true;
   return (s.title+' '+s.summary+' '+s.speakers.join(' ')+' '+s.labels.map(l=>l.name).join(' '))
     .toLowerCase().includes(q);
 }
 
-function renderStats(){
-  const c=S.data.counts, box=document.getElementById('stats');
-  box.innerHTML='';
-  const hrs=Math.round(c.stageMinutes/6)/10;
-  [[c.total,'sessions'],[c.scheduled,'scheduled'],[c.floor,'floor'],[hrs+'h','stage time']]
-    .forEach(([n,l])=>{const d=el('div','stat');d.appendChild(el('div','n',String(n)));d.appendChild(el('div','l',l));box.appendChild(d);});
+function groupsOf(list){
+  const g=new Map();
+  list.forEach(s=>{const k=isAllDay(s)?'allday':(s.date||''); if(!g.has(k))g.set(k,[]); g.get(k).push(s);});
+  const keys=[...g.keys()].sort((a,b)=>{
+    if(a==='allday') return 1; if(b==='allday') return -1;
+    return (a||'9999').localeCompare(b||'9999');
+  });
+  return keys.map(k=>[k,g.get(k)]);
 }
 
-function sessionNode(s){
+function dayHead(key){
+  const head=el('div','dayhead');
+  const h=el('h2',null, key==='allday' ? 'All day' : dayLabel(key));
+  if(key==='allday') h.appendChild(el('span','badge','Runs all event'));
+  head.appendChild(h);
+  return head;
+}
+
+function detailsNode(s){
   const row=el('div','session');
   const when=el('div','when');
   if(s.start){
@@ -142,7 +177,7 @@ function sessionNode(s){
     when.appendChild(el('span','e','to '+s.end));
     if(s.durationMin) when.appendChild(el('span','d',dur(s.durationMin)));
   } else {
-    when.appendChild(el('span','e', s.track==='floor' ? 'All days' : 'TBA'));
+    when.appendChild(el('span','e', isAllDay(s) ? 'All day' : 'TBA'));
   }
   row.appendChild(when);
 
@@ -153,22 +188,43 @@ function sessionNode(s){
   if(s.summary) body.appendChild(el('p','summary',s.summary));
 
   const tags=el('div','tags');
-  if(s.track==='floor') tags.appendChild(el('span','tag floor','Floor'));
   s.labels.filter(l=>!/^accepted$|needs to be scheduled/i.test(l.name))
           .forEach(l=>tags.appendChild(el('span','tag kind',l.name)));
   if(s.speakers.length) tags.appendChild(el('span','who','@'+s.speakers.join(', @')));
   tags.appendChild(el('span','num','#'+s.number));
   body.appendChild(tags);
-
   row.appendChild(body);
   return row;
+}
+
+function calendarTable(items){
+  const t=el('table','grid');
+  const thead=el('thead'), hr=el('tr');
+  ['Time','Session','Speaker','Location'].forEach((h,i)=>{
+    const th=el('th',null,h); th.className=['c-time','c-title','c-who','c-loc'][i]; hr.appendChild(th);
+  });
+  thead.appendChild(hr); t.appendChild(thead);
+  const tb=el('tbody');
+  items.forEach(s=>{
+    const tr=el('tr');
+    tr.appendChild(el('td','c-time', s.start ? s.start+' - '+s.end : 'All day'));
+    const td=el('td','c-title');
+    const a=el('a',null,s.title); a.href=s.url; a.target='_blank'; a.rel='noopener';
+    td.appendChild(a);
+    const k=kindOf(s); if(k) td.appendChild(el('span','tag',' '+k));
+    tr.appendChild(td);
+    tr.appendChild(el('td','c-who', s.speakers.length ? '@'+s.speakers.join(', @') : ''));
+    tr.appendChild(el('td','c-loc', place(s)));
+    tb.appendChild(tr);
+  });
+  t.appendChild(tb);
+  return t;
 }
 
 function render(){
   const out=document.getElementById('out');
   out.innerHTML='';
   const list=S.data.sessions.filter(matches);
-
   if(!list.length){ out.appendChild(el('p','empty','No sessions match that.')); return; }
 
   if(S.data.clashes && S.data.clashes.length){
@@ -178,34 +234,35 @@ function render(){
     out.appendChild(n);
   }
 
-  const groups=new Map();
-  list.forEach(s=>{ const k=s.track==='floor'?'floor':(s.date||''); if(!groups.has(k))groups.set(k,[]); groups.get(k).push(s); });
-
-  const keys=[...groups.keys()].sort((a,b)=>{
-    if(a==='floor') return 1; if(b==='floor') return -1;
-    return (a||'9999').localeCompare(b||'9999');
-  });
-
-  for(const k of keys){
-    const items=groups.get(k);
+  for(const [key,items] of groupsOf(list)){
     const sec=el('section','day');
-    const head=el('div','dayhead');
-    head.appendChild(el('h2',null, k==='floor' ? 'Running all event' : dayLabel(k)));
-    const mins=items.reduce((n,s)=>n+(s.durationMin||0),0);
-    head.appendChild(el('div','meta', items.length+' session'+(items.length>1?'s':'')+(mins?' · '+dur(mins)+' of stage time':'')));
-    sec.appendChild(head);
-    items.forEach(s=>sec.appendChild(sessionNode(s)));
+    sec.appendChild(dayHead(key));
+    if(S.view==='calendar') sec.appendChild(calendarTable(items));
+    else items.forEach(s=>sec.appendChild(detailsNode(s)));
     out.appendChild(sec);
   }
 }
 
 function bind(){
   document.getElementById('q').addEventListener('input',e=>{S.q=e.target.value;render();});
-  const btns={all:'f-all',stage:'f-stage',floor:'f-floor'};
-  Object.entries(btns).forEach(([track,id])=>{
+
+  const views={details:'v-details',calendar:'v-calendar'};
+  Object.entries(views).forEach(([v,id])=>{
+    document.getElementById(id).addEventListener('click',()=>{
+      S.view=v;
+      Object.entries(views).forEach(([vv,ii])=>
+        document.getElementById(ii).setAttribute('aria-pressed',String(vv===v)));
+      try{localStorage.setItem('tabconf8-view',v);}catch(e){}
+      render();
+    });
+  });
+
+  const filters={all:'f-all',stage:'f-stage',allday:'f-allday'};
+  Object.entries(filters).forEach(([track,id])=>{
     document.getElementById(id).addEventListener('click',()=>{
       S.track=track;
-      Object.values(btns).forEach(b=>document.getElementById(b).setAttribute('aria-pressed',String(b===id)));
+      Object.values(filters).forEach(b=>
+        document.getElementById(b).setAttribute('aria-pressed',String(b===id)));
       render();
     });
   });
@@ -214,14 +271,19 @@ function bind(){
 fetch('data/schedule.json?v='+Date.now())
   .then(r=>r.json())
   .then(d=>{
-    // Tolerate the old array-only format so a stale file does not blank the page.
-    S.data = Array.isArray(d) ? {counts:{total:d.length,scheduled:0,floor:0,stageMinutes:0},clashes:[],sessions:d} : d;
+    S.data = Array.isArray(d) ? {clashes:[],sessions:d} : d;
     S.data.sessions = (S.data.sessions||[]).map(s=>Object.assign(
       {number:0,title:'',url:'#',date:'',start:'',end:'',startMin:null,endMin:null,
        durationMin:null,track:'stage',speakers:[],labels:[],summary:''},s));
-    renderStats(); bind(); render();
+    try{
+      const v=localStorage.getItem('tabconf8-view');
+      if(v==='calendar'){S.view='calendar';
+        document.getElementById('v-calendar').setAttribute('aria-pressed','true');
+        document.getElementById('v-details').setAttribute('aria-pressed','false');}
+    }catch(e){}
+    bind(); render();
     const g=S.data.generatedAt ? new Date(S.data.generatedAt).toLocaleString() : 'unknown';
-    document.getElementById('foot').textContent='Generated '+g+'. Sessions are curated from public submissions on GitHub.';
+    document.getElementById('foot').textContent='Updated '+g+'. Sessions are curated from public submissions on GitHub.';
   })
   .catch(()=>{
     document.getElementById('out').innerHTML=
