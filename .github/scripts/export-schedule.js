@@ -1,17 +1,17 @@
 const fs = require('fs');
 const fetch = require('node-fetch');
 
-// !! THIS IS THE TABCONF 7 PROJECT (org project #9). !!
-// As of 2026-08-05 no TABConf 8 project exists; the org only has projects for
-// TABConf 7 (#9), TABConf 6 (#4) and TABConf 2023 (#1). Running this workflow as-is
-// will republish last year's schedule over data/schedule.json.
+// TABConf 8 Schedule, org project #11. Verified against the API on 2026-09-12,
+// not copied from a note: the org has #11 TABConf8 Schedule, #9 TABConf 7,
+// #4 TABConf 6 and #1 TABConf 2023.
 //
-// TO FIX: create the TABConf 8 project, add the accepted issues from
-// TABConf/8.tabconf.com, then replace the id below with the new project's node id and
-// update the project link in index.html. Get the node id with:
-//   gh api graphql -f query='{organization(login:"TABConf"){projectV2(number:N){id}}}'
-// DO NOT run the Export Project Schedule workflow until this is changed.
-const PROJECT_ID = 'PVT_kwDOAfWa-84Awu-M'; // TABConf 7 project v2 id, STALE
+// This pointed at #9 from 2026-08-05 until 2026-09-12, because when the site was
+// switched to TABConf 8 no TABConf 8 project existed yet. Running the workflow in
+// that window would have published last year's schedule over data/schedule.json.
+//
+// IF THE PROJECT EVER CHANGES, GET THE ID FROM THE API RATHER THAN GUESSING:
+//   gh api graphql -f query='{organization(login:"TABConf"){projectsV2(first:20){nodes{number title id}}}}'
+const PROJECT_ID = 'PVT_kwDOAfWa-84Bffju'; // TABConf 8 Schedule, org project #11
 
 const QUERY = `
 query($projectId: ID!, $after: String) {
@@ -35,7 +35,23 @@ query($projectId: ID!, $after: String) {
               __typename
               ... on ProjectV2ItemFieldSingleSelectValue {
                 name
-                field { ... on ProjectV2SingleSelectField { name } }
+                field { ... on ProjectV2FieldCommon { name } }
+              }
+              ... on ProjectV2ItemFieldDateValue {
+                date
+                field { ... on ProjectV2FieldCommon { name } }
+              }
+              ... on ProjectV2ItemFieldMultiSelectValue {
+                options { name }
+                field { ... on ProjectV2FieldCommon { name } }
+              }
+              ... on ProjectV2ItemFieldTextValue {
+                text
+                field { ... on ProjectV2FieldCommon { name } }
+              }
+              ... on ProjectV2ItemFieldNumberValue {
+                number
+                field { ... on ProjectV2FieldCommon { name } }
               }
             }
           }
@@ -91,21 +107,45 @@ function sanitizeSummary(md) {
       const hasAccepted = labels.some(l => (l.name || '').toLowerCase() === 'accepted');
       if (!hasAccepted) return null; // keep your Accepted-only rule
 
-      // gather select fields
+      // Gather EVERY field value type, not just single select.
+      //
+      // This read single select only until 2026-09-12, and project #11 does not
+      // use single select for the parts that matter: Date is a DATE field and
+      // Start Time and End Time are MULTI_SELECT. The result was a schedule.json
+      // where every session had an empty day and time, which looks like a data
+      // entry problem rather than a parser one and is miserable to debug.
       const fields = {};
       for (const f of item.fieldValues?.nodes || []) {
-        if (f.__typename === 'ProjectV2ItemFieldSingleSelectValue' && f.field?.name && f.name) {
-          fields[f.field.name] = f.name;
+        const key = f.field?.name;
+        if (!key) continue;
+        switch (f.__typename) {
+          case 'ProjectV2ItemFieldSingleSelectValue': fields[key] = f.name || ''; break;
+          case 'ProjectV2ItemFieldDateValue':         fields[key] = f.date || ''; break;
+          case 'ProjectV2ItemFieldTextValue':         fields[key] = f.text || ''; break;
+          case 'ProjectV2ItemFieldNumberValue':
+            fields[key] = (f.number === null || f.number === undefined) ? '' : String(f.number);
+            break;
+          case 'ProjectV2ItemFieldMultiSelectValue':
+            // Take the FIRST option only. Start Time and End Time are multi
+            // select purely because of how the project was set up; a session
+            // has one start and one end, so joining them would render a slot
+            // as something like "10:00, 14:00" and break the timeline.
+            fields[key] = (f.options && f.options[0] && f.options[0].name) || '';
+            break;
         }
       }
 
+      // Field names as they exist in project #11 today, with the older names kept
+      // as fallbacks so renaming a column in the project does not silently blank
+      // the site.
       return {
         title: c?.title || '',
-        day: fields['Day'] || '',
+        day: fields['Date'] || fields['Day'] || '',
         time: fields['Time Slot'] || '',
         startTime: fields['Start Time'] || '',
         endTime: fields['End Time'] || '',
         village: fields['Village'] || '',
+        status: fields['Status'] || '',
         assignees: (c?.assignees?.nodes || []).map(a => a.login).join(', ') || '',
         labels: labels.map(l => ({ name: l.name, color: `#${l.color}` })),
         summary: sanitizeSummary(c?.body),
