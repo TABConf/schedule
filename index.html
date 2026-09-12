@@ -28,12 +28,11 @@ body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--sans);font
 a{color:inherit}
 
 header{border-bottom:1px solid var(--line);background:var(--card)}
-header .wrap{padding-top:26px;padding-bottom:20px}
+header .wrap{padding-top:24px;padding-bottom:22px;display:flex;align-items:center;gap:22px}
+.logo{flex:0 0 auto;width:132px;height:auto;display:block}
+.titles{min-width:0}
 h1{margin:0;font-size:26px;letter-spacing:-.02em}
-.sub{margin:5px 0 0;color:var(--muted);font-size:14px}
-.final{display:inline-block;margin-top:10px;font-size:11px;text-transform:uppercase;letter-spacing:.09em;
-  font-weight:700;color:var(--accent);background:var(--accent-soft);border:1px solid var(--accent);
-  padding:3px 9px;border-radius:3px}
+.sub{margin:4px 0 0;color:var(--muted);font-size:14px}
 
 .controls{display:flex;gap:9px;flex-wrap:wrap;align-items:center;margin:0 0 6px;position:sticky;top:0;
   background:var(--bg);padding:12px 0;z-index:20;border-bottom:1px solid var(--line)}
@@ -90,7 +89,10 @@ input[type=search]:focus{outline:2px solid var(--accent);outline-offset:-1px}
 footer{margin-top:40px;padding-top:18px;border-top:1px solid var(--line);color:var(--muted);font-size:12px}
 
 @media(max-width:640px){
-  h1{font-size:22px}
+  header .wrap{gap:14px}
+  .logo{width:84px}
+  h1{font-size:20px}
+  .sub{font-size:13px}
   .session{grid-template-columns:1fr;gap:5px}
   .when{padding-top:0}
   .when .e,.when .d{display:inline;margin-right:9px}
@@ -104,9 +106,12 @@ footer{margin-top:40px;padding-top:18px;border-top:1px solid var(--line);color:v
 
 <header>
   <div class="wrap">
-    <h1>TABConf 8 Schedule</h1>
-    <p class="sub">October 12-15, 2026 · Georgia Tech Exhibition Hall, Atlanta</p>
-    <div class="final">The final TABConf</div>
+    <img class="logo" src="assets/tabconf8-logo.png"
+         alt="TABConf 8" width="720" height="410" decoding="async">
+    <div class="titles">
+      <h1>TABConf 8 Schedule</h1>
+      <p class="sub">October 12-15, 2026 · Georgia Tech Exhibition Hall, Atlanta</p>
+    </div>
   </div>
 </header>
 
