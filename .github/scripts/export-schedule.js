@@ -1,17 +1,33 @@
+/**
+ * export-schedule.js: TABConf 8 schedule export.
+ *
+ * Rewritten from scratch 2026-09-12. The previous version was built for a
+ * multi-room event keyed on "Day 1" to "Day 4" strings and Village columns.
+ * TABConf 8 is ONE STAGE with real calendar dates, so that model is gone.
+ *
+ * Reads org project #11 and writes data/schedule.json.
+ *
+ * DESIGN NOTE: all parsing, normalising and sorting happens HERE, not in the
+ * page. The site renders what it is given and makes no decisions. The old site
+ * carried its own AM/PM parser, a day-range expander and a colour hashing
+ * function, and each was a place for the schedule to disagree with itself.
+ *
+ * Fields are read defensively BY NAME across every value type, because these
+ * have moved between project custom fields and org issue fields more than
+ * once. Whatever Date, Start Time and End Time happen to be today, this reads
+ * them.
+ */
 const fs = require('fs');
 const fetch = require('node-fetch');
 
-// TABConf 8 Schedule, org project #11. Verified against the API on 2026-09-12,
-// not copied from a note: the org has #11 TABConf8 Schedule, #9 TABConf 7,
-// #4 TABConf 6 and #1 TABConf 2023.
-//
-// This pointed at #9 from 2026-08-05 until 2026-09-12, because when the site was
-// switched to TABConf 8 no TABConf 8 project existed yet. Running the workflow in
-// that window would have published last year's schedule over data/schedule.json.
-//
-// IF THE PROJECT EVER CHANGES, GET THE ID FROM THE API RATHER THAN GUESSING:
+// TABConf 8 Schedule, org project #11. Verified against the API 2026-09-12.
+// Get it again with:
 //   gh api graphql -f query='{organization(login:"TABConf"){projectsV2(first:20){nodes{number title id}}}}'
-const PROJECT_ID = 'PVT_kwDOAfWa-84Bffju'; // TABConf 8 Schedule, org project #11
+const PROJECT_ID = 'PVT_kwDOAfWa-84Bffju';
+
+// Sessions that occupy floor space rather than the stage. No start time, and
+// they must never be laid out on the timeline.
+const FLOOR_LABELS = ['floor space', 'builders day project', 'village'];
 
 const QUERY = `
 query($projectId: ID!, $after: String) {
@@ -22,143 +38,251 @@ query($projectId: ID!, $after: String) {
         nodes {
           content {
             ... on Issue {
+              number
               title
               state
               body
               url
-              assignees(first: 5) { nodes { login } }
+              assignees(first: 10) { nodes { login } }
               labels(first: 20) { nodes { name color } }
+              issueFieldValues(first: 20) {
+                nodes {
+                  __typename
+                  ... on IssueFieldDateValue         { value field { ... on IssueFieldCommon { name } } }
+                  ... on IssueFieldTextValue         { value field { ... on IssueFieldCommon { name } } }
+                  ... on IssueFieldMultiSelectValue  { value field { ... on IssueFieldCommon { name } } }
+                  ... on IssueFieldSingleSelectValue { name  field { ... on IssueFieldCommon { name } } }
+                }
+              }
             }
           }
-          fieldValues(first: 30) {
+          fieldValues(first: 40) {
             nodes {
               __typename
-              ... on ProjectV2ItemFieldSingleSelectValue {
-                name
-                field { ... on ProjectV2FieldCommon { name } }
-              }
-              ... on ProjectV2ItemFieldDateValue {
-                date
-                field { ... on ProjectV2FieldCommon { name } }
-              }
-              ... on ProjectV2ItemFieldMultiSelectValue {
-                options { name }
-                field { ... on ProjectV2FieldCommon { name } }
-              }
-              ... on ProjectV2ItemFieldTextValue {
-                text
-                field { ... on ProjectV2FieldCommon { name } }
-              }
-              ... on ProjectV2ItemFieldNumberValue {
-                number
-                field { ... on ProjectV2FieldCommon { name } }
-              }
+              ... on ProjectV2ItemFieldTextValue         { text   field { ... on ProjectV2FieldCommon { name } } }
+              ... on ProjectV2ItemFieldDateValue         { date   field { ... on ProjectV2FieldCommon { name } } }
+              ... on ProjectV2ItemFieldNumberValue       { number field { ... on ProjectV2FieldCommon { name } } }
+              ... on ProjectV2ItemFieldSingleSelectValue { name   field { ... on ProjectV2FieldCommon { name } } }
+              ... on ProjectV2ItemFieldMultiSelectValue  { options { name } field { ... on ProjectV2FieldCommon { name } } }
             }
           }
         }
       }
     }
   }
-}
-`;
+}`;
 
 async function fetchAllItems() {
   const out = [];
   let after = null;
-  while (true) {
+  for (;;) {
     const res = await fetch('https://api.github.com/graphql', {
       method: 'POST',
       headers: {
-        'Authorization': `Bearer ${process.env.GH_TOKEN}`,
+        Authorization: `Bearer ${process.env.GH_TOKEN}`,
         'Content-Type': 'application/json',
-        'User-Agent': 'GitHubAction'
+        'User-Agent': 'tabconf-schedule-export'
       },
       body: JSON.stringify({ query: QUERY, variables: { projectId: PROJECT_ID, after } })
     });
     const json = await res.json();
-    if (!json?.data?.node?.items) {
-      console.error('GraphQL response missing expected data:', JSON.stringify(json, null, 2));
+    if (json.errors) console.error('GraphQL errors:', JSON.stringify(json.errors, null, 2));
+    if (!json || !json.data || !json.data.node || !json.data.node.items) {
+      console.error('Response missing items. Can GH_TOKEN read org projects?');
       process.exit(1);
     }
-
     const { nodes, pageInfo } = json.data.node.items;
     out.push(...nodes);
-    if (!pageInfo.hasNextPage) break;
+    if (!pageInfo.hasNextPage) return out;
     after = pageInfo.endCursor;
   }
-  return out;
 }
 
-function sanitizeSummary(md) {
-  return (md || '').replace(/<img[^>]*>/gi, '').slice(0, 160);
+/**
+ * Flatten field values into { fieldName: string }.
+ *
+ * Reads BOTH sources and issue fields win:
+ *   - the project item's own fieldValues (project custom fields)
+ *   - the issue's issueFieldValues (org level Issue Fields)
+ *
+ * Date, Start Time and End Time are Issue Fields as of 2026-09-12. They do NOT
+ * appear in the project's fieldValues unless someone also adds them to the
+ * project, so reading only the project silently produced a schedule with no
+ * times. Reading both means it keeps working whichever way they are stored.
+ */
+function readFields(item) {
+  const f = {};
+  const c = item.content || {};
+  for (const v of (c.issueFieldValues && c.issueFieldValues.nodes) || []) {
+    const key = v.field && v.field.name;
+    if (!key) continue;
+    const val = v.name !== undefined && v.name !== null ? v.name : v.value;
+    if (val !== undefined && val !== null && val !== '') f[key] = String(val);
+  }
+  const nodes = (item.fieldValues && item.fieldValues.nodes) || [];
+  for (const v of nodes) {
+    const key = v.field && v.field.name;
+    if (!key) continue;
+    switch (v.__typename) {
+      case 'ProjectV2ItemFieldTextValue':         if (!f[key]) f[key] = v.text || ''; break;
+      case 'ProjectV2ItemFieldDateValue':         if (!f[key]) f[key] = v.date || ''; break;
+      case 'ProjectV2ItemFieldSingleSelectValue': if (!f[key]) f[key] = v.name || ''; break;
+      case 'ProjectV2ItemFieldNumberValue':
+        f[key] = (v.number === null || v.number === undefined) ? '' : String(v.number);
+        break;
+      case 'ProjectV2ItemFieldMultiSelectValue':
+        // First option only. A session has one start and one end; joining them
+        // would render a slot as "10:00, 14:00" and break the timeline.
+        f[key] = (v.options && v.options[0] && v.options[0].name) || '';
+        break;
+    }
+  }
+  return f;
+}
+
+/** "9:30 AM" | "09:30" | "1:05 PM" -> minutes from midnight, or null. */
+function toMinutes(raw) {
+  if (!raw) return null;
+  const s = String(raw).trim().toUpperCase().replace(/\./g, '');
+  let m = s.match(/^(\d{1,2})(?::(\d{2}))?\s*(AM|PM)$/);
+  if (m) {
+    let h = parseInt(m[1], 10) % 12;
+    if (m[3] === 'PM') h += 12;
+    return h * 60 + (m[2] ? parseInt(m[2], 10) : 0);
+  }
+  m = s.match(/^(\d{1,2}):(\d{2})$/);
+  if (m) return parseInt(m[1], 10) * 60 + parseInt(m[2], 10);
+  return null;
+}
+
+function fmtTime(mins) {
+  if (mins === null) return '';
+  const h = Math.floor(mins / 60);
+  const mm = String(mins % 60).padStart(2, '0');
+  const ap = h < 12 ? 'AM' : 'PM';
+  return `${(h % 12) || 12}:${mm} ${ap}`;
+}
+
+/** Accepts "2026-10-14", and a bare "Day 3" from the older model. */
+const DAY_ONE = '2026-10-12';
+function toISODate(raw) {
+  if (!raw) return '';
+  const s = String(raw).trim();
+  let m = s.match(/^(\d{4})-(\d{2})-(\d{2})/);
+  if (m) return `${m[1]}-${m[2]}-${m[3]}`;
+  m = s.match(/day\s*([1-4])/i);
+  if (m) {
+    const d = new Date(DAY_ONE + 'T00:00:00Z');
+    d.setUTCDate(d.getUTCDate() + (parseInt(m[1], 10) - 1));
+    return d.toISOString().slice(0, 10);
+  }
+  return '';
+}
+
+function summarise(md) {
+  return String(md || '')
+    .replace(/<img[^>]*>/gi, '')
+    .replace(/!\[[^\]]*\]\([^)]*\)/g, '')
+    .replace(/```[\s\S]*?```/g, '')
+    .replace(/[#*_>`]/g, '')
+    .replace(/\r/g, '')
+    .split('\n').map(l => l.trim()).filter(Boolean).join(' ')
+    .slice(0, 240);
 }
 
 (async () => {
-  try {
-    const nodes = await fetchAllItems();
+  const nodes = await fetchAllItems();
+  const sessions = [];
 
-    const items = nodes.map(item => {
-      const c = item.content;
+  for (const item of nodes) {
+    const c = item.content;
+    if (!c || !c.number) continue;
+    if (String(c.state).toUpperCase() === 'CLOSED') continue;
 
-      // exclude closed issues
-      if ((c?.state || '').toUpperCase() === 'CLOSED') return null;
+    const labels = (c.labels && c.labels.nodes) || [];
+    const names = labels.map(l => (l.name || '').toLowerCase());
+    if (names.indexOf('accepted') === -1) continue;
 
-      const labels = c?.labels?.nodes || [];
-      const hasAccepted = labels.some(l => (l.name || '').toLowerCase() === 'accepted');
-      if (!hasAccepted) return null; // keep your Accepted-only rule
+    const f = readFields(item);
+    const date = toISODate(f['Date'] || f['Day']);
+    const startMin = toMinutes(f['Start Time']);
+    const endMin = toMinutes(f['End Time']);
+    const isFloor = names.some(n => FLOOR_LABELS.indexOf(n) !== -1);
 
-      // Gather EVERY field value type, not just single select.
-      //
-      // This read single select only until 2026-09-12, and project #11 does not
-      // use single select for the parts that matter: Date is a DATE field and
-      // Start Time and End Time are MULTI_SELECT. The result was a schedule.json
-      // where every session had an empty day and time, which looks like a data
-      // entry problem rather than a parser one and is miserable to debug.
-      const fields = {};
-      for (const f of item.fieldValues?.nodes || []) {
-        const key = f.field?.name;
-        if (!key) continue;
-        switch (f.__typename) {
-          case 'ProjectV2ItemFieldSingleSelectValue': fields[key] = f.name || ''; break;
-          case 'ProjectV2ItemFieldDateValue':         fields[key] = f.date || ''; break;
-          case 'ProjectV2ItemFieldTextValue':         fields[key] = f.text || ''; break;
-          case 'ProjectV2ItemFieldNumberValue':
-            fields[key] = (f.number === null || f.number === undefined) ? '' : String(f.number);
-            break;
-          case 'ProjectV2ItemFieldMultiSelectValue':
-            // Take the FIRST option only. Start Time and End Time are multi
-            // select purely because of how the project was set up; a session
-            // has one start and one end, so joining them would render a slot
-            // as something like "10:00, 14:00" and break the timeline.
-            fields[key] = (f.options && f.options[0] && f.options[0].name) || '';
-            break;
-        }
-      }
-
-      // Field names as they exist in project #11 today, with the older names kept
-      // as fallbacks so renaming a column in the project does not silently blank
-      // the site.
-      return {
-        title: c?.title || '',
-        day: fields['Date'] || fields['Day'] || '',
-        time: fields['Time Slot'] || '',
-        startTime: fields['Start Time'] || '',
-        endTime: fields['End Time'] || '',
-        village: fields['Village'] || '',
-        status: fields['Status'] || '',
-        assignees: (c?.assignees?.nodes || []).map(a => a.login).join(', ') || '',
-        labels: labels.map(l => ({ name: l.name, color: `#${l.color}` })),
-        summary: sanitizeSummary(c?.body),
-        url: c?.url
-      };
-    }).filter(Boolean);
-
-    // Optional: quick debug counts
-    console.log(`Collected items: ${nodes.length}, kept after Accepted filter: ${items.length}`);
-
-    fs.writeFileSync('data/schedule.json', JSON.stringify(items, null, 2));
-  } catch (err) {
-    console.error('GraphQL query failed:', err);
-    process.exit(1);
+    sessions.push({
+      number: c.number,
+      title: c.title || '',
+      url: c.url,
+      date,
+      start: fmtTime(startMin),
+      end: fmtTime(endMin),
+      startMin,
+      endMin,
+      durationMin: (startMin !== null && endMin !== null) ? endMin - startMin : null,
+      track: isFloor ? 'floor' : 'stage',
+      speakers: ((c.assignees && c.assignees.nodes) || []).map(a => a.login),
+      labels: labels.map(l => ({ name: l.name, color: '#' + l.color })),
+      summary: summarise(c.body)
+    });
   }
-})();
+
+  // Sort once, here. Undated sessions sink to the bottom rather than vanishing:
+  // an accepted talk with no slot is information, not an error.
+  sessions.sort((a, b) =>
+    (a.date || '9999').localeCompare(b.date || '9999') ||
+    ((a.startMin === null ? 1e9 : a.startMin) - (b.startMin === null ? 1e9 : b.startMin)) ||
+    a.number - b.number);
+
+  // One stage, so a real overlap is a scheduling bug worth shouting about.
+  const clashes = [];
+  const byDate = {};
+  for (const s of sessions) {
+    if (s.track !== 'stage' || !s.date || s.startMin === null) continue;
+    byDate[s.date] = byDate[s.date] || [];
+    byDate[s.date].push(s);
+  }
+  Object.keys(byDate).forEach(date => {
+    const list = byDate[date].sort((a, b) => a.startMin - b.startMin);
+    for (let i = 1; i < list.length; i++) {
+      if (list[i - 1].endMin > list[i].startMin) {
+        clashes.push(date + ': #' + list[i - 1].number + ' overlaps #' + list[i].number);
+      }
+    }
+  });
+
+  const scheduled = sessions.filter(s => s.date && s.startMin !== null).length;
+  const floor = sessions.filter(s => s.track === 'floor').length;
+  const stageMinutes = sessions.reduce((n, s) => n + (s.track === 'stage' ? (s.durationMin || 0) : 0), 0);
+
+  const payload = {
+    generatedAt: new Date().toISOString(),
+    event: {
+      name: 'TABConf 8',
+      start: '2026-10-12',
+      end: '2026-10-15',
+      venue: 'Georgia Tech Exhibition Hall, Atlanta'
+    },
+    counts: {
+      total: sessions.length,
+      scheduled: scheduled,
+      unscheduled: sessions.length - scheduled - floor,
+      floor: floor,
+      stageMinutes: stageMinutes
+    },
+    clashes: clashes,
+    sessions: sessions
+  };
+
+  fs.mkdirSync('data', { recursive: true });
+  fs.writeFileSync('data/schedule.json', JSON.stringify(payload, null, 2));
+
+  console.log('items fetched      ' + nodes.length);
+  console.log('accepted and open  ' + sessions.length);
+  console.log('scheduled          ' + scheduled);
+  console.log('floor / village    ' + floor);
+  console.log('stage minutes      ' + stageMinutes);
+  if (clashes.length) {
+    console.log('\n*** OVERLAPS ON A SINGLE STAGE ***');
+    clashes.forEach(c => console.log('  ' + c));
+  }
+})().catch(err => { console.error('export failed:', err); process.exit(1); });

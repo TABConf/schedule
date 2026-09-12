@@ -1,765 +1,232 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-    <link rel="icon" type="image/x-icon" href="favicon.ico">
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>TABConf 8 Schedule · October 12-15, 2026</title>
-    <style>
-        :root {
-            --bg: #0f1115;
-            --surface: #11141a;
-            --card: #171a21;
-            --muted: #9aa3b2;
-            --text: #e6e9ef;
-            --accent: #4da3ff;
-            --border: #2a2f3a;
-            --col-gap: 10px;
-            --row-gap: 2px;
-            --px-per-min: 0.8;
-        }
+<link rel="icon" type="image/x-icon" href="favicon.ico">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>TABConf 8 Schedule · October 12-15, 2026</title>
+<meta name="description" content="The full session schedule for TABConf 8, the final TABConf. October 12 to 15, 2026, Georgia Tech Exhibition Hall, Atlanta.">
+<style>
+:root{
+  color-scheme: light dark;
+  --bg:#faf8f5; --card:#fff; --ink:#161615; --muted:#6c6862;
+  --line:#e6e1d9; --accent:#c2410c; --accent-soft:#fdf1e7;
+  --stage:#c2410c; --floor:#0f766e; --floor-soft:#e6f4f1;
+  --mono:ui-monospace,SFMono-Regular,"SF Mono",Menlo,monospace;
+  --sans:-apple-system,BlinkMacSystemFont,"Segoe UI",system-ui,sans-serif;
+  --radius:10px;
+}
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme=light]){
+    --bg:#14131a; --card:#1d1c24; --ink:#eceaf0; --muted:#9b97a6;
+    --line:#2f2d3a; --accent:#fb923c; --accent-soft:#2a1d14;
+    --stage:#fb923c; --floor:#5eead4; --floor-soft:#14302c;
+  }
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--sans);font-size:15px;line-height:1.5}
+.wrap{max-width:940px;margin:0 auto;padding:0 20px 80px}
+a{color:inherit}
 
-        html,
-        body {
-            overflow-x: auto;
-            /* desktop layout preserved on mobile via horizontal scroll */
-        }
+header{border-bottom:1px solid var(--line);background:var(--card);margin-bottom:26px}
+header .wrap{padding-top:26px;padding-bottom:22px}
+h1{margin:0;font-size:26px;letter-spacing:-.02em}
+.sub{margin:5px 0 0;color:var(--muted);font-size:14px}
+.final{display:inline-block;margin-top:10px;font-size:11px;text-transform:uppercase;letter-spacing:.09em;
+  font-weight:700;color:var(--accent);background:var(--accent-soft);border:1px solid var(--accent);
+  padding:3px 9px;border-radius:3px}
 
-        body {
-            margin: 0;
-            background: var(--bg);
-            color: var(--text);
-            font-family: system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, Noto Sans, Helvetica, Arial;
-        }
+.stats{display:flex;gap:22px;flex-wrap:wrap;margin-top:16px}
+.stat .n{font-family:var(--mono);font-size:19px;font-weight:600}
+.stat .l{font-size:11px;color:var(--muted);text-transform:uppercase;letter-spacing:.05em}
 
-        .wrap {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 24px 16px 48px;
-            min-width: 900px;
-            /* preserve 3-column layout; mobile can scroll horizontally */
-        }
+.controls{display:flex;gap:9px;flex-wrap:wrap;align-items:center;margin:0 0 22px;position:sticky;top:0;
+  background:var(--bg);padding:12px 0;z-index:20;border-bottom:1px solid var(--line)}
+input[type=search]{flex:1;min-width:190px;padding:9px 12px;font:inherit;font-size:14px;border:1px solid var(--line);
+  border-radius:7px;background:var(--card);color:var(--ink)}
+input[type=search]:focus{outline:2px solid var(--accent);outline-offset:-1px}
+.chip{border:1px solid var(--line);background:var(--card);color:var(--muted);font:inherit;font-size:13px;
+  padding:7px 13px;border-radius:20px;cursor:pointer;white-space:nowrap}
+.chip:hover{border-color:var(--accent);color:var(--ink)}
+.chip[aria-pressed=true]{background:var(--accent);border-color:var(--accent);color:#fff;font-weight:600}
 
-        h1 {
-            margin: 0 0 12px 0;
-            font-size: 24px;
-        }
+.day{margin:0 0 34px}
+.dayhead{position:sticky;top:61px;background:var(--bg);padding:12px 0 9px;z-index:10;
+  border-bottom:2px solid var(--ink);margin-bottom:2px}
+.dayhead h2{margin:0;font-size:17px;letter-spacing:-.01em}
+.dayhead .meta{font-size:12px;color:var(--muted);font-family:var(--mono);margin-top:2px}
 
-        .controls {
-            display: flex;
-            gap: 12px;
-            align-items: center;
-            flex-wrap: wrap;
-            background: var(--card);
-            border: 1px solid var(--border);
-            border-radius: 12px;
-            padding: 12px;
-        }
+.session{display:grid;grid-template-columns:92px 1fr;gap:16px;padding:15px 0;border-bottom:1px solid var(--line)}
+.session:last-child{border-bottom:none}
+.when{font-family:var(--mono);font-size:12.5px;line-height:1.45;padding-top:2px}
+.when .s{font-weight:600}
+.when .e,.when .d{color:var(--muted);font-size:11.5px;display:block}
+.title{margin:0 0 5px;font-size:15.5px;font-weight:600;line-height:1.35}
+.title a{text-decoration:none}
+.title a:hover{color:var(--accent);text-decoration:underline}
+.summary{margin:0;color:var(--muted);font-size:13.5px}
+.tags{display:flex;gap:6px;flex-wrap:wrap;margin-top:8px;align-items:center}
+.tag{font-size:11px;padding:2px 8px;border-radius:11px;border:1px solid var(--line);color:var(--muted)}
+.tag.kind{border-color:var(--stage);color:var(--stage);font-weight:600}
+.tag.floor{border-color:var(--floor);color:var(--floor);font-weight:600;background:var(--floor-soft)}
+.who{font-family:var(--mono);font-size:11.5px;color:var(--muted)}
+.num{font-family:var(--mono);font-size:11px;color:var(--muted)}
 
-        select {
-            background: #0d0f14;
-            color: var(--text);
-            border: 1px solid var(--border);
-            border-radius: 10px;
-            padding: 8px 10px;
-        }
+.note{background:var(--accent-soft);border:1px solid var(--line);border-left:3px solid var(--accent);
+  border-radius:6px;padding:12px 15px;margin:0 0 22px;font-size:13.5px}
+.empty{color:var(--muted);padding:48px 0;text-align:center}
+footer{margin-top:40px;padding-top:18px;border-top:1px solid var(--line);color:var(--muted);font-size:12px}
 
-        .days {
-            margin-top: 18px;
-        }
-
-        .day {
-            background: var(--card);
-            border: 1px solid var(--border);
-            border-radius: 12px;
-            overflow: hidden;
-            margin-top: 18px;
-        }
-
-        .day-h {
-            padding: 14px;
-            border-bottom: 1px solid var(--border);
-            font-weight: 700;
-            background: var(--surface);
-            text-align: center;
-            font-size: 28px;
-        }
-
-        .timeline {
-            display: grid;
-            grid-template-columns: 100px repeat(var(--cols), 1fr);
-            gap: var(--row-gap) var(--col-gap);
-            background: var(--surface);
-            align-items: start;
-            align-content: start;
-            position: relative;
-            padding-bottom: 20px;
-        }
-
-        .col-head {
-            background: var(--surface);
-            border-bottom: 1px solid var(--border);
-            font-weight: 600;
-            font-size: 13px;
-            padding: 6px 8px;
-            text-align: center;
-        }
-
-        .col-head.time {
-            text-align: left;
-        }
-
-        .time-label {
-            font-size: 12px;
-            color: var(--muted);
-            align-self: start;
-            padding-top: 4px;
-        }
-
-        .hour-line {
-            grid-column: 1 / -1;
-            border-top: 1px solid rgba(255, 255, 255, 0.06);
-            height: 0;
-        }
-
-        .event {
-            border: 1px solid var(--border);
-            border-radius: 10px;
-            padding: 10px;
-            display: flex;
-            flex-direction: column;
-            justify-content: flex-start;
-            overflow: visible;
-            align-self: stretch;
-            height: 100%;
-            box-sizing: border-box;
-        }
-
-        .event * {
-            min-height: 0;
-        }
-
-        .event h4 {
-            margin: 0 0 6px 0;
-            font-size: 14px;
-            line-height: 1.3;
-        }
-
-        .meta {
-            font-size: 12px;
-            color: var(--muted);
-            margin-bottom: 6px;
-        }
-
-        .badges {
-            display: flex;
-            gap: 6px;
-            flex-wrap: wrap;
-            margin-top: auto;
-        }
-
-        .badge {
-            border: 1px solid var(--border);
-            background: rgba(255, 255, 255, 0.06);
-            font-size: 11px;
-            padding: 2px 6px;
-            border-radius: 999px;
-        }
-
-        a {
-            color: var(--accent);
-            text-decoration: none;
-        }
-
-        a:hover {
-            text-decoration: underline;
-        }
-
-        /* Day 0 compact styling */
-        .day.day0 .event {
-            padding: 8px;
-        }
-
-        .day.day0 .event h4 {
-            font-size: 13px;
-            margin-bottom: 4px;
-        }
-
-        .day.day0 .meta {
-            font-size: 11px;
-            margin-bottom: 4px;
-        }
-
-        .day.day0 .badge {
-            font-size: 10px;
-            padding: 1px 5px;
-        }
-
-        /* ---------- Overlay for all-day / unscheduled (Days 1–4) ---------- */
-        .overlay-col {
-            position: relative;
-            /* containing block for overlay stack */
-            grid-column: 4;
-            /* General column (time rail is col 1) */
-            grid-row: 1 / -1;
-            /* span header + all time rows */
-            z-index: 10;
-            /* above scheduled events */
-            pointer-events: none;
-            /* don't block grid scroll/clicks */
-        }
-
-        .overlay-stack {
-            position: sticky;
-            /* keeps stack under the header */
-            top: 40px;
-            /* adjust if your header row height changes */
-            display: flex;
-            flex-direction: column;
-            gap: var(--row-gap);
-            padding: 6px;
-        }
-
-        .event.overlay-card {
-            pointer-events: auto;
-            /* clickable cards */
-            width: 100%;
-            z-index: 11;
-            /* above scheduled cards */
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.25);
-        }
-
-        .assignees {
-            margin: 4px 0 6px;
-            font-size: 12px;
-            color: var(--muted);
-        }
-
-        .assignees strong {
-            font-weight: 600;
-            color: var(--text);
-            /* normal text color for "With:" */
-            opacity: 0.85;
-        }
-
-        .assignees .name {
-            font-weight: 700;
-            color: #ffd54f;
-            /* warm bright yellow */
-            opacity: 0.95;
-        }
-
-
-
-        /* Mobile zoom-out (keeps multi-column view) */
-        @media(max-width:900px) {
-            body {
-                transform: scale(0.8);
-                transform-origin: top left;
-                width: 125%;
-            }
-        }
-
-        @media(max-width:700px) {
-            body {
-                transform: scale(0.7);
-                transform-origin: top left;
-                width: 143%;
-            }
-        }
-
-        @media(max-width:500px) {
-            body {
-                transform: scale(0.6);
-                transform-origin: top left;
-                width: 167%;
-            }
-        }
-    </style>
+@media(max-width:620px){
+  .session{grid-template-columns:1fr;gap:5px}
+  .when{padding-top:0}
+  .when .e,.when .d{display:inline;margin-right:9px}
+  h1{font-size:22px}
+  .dayhead{top:57px}
+}
+</style>
 </head>
-
 <body>
-    <div class="wrap">
-        <h1>TABConf 8 Schedule</h1>
-        <p style="margin:-6px 0 14px; font-size:15px; color:var(--text); opacity:0.85;">
-            October 12-15, 2026 · Georgia Tech Exhibition Hall, Atlanta
-        </p>
-        <div class="controls">
-            <label for="daySel">Day:</label>
-            <select id="daySel">
-                <option value="all">All</option>
-                <option value="0">Day 0 - Oct 12</option>
-                <option value="1">Day 1 - Oct 13</option>
-                <option value="2">Day 2 - Oct 14</option>
-                <option value="3">Day 3 - Oct 15</option>
-            </select>
-            <label for="typeSel">Type:</label>
-            <select id="typeSel">
-                <option value="all">All</option>
-                <option>Workshop</option>
-                <option>Talk</option>
-                <option>Panel</option>
-                <option>Debate</option>
-                <option>Unrecorded</option>
-                <option>Beginner</option>
-                <option>Advanced</option>
-                <option>Builder Days Project</option>
-                <option>Satellite Event</option>
-            </select>
-            <span
-                style="margin-left:auto; display:flex; align-items:center; gap:6px; font-size:13px; color:var(--text); opacity:0.85;">
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="15" height="15" fill="currentColor"
-                    style="opacity:0.8;">
-                    <path
-                        d="M12 0C5.37 0 0 5.37 0 12a12 12 0 008.21 11.44c.6.11.82-.26.82-.58v-2.03c-3.34.73-4.04-1.61-4.04-1.61-.55-1.4-1.33-1.77-1.33-1.77-1.09-.74.09-.72.09-.72 1.21.09 1.84 1.25 1.84 1.25 1.07 1.83 2.8 1.3 3.49.99.11-.78.42-1.3.76-1.6-2.67-.3-5.47-1.34-5.47-5.95 0-1.32.47-2.4 1.24-3.25-.12-.3-.54-1.51.12-3.15 0 0 1.01-.32 3.3 1.23a11.4 11.4 0 016 0c2.29-1.55 3.3-1.23 3.3-1.23.66 1.64.24 2.85.12 3.15.77.85 1.24 1.93 1.24 3.25 0 4.63-2.81 5.64-5.49 5.94.43.37.81 1.1.81 2.22v3.29c0 .32.22.7.83.58A12.01 12.01 0 0024 12c0-6.63-5.37-12-12-12z" />
-                </svg>
-                <a href="https://github.com/TABConf/8.tabconf.com/issues" target="_blank"
-                    style="color:#ffd54f; font-weight:600; text-decoration:none; opacity:0.9;">
-                    Submit or track a session on GitHub
-                </a>
-            </span>
-        </div>
-        <div id="days" class="days"></div>
-    </div>
-
-    <script>
-        const norm = s => String(s || "").trim().toLowerCase();
-
-        const parseAmPm = t => {
-            if (!t) return NaN;
-            const s = String(t).toUpperCase().replace(/\s+/g, '');
-            const m = s.match(/^(\d{1,2})(?::(\d{2}))?(AM|PM)$/);
-            if (!m) return NaN;
-            let h = parseInt(m[1], 10);
-            const min = m[2] ? parseInt(m[2], 10) : 0; const ap = m[3];
-            if (ap === 'PM' && h < 12) h += 12; if (ap === 'AM' && h === 12) h = 0;
-            return h * 60 + min;
-        };
-
-        const fmtHour = m => `${((Math.floor(m / 60) % 12) || 12)}:${(m % 60).toString().padStart(2, '0')} ${m < 720 ? 'AM' : 'PM'}`;
-
-        function expandDays(dayStr) {
-            const s = String(dayStr || "").toLowerCase();
-            if (!s) return [];
-            if (s.includes("all")) return [0, 1, 2, 3, 4];
-
-            const nums = new Set();
-            let m;
-
-            // Ranges: "day 1-4", "days 2–3", "d 1—2"
-            const rangeRe = /(day|days|d)\s*([0-4])\s*[-–—]\s*([0-4])/g;
-            while ((m = rangeRe.exec(s))) {
-                const a = parseInt(m[2], 10);
-                const b = parseInt(m[3], 10);
-                const start = Math.min(a, b);
-                const end = Math.max(a, b);
-                for (let i = start; i <= end; i++) nums.add(i);
-            }
-
-            // Singles
-            const singleRe = /(day|days|d)\s*([0-4])/g;
-            while ((m = singleRe.exec(s))) nums.add(parseInt(m[2], 10));
-
-            return nums.size ? Array.from(nums).sort((a, b) => a - b) : [];
-        }
-
-        const mapVillageToCol = v => {
-            const n = norm(v);
-            if (n.includes('workshop room 1') || n.includes('bitdevs socratic village')) return 1;
-            if (n.includes('workshop room 2') || n.includes('main stage')) return 2;
-            return 3; // general
-        };
-
-        // Unique color generator based on label combo (card background/border)
-        function djb2(str) { let h = 5381; for (let i = 0; i < str.length; i++) h = ((h << 5) + h) + str.charCodeAt(i); return h >>> 0; }
-        function colorFromLabels(labels) {
-            const clean = (labels || []).map(l => norm(l?.name)).filter(Boolean);
-
-            // Priority 1: Advanced
-            const adv = (labels || []).find(l => /advanced/i.test(l.name) && l.color);
-            if (adv) return { bg: adv.color + '20', br: adv.color };
-
-            // Priority 2: Beginner
-            const beg = (labels || []).find(l => /beginner/i.test(l.name) && l.color);
-            if (beg) return { bg: beg.color + '20', br: beg.color };
-
-            // Priority 3: Talk → fixed light purple
-            const talk = clean.includes('talk');
-            if (talk) return { bg: 'hsla(270, 70%, 60%, 0.15)', br: 'hsl(270, 70%, 60%)' };
-
-            // Fallback for unlabeled or other labels
-            if (clean.length === 0) {
-                return { bg: `hsla(210, 60%, 50%, 0.12)`, br: `hsl(210, 60%, 50%)` };
-            }
-
-            // Hash-based unique color for everything else
-            const key = clean.sort().join('|');
-            const hue = djb2(key) % 360;
-            return { bg: `hsla(${hue}, 70%, 45%, 0.12)`, br: `hsl(${hue}, 70%, 45%)` };
-        }
-
-        // Safer hex parsing for label text contrast (supports #abc and #aabbcc)
-        function hexToRGB(hex) {
-            if (!hex) return [200, 200, 200];
-            let h = hex.replace('#', '').trim();
-            if (h.length === 3) h = h.split('').map(ch => ch + ch).join('');
-            const r = parseInt(h.slice(0, 2), 16);
-            const g = parseInt(h.slice(2, 4), 16);
-            const b = parseInt(h.slice(4, 6), 16);
-            return [r, g, b].map(v => (isNaN(v) ? 0 : v));
-        }
-
-        function getAssigneesText(assignees) {
-            if (!assignees) return '';
-            const arr = Array.isArray(assignees) ? assignees : [assignees];
-            const names = arr
-                .map(a => {
-                    if (typeof a === 'string') return a.trim();
-                    if (!a || typeof a !== 'object') return '';
-                    return (a.name || a.handle || a.email || '').trim();
-                })
-                .filter(Boolean);
-            return names.join(', ');
-        }
-
-        async function main() {
-            const res = await fetch('data/schedule.json', { cache: 'no-store' });
-            const all = await res.json();
-
-            const mount = document.getElementById('days');
-            const daySel = document.getElementById('daySel');
-            const typeSel = document.getElementById('typeSel');
-
-            // Auto-select day based on current date.
-            // NOTE: this was hardcoded to new Date(2025, 9, 12) during TABConf 7 and never
-            // reverted, which pinned the page to last year's dates. Keep it as the real date.
-            const today = new Date();
-            const year = today.getFullYear();
-            const month = today.getMonth() + 1; // 1–12
-            const day = today.getDate();
-
-            // TABConf 8 runs Oct 12-15 2026. Day 0 is Oct 12.
-            const dayMap = {
-                12: '0',
-                13: '1',
-                14: '2',
-                15: '3'
-            };
-
-            if (year === 2026 && month === 10 && dayMap[day]) {
-                daySel.value = dayMap[day];
-            }
-
-            function render() {
-                mount.innerHTML = '';
-                const dayFilter = daySel.value;
-                const typeFilter = norm(typeSel.value);
-                const pxPerMin = parseFloat(getComputedStyle(document.documentElement).getPropertyValue('--px-per-min'));
-
-                for (let d = 0; d <= 3; d++) {
-                    if (dayFilter !== 'all' && String(d) !== dayFilter) continue;
-
-                    // Map then split into scheduled / unscheduled (no time means unscheduled)
-                    const mapped = all
-                        .filter(ev => expandDays(ev.day).includes(d))
-                        .filter(ev => typeFilter === 'all' || (ev.labels || []).some(l => norm(l.name) === typeFilter))
-                        .map(ev => ({ ...ev, _s: parseAmPm(ev.startTime), _e: parseAmPm(ev.endTime) }));
-
-                    const scheduled = mapped.filter(ev => !isNaN(ev._s) && !isNaN(ev._e) && ev._e > ev._s);
-                    const unscheduled = mapped.filter(ev => !(!isNaN(ev._s) && !isNaN(ev._e) && ev._e > ev._s));
-
-                    if (scheduled.length === 0 && unscheduled.length === 0) continue;
-
-                    const dayDiv = document.createElement('div');
-                    dayDiv.className = 'day';
-                    const dayDates = ["October 12", "October 13", "October 14", "October 15"];
-                    dayDiv.innerHTML = `<div class="day-h">Day ${d} - ${dayDates[d] || ""}</div>`;
-
-                    // --- Day 0 (single column, compact). Scheduled first, then unscheduled ---
-                    if (d === 0) {
-                        dayDiv.classList.add('day0');
-                        const timeline = document.createElement('div');
-                        timeline.className = 'timeline';
-                        timeline.style.gridTemplateColumns = '1fr';
-                        timeline.style.setProperty('--cols', 1);
-
-                        const head = document.createElement('div');
-                        head.className = 'col-head';
-                        head.textContent = 'Offsite Pre Events';
-                        head.style.gridColumn = '1';
-                        timeline.appendChild(head);
-
-                        const stack = [
-                            ...scheduled.sort((a, b) => (a._s || 0) - (b._s || 0)),
-                            ...unscheduled // show unscheduled after scheduled for Day 0
-                        ];
-
-                        stack.forEach(ev => {
-                            const card = document.createElement('div');
-                            card.className = 'event';
-                            const { bg, br } = colorFromLabels(ev.labels || []);
-                            card.style.background = bg; card.style.borderColor = br;
-                            card.style.zIndex = isNaN(ev._s) || isNaN(ev._e) ? '1' : '2';
-
-                            const h4 = document.createElement('h4');
-                            const a = document.createElement('a');
-                            a.href = ev.url || '#'; a.target = '_blank'; a.textContent = ev.title || 'Untitled';
-                            h4.appendChild(a); card.appendChild(h4);
-
-                            const meta = document.createElement('div');
-                            meta.className = 'meta';
-                            const timeText = 'General';
-                            meta.textContent = `${timeText}${ev.village ? ' • ' + ev.village : ''}`;
-                            card.appendChild(meta);
-
-                            // --- Assignees (Day 0) ---
-                            const people = getAssigneesText(ev.assignees);
-                            if (people) {
-                                const as = document.createElement('div');
-                                as.className = 'assignees';
-                                const names = people
-                                    .split(',')
-                                    .map(n => `<span class="name">${n.trim()}</span>`)
-                                    .join(', ');
-                                as.innerHTML = `<strong>With:</strong> ${names}`;
-                                card.appendChild(as);
-                            }
-
-                            const labels = (ev.labels || []).filter(l => l.name && !['accepted', 'confirmed'].includes(norm(l.name)));
-                            if (labels.length) {
-                                const badges = document.createElement('div'); badges.className = 'badges';
-                                labels.forEach(l => {
-                                    const span = document.createElement('span'); span.className = 'badge'; span.textContent = l.name;
-                                    if (l.color) {
-                                        span.style.backgroundColor = l.color; span.style.borderColor = l.color;
-                                        const [r, g, b] = hexToRGB(l.color);
-                                        span.style.color = ((r * 299 + g * 587 + b * 114) / 1000) > 160 ? '#000' : '#fff';
-                                    }
-                                    badges.appendChild(span);
-                                });
-                                card.appendChild(badges);
-                            }
-
-                            timeline.appendChild(card);
-                        });
-
-                        dayDiv.appendChild(timeline);
-                        mount.appendChild(dayDiv);
-                        continue;
-                    }
-
-                    // --- Days 1–4 (time grid + overlay for unscheduled in General) ---
-                    const timeline = document.createElement('div');
-                    const numCols = 3;
-                    timeline.className = 'timeline';
-                    timeline.style.setProperty('--cols', numCols);
-
-                    const colTitles = (d === 1 || d === 2)
-                        ? ["Time", "Workshop 1", "Workshop 2", "General"]
-                        : (d === 3 || d === 4)
-                            ? ["Time", "Socratic BitDevs", "MainStage", "General"]
-                            : ["Time", "Workshop Room 1 / BitDevs", "Main Stage / Workshop Room 2", "General"];
-
-
-                    // Header row
-                    // If we have scheduled items, compute time rows; else keep only header
-                    let minT = Infinity, maxT = -Infinity, totalMins = 0;
-                    if (scheduled.length > 0) {
-                        minT = Math.min(...scheduled.map(e => e._s));
-                        maxT = Math.max(...scheduled.map(e => e._e));
-                        totalMins = Math.max(0, maxT - minT);
-                        const minuteRows = [];
-                        for (let t = minT; t < maxT; t++) {
-                            const hasEvent = scheduled.some(e => e._s <= t && e._e > t);
-                            minuteRows.push(hasEvent ? `minmax(${pxPerMin}px,auto)` : `minmax(0.2px,auto)`);
-                        }
-                        timeline.style.gridTemplateRows = `auto ${minuteRows.join(' ')}`; timeline.style.gridTemplateRows = `auto ${minuteRows}`;
-                    }
-
-                    const rowOffset = 1; // header row index
-
-                    // Header cells (row 1)
-                    for (let i = 0; i <= numCols; i++) {
-                        const head = document.createElement('div');
-                        head.className = 'col-head' + (i === 0 ? ' time' : '');
-                        head.textContent = colTitles[i] || '';
-                        head.style.gridColumn = String(i + 1);
-                        head.style.gridRow = '1';
-                        timeline.appendChild(head);
-                    }
-
-                    // Hour lines + labels only if we have scheduled items
-                    if (scheduled.length > 0) {
-                        for (let t = Math.ceil(minT / 60) * 60; t < maxT; t += 60) {
-                            const hourLine = document.createElement('div');
-                            hourLine.className = 'hour-line';
-                            hourLine.style.gridRow = String((t - minT + 1) + rowOffset);
-                            timeline.appendChild(hourLine);
-
-                            const label = document.createElement('div');
-                            label.className = 'time-label';
-                            label.textContent = fmtHour(t);
-                            label.style.gridColumn = '1';
-                            label.style.gridRow = String((t - minT + 1) + rowOffset);
-                            timeline.appendChild(label);
-                        }
-                    }
-
-                    // Scheduled events (time-based placement)
-                    scheduled.forEach(ev => {
-                        const col = mapVillageToCol(ev.village);
-                        const card = document.createElement('div');
-                        card.className = 'event';
-                        card.style.gridColumn = String(col + 1);
-                        const { bg, br } = colorFromLabels(ev.labels || []);
-                        card.style.background = bg; card.style.borderColor = br;
-                        card.style.zIndex = '2'; // below overlay but above base
-
-                        const startRow = ev._s - minT + 1;
-                        const endRow = ev._e - minT + 1;
-                        card.style.gridRow = `${startRow + rowOffset} / ${endRow + rowOffset}`;
-
-                        const h4 = document.createElement('h4');
-                        const a = document.createElement('a');
-                        a.href = ev.url || '#'; a.target = '_blank'; a.textContent = ev.title || 'Untitled';
-                        h4.appendChild(a); card.appendChild(h4);
-
-                        const meta = document.createElement('div');
-                        meta.className = 'meta';
-                        meta.textContent = `${ev.startTime} - ${ev.endTime}${ev.village ? ' • ' + ev.village : ''}`;
-                        card.appendChild(meta);
-
-                        // --- Assignees (scheduled) ---
-                        const people = getAssigneesText(ev.assignees);
-                        if (people) {
-                            const as = document.createElement('div');
-                            as.className = 'assignees';
-                            const names = people
-                                .split(',')
-                                .map(n => `<span class="name">${n.trim()}</span>`)
-                                .join(', ');
-                            as.innerHTML = `<strong>With:</strong> ${names}`;
-                            card.appendChild(as);
-                        }
-
-                        const labels = (ev.labels || []).filter(l => l.name && !['accepted', 'confirmed'].includes(norm(l.name)));
-                        if (labels.length) {
-                            const badges = document.createElement('div'); badges.className = 'badges';
-                            labels.forEach(l => {
-                                const span = document.createElement('span'); span.className = 'badge'; span.textContent = l.name;
-                                if (l.color) {
-                                    span.style.backgroundColor = l.color; span.style.borderColor = l.color;
-                                    const [r, g, b] = hexToRGB(l.color);
-                                    span.style.color = ((r * 299 + g * 587 + b * 114) / 1000) > 160 ? '#000' : '#fff';
-                                }
-                                badges.appendChild(span);
-                            });
-                            card.appendChild(badges);
-                        }
-
-                        timeline.appendChild(card);
-                    });
-
-                    // ---------- Overlay stack in the General column for all-day/unscheduled ----------
-                    if (unscheduled.length > 0) {
-                        const overlay = document.createElement('div');
-                        overlay.className = 'overlay-col';
-                        overlay.style.gridColumn = String(3 + 1);  // General col = 4
-                        overlay.style.gridRow = '1 / -1';
-
-                        const overlayStack = document.createElement('div');
-                        overlayStack.className = 'overlay-stack';
-                        overlay.appendChild(overlayStack);
-
-                        // Optional header for the pile
-                        const overlayHdr = document.createElement('div');
-                        overlayHdr.className = 'col-head';
-                        overlayHdr.textContent = 'General';
-                        overlayHdr.style.textAlign = 'center';
-                        overlayStack.appendChild(overlayHdr);
-
-                        // Put unscheduled at the TOP (above scheduled), order as they appear
-                        unscheduled.forEach(ev => {
-                            const card = document.createElement('div');
-                            card.className = 'event overlay-card';
-                            const { bg, br } = colorFromLabels(ev.labels || []);
-                            card.style.background = bg; card.style.borderColor = br;
-
-                            const h4 = document.createElement('h4');
-                            const a = document.createElement('a');
-                            a.href = ev.url || '#'; a.target = '_blank'; a.textContent = ev.title || 'Untitled';
-                            h4.appendChild(a); card.appendChild(h4);
-
-                            const meta = document.createElement('div');
-                            meta.className = 'meta';
-                            const village = ev.village ? ' • ' + ev.village : '';
-                            meta.textContent = `${village}`;
-                            card.appendChild(meta);
-
-                            // --- Assignees (unscheduled/overlay) ---
-                            const people = getAssigneesText(ev.assignees);
-                            if (people) {
-                                const as = document.createElement('div');
-                                as.className = 'assignees';
-                                const names = people
-                                    .split(',')
-                                    .map(n => `<span class="name">${n.trim()}</span>`)
-                                    .join(', ');
-                                as.innerHTML = `<strong>With:</strong> ${names}`;
-                                card.appendChild(as);
-                            }
-
-                            const labels = (ev.labels || []).filter(l => l.name && !['accepted', 'confirmed'].includes(norm(l.name)));
-                            if (labels.length) {
-                                const badges = document.createElement('div'); badges.className = 'badges';
-                                labels.forEach(l => {
-                                    const span = document.createElement('span'); span.className = 'badge'; span.textContent = l.name;
-                                    if (l.color) {
-                                        span.style.backgroundColor = l.color; span.style.borderColor = l.color;
-                                        const [r, g, b] = hexToRGB(l.color);
-                                        span.style.color = ((r * 299 + g * 587 + b * 114) / 1000) > 160 ? '#000' : '#fff';
-                                    }
-                                    badges.appendChild(span);
-                                });
-                                card.appendChild(badges);
-                            }
-
-                            overlayStack.appendChild(card);
-                        });
-
-                        // Add overlay last so it paints above the grid
-                        timeline.appendChild(overlay);
-                    }
-
-                    dayDiv.appendChild(timeline);
-                    mount.appendChild(dayDiv);
-                }
-
-                if (!mount.children.length) {
-                    mount.innerHTML = `
-                        <div style="padding:28px 20px; text-align:center; line-height:1.6;">
-                            <div style="font-size:18px; font-weight:600; margin-bottom:8px;">
-                                The TABConf 8 schedule is still being built.
-                            </div>
-                            <div style="opacity:0.85;">
-                                Talks and workshops are proposed and reviewed in public.
-                                <a href="https://github.com/TABConf/8.tabconf.com/issues" target="_blank"
-                                    style="color:#ffd54f; font-weight:600;">Submit a session</a>
-                                or watch the queue on GitHub. Accepted sessions appear here as they are scheduled.
-                            </div>
-                        </div>`;
-                }
-            }
-
-            daySel.addEventListener('change', render);
-            typeSel.addEventListener('change', render);
-            render();
-        }
-
-        main();
-
-    </script>
+
+<header>
+  <div class="wrap">
+    <h1>TABConf 8 Schedule</h1>
+    <p class="sub">October 12-15, 2026 · Georgia Tech Exhibition Hall, Atlanta</p>
+    <div class="final">The final TABConf</div>
+    <div class="stats" id="stats"></div>
+  </div>
+</header>
+
+<div class="wrap">
+  <div class="controls">
+    <input type="search" id="q" placeholder="Search sessions, speakers, topics…" autocomplete="off">
+    <button class="chip" id="f-all"  aria-pressed="true">All</button>
+    <button class="chip" id="f-stage" aria-pressed="false">Stage</button>
+    <button class="chip" id="f-floor" aria-pressed="false">Floor</button>
+  </div>
+  <div id="out"><p class="empty">Loading the schedule…</p></div>
+  <footer id="foot"></footer>
+</div>
+
+<script>
+/* Renders data/schedule.json. All parsing, sorting and clash detection happens
+   in the export script, so this file only decides what things look like. */
+const S = { data:null, q:"", track:"all" };
+const el = (t,c,x)=>{const e=document.createElement(t); if(c)e.className=c; if(x!=null)e.textContent=x; return e;};
+
+const DAY_FMT = new Intl.DateTimeFormat('en-US',{weekday:'long',month:'long',day:'numeric',timeZone:'UTC'});
+const dayLabel = iso => iso ? DAY_FMT.format(new Date(iso+'T00:00:00Z')) : 'Not yet scheduled';
+const dur = m => m==null ? '' : (m>=60 ? (m%60 ? (m/60|0)+'h '+(m%60)+'m' : (m/60|0)+'h') : m+'m');
+
+function matches(s){
+  if(S.track!=="all" && s.track!==S.track) return false;
+  const q=S.q.trim().toLowerCase();
+  if(!q) return true;
+  return (s.title+' '+s.summary+' '+s.speakers.join(' ')+' '+s.labels.map(l=>l.name).join(' '))
+    .toLowerCase().includes(q);
+}
+
+function renderStats(){
+  const c=S.data.counts, box=document.getElementById('stats');
+  box.innerHTML='';
+  const hrs=Math.round(c.stageMinutes/6)/10;
+  [[c.total,'sessions'],[c.scheduled,'scheduled'],[c.floor,'floor'],[hrs+'h','stage time']]
+    .forEach(([n,l])=>{const d=el('div','stat');d.appendChild(el('div','n',String(n)));d.appendChild(el('div','l',l));box.appendChild(d);});
+}
+
+function sessionNode(s){
+  const row=el('div','session');
+  const when=el('div','when');
+  if(s.start){
+    when.appendChild(el('span','s',s.start));
+    when.appendChild(el('span','e','to '+s.end));
+    if(s.durationMin) when.appendChild(el('span','d',dur(s.durationMin)));
+  } else {
+    when.appendChild(el('span','e', s.track==='floor' ? 'All days' : 'TBA'));
+  }
+  row.appendChild(when);
+
+  const body=el('div');
+  const h=el('h3','title');
+  const a=el('a',null,s.title); a.href=s.url; a.target='_blank'; a.rel='noopener';
+  h.appendChild(a); body.appendChild(h);
+  if(s.summary) body.appendChild(el('p','summary',s.summary));
+
+  const tags=el('div','tags');
+  if(s.track==='floor') tags.appendChild(el('span','tag floor','Floor'));
+  s.labels.filter(l=>!/^accepted$|needs to be scheduled/i.test(l.name))
+          .forEach(l=>tags.appendChild(el('span','tag kind',l.name)));
+  if(s.speakers.length) tags.appendChild(el('span','who','@'+s.speakers.join(', @')));
+  tags.appendChild(el('span','num','#'+s.number));
+  body.appendChild(tags);
+
+  row.appendChild(body);
+  return row;
+}
+
+function render(){
+  const out=document.getElementById('out');
+  out.innerHTML='';
+  const list=S.data.sessions.filter(matches);
+
+  if(!list.length){ out.appendChild(el('p','empty','No sessions match that.')); return; }
+
+  if(S.data.clashes && S.data.clashes.length){
+    const n=el('div','note');
+    n.innerHTML='<strong>Scheduling conflict.</strong> '+S.data.clashes.length+
+      ' session(s) overlap on a single stage: '+S.data.clashes.join('; ');
+    out.appendChild(n);
+  }
+
+  const groups=new Map();
+  list.forEach(s=>{ const k=s.track==='floor'?'floor':(s.date||''); if(!groups.has(k))groups.set(k,[]); groups.get(k).push(s); });
+
+  const keys=[...groups.keys()].sort((a,b)=>{
+    if(a==='floor') return 1; if(b==='floor') return -1;
+    return (a||'9999').localeCompare(b||'9999');
+  });
+
+  for(const k of keys){
+    const items=groups.get(k);
+    const sec=el('section','day');
+    const head=el('div','dayhead');
+    head.appendChild(el('h2',null, k==='floor' ? 'Running all event' : dayLabel(k)));
+    const mins=items.reduce((n,s)=>n+(s.durationMin||0),0);
+    head.appendChild(el('div','meta', items.length+' session'+(items.length>1?'s':'')+(mins?' · '+dur(mins)+' of stage time':'')));
+    sec.appendChild(head);
+    items.forEach(s=>sec.appendChild(sessionNode(s)));
+    out.appendChild(sec);
+  }
+}
+
+function bind(){
+  document.getElementById('q').addEventListener('input',e=>{S.q=e.target.value;render();});
+  const btns={all:'f-all',stage:'f-stage',floor:'f-floor'};
+  Object.entries(btns).forEach(([track,id])=>{
+    document.getElementById(id).addEventListener('click',()=>{
+      S.track=track;
+      Object.values(btns).forEach(b=>document.getElementById(b).setAttribute('aria-pressed',String(b===id)));
+      render();
+    });
+  });
+}
+
+fetch('data/schedule.json?v='+Date.now())
+  .then(r=>r.json())
+  .then(d=>{
+    // Tolerate the old array-only format so a stale file does not blank the page.
+    S.data = Array.isArray(d) ? {counts:{total:d.length,scheduled:0,floor:0,stageMinutes:0},clashes:[],sessions:d} : d;
+    S.data.sessions = (S.data.sessions||[]).map(s=>Object.assign(
+      {number:0,title:'',url:'#',date:'',start:'',end:'',startMin:null,endMin:null,
+       durationMin:null,track:'stage',speakers:[],labels:[],summary:''},s));
+    renderStats(); bind(); render();
+    const g=S.data.generatedAt ? new Date(S.data.generatedAt).toLocaleString() : 'unknown';
+    document.getElementById('foot').textContent='Generated '+g+'. Sessions are curated from public submissions on GitHub.';
+  })
+  .catch(()=>{
+    document.getElementById('out').innerHTML=
+      '<p class="empty">The schedule is not published yet. Check back soon.</p>';
+  });
+</script>
 </body>
-
 </html>
