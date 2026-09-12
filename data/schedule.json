@@ -1,1 +1,679 @@
-[]
+{
+  "generatedAt": "2026-09-12T23:06:48.398Z",
+  "event": {
+    "name": "TABConf 8",
+    "start": "2026-10-12",
+    "end": "2026-10-15",
+    "venue": "Georgia Tech Exhibition Hall, Atlanta"
+  },
+  "counts": {
+    "total": 24,
+    "scheduled": 20,
+    "unscheduled": 0,
+    "floor": 4,
+    "stageMinutes": 990
+  },
+  "clashes": [],
+  "sessions": [
+    {
+      "number": 4,
+      "title": "Bitcoin at Work(shop)",
+      "url": "https://github.com/TABConf/8.tabconf.com/issues/4",
+      "date": "2026-10-12",
+      "start": "9:30 AM",
+      "end": "11:30 AM",
+      "startMin": 570,
+      "endMin": 690,
+      "durationMin": 120,
+      "track": "stage",
+      "speakers": [],
+      "labels": [
+        {
+          "name": "Accepted",
+          "color": "#0e8a16"
+        },
+        {
+          "name": "Workshop",
+          "color": "#7a69e2"
+        },
+        {
+          "name": "needs to be scheduled",
+          "color": "#859494"
+        }
+      ],
+      "summary": "(aka the Bitcoin LARP) In this interactive, 2-hr long workshop participants walk through how the Bitcoin protocol works. Using just pens, paper, and some string we learn how the protocol works. Join us for this live-action learning session "
+    },
+    {
+      "number": 10,
+      "title": "warnet",
+      "url": "https://github.com/TABConf/8.tabconf.com/issues/10",
+      "date": "2026-10-12",
+      "start": "1:00 PM",
+      "end": "3:00 PM",
+      "startMin": 780,
+      "endMin": 900,
+      "durationMin": 120,
+      "track": "stage",
+      "speakers": [],
+      "labels": [
+        {
+          "name": "Accepted",
+          "color": "#0e8a16"
+        },
+        {
+          "name": "Workshop",
+          "color": "#7a69e2"
+        },
+        {
+          "name": "needs to be scheduled",
+          "color": "#859494"
+        }
+      ],
+      "summary": "Hello, I have volunteered to run a version of [warnet](https://github.com/bitcoin-dev-project/warnet). I don't yet know whether it will be [Battle of Galen Erso](https://github.com/bitcoin-dev-project/battle-of-galen-erso), [Wrath of Nalo]("
+    },
+    {
+      "number": 11,
+      "title": "Agentic Engineering for Bitcoin Developers",
+      "url": "https://github.com/TABConf/8.tabconf.com/issues/11",
+      "date": "2026-10-12",
+      "start": "3:00 PM",
+      "end": "4:00 PM",
+      "startMin": 900,
+      "endMin": 960,
+      "durationMin": 60,
+      "track": "stage",
+      "speakers": [],
+      "labels": [
+        {
+          "name": "Accepted",
+          "color": "#0e8a16"
+        },
+        {
+          "name": "Workshop",
+          "color": "#7a69e2"
+        },
+        {
+          "name": "needs to be scheduled",
+          "color": "#859494"
+        }
+      ],
+      "summary": "Agentic Engineering for Bitcoin Developers Format: Workshop (talk + hands-on interactive session) Length: 60 minutes Summary Coding agents are no longer experimental tech; they are now indispensable software development tools. But most work"
+    },
+    {
+      "number": 26,
+      "title": "Hands-on Workshop - DuraShare: BIP39-Native Threshold Backup over GF(2053) with Full Manual Fallback and Per-Share Audit",
+      "url": "https://github.com/TABConf/8.tabconf.com/issues/26",
+      "date": "2026-10-13",
+      "start": "9:30 AM",
+      "end": "11:30 AM",
+      "startMin": 570,
+      "endMin": 690,
+      "durationMin": 120,
+      "track": "stage",
+      "speakers": [],
+      "labels": [
+        {
+          "name": "Accepted",
+          "color": "#0e8a16"
+        },
+        {
+          "name": "Under Consideration",
+          "color": "#b60205"
+        },
+        {
+          "name": "Workshop",
+          "color": "#7a69e2"
+        }
+      ],
+      "summary": "Workshop DuraShare DuraShare: BIP39-Native Threshold Backup over GF(2053) with Full Manual Fallback and Per-Share Audit DuraShare uses Shamir secret sharing to split a standard BIP39 recovery phrase into k-of-n durable, human-readable share"
+    },
+    {
+      "number": 29,
+      "title": "Workshop: Wavelength: Building Self-Custodial Bitcoin and Lightning Apps",
+      "url": "https://github.com/TABConf/8.tabconf.com/issues/29",
+      "date": "2026-10-13",
+      "start": "1:00 PM",
+      "end": "2:00 PM",
+      "startMin": 780,
+      "endMin": 840,
+      "durationMin": 60,
+      "track": "stage",
+      "speakers": [],
+      "labels": [
+        {
+          "name": "Accepted",
+          "color": "#0e8a16"
+        },
+        {
+          "name": "Workshop",
+          "color": "#7a69e2"
+        },
+        {
+          "name": "needs to be scheduled",
+          "color": "#859494"
+        }
+      ],
+      "summary": "Workshop Wavelength Wavelength: Building Self-Custodial Bitcoin and Lightning Apps Wavelength is Lightning Labs' toolkit for embedding a self-custodial Bitcoin and Lightning wallet directly into a web or mobile app — no node to run, no chan"
+    },
+    {
+      "number": 33,
+      "title": "D++ Entropy Workshop Featuring EntropyLab: Roll Your Own Bitcoin Wallet 🎲",
+      "url": "https://github.com/TABConf/8.tabconf.com/issues/33",
+      "date": "2026-10-13",
+      "start": "2:00 PM",
+      "end": "3:00 PM",
+      "startMin": 840,
+      "endMin": 900,
+      "durationMin": 60,
+      "track": "stage",
+      "speakers": [],
+      "labels": [
+        {
+          "name": "Accepted",
+          "color": "#0e8a16"
+        },
+        {
+          "name": "Workshop",
+          "color": "#7a69e2"
+        },
+        {
+          "name": "needs to be scheduled",
+          "color": "#859494"
+        }
+      ],
+      "summary": "In 2021, at my first TABConf, I gave my first-ever talk at a bitcoin conference. We used coin flips to create a BIP39 wallet, then went from seed to receive address, learning each step in the derivation process. Five years later, I’m hoping"
+    },
+    {
+      "number": 2,
+      "title": "The Compliance Era: How Tax Reporting Infrastructure & Policy Are Reshaping Bitcoin Markets",
+      "url": "https://github.com/TABConf/8.tabconf.com/issues/2",
+      "date": "2026-10-14",
+      "start": "9:00 AM",
+      "end": "9:30 AM",
+      "startMin": 540,
+      "endMin": 570,
+      "durationMin": 30,
+      "track": "stage",
+      "speakers": [],
+      "labels": [
+        {
+          "name": "Accepted",
+          "color": "#0e8a16"
+        },
+        {
+          "name": "Talk or Demo",
+          "color": "#87a876"
+        },
+        {
+          "name": "needs to be scheduled",
+          "color": "#859494"
+        }
+      ],
+      "summary": "What attendees will learn: - How Form 1099-DA works, what it reports now, and what's coming in subsequent years - The account-based methodology under Revenue Procedure 2024-28 and why most Bitcoin holders are non-compliant - How the IRS aut"
+    },
+    {
+      "number": 12,
+      "title": "Talk: Quantum Address Format Zoo",
+      "url": "https://github.com/TABConf/8.tabconf.com/issues/12",
+      "date": "2026-10-14",
+      "start": "9:30 AM",
+      "end": "10:00 AM",
+      "startMin": 570,
+      "endMin": 600,
+      "durationMin": 30,
+      "track": "stage",
+      "speakers": [],
+      "labels": [
+        {
+          "name": "Accepted",
+          "color": "#0e8a16"
+        },
+        {
+          "name": "Talk or Demo",
+          "color": "#87a876"
+        },
+        {
+          "name": "Details need to be confirmed",
+          "color": "#662204"
+        },
+        {
+          "name": "needs to be scheduled",
+          "color": "#859494"
+        }
+      ],
+      "summary": "There's a handful of proposals for quantum address formats - P2MR, P2TRv2, P2MR-no-EC, P2TR-as-is, etc, etc. In this talk I'll walk through the proposals that exist, what the constraints and considerations are, what the options proposed are"
+    },
+    {
+      "number": 22,
+      "title": "Talk: Bridges in a Post-Quantum World",
+      "url": "https://github.com/TABConf/8.tabconf.com/issues/22",
+      "date": "2026-10-14",
+      "start": "10:00 AM",
+      "end": "10:30 AM",
+      "startMin": 600,
+      "endMin": 630,
+      "durationMin": 30,
+      "track": "stage",
+      "speakers": [],
+      "labels": [
+        {
+          "name": "Accepted",
+          "color": "#0e8a16"
+        },
+        {
+          "name": "Talk or Demo",
+          "color": "#87a876"
+        },
+        {
+          "name": "needs to be scheduled",
+          "color": "#859494"
+        }
+      ],
+      "summary": "Description Modern trust-reducing bridges use a combination of classical and new cryptography for security and efficiency. Specifically, designs like Glock and BitVM3 make use of garbled circuits, zkVM-based proofs, adaptor signatures, and "
+    },
+    {
+      "number": 30,
+      "title": "Isogenies: Quatnum-Safe Algebra for Bitcoin",
+      "url": "https://github.com/TABConf/8.tabconf.com/issues/30",
+      "date": "2026-10-14",
+      "start": "10:30 AM",
+      "end": "11:30 AM",
+      "startMin": 630,
+      "endMin": 690,
+      "durationMin": 60,
+      "track": "stage",
+      "speakers": [],
+      "labels": [
+        {
+          "name": "Accepted",
+          "color": "#0e8a16"
+        },
+        {
+          "name": "Talk or Demo",
+          "color": "#87a876"
+        },
+        {
+          "name": "needs to be scheduled",
+          "color": "#859494"
+        }
+      ],
+      "summary": "<!-- Doing a non-interactive demo? That belongs here, not under \"Workshop Submission\". -- Description What is this talk about? Give us as many details as possible. I will be introducing bitcoiners to the basics of isogeny-based digital sign"
+    },
+    {
+      "number": 13,
+      "title": "Talk: A session layer for remote multisig — encrypted coordination over relays, Nostr, and QR",
+      "url": "https://github.com/TABConf/8.tabconf.com/issues/13",
+      "date": "2026-10-14",
+      "start": "1:00 PM",
+      "end": "1:30 PM",
+      "startMin": 780,
+      "endMin": 810,
+      "durationMin": 30,
+      "track": "stage",
+      "speakers": [],
+      "labels": [
+        {
+          "name": "Accepted",
+          "color": "#0e8a16"
+        },
+        {
+          "name": "Talk or Demo",
+          "color": "#87a876"
+        },
+        {
+          "name": "needs to be scheduled",
+          "color": "#859494"
+        }
+      ],
+      "summary": "Format: Talk with live demo · Length: 30 min preferred, can do 20 · Days: Oct 14–15 BSMS (BIP-129) standardized the multisig setup file format, but nothing standardizes how remote participants exchange it. In practice, xpubs, descriptors, a"
+    },
+    {
+      "number": 8,
+      "title": "Bolt12 is the new common interface to Bitcoin payments",
+      "url": "https://github.com/TABConf/8.tabconf.com/issues/8",
+      "date": "2026-10-14",
+      "start": "1:30 PM",
+      "end": "2:00 PM",
+      "startMin": 810,
+      "endMin": 840,
+      "durationMin": 30,
+      "track": "stage",
+      "speakers": [],
+      "labels": [
+        {
+          "name": "Accepted",
+          "color": "#0e8a16"
+        },
+        {
+          "name": "needs to be scheduled",
+          "color": "#859494"
+        }
+      ],
+      "summary": "Proposing a talk of over 30 minutes that will describe the following content --- One of the mistakes of Lightning's early days was exposing complexity to the user: managing channels, rebalancing, gossip propagation delays, and after that, t"
+    },
+    {
+      "number": 17,
+      "title": "Talk: The Path to a Lightning-First Bitcoin Wallet",
+      "url": "https://github.com/TABConf/8.tabconf.com/issues/17",
+      "date": "2026-10-14",
+      "start": "2:00 PM",
+      "end": "2:30 PM",
+      "startMin": 840,
+      "endMin": 870,
+      "durationMin": 30,
+      "track": "stage",
+      "speakers": [],
+      "labels": [
+        {
+          "name": "Accepted",
+          "color": "#0e8a16"
+        },
+        {
+          "name": "Talk or Demo",
+          "color": "#87a876"
+        },
+        {
+          "name": "needs to be scheduled",
+          "color": "#859494"
+        }
+      ],
+      "summary": "Beignet: Reimagining the Bitcoin Wallet Through Reckless Experimentation Beignet is a new Lightning implementation written in TypeScript, built as an environment for rapidly experimenting with ways to improve the Lightning user experience. "
+    },
+    {
+      "number": 31,
+      "title": "You Can’t Fix What You Can’t See: Monitoring the Bitcoin Network",
+      "url": "https://github.com/TABConf/8.tabconf.com/issues/31",
+      "date": "2026-10-15",
+      "start": "9:00 AM",
+      "end": "9:30 AM",
+      "startMin": 540,
+      "endMin": 570,
+      "durationMin": 30,
+      "track": "stage",
+      "speakers": [],
+      "labels": [
+        {
+          "name": "Accepted",
+          "color": "#0e8a16"
+        },
+        {
+          "name": "Talk or Demo",
+          "color": "#87a876"
+        },
+        {
+          "name": "needs to be scheduled",
+          "color": "#859494"
+        }
+      ],
+      "summary": "Description Bitcoin is decentralized, but much of what happens across its network is not visible from the blockchain or from a single node. This talk provides a high level overview of what is monitored across the Bitcoin network, including "
+    },
+    {
+      "number": 32,
+      "title": "Talk: Recent Advances in Difficulty Adjustment for Mining Pools",
+      "url": "https://github.com/TABConf/8.tabconf.com/issues/32",
+      "date": "2026-10-15",
+      "start": "9:30 AM",
+      "end": "10:00 AM",
+      "startMin": 570,
+      "endMin": 600,
+      "durationMin": 30,
+      "track": "stage",
+      "speakers": [],
+      "labels": [
+        {
+          "name": "Accepted",
+          "color": "#0e8a16"
+        },
+        {
+          "name": "Talk or Demo",
+          "color": "#87a876"
+        },
+        {
+          "name": "needs to be scheduled",
+          "color": "#859494"
+        }
+      ],
+      "summary": "Description What is this talk about? Give us as many details as possible. Every mining pool runs a difficulty adjustment loop. It sets each miner's share difficulty from an estimate of that miner's hashrate, and the only input it has is the"
+    },
+    {
+      "number": 16,
+      "title": "The State of Bitcoin Forks",
+      "url": "https://github.com/TABConf/8.tabconf.com/issues/16",
+      "date": "2026-10-15",
+      "start": "10:00 AM",
+      "end": "10:30 AM",
+      "startMin": 600,
+      "endMin": 630,
+      "durationMin": 30,
+      "track": "stage",
+      "speakers": [],
+      "labels": [
+        {
+          "name": "Accepted",
+          "color": "#0e8a16"
+        },
+        {
+          "name": "Talk or Demo",
+          "color": "#87a876"
+        },
+        {
+          "name": "needs to be scheduled",
+          "color": "#859494"
+        }
+      ],
+      "summary": "A talk about the history of hard forks and soft forks that we've had over the years in Bitcoin, and a reflection on the state of BIP110 and BIP300 which by the time of the conference will have split into individual chains. Also, very much i"
+    },
+    {
+      "number": 6,
+      "title": "ai: L402 and agents",
+      "url": "https://github.com/TABConf/8.tabconf.com/issues/6",
+      "date": "2026-10-15",
+      "start": "10:30 AM",
+      "end": "11:00 AM",
+      "startMin": 630,
+      "endMin": 660,
+      "durationMin": 30,
+      "track": "stage",
+      "speakers": [],
+      "labels": [
+        {
+          "name": "Accepted",
+          "color": "#0e8a16"
+        },
+        {
+          "name": "needs to be scheduled",
+          "color": "#859494"
+        }
+      ],
+      "summary": "This talk goes over agentic AI use-cases, how L402 factors into this brave new world, and what lies ahead for open source models. Bonus feature on agent to agent commerce. Speaker: Kevin Cai (Lightning Labs). Runtime: 30m. I will be the spe"
+    },
+    {
+      "number": 14,
+      "title": "Talk: The Four Horsemen",
+      "url": "https://github.com/TABConf/8.tabconf.com/issues/14",
+      "date": "2026-10-15",
+      "start": "1:00 PM",
+      "end": "1:30 PM",
+      "startMin": 780,
+      "endMin": 810,
+      "durationMin": 30,
+      "track": "stage",
+      "speakers": [],
+      "labels": [
+        {
+          "name": "Accepted",
+          "color": "#0e8a16"
+        },
+        {
+          "name": "Talk or Demo",
+          "color": "#87a876"
+        },
+        {
+          "name": "needs to be scheduled",
+          "color": "#859494"
+        }
+      ],
+      "summary": "Described on Delving: https://delvingbitcoin.org/t/the-four-horsemen/2728 When comparing different coinjoin protocols, I was somewhat surprised to see that the weaknesses of any individual protocol were solvable by combining a second one."
+    },
+    {
+      "number": 28,
+      "title": "The tism - gift or curse?",
+      "url": "https://github.com/TABConf/8.tabconf.com/issues/28",
+      "date": "2026-10-15",
+      "start": "1:30 PM",
+      "end": "2:00 PM",
+      "startMin": 810,
+      "endMin": 840,
+      "durationMin": 30,
+      "track": "stage",
+      "speakers": [],
+      "labels": [
+        {
+          "name": "Accepted",
+          "color": "#0e8a16"
+        },
+        {
+          "name": "Talk or Demo",
+          "color": "#87a876"
+        },
+        {
+          "name": "Details need to be confirmed",
+          "color": "#662204"
+        }
+      ],
+      "summary": "Why we do what we do and how we do it well are questions that concern me. I will talk about Neurodivergence, why its the reason I can do what I do and why its also the reason I can't. I'm not a psychologist and what I say may or may not be "
+    },
+    {
+      "number": 9,
+      "title": "How Bitcoin is improving election and video surveillance integrity in Georgia",
+      "url": "https://github.com/TABConf/8.tabconf.com/issues/9",
+      "date": "2026-10-15",
+      "start": "2:00 PM",
+      "end": "2:30 PM",
+      "startMin": 840,
+      "endMin": 870,
+      "durationMin": 30,
+      "track": "stage",
+      "speakers": [],
+      "labels": [
+        {
+          "name": "Accepted",
+          "color": "#0e8a16"
+        },
+        {
+          "name": "Panel or Debate",
+          "color": "#935478"
+        },
+        {
+          "name": "needs to be scheduled",
+          "color": "#859494"
+        }
+      ],
+      "summary": "What is this panel discussion about? Will there be multiple talking a points? Bitcoin was used during the November 2024 presidential elections by Stacy Scott in Screven County GA to protect her county election results. She then used it to p"
+    },
+    {
+      "number": 15,
+      "title": "Bitcoin Takeover Podcast Livestream in the Expo area",
+      "url": "https://github.com/TABConf/8.tabconf.com/issues/15",
+      "date": "",
+      "start": "",
+      "end": "",
+      "startMin": null,
+      "endMin": null,
+      "durationMin": null,
+      "track": "floor",
+      "speakers": [],
+      "labels": [
+        {
+          "name": "Accepted",
+          "color": "#0e8a16"
+        },
+        {
+          "name": "Details need to be confirmed",
+          "color": "#662204"
+        },
+        {
+          "name": "floor space",
+          "color": "#9a1fad"
+        }
+      ],
+      "summary": "Date: October 14th or 15th Location: Outside the expo area, where booths will be set up Gears needed: a tripod for the camera, fast + stable internet (preferably ethernet cable, if possible), maybe some backup XLR cables just in case Purpos"
+    },
+    {
+      "number": 19,
+      "title": "Job Board",
+      "url": "https://github.com/TABConf/8.tabconf.com/issues/19",
+      "date": "",
+      "start": "",
+      "end": "",
+      "startMin": null,
+      "endMin": null,
+      "durationMin": null,
+      "track": "floor",
+      "speakers": [],
+      "labels": [
+        {
+          "name": "Accepted",
+          "color": "#0e8a16"
+        },
+        {
+          "name": "Details need to be confirmed",
+          "color": "#662204"
+        },
+        {
+          "name": "floor space",
+          "color": "#9a1fad"
+        }
+      ],
+      "summary": "Project Job Board Description: Physical Job Board where folks looking to hire Bitcoin developer talent can make their needs known and folks looking for contract or full-time work can make their desires known. Link(s) to source Repos: Potent"
+    },
+    {
+      "number": 25,
+      "title": "Stacker News In Real Life #2 (SNIRL)",
+      "url": "https://github.com/TABConf/8.tabconf.com/issues/25",
+      "date": "",
+      "start": "",
+      "end": "",
+      "startMin": null,
+      "endMin": null,
+      "durationMin": null,
+      "track": "floor",
+      "speakers": [],
+      "labels": [
+        {
+          "name": "Accepted",
+          "color": "#0e8a16"
+        },
+        {
+          "name": "Builders Day Project",
+          "color": "#241929"
+        }
+      ],
+      "summary": "Last year I had a Stacker News Theme table and I wish to do the same this year. Here is a recap of our experience last year: https://stacker.news/items/1258169/r/BlokchainB This year we want to do the same thing. Have a table with Stacker N"
+    },
+    {
+      "number": 35,
+      "title": "LABConf Village at TABConf, Powered by EntropyLab 🧪🎲",
+      "url": "https://github.com/TABConf/8.tabconf.com/issues/35",
+      "date": "",
+      "start": "",
+      "end": "",
+      "startMin": null,
+      "endMin": null,
+      "durationMin": null,
+      "track": "floor",
+      "speakers": [],
+      "labels": [
+        {
+          "name": "Accepted",
+          "color": "#0e8a16"
+        },
+        {
+          "name": "floor space",
+          "color": "#9a1fad"
+        }
+      ],
+      "summary": "For the final TABConf, may I suggest the LABConf Village: a dedicated space running throughout the conference for hands-on bitcoin experimentation, collaborative learning, and building in public. At the center will be EntropyLab (https://en"
+    }
+  ]
+}
