@@ -163,13 +163,29 @@ function fmtTime(mins) {
   return `${(h % 12) || 12}:${mm} ${ap}`;
 }
 
-/** Accepts "2026-10-14", and a bare "Day 3" from the older model. */
+/**
+ * Accepts "2026-10-14", "Mon Oct 12", and a bare "Day 3" from the older model.
+ *
+ * THE MONTH-NAME FORM IS WHAT THE BOARD ACTUALLY HOLDS as of 2026-09-24, because
+ * a human reads that board and "Wed Oct 14" is legible where "Day 3" is not.
+ * Before this was added every one of the 32 scheduled sessions parsed to an
+ * empty date and sank to the bottom as undated, which would have published an
+ * empty schedule while looking like a successful export.
+ */
 const DAY_ONE = '2026-10-12';
+const MONTHS = { jan:1, feb:2, mar:3, apr:4, may:5, jun:6,
+                 jul:7, aug:8, sep:9, oct:10, nov:11, dec:12 };
 function toISODate(raw) {
   if (!raw) return '';
   const s = String(raw).trim();
   let m = s.match(/^(\d{4})-(\d{2})-(\d{2})/);
   if (m) return `${m[1]}-${m[2]}-${m[3]}`;
+  m = s.match(/([A-Za-z]{3})[a-z]*\.?\s+(\d{1,2})\b/);
+  if (m && MONTHS[m[1].toLowerCase()]) {
+    const mo = String(MONTHS[m[1].toLowerCase()]).padStart(2, '0');
+    const da = String(parseInt(m[2], 10)).padStart(2, '0');
+    return `${DAY_ONE.slice(0, 4)}-${mo}-${da}`;
+  }
   m = s.match(/day\s*([1-4])/i);
   if (m) {
     const d = new Date(DAY_ONE + 'T00:00:00Z');
@@ -220,6 +236,11 @@ function summarise(md) {
       endMin,
       durationMin: (startMin !== null && endMin !== null) ? endMin - startMin : null,
       track: isFloor ? 'floor' : 'stage',
+      // TWO ROOMS ON OCT 12-13, one on Oct 14-15. Until 2026-09-24 the front end
+      // derived the location as the string "Main stage" because there was only
+      // ever one, which is no longer true and would have mislabelled every
+      // hacker room session.
+      room: isFloor ? 'Expo floor' : (f['Room'] || 'Main stage'),
       speakers: ((c.assignees && c.assignees.nodes) || []).map(a => a.login),
       labels: labels.map(l => ({ name: l.name, color: '#' + l.color })),
       summary: summarise(c.body)
@@ -233,13 +254,17 @@ function summarise(md) {
     ((a.startMin === null ? 1e9 : a.startMin) - (b.startMin === null ? 1e9 : b.startMin)) ||
     a.number - b.number);
 
-  // One stage, so a real overlap is a scheduling bug worth shouting about.
+  // OVERLAP IS ONLY A BUG WITHIN A SINGLE ROOM. Oct 12 and 13 run two rooms,
+  // so two sessions at 11am are the schedule working rather than failing. Keying
+  // this on date alone, as it did until 2026-09-24, would flag every legitimate
+  // parallel session and train everyone to ignore the warning.
   const clashes = [];
   const byDate = {};
   for (const s of sessions) {
     if (s.track !== 'stage' || !s.date || s.startMin === null) continue;
-    byDate[s.date] = byDate[s.date] || [];
-    byDate[s.date].push(s);
+    const key = s.date + ' | ' + (s.room || 'Main stage');
+    byDate[key] = byDate[key] || [];
+    byDate[key].push(s);
   }
   Object.keys(byDate).forEach(date => {
     const list = byDate[date].sort((a, b) => a.startMin - b.startMin);
