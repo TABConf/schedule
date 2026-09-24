@@ -226,7 +226,12 @@ function summarise(md) {
     if (names.indexOf('accepted') === -1) continue;
 
     const f = readFields(item);
-    const date = toISODate(f['Date'] || f['Day']);
+    // 'Day' IS THE BOARD FIELD, 'Date' IS THE LEGACY ISSUE FIELD, and they are
+    // different names so the precedence rule above cannot arbitrate between
+    // them. Board first. Preferring 'Date' put sessions on days the board had
+    // never assigned while their times came out correct, which is the most
+    // confusing possible way for this to be wrong.
+    const date = toISODate(f['Day'] || f['Date']);
     const startMin = toMinutes(f['Start Time']);
     const endMin = toMinutes(f['End Time']);
     const isFloor = names.some(n => FLOOR_LABELS.indexOf(n) !== -1);
