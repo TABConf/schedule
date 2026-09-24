@@ -101,24 +101,23 @@ async function fetchAllItems() {
 /**
  * Flatten field values into { fieldName: string }.
  *
- * Reads BOTH sources and issue fields win:
+ * Reads BOTH sources and THE PROJECT BOARD WINS:
  *   - the project item's own fieldValues (project custom fields)
- *   - the issue's issueFieldValues (org level Issue Fields)
+ *   - the issue's issueFieldValues (org level Issue Fields), as a fallback only
  *
- * Date, Start Time and End Time are Issue Fields as of 2026-09-12. They do NOT
- * appear in the project's fieldValues unless someone also adds them to the
- * project, so reading only the project silently produced a schedule with no
- * times. Reading both means it keeps working whichever way they are stored.
+ * PRECEDENCE FLIPPED 2026-09-24, AND IT HAD TEETH. Issue Fields used to win,
+ * which was right when they were the only place times lived. Once the whole
+ * schedule was written onto project #11 the two sources disagreed, and stale
+ * Issue Field values from an earlier attempt silently overrode every one of
+ * them: sessions came out at the wrong times, in rooms that do not run on
+ * those days, and the clash detector reported five overlaps that did not exist.
+ *
+ * THE BOARD IS WHERE A HUMAN SCHEDULES, so the board is the source of truth.
+ * Issue Fields remain a fallback for anything the board has not set, which
+ * keeps older items rendering rather than vanishing.
  */
 function readFields(item) {
   const f = {};
-  const c = item.content || {};
-  for (const v of (c.issueFieldValues && c.issueFieldValues.nodes) || []) {
-    const key = v.field && v.field.name;
-    if (!key) continue;
-    const val = v.name !== undefined && v.name !== null ? v.name : v.value;
-    if (val !== undefined && val !== null && val !== '') f[key] = String(val);
-  }
   const nodes = (item.fieldValues && item.fieldValues.nodes) || [];
   for (const v of nodes) {
     const key = v.field && v.field.name;
@@ -133,9 +132,16 @@ function readFields(item) {
       case 'ProjectV2ItemFieldMultiSelectValue':
         // First option only. A session has one start and one end; joining them
         // would render a slot as "10:00, 14:00" and break the timeline.
-        f[key] = (v.options && v.options[0] && v.options[0].name) || '';
+        if (!f[key]) f[key] = (v.options && v.options[0] && v.options[0].name) || '';
         break;
     }
+  }
+  const c = item.content || {};
+  for (const v of (c.issueFieldValues && c.issueFieldValues.nodes) || []) {
+    const key = v.field && v.field.name;
+    if (!key || f[key]) continue;   // the board already answered
+    const val = v.name !== undefined && v.name !== null ? v.name : v.value;
+    if (val !== undefined && val !== null && val !== '') f[key] = String(val);
   }
   return f;
 }
