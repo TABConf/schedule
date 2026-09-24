@@ -83,6 +83,21 @@ input[type=search]:focus{outline:2px solid var(--accent);outline-offset:-1px}
 .grid .c-title a{text-decoration:none}
 .grid .c-title a:hover{color:var(--accent);text-decoration:underline}
 
+/* Two room days. One column per room, so a reader can see what is on opposite
+   a session rather than inferring it from a Location column. */
+.gridwrap{overflow-x:auto}
+.grid-rooms{table-layout:fixed;min-width:560px}
+.grid-rooms .c-room{width:auto;vertical-align:top}
+.grid-rooms thead .c-room{color:var(--accent);font-size:11px}
+.grid-rooms .c-time{width:92px}
+.cell{padding:2px 0 6px}
+.cell + .cell{border-top:1px dashed var(--line);margin-top:6px;padding-top:8px}
+.cell-title{font-weight:600;line-height:1.35}
+.cell-title a{text-decoration:none}
+.cell-title a:hover{color:var(--accent);text-decoration:underline}
+.cell-meta{font-family:var(--mono);font-size:11.5px;color:var(--muted);margin-top:3px}
+.grid-rooms td.c-room:empty::after{content:"";display:block}
+
 .note{background:var(--accent-soft);border:1px solid var(--line);border-left:3px solid var(--accent);
   border-radius:6px;padding:12px 15px;margin:14px 0 0;font-size:13.5px}
 .empty{color:var(--muted);padding:48px 0;text-align:center}
@@ -98,6 +113,10 @@ footer{margin-top:40px;padding-top:18px;border-top:1px solid var(--line);color:v
   .when .e,.when .d{display:inline;margin-right:9px}
   .dayhead{top:57px}
   .grid .c-who,.grid .c-loc{display:none}
+  /* The room columns are the point of that view, so it scrolls sideways in its
+     own container rather than dropping a column the way the flat table does. */
+  .grid-rooms{min-width:520px}
+  .grid-rooms .c-time{width:74px}
   .grid .c-time{width:auto}
 }
 </style>
@@ -226,7 +245,32 @@ function detailsNode(s){
   return row;
 }
 
-function calendarTable(items){
+/* Oct 12 and 13 run two rooms, so the calendar for those days is a real grid:
+   one column per room, one row per distinct start time. Oct 14 and 15 have a
+   single room and keep the flat table, because a one column grid is just a
+   table with a wasted header.
+
+   Rows are keyed on start time rather than drawn with rowspan. A 2 hour
+   workshop therefore occupies one row and states its own end time. Rowspan
+   would look tidier and would need every session in the day to share a tidy
+   grid of boundaries, which real schedules never do. */
+const ROOM_ORDER = ['Main stage', 'Hacker room', 'Expo floor'];
+const roomRank = r => { const i = ROOM_ORDER.indexOf(r); return i === -1 ? 99 : i; };
+
+function sessionCell(s){
+  const wrap = el('div','cell');
+  const a = el('a',null,s.title); a.href=s.url; a.target='_blank'; a.rel='noopener';
+  const line = el('div','cell-title'); line.appendChild(a);
+  const k = kindOf(s); if(k) line.appendChild(labelChip(k));
+  wrap.appendChild(line);
+  const meta = [];
+  if (s.start) meta.push(s.start + ' - ' + s.end);
+  if (s.speakers.length) meta.push('@' + s.speakers.join(', @'));
+  if (meta.length) wrap.appendChild(el('div','cell-meta', meta.join('  ')));
+  return wrap;
+}
+
+function flatTable(items){
   const t=el('table','grid');
   const thead=el('thead'), hr=el('tr');
   ['Time','Session','Speaker','Location'].forEach((h,i)=>{
@@ -248,6 +292,65 @@ function calendarTable(items){
   });
   t.appendChild(tb);
   return t;
+}
+
+function roomGrid(timed, rooms){
+  const t=el('table','grid grid-rooms');
+  const thead=el('thead'), hr=el('tr');
+  const th0=el('th',null,'Time'); th0.className='c-time'; hr.appendChild(th0);
+  rooms.forEach(r=>{ const th=el('th',null,r); th.className='c-room'; hr.appendChild(th); });
+  thead.appendChild(hr); t.appendChild(thead);
+
+  const starts=[...new Set(timed.map(s=>s.startMin))].sort((a,b)=>a-b);
+  const tb=el('tbody');
+  starts.forEach(mins=>{
+    const tr=el('tr');
+    const first=timed.find(s=>s.startMin===mins);
+    tr.appendChild(el('td','c-time', first ? first.start : ''));
+    rooms.forEach(r=>{
+      const td=el('td','c-room');
+      timed.filter(s=>s.startMin===mins && place(s)===r).forEach(s=>td.appendChild(sessionCell(s)));
+      tr.appendChild(td);
+    });
+    tb.appendChild(tr);
+  });
+  t.appendChild(tb);
+  return t;
+}
+
+function calendarTable(items){
+  const allDay = items.filter(s=>isAllDay(s) || s.startMin===null);
+  const timed  = items.filter(s=>!(isAllDay(s) || s.startMin===null));
+  const rooms  = [...new Set(timed.map(place))].sort((a,b)=>roomRank(a)-roomRank(b));
+
+  // One room, or nothing timed: the flat table says it better.
+  if (rooms.length < 2) return flatTable(items);
+
+  const box = el('div','gridwrap');
+  box.appendChild(roomGrid(timed, rooms));
+  if (allDay.length){
+    const t2=el('table','grid');
+    const th=el('thead'), r=el('tr');
+    const a=el('th',null,'All day'); a.className='c-time'; r.appendChild(a);
+    const b=el('th',null,'Session'); b.className='c-title'; r.appendChild(b);
+    const c=el('th',null,'Location'); c.className='c-loc'; r.appendChild(c);
+    th.appendChild(r); t2.appendChild(th);
+    const tb=el('tbody');
+    allDay.forEach(s=>{
+      const tr=el('tr');
+      tr.appendChild(el('td','c-time','All day'));
+      const td=el('td','c-title');
+      const link=el('a',null,s.title); link.href=s.url; link.target='_blank'; link.rel='noopener';
+      td.appendChild(link);
+      const k=kindOf(s); if(k) td.appendChild(labelChip(k));
+      tr.appendChild(td);
+      tr.appendChild(el('td','c-loc', place(s)));
+      tb.appendChild(tr);
+    });
+    t2.appendChild(tb);
+    box.appendChild(t2);
+  }
+  return box;
 }
 
 function render(){
