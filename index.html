@@ -139,8 +139,11 @@ const isAllDay = s => s.track === 'floor';
 const DAY_FMT = new Intl.DateTimeFormat('en-US',{weekday:'long',month:'long',day:'numeric',timeZone:'UTC'});
 const dayLabel = iso => iso ? DAY_FMT.format(new Date(iso+'T00:00:00Z')) : 'Not yet scheduled';
 const dur = m => m==null ? '' : (m>=60 ? (m%60 ? (m/60|0)+'h '+(m%60)+'m' : (m/60|0)+'h') : m+'m');
-// There is one stage this year, so location is derivable rather than stored.
-const place = s => isAllDay(s) ? 'Expo floor' : 'Main stage';
+/* Location is STORED now, not derived. Oct 12 and 13 run two rooms, the main
+   stage and the hacker room, so hardcoding "Main stage" mislabelled half of
+   the Builder Days. Falls back for any session exported before the Room field
+   existed. */
+const place = s => s.room || (isAllDay(s) ? 'Expo floor' : 'Main stage');
 const kindOf = s => s.labels.find(l=>/workshop|talk|panel|demo|socratic/i.test(l.name)) || null;
 
 /* GitHub gives each label a hex. Use it, but pick the text colour from the
@@ -256,7 +259,7 @@ function render(){
   if(S.data.clashes && S.data.clashes.length){
     const n=el('div','note');
     n.innerHTML='<strong>Scheduling conflict.</strong> '+S.data.clashes.length+
-      ' session(s) overlap on a single stage: '+S.data.clashes.join('; ');
+      ' session(s) overlap in the same room: '+S.data.clashes.join('; ');
     out.appendChild(n);
   }
 
@@ -291,7 +294,7 @@ fetch('data/schedule.json?v='+Date.now())
     S.data = Array.isArray(d) ? {clashes:[],sessions:d} : d;
     S.data.sessions = (S.data.sessions||[]).map(s=>Object.assign(
       {number:0,title:'',url:'#',date:'',start:'',end:'',startMin:null,endMin:null,
-       durationMin:null,track:'stage',speakers:[],labels:[],summary:''},s));
+       durationMin:null,track:'stage',room:'',speakers:[],labels:[],summary:''},s));
     try{
       const v=localStorage.getItem('tabconf8-view');
       if(v==='calendar'){S.view='calendar';
