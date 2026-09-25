@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-25T16:08:50.314Z",
+  "generatedAt": "2026-09-25T16:56:26.815Z",
   "event": {
     "name": "TABConf 8",
     "start": "2026-10-12",
@@ -11,7 +11,7 @@
     "scheduled": 33,
     "unscheduled": -1,
     "floor": 6,
-    "stageMinutes": 1440
+    "stageMinutes": 1380
   },
   "clashes": [],
   "sessions": [
@@ -310,10 +310,10 @@
       "url": "https://github.com/TABConf/8.tabconf.com/issues/41",
       "date": "2026-10-13",
       "start": "9:00 AM",
-      "end": "11:00 AM",
+      "end": "10:00 AM",
       "startMin": 540,
-      "endMin": 660,
-      "durationMin": 120,
+      "endMin": 600,
+      "durationMin": 60,
       "track": "stage",
       "room": "Hacker room",
       "speakers": [],
@@ -336,6 +336,68 @@
         }
       ],
       "summary": "Description The DIY signing device ecosystem (SeedSigner, Krux, Specter DIY, Kern) started across a variety of different hardware: Pi Zero, stm32, k210. But we are all now working to expand to newer microcontrollers, specifically the esp32-"
+    },
+    {
+      "number": 48,
+      "title": "Noah Wallet Unilateral Exit Workshop",
+      "url": "https://github.com/TABConf/8.tabconf.com/issues/48",
+      "date": "2026-10-13",
+      "start": "10:15 AM",
+      "end": "10:45 AM",
+      "startMin": 615,
+      "endMin": 645,
+      "durationMin": 30,
+      "track": "stage",
+      "room": "Hacker room",
+      "speakers": [],
+      "labels": [
+        {
+          "name": "Accepted",
+          "color": "#0e8a16"
+        },
+        {
+          "name": "needs to be scheduled",
+          "color": "#859494"
+        },
+        {
+          "name": "hacker room",
+          "color": "#00acc1"
+        }
+      ],
+      "summary": "<!-- NOTE!! If you are intending to do a non-interactive demo, THIS IS NOT a workshop, please submit talk demo's under \"Solo Talks\". -- Description What is this workshop about? Provide as many details as possible. Load sats into Noah, then "
+    },
+    {
+      "number": 13,
+      "title": "Talk: A session layer for remote multisig — encrypted coordination over relays, Nostr, and QR",
+      "url": "https://github.com/TABConf/8.tabconf.com/issues/13",
+      "date": "2026-10-13",
+      "start": "11:00 AM",
+      "end": "11:30 AM",
+      "startMin": 660,
+      "endMin": 690,
+      "durationMin": 30,
+      "track": "stage",
+      "room": "Hacker room",
+      "speakers": [],
+      "labels": [
+        {
+          "name": "Accepted",
+          "color": "#0e8a16"
+        },
+        {
+          "name": "Talk or Demo",
+          "color": "#87a876"
+        },
+        {
+          "name": "needs to be scheduled",
+          "color": "#859494"
+        },
+        {
+          "name": "hacker room",
+          "color": "#00acc1"
+        }
+      ],
+      "summary": "Format: Talk with live demo · Length: 30 min preferred, can do 20 · Days: Oct 14–15 BSMS (BIP-129) standardized the multisig setup file format, but nothing standardizes how remote participants exchange it. In practice, xpubs, descriptors, a"
     },
     {
       "number": 44,
@@ -367,35 +429,6 @@
       "summary": "Description I've had the fascinating experience of building my own full node implementation in just a couple of months and want to share that experience with TABconf. Questions which this helps answer: how has AI fundamentally changed softw"
     },
     {
-      "number": 48,
-      "title": "Noah Wallet Unilateral Exit Workshop",
-      "url": "https://github.com/TABConf/8.tabconf.com/issues/48",
-      "date": "2026-10-13",
-      "start": "11:15 AM",
-      "end": "11:45 AM",
-      "startMin": 675,
-      "endMin": 705,
-      "durationMin": 30,
-      "track": "stage",
-      "room": "Hacker room",
-      "speakers": [],
-      "labels": [
-        {
-          "name": "Accepted",
-          "color": "#0e8a16"
-        },
-        {
-          "name": "needs to be scheduled",
-          "color": "#859494"
-        },
-        {
-          "name": "hacker room",
-          "color": "#00acc1"
-        }
-      ],
-      "summary": "<!-- NOTE!! If you are intending to do a non-interactive demo, THIS IS NOT a workshop, please submit talk demo's under \"Solo Talks\". -- Description What is this workshop about? Provide as many details as possible. Load sats into Noah, then "
-    },
-    {
       "number": 6,
       "title": "ai: L402 and agents",
       "url": "https://github.com/TABConf/8.tabconf.com/issues/6",
@@ -423,39 +456,6 @@
         }
       ],
       "summary": "This talk goes over agentic AI use-cases, how L402 factors into this brave new world, and what lies ahead for open source models. Bonus feature on agent to agent commerce. Speaker: Kevin Cai (Lightning Labs). Runtime: 30m. I will be the spe"
-    },
-    {
-      "number": 13,
-      "title": "Talk: A session layer for remote multisig — encrypted coordination over relays, Nostr, and QR",
-      "url": "https://github.com/TABConf/8.tabconf.com/issues/13",
-      "date": "2026-10-13",
-      "start": "12:00 PM",
-      "end": "12:30 PM",
-      "startMin": 720,
-      "endMin": 750,
-      "durationMin": 30,
-      "track": "stage",
-      "room": "Hacker room",
-      "speakers": [],
-      "labels": [
-        {
-          "name": "Accepted",
-          "color": "#0e8a16"
-        },
-        {
-          "name": "Talk or Demo",
-          "color": "#87a876"
-        },
-        {
-          "name": "needs to be scheduled",
-          "color": "#859494"
-        },
-        {
-          "name": "hacker room",
-          "color": "#00acc1"
-        }
-      ],
-      "summary": "Format: Talk with live demo · Length: 30 min preferred, can do 20 · Days: Oct 14–15 BSMS (BIP-129) standardized the multisig setup file format, but nothing standardizes how remote participants exchange it. In practice, xpubs, descriptors, a"
     },
     {
       "number": 26,
