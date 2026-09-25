@@ -235,6 +235,10 @@ function summarise(md) {
     const startMin = toMinutes(f['Start Time']);
     const endMin = toMinutes(f['End Time']);
     const isFloor = names.some(n => FLOOR_LABELS.indexOf(n) !== -1);
+    // SATELLITE EVENTS ARE A THIRD TRACK, not a room. They happen offsite and
+    // after hours, so they neither consume stage minutes nor belong in the room
+    // grid, and an evening start would otherwise look like a clash with nothing.
+    const isSatellite = names.indexOf('satellite event') !== -1;
 
     sessions.push({
       number: c.number,
@@ -246,12 +250,14 @@ function summarise(md) {
       startMin,
       endMin,
       durationMin: (startMin !== null && endMin !== null) ? endMin - startMin : null,
-      track: isFloor ? 'floor' : 'stage',
+      track: isSatellite ? 'satellite' : (isFloor ? 'floor' : 'stage'),
       // TWO ROOMS ON OCT 12-13, one on Oct 14-15. Until 2026-09-24 the front end
       // derived the location as the string "Main stage" because there was only
       // ever one, which is no longer true and would have mislabelled every
       // hacker room session.
-      room: isFloor ? 'Expo floor' : (f['Room'] || 'Main stage'),
+      room: isSatellite ? (f['Room'] || 'Offsite')
+          : isFloor ? 'Expo floor'
+          : (f['Room'] || 'Main stage'),
       speakers: ((c.assignees && c.assignees.nodes) || []).map(a => a.login),
       labels: labels.map(l => ({ name: l.name, color: '#' + l.color })),
       summary: summarise(c.body)
