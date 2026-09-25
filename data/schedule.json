@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-25T17:35:27.467Z",
+  "generatedAt": "2026-09-25T17:40:23.387Z",
   "event": {
     "name": "TABConf 8",
     "start": "2026-10-12",
@@ -9,9 +9,9 @@
   "counts": {
     "total": 38,
     "scheduled": 33,
-    "unscheduled": -1,
-    "floor": 6,
-    "stageMinutes": 1380
+    "unscheduled": 0,
+    "floor": 5,
+    "stageMinutes": 1440
   },
   "clashes": [],
   "sessions": [
@@ -58,8 +58,8 @@
       "startMin": 660,
       "endMin": 720,
       "durationMin": 60,
-      "track": "floor",
-      "room": "Expo floor",
+      "track": "stage",
+      "room": "Main stage",
       "speakers": [],
       "labels": [
         {
