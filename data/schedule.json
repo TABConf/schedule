@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-25T17:40:23.387Z",
+  "generatedAt": "2026-09-25T17:50:06.686Z",
   "event": {
     "name": "TABConf 8",
     "start": "2026-10-12",
@@ -8,10 +8,10 @@
   },
   "counts": {
     "total": 38,
-    "scheduled": 33,
+    "scheduled": 32,
     "unscheduled": 0,
-    "floor": 5,
-    "stageMinutes": 1440
+    "floor": 6,
+    "stageMinutes": 1380
   },
   "clashes": [],
   "sessions": [
@@ -47,35 +47,6 @@
         }
       ],
       "summary": "Agentic Engineering for Bitcoin Developers Format: Workshop (talk + hands-on interactive session) Length: 60 minutes Summary Coding agents are no longer experimental tech; they are now indispensable software development tools. But most work"
-    },
-    {
-      "number": 25,
-      "title": "Stacker News In Real Life #2 (SNIRL)",
-      "url": "https://github.com/TABConf/8.tabconf.com/issues/25",
-      "date": "2026-10-12",
-      "start": "11:00 AM",
-      "end": "12:00 PM",
-      "startMin": 660,
-      "endMin": 720,
-      "durationMin": 60,
-      "track": "stage",
-      "room": "Main stage",
-      "speakers": [],
-      "labels": [
-        {
-          "name": "Accepted",
-          "color": "#0e8a16"
-        },
-        {
-          "name": "Builders Day Project",
-          "color": "#241929"
-        },
-        {
-          "name": "hacker room",
-          "color": "#00acc1"
-        }
-      ],
-      "summary": "Last year I had a Stacker News Theme table and I wish to do the same this year. Here is a recap of our experience last year: https://stacker.news/items/1258169/r/BlokchainB This year we want to do the same thing. Have a table with Stacker N"
     },
     {
       "number": 45,
@@ -1105,6 +1076,35 @@
         }
       ],
       "summary": "Project Job Board Description: Physical Job Board where folks looking to hire Bitcoin developer talent can make their needs known and folks looking for contract or full-time work can make their desires known. Link(s) to source Repos: Potent"
+    },
+    {
+      "number": 25,
+      "title": "Stacker News In Real Life #2 (SNIRL)",
+      "url": "https://github.com/TABConf/8.tabconf.com/issues/25",
+      "date": "",
+      "start": "",
+      "end": "",
+      "startMin": null,
+      "endMin": null,
+      "durationMin": null,
+      "track": "floor",
+      "room": "Expo floor",
+      "speakers": [],
+      "labels": [
+        {
+          "name": "Accepted",
+          "color": "#0e8a16"
+        },
+        {
+          "name": "Builders Day Project",
+          "color": "#241929"
+        },
+        {
+          "name": "hacker room",
+          "color": "#00acc1"
+        }
+      ],
+      "summary": "Last year I had a Stacker News Theme table and I wish to do the same this year. Here is a recap of our experience last year: https://stacker.news/items/1258169/r/BlokchainB This year we want to do the same thing. Have a table with Stacker N"
     },
     {
       "number": 35,
