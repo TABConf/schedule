@@ -234,7 +234,13 @@ function summarise(md) {
     const date = toISODate(f['Day'] || f['Date']);
     const startMin = toMinutes(f['Start Time']);
     const endMin = toMinutes(f['End Time']);
-    const isFloor = names.some(n => FLOOR_LABELS.indexOf(n) !== -1);
+    // AN EXPLICIT ROOM ON THE BOARD BEATS A LABEL GUESS. FLOOR_LABELS predates
+    // the Room field, and it was overriding it: #25 was scheduled on the main
+    // stage at a real time and still published as "Expo floor" because it
+    // carries "Builders Day Project". That label says what a session IS, not
+    // where it happens. A session with a room and a time is in that room.
+    const roomSet = f['Room'] && f['Room'] !== 'Floor';
+    const isFloor = !roomSet && names.some(n => FLOOR_LABELS.indexOf(n) !== -1);
     // SATELLITE EVENTS ARE A THIRD TRACK, not a room. They happen offsite and
     // after hours, so they neither consume stage minutes nor belong in the room
     // grid, and an evening start would otherwise look like a clash with nothing.
