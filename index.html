@@ -96,6 +96,17 @@ input[type=search]:focus{outline:2px solid var(--accent);outline-offset:-1px}
 .cell-title a{text-decoration:none}
 .cell-title a:hover{color:var(--accent);text-decoration:underline}
 .cell-meta{font-family:var(--mono);font-size:11.5px;color:var(--muted);margin-top:3px}
+
+/* Satellite events, one block per day */
+.sats{margin-top:16px;border:1px solid var(--line);border-left:3px solid var(--accent);border-radius:6px;padding:12px 15px}
+.sats-head{font-size:10.5px;text-transform:uppercase;letter-spacing:.05em;color:var(--accent);font-weight:600;margin-bottom:8px}
+.sat{display:flex;gap:14px;padding:5px 0}
+.sat-when{font-family:var(--mono);font-size:12.5px;color:var(--muted);white-space:nowrap;min-width:78px}
+.sat-body{font-weight:600}
+.sat-body a{text-decoration:none}
+.sat-body a:hover{color:var(--accent);text-decoration:underline}
+.sat-place{font-weight:400;color:var(--muted)}
+.sats-note{font-size:11.5px;color:var(--muted);margin-top:8px}
 .grid-rooms td.c-room:empty::after{content:"";display:block}
 
 .note{background:var(--accent-soft);border:1px solid var(--line);border-left:3px solid var(--accent);
@@ -154,6 +165,7 @@ footer{margin-top:40px;padding-top:18px;border-top:1px solid var(--line);color:v
 const S = { data:null, q:"", track:"all", view:"details" };
 const el = (t,c,x)=>{const e=document.createElement(t); if(c)e.className=c; if(x!=null)e.textContent=x; return e;};
 const isAllDay = s => s.track === 'floor';
+const isSatellite = s => s.track === 'satellite';
 
 const DAY_FMT = new Intl.DateTimeFormat('en-US',{weekday:'long',month:'long',day:'numeric',timeZone:'UTC'});
 const dayLabel = iso => iso ? DAY_FMT.format(new Date(iso+'T00:00:00Z')) : 'Not yet scheduled';
@@ -162,7 +174,7 @@ const dur = m => m==null ? '' : (m>=60 ? (m%60 ? (m/60|0)+'h '+(m%60)+'m' : (m/6
    stage and the hacker room, so hardcoding "Main stage" mislabelled half of
    the Builder Days. Falls back for any session exported before the Room field
    existed. */
-const place = s => s.room || (isAllDay(s) ? 'Expo floor' : 'Main stage');
+const place = s => isSatellite(s) ? (s.room || 'Offsite') : (s.room || (isAllDay(s) ? 'Expo floor' : 'Main stage'));
 const kindOf = s => s.labels.find(l=>/workshop|talk|panel|demo|socratic/i.test(l.name)) || null;
 
 /* GitHub gives each label a hex. Use it, but pick the text colour from the
@@ -318,13 +330,40 @@ function roomGrid(timed, rooms){
   return t;
 }
 
+/* Satellite events: other people's events, offsite, usually in the evening.
+   They get their own block under each day rather than a row in the grid,
+   because they share nothing with the main programme except the date. */
+function satelliteBlock(sats){
+  const wrap = el('div','sats');
+  wrap.appendChild(el('div','sats-head','Satellite events'));
+  sats.sort((a,b)=>(a.startMin===null?1e9:a.startMin)-(b.startMin===null?1e9:b.startMin)).forEach(s=>{
+    const row = el('div','sat');
+    const t = el('div','sat-when', s.start ? s.start : 'Time TBC');
+    const b = el('div','sat-body');
+    const a = el('a',null,s.title); a.href=s.url; a.target='_blank'; a.rel='noopener';
+    b.appendChild(a);
+    if (s.room && s.room !== 'Offsite') b.appendChild(el('span','sat-place', ' at ' + s.room));
+    row.appendChild(t); row.appendChild(b);
+    wrap.appendChild(row);
+  });
+  wrap.appendChild(el('div','sats-note','Run by other organisers. Check the link for tickets and RSVP.'));
+  return wrap;
+}
+
 function calendarTable(items){
-  const allDay = items.filter(s=>isAllDay(s) || s.startMin===null);
-  const timed  = items.filter(s=>!(isAllDay(s) || s.startMin===null));
+  const sats   = items.filter(isSatellite);
+  const rest   = items.filter(s=>!isSatellite(s));
+  const allDay = rest.filter(s=>isAllDay(s) || s.startMin===null);
+  const timed  = rest.filter(s=>!(isAllDay(s) || s.startMin===null));
   const rooms  = [...new Set(timed.map(place))].sort((a,b)=>roomRank(a)-roomRank(b));
 
   // One room, or nothing timed: the flat table says it better.
-  if (rooms.length < 2) return flatTable(items);
+  if (rooms.length < 2){
+    const only = el('div');
+    only.appendChild(flatTable(rest));
+    if (sats.length) only.appendChild(satelliteBlock(sats));
+    return only;
+  }
 
   const box = el('div','gridwrap');
   box.appendChild(roomGrid(timed, rooms));
@@ -350,6 +389,7 @@ function calendarTable(items){
     t2.appendChild(tb);
     box.appendChild(t2);
   }
+  if (sats.length) box.appendChild(satelliteBlock(sats));
   return box;
 }
 
