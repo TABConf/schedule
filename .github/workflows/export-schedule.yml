@@ -1,7 +1,32 @@
 name: Export Project Schedule
 
+# CADENCE IS A REPOSITORY VARIABLE, NOT A LINE IN THIS FILE.
+#
+# Set EXPORT_INTERVAL_MINUTES under Settings, Secrets and variables, Actions,
+# Variables. It defaults to 60. Lower it to 10 in the last days before the
+# conference and raise it afterwards. Changing it takes effect on the next tick
+# and needs no commit, no review and nobody who knows YAML.
+#
+# WHY THE CRON IS FIXED AT 10 MINUTES AND THE INTERVAL IS CHECKED IN A STEP.
+# GitHub does not allow an expression in a cron line, so a configurable cadence
+# cannot be expressed there. So this ticks at the fastest rate we would ever
+# want and the first step decides whether the tick is due. A skipped tick costs
+# one checkout and about five seconds.
+#
+# AND THE CHECK IS AGAINST THE LAST EXPORT, NOT THE CLOCK. Scheduled runs on
+# shared runners fire late, routinely by several minutes and sometimes by more
+# than the interval itself. Gating on "is the current minute divisible by N"
+# therefore drops real runs on the floor: an hourly tick that fires at :12 would
+# simply never happen. Reading generatedAt out of the last published file
+# answers the question that actually matters, which is how stale the page is.
 on:
   workflow_dispatch:
+  schedule:
+    - cron: '*/10 * * * *'
+
+# The job pushes data/schedule.json back to this repo.
+permissions:
+  contents: write
 
 jobs:
   export:
@@ -9,15 +34,70 @@ jobs:
     steps:
     - uses: actions/checkout@v3
 
+    - name: Is this run due
+      id: due
+      env:
+        # Empty or unset falls back to hourly.
+        INTERVAL: ${{ vars.EXPORT_INTERVAL_MINUTES || '60' }}
+      run: |
+        set -euo pipefail
+
+        # A human clicking Run workflow always means now.
+        if [ "${{ github.event_name }}" != "schedule" ]; then
+          echo "manual run, exporting"
+          echo "due=true" >> "$GITHUB_OUTPUT"
+          exit 0
+        fi
+
+        interval="${INTERVAL:-60}"
+        case "$interval" in
+          ''|*[!0-9]*)
+            echo "EXPORT_INTERVAL_MINUTES is '$interval', which is not a number. Using 60."
+            interval=60 ;;
+        esac
+        # The cron cannot tick faster than this, so anything lower is a lie.
+        # Written as an if rather than a one line &&, because under set -e a
+        # false && is a non zero exit and would kill the step.
+        if [ "$interval" -lt 10 ]; then
+          interval=10
+        fi
+
+        if [ ! -f data/schedule.json ]; then
+          echo "no previous export, exporting"
+          echo "due=true" >> "$GITHUB_OUTPUT"
+          exit 0
+        fi
+
+        last=$(sed -n 's/.*"generatedAt": *"\([^"]*\)".*/\1/p' data/schedule.json | head -1)
+        if [ -z "$last" ]; then
+          echo "no generatedAt in the last export, exporting"
+          echo "due=true" >> "$GITHUB_OUTPUT"
+          exit 0
+        fi
+
+        age=$(( ( $(date -u +%s) - $(date -u -d "$last" +%s) ) / 60 ))
+        echo "last export $last, ${age} min ago, interval ${interval} min"
+        # One tick of slack, so a run that fires 20 seconds early is not skipped
+        # and then skipped again for another whole interval.
+        if [ "$age" -ge $(( interval - 5 )) ]; then
+          echo "due=true" >> "$GITHUB_OUTPUT"
+        else
+          echo "not due, skipping"
+          echo "due=false" >> "$GITHUB_OUTPUT"
+        fi
+
     - name: Set up Node.js
+      if: steps.due.outputs.due == 'true'
       uses: actions/setup-node@v3
       with:
         node-version: '18'
 
     - name: Install dependencies
+      if: steps.due.outputs.due == 'true'
       run: npm install node-fetch@2
 
     - name: Run export script
+      if: steps.due.outputs.due == 'true'
       env:
         GH_TOKEN: ${{ secrets.GH_TOKEN }}
       run: |
@@ -25,9 +105,16 @@ jobs:
         node .github/scripts/export-schedule.js
 
     - name: Commit schedule file
+      if: steps.due.outputs.due == 'true'
       run: |
         git config user.name "github-actions"
         git config user.email "actions@github.com"
         git add data/schedule.json
+        # generatedAt changes on every run, so there is always something to
+        # commit. That is deliberate: it is the timestamp the next run reads to
+        # decide whether it is due, and it is the honest answer to "how fresh is
+        # this page".
         git commit -m "Update schedule from project" || echo "No changes"
+        # Another run or a person may have pushed while this one was working.
+        git pull --rebase origin "${GITHUB_REF_NAME}"
         git push
