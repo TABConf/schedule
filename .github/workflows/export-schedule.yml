@@ -3,15 +3,28 @@ name: Export Project Schedule
 # CADENCE IS A REPOSITORY VARIABLE, NOT A LINE IN THIS FILE.
 #
 # Set EXPORT_INTERVAL_MINUTES under Settings, Secrets and variables, Actions,
-# Variables. It defaults to 60. Lower it to 10 in the last days before the
-# conference and raise it afterwards. Changing it takes effect on the next tick
-# and needs no commit, no review and nobody who knows YAML.
+# Variables. It defaults to 60 and floors at 15, which is as often as the cron
+# ticks. Lower it to 15 in the last days before the conference and raise it
+# afterwards. Changing it takes effect on the next tick and needs no commit, no
+# review and nobody who knows YAML.
 #
-# WHY THE CRON IS FIXED AT 10 MINUTES AND THE INTERVAL IS CHECKED IN A STEP.
+# WHY THE CRON IS FIXED AND THE INTERVAL IS CHECKED IN A STEP.
 # GitHub does not allow an expression in a cron line, so a configurable cadence
 # cannot be expressed there. So this ticks at the fastest rate we would ever
 # want and the first step decides whether the tick is due. A skipped tick costs
 # one checkout and about five seconds.
+#
+# WHY THESE MINUTES AND NOT '*/10'. The first version asked for six runs an
+# hour including :00, and GitHub ran it ZERO times in 2 hours 15 minutes on
+# 2026-10-04. GitHub documents that scheduled runs are delayed under load, that
+# the start of every hour is the heaviest, and that high frequency schedules
+# are deprioritised first. So this asks for four runs an hour on minutes that
+# avoid :00, :15, :30 and :45, which are where everyone else piles up.
+#
+# IF THIS STILL DOES NOT FIRE, STOP TUNING THE CRON. GitHub's scheduler is not
+# something we can debug from outside, and the fallback is a local timer on
+# Michael's machine running scripts/publish_schedule.py, which has the bonus of
+# catching project #11 field edits that fire no GitHub event at all.
 #
 # AND THE CHECK IS AGAINST THE LAST EXPORT, NOT THE CLOCK. Scheduled runs on
 # shared runners fire late, routinely by several minutes and sometimes by more
@@ -22,7 +35,7 @@ name: Export Project Schedule
 on:
   workflow_dispatch:
   schedule:
-    - cron: '*/10 * * * *'
+    - cron: '7,22,37,52 * * * *'
 
 # The job pushes data/schedule.json back to this repo.
 permissions:
@@ -55,11 +68,11 @@ jobs:
             echo "EXPORT_INTERVAL_MINUTES is '$interval', which is not a number. Using 60."
             interval=60 ;;
         esac
-        # The cron cannot tick faster than this, so anything lower is a lie.
+        # The cron ticks four times an hour, so anything under 15 is a lie.
         # Written as an if rather than a one line &&, because under set -e a
         # false && is a non zero exit and would kill the step.
-        if [ "$interval" -lt 10 ]; then
-          interval=10
+        if [ "$interval" -lt 15 ]; then
+          interval=15
         fi
 
         if [ ! -f data/schedule.json ]; then
