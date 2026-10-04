@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-04T21:42:08.318Z",
+  "generatedAt": "2026-10-04T21:47:41.079Z",
   "event": {
     "name": "TABConf 8",
     "start": "2026-10-12",
@@ -216,15 +216,15 @@
       "summary": "Description What is this workshop about? Provide as many details as possible. We are building tools that make it easier for AI agents to conduct Bitcoin research. This workshop is about experimenting with some of these tools hands-on. What "
     },
     {
-      "number": 10,
-      "title": "Warnet 2026: Lightning Sparks ✨💥",
-      "url": "https://github.com/TABConf/8.tabconf.com/issues/10",
+      "number": 29,
+      "title": "Workshop: Wavelength: Building Self-Custodial Bitcoin and Lightning Apps",
+      "url": "https://github.com/TABConf/8.tabconf.com/issues/29",
       "date": "2026-10-13",
       "start": "9:00 AM",
-      "end": "11:00 AM",
+      "end": "10:30 AM",
       "startMin": 540,
-      "endMin": 660,
-      "durationMin": 120,
+      "endMin": 630,
+      "durationMin": 90,
       "track": "stage",
       "room": "Main stage",
       "roomFromLabel": true,
@@ -247,7 +247,7 @@
           "color": "#c2185b"
         }
       ],
-      "summary": "Hello, I have volunteered to run [Warnet: The Wrath Of Nalo](https://github.com/bitcoin-dev-project/wrath-of-nalo) at TABConf 8. This was run before at TABConf 7, see https://github.com/TABConf/7.tabconf.com/issues/42: This workshop is a co"
+      "summary": "Workshop Wavelength Wavelength: Building Self-Custodial Bitcoin and Lightning Apps Wavelength is Lightning Labs' toolkit for embedding a self-custodial Bitcoin and Lightning wallet directly into a web or mobile app — no node to run, no chan"
     },
     {
       "number": 41,
@@ -408,6 +408,40 @@
       "summary": "This talk goes over agentic AI use-cases, how L402 factors into this brave new world, and what lies ahead for open source models. Bonus feature on agent to agent commerce. Speaker: Kevin Cai (Lightning Labs). Runtime: 30m. I will be the spe"
     },
     {
+      "number": 10,
+      "title": "Warnet 2026: Lightning Sparks ✨💥",
+      "url": "https://github.com/TABConf/8.tabconf.com/issues/10",
+      "date": "2026-10-13",
+      "start": "1:30 PM",
+      "end": "3:30 PM",
+      "startMin": 810,
+      "endMin": 930,
+      "durationMin": 120,
+      "track": "stage",
+      "room": "Main stage",
+      "roomFromLabel": true,
+      "speakers": [],
+      "labels": [
+        {
+          "name": "Accepted",
+          "color": "#0e8a16"
+        },
+        {
+          "name": "Workshop",
+          "color": "#7a69e2"
+        },
+        {
+          "name": "needs to be scheduled",
+          "color": "#859494"
+        },
+        {
+          "name": "main stage",
+          "color": "#c2185b"
+        }
+      ],
+      "summary": "Hello, I have volunteered to run [Warnet: The Wrath Of Nalo](https://github.com/bitcoin-dev-project/wrath-of-nalo) at TABConf 8. This was run before at TABConf 7, see https://github.com/TABConf/7.tabconf.com/issues/42: This workshop is a co"
+    },
+    {
       "number": 26,
       "title": "Workshop DuraShare: create, audit and recover a Shamir backup using software and manually (pen, paper and calculator)",
       "url": "https://github.com/TABConf/8.tabconf.com/issues/26",
@@ -436,40 +470,6 @@
         }
       ],
       "summary": "Workshop DuraShare DuraShare: BIP39-Native Threshold Backup over GF(2053) with Full Manual Fallback and Per-Share Audit DuraShare uses Shamir secret sharing to split a standard BIP39 recovery phrase into k-of-n durable, human-readable share"
-    },
-    {
-      "number": 29,
-      "title": "Workshop: Wavelength: Building Self-Custodial Bitcoin and Lightning Apps",
-      "url": "https://github.com/TABConf/8.tabconf.com/issues/29",
-      "date": "2026-10-13",
-      "start": "1:30 PM",
-      "end": "3:00 PM",
-      "startMin": 810,
-      "endMin": 900,
-      "durationMin": 90,
-      "track": "stage",
-      "room": "Main stage",
-      "roomFromLabel": true,
-      "speakers": [],
-      "labels": [
-        {
-          "name": "Accepted",
-          "color": "#0e8a16"
-        },
-        {
-          "name": "Workshop",
-          "color": "#7a69e2"
-        },
-        {
-          "name": "needs to be scheduled",
-          "color": "#859494"
-        },
-        {
-          "name": "main stage",
-          "color": "#c2185b"
-        }
-      ],
-      "summary": "Workshop Wavelength Wavelength: Building Self-Custodial Bitcoin and Lightning Apps Wavelength is Lightning Labs' toolkit for embedding a self-custodial Bitcoin and Lightning wallet directly into a web or mobile app — no node to run, no chan"
     },
     {
       "number": 32,
