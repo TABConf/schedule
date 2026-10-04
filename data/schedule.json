@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-04T22:23:41.364Z",
+  "generatedAt": "2026-10-04T22:24:25.445Z",
   "event": {
     "name": "TABConf 8",
     "start": "2026-10-12",
@@ -7,10 +7,10 @@
     "venue": "Georgia Tech Exhibition Hall, Atlanta"
   },
   "counts": {
-    "total": 47,
+    "total": 49,
     "scheduled": 41,
     "unscheduled": -1,
-    "floor": 7,
+    "floor": 9,
     "stageMinutes": 1830
   },
   "clashes": [],
@@ -1470,6 +1470,62 @@
         }
       ],
       "summary": "Description: Bitcoin Data Labs (https://bitcoindatalabs.org) is an open-source non-profit building public analytical infrastructure, network visualizers, and data engines for the Bitcoin and Lightning ecosystems. At Builder Days, we will ho"
+    },
+    {
+      "number": 68,
+      "title": "Builder Days Project: Proof Of Print - Bitcoin mining 3D Printer hardware",
+      "url": "https://github.com/TABConf/8.tabconf.com/issues/68",
+      "date": "",
+      "start": "",
+      "end": "",
+      "startMin": null,
+      "endMin": null,
+      "durationMin": null,
+      "track": "floor",
+      "room": "Expo floor",
+      "roomFromLabel": false,
+      "speakers": [],
+      "labels": [
+        {
+          "name": "Accepted",
+          "color": "#0e8a16"
+        },
+        {
+          "name": "Builders Day Project",
+          "color": "#241929"
+        },
+        {
+          "name": "floor space",
+          "color": "#9a1fad"
+        }
+      ],
+      "summary": "<!-- All software-based projects submitted must be open source and freely available for public use -- Proof Of Print Description: Proof Of Print integrates bitcoin mining into equipment that already requires electric heat. We will demonstra"
+    },
+    {
+      "number": 77,
+      "title": "GoldenPie — playable Lightning arcade booth (Expo area, Oct 14-15)",
+      "url": "https://github.com/TABConf/8.tabconf.com/issues/77",
+      "date": "",
+      "start": "",
+      "end": "",
+      "startMin": null,
+      "endMin": null,
+      "durationMin": null,
+      "track": "floor",
+      "room": "Expo floor",
+      "roomFromLabel": false,
+      "speakers": [],
+      "labels": [
+        {
+          "name": "Accepted",
+          "color": "#0e8a16"
+        },
+        {
+          "name": "floor space",
+          "color": "#9a1fad"
+        }
+      ],
+      "summary": "GoldenPie — a playable Lightning arcade booth Dates: October 14-15 (conference days — I can't make Builder Days, so this is an Expo-area booth rather than a Builder Days table) Location: Expo area / wherever booths are set up Format: Walk-u"
     }
   ]
 }
