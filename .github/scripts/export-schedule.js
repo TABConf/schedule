@@ -27,7 +27,39 @@ const PROJECT_ID = 'PVT_kwDOAfWa-84Bffju';
 
 // Sessions that occupy floor space rather than the stage. No start time, and
 // they must never be laid out on the timeline.
+//
+// MATCHING IS EXACT, NOT SUBSTRING. 'village' here is its own label and does
+// not catch 'bitlab village', which is a room. Do not turn this into an
+// includes() check or the whole BitLab Village room collapses onto the floor.
 const FLOOR_LABELS = ['floor space', 'builders day project', 'village'];
+
+// THE ROOM COMES FROM THE LABEL. The project Room field is no longer read.
+//
+// Michael, 2026-10-04: "same for hackerspace and mainstage.. then we can remove
+// the logic for fields .. that way we can help people manage things more easily
+// with labels."
+//
+// The reason is access, not taste. Repository triage permission lets someone
+// apply labels and nothing else; it does not reach project #11 fields at all.
+// BitLab Village is run from outside the org, so a label is the only control
+// its organiser can actually be given. One mechanism beats two.
+//
+// WHAT THIS COST TO SWITCH, so nobody reintroduces the Room field casually.
+// On 2026-10-04 six items carried a 'hacker room' label while the board said
+// Main stage: #6, #10, #29, #33, #42 and #44. They were drafted into the
+// builder days hacker pool, ended up on the main stage, and nobody cleared the
+// label. Under the old board-first rule that was invisible. Under this rule the
+// label is the answer, so those labels had to be corrected before this shipped
+// or six confirmed sessions would have moved rooms on the public schedule.
+//
+// THE LABEL IS NOW THE ONLY RECORD OF A ROOM. A session with no room label
+// falls back to the main stage, which is right for the common case and silent
+// when it is wrong, so check the per-room counts the export prints.
+const ROOM_LABELS = {
+  'main stage': 'Main stage',
+  'hacker room': 'Hacker room',
+  'bitlab village': 'BitLab Village'
+};
 
 const QUERY = `
 query($projectId: ID!, $after: String) {
@@ -246,6 +278,10 @@ function summarise(md) {
     // after hours, so they neither consume stage minutes nor belong in the room
     // grid, and an evening start would otherwise look like a clash with nothing.
     const isSatellite = names.indexOf('satellite event') !== -1;
+    // First room label wins if somebody applies two. Labels are a set with no
+    // order, so two room labels is a mistake rather than a preference, and the
+    // count printed at the end is what surfaces it.
+    const roomLabel = names.map(n => ROOM_LABELS[n]).find(Boolean) || null;
 
     sessions.push({
       number: c.number,
@@ -258,13 +294,15 @@ function summarise(md) {
       endMin,
       durationMin: (startMin !== null && endMin !== null) ? endMin - startMin : null,
       track: isSatellite ? 'satellite' : (isFloor ? 'floor' : 'stage'),
-      // TWO ROOMS ON OCT 12-13, one on Oct 14-15. Until 2026-09-24 the front end
-      // derived the location as the string "Main stage" because there was only
-      // ever one, which is no longer true and would have mislabelled every
-      // hacker room session.
-      room: isSatellite ? (f['Room'] || 'Offsite')
+      // Satellites are offsite and the floor is the floor, so neither takes a
+      // room label. Everything else is wherever its label says, and the main
+      // stage when it says nothing.
+      room: isSatellite ? 'Offsite'
           : isFloor ? 'Expo floor'
-          : (f['Room'] || 'Main stage'),
+          : (roomLabel || 'Main stage'),
+      // Kept so the run summary can separate "labelled Main stage" from
+      // "labelled nothing and defaulted there". The page does not use it.
+      roomFromLabel: roomLabel !== null,
       speakers: ((c.assignees && c.assignees.nodes) || []).map(a => a.login),
       labels: labels.map(l => ({ name: l.name, color: '#' + l.color })),
       summary: summarise(c.body)
@@ -330,6 +368,21 @@ function summarise(md) {
   console.log('scheduled          ' + scheduled);
   console.log('floor / village    ' + floor);
   console.log('stage minutes      ' + stageMinutes);
+
+  // THE ROOM IS A LABEL NOW, so a forgotten label is a session quietly filed on
+  // the main stage. Nothing errors and the page looks fine. Printing the split
+  // per room is the only cheap way to notice, so read it after every run.
+  const byRoom = {};
+  sessions.filter(s => s.track === 'stage')
+          .forEach(s => { byRoom[s.room] = (byRoom[s.room] || 0) + 1; });
+  console.log('\nstage sessions by room, from labels:');
+  Object.keys(byRoom).sort().forEach(r => console.log('  ' + r.padEnd(18) + byRoom[r]));
+  const unlabelled = sessions.filter(s => s.track === 'stage' && !s.roomFromLabel);
+  if (unlabelled.length) {
+    console.log('  no room label, defaulted to Main stage: ' +
+                unlabelled.map(s => '#' + s.number).join(', '));
+  }
+
   if (clashes.length) {
     console.log('\n*** OVERLAPS ON A SINGLE STAGE ***');
     clashes.forEach(c => console.log('  ' + c));
