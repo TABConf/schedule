@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-25T17:50:06.686Z",
+  "generatedAt": "2026-10-04T17:38:28.290Z",
   "event": {
     "name": "TABConf 8",
     "start": "2026-10-12",
@@ -7,11 +7,11 @@
     "venue": "Georgia Tech Exhibition Hall, Atlanta"
   },
   "counts": {
-    "total": 38,
-    "scheduled": 32,
+    "total": 39,
+    "scheduled": 33,
     "unscheduled": 0,
     "floor": 6,
-    "stageMinutes": 1380
+    "stageMinutes": 1440
   },
   "clashes": [],
   "sessions": [
@@ -27,6 +27,7 @@
       "durationMin": 60,
       "track": "stage",
       "room": "Hacker room",
+      "roomFromLabel": true,
       "speakers": [],
       "labels": [
         {
@@ -60,6 +61,7 @@
       "durationMin": 15,
       "track": "stage",
       "room": "Hacker room",
+      "roomFromLabel": true,
       "speakers": [],
       "labels": [
         {
@@ -89,6 +91,7 @@
       "durationMin": 120,
       "track": "stage",
       "room": "Hacker room",
+      "roomFromLabel": true,
       "speakers": [],
       "labels": [
         {
@@ -122,6 +125,7 @@
       "durationMin": 120,
       "track": "stage",
       "room": "Main stage",
+      "roomFromLabel": true,
       "speakers": [],
       "labels": [
         {
@@ -137,8 +141,8 @@
           "color": "#859494"
         },
         {
-          "name": "hacker room",
-          "color": "#00acc1"
+          "name": "main stage",
+          "color": "#c2185b"
         }
       ],
       "summary": "In 2021, at my first TABConf, I gave my first-ever talk at a bitcoin conference. We used coin flips to create a BIP39 wallet, then went from seed to receive address, learning each step in the derivation process. Five years later, I’m hoping"
@@ -155,6 +159,7 @@
       "durationMin": 60,
       "track": "stage",
       "room": "Hacker room",
+      "roomFromLabel": true,
       "speakers": [],
       "labels": [
         {
@@ -188,6 +193,7 @@
       "durationMin": 30,
       "track": "stage",
       "room": "Main stage",
+      "roomFromLabel": true,
       "speakers": [],
       "labels": [
         {
@@ -203,15 +209,15 @@
           "color": "#859494"
         },
         {
-          "name": "hacker room",
-          "color": "#00acc1"
+          "name": "main stage",
+          "color": "#c2185b"
         }
       ],
       "summary": "Description What is this workshop about? Provide as many details as possible. We are building tools that make it easier for AI agents to conduct Bitcoin research. This workshop is about experimenting with some of these tools hands-on. What "
     },
     {
       "number": 10,
-      "title": "warnet",
+      "title": "Warnet 2026: Lightning Sparks ✨💥",
       "url": "https://github.com/TABConf/8.tabconf.com/issues/10",
       "date": "2026-10-13",
       "start": "9:00 AM",
@@ -221,6 +227,7 @@
       "durationMin": 120,
       "track": "stage",
       "room": "Main stage",
+      "roomFromLabel": true,
       "speakers": [],
       "labels": [
         {
@@ -236,11 +243,11 @@
           "color": "#859494"
         },
         {
-          "name": "hacker room",
-          "color": "#00acc1"
+          "name": "main stage",
+          "color": "#c2185b"
         }
       ],
-      "summary": "Hello, I have volunteered to run a version of [warnet](https://github.com/bitcoin-dev-project/warnet). I don't yet know whether it will be [Battle of Galen Erso](https://github.com/bitcoin-dev-project/battle-of-galen-erso), [Wrath of Nalo]("
+      "summary": "Hello, I have volunteered to run [Warnet: The Wrath Of Nalo](https://github.com/bitcoin-dev-project/wrath-of-nalo) at TABConf 8. This was run before at TABConf 7, see https://github.com/TABConf/7.tabconf.com/issues/42: This workshop is a co"
     },
     {
       "number": 41,
@@ -254,6 +261,7 @@
       "durationMin": 60,
       "track": "stage",
       "room": "Hacker room",
+      "roomFromLabel": true,
       "speakers": [],
       "labels": [
         {
@@ -287,6 +295,7 @@
       "durationMin": 30,
       "track": "stage",
       "room": "Hacker room",
+      "roomFromLabel": true,
       "speakers": [],
       "labels": [
         {
@@ -316,6 +325,7 @@
       "durationMin": 30,
       "track": "stage",
       "room": "Hacker room",
+      "roomFromLabel": true,
       "speakers": [],
       "labels": [
         {
@@ -349,6 +359,7 @@
       "durationMin": 30,
       "track": "stage",
       "room": "Main stage",
+      "roomFromLabel": true,
       "speakers": [],
       "labels": [
         {
@@ -360,8 +371,8 @@
           "color": "#859494"
         },
         {
-          "name": "hacker room",
-          "color": "#00acc1"
+          "name": "main stage",
+          "color": "#c2185b"
         }
       ],
       "summary": "Description I've had the fascinating experience of building my own full node implementation in just a couple of months and want to share that experience with TABconf. Questions which this helps answer: how has AI fundamentally changed softw"
@@ -378,6 +389,7 @@
       "durationMin": 30,
       "track": "stage",
       "room": "Main stage",
+      "roomFromLabel": true,
       "speakers": [],
       "labels": [
         {
@@ -389,8 +401,8 @@
           "color": "#859494"
         },
         {
-          "name": "hacker room",
-          "color": "#00acc1"
+          "name": "main stage",
+          "color": "#c2185b"
         }
       ],
       "summary": "This talk goes over agentic AI use-cases, how L402 factors into this brave new world, and what lies ahead for open source models. Bonus feature on agent to agent commerce. Speaker: Kevin Cai (Lightning Labs). Runtime: 30m. I will be the spe"
@@ -407,6 +419,7 @@
       "durationMin": 90,
       "track": "stage",
       "room": "Hacker room",
+      "roomFromLabel": true,
       "speakers": [],
       "labels": [
         {
@@ -436,6 +449,7 @@
       "durationMin": 90,
       "track": "stage",
       "room": "Main stage",
+      "roomFromLabel": true,
       "speakers": [],
       "labels": [
         {
@@ -451,8 +465,8 @@
           "color": "#859494"
         },
         {
-          "name": "hacker room",
-          "color": "#00acc1"
+          "name": "main stage",
+          "color": "#c2185b"
         }
       ],
       "summary": "Workshop Wavelength Wavelength: Building Self-Custodial Bitcoin and Lightning Apps Wavelength is Lightning Labs' toolkit for embedding a self-custodial Bitcoin and Lightning wallet directly into a web or mobile app — no node to run, no chan"
@@ -469,6 +483,7 @@
       "durationMin": 30,
       "track": "stage",
       "room": "Hacker room",
+      "roomFromLabel": true,
       "speakers": [],
       "labels": [
         {
@@ -502,6 +517,7 @@
       "durationMin": 30,
       "track": "stage",
       "room": "Hacker room",
+      "roomFromLabel": true,
       "speakers": [],
       "labels": [
         {
@@ -535,6 +551,7 @@
       "durationMin": 180,
       "track": "satellite",
       "room": "Offsite",
+      "roomFromLabel": false,
       "speakers": [],
       "labels": [
         {
@@ -560,6 +577,7 @@
       "durationMin": 30,
       "track": "stage",
       "room": "Main stage",
+      "roomFromLabel": true,
       "speakers": [],
       "labels": [
         {
@@ -593,6 +611,7 @@
       "durationMin": 30,
       "track": "stage",
       "room": "Main stage",
+      "roomFromLabel": true,
       "speakers": [],
       "labels": [
         {
@@ -626,6 +645,7 @@
       "durationMin": 30,
       "track": "stage",
       "room": "Main stage",
+      "roomFromLabel": true,
       "speakers": [],
       "labels": [
         {
@@ -652,6 +672,36 @@
       "summary": "There's a handful of proposals for quantum address formats - P2MR, P2TRv2, P2MR-no-EC, P2TR-as-is, etc, etc. In this talk I'll walk through the proposals that exist, what the constraints and considerations are, what the options proposed are"
     },
     {
+      "number": 78,
+      "title": "Workshop: How to Score a Bitcoin Setup Across Seven Domains — Build the SeReCoLiPrInGo Questionnaire",
+      "url": "https://github.com/TABConf/8.tabconf.com/issues/78",
+      "date": "2026-10-14",
+      "start": "11:00 AM",
+      "end": "12:00 PM",
+      "startMin": 660,
+      "endMin": 720,
+      "durationMin": 60,
+      "track": "stage",
+      "room": "BitLab Village",
+      "roomFromLabel": true,
+      "speakers": [],
+      "labels": [
+        {
+          "name": "Accepted",
+          "color": "#0e8a16"
+        },
+        {
+          "name": "Workshop",
+          "color": "#7a69e2"
+        },
+        {
+          "name": "bitlab village",
+          "color": "#6a1b9a"
+        }
+      ],
+      "summary": "Description What is this workshop about? Provide as many details as possible. Most self-custody checklists ask one question in many different ways: is this safe from hackers? The SeReCoLiPrInGo framework says a setup has to answer seven que"
+    },
+    {
       "number": 22,
       "title": "Talk: Bridges in a Post-Quantum World",
       "url": "https://github.com/TABConf/8.tabconf.com/issues/22",
@@ -663,6 +713,7 @@
       "durationMin": 30,
       "track": "stage",
       "room": "Main stage",
+      "roomFromLabel": true,
       "speakers": [],
       "labels": [
         {
@@ -696,6 +747,7 @@
       "durationMin": 30,
       "track": "stage",
       "room": "Main stage",
+      "roomFromLabel": true,
       "speakers": [],
       "labels": [
         {
@@ -725,6 +777,7 @@
       "durationMin": 30,
       "track": "stage",
       "room": "Main stage",
+      "roomFromLabel": true,
       "speakers": [],
       "labels": [
         {
@@ -754,6 +807,7 @@
       "durationMin": 30,
       "track": "stage",
       "room": "Main stage",
+      "roomFromLabel": true,
       "speakers": [],
       "labels": [
         {
@@ -783,6 +837,7 @@
       "durationMin": 30,
       "track": "stage",
       "room": "Main stage",
+      "roomFromLabel": true,
       "speakers": [],
       "labels": [
         {
@@ -812,6 +867,7 @@
       "durationMin": 30,
       "track": "stage",
       "room": "Main stage",
+      "roomFromLabel": true,
       "speakers": [],
       "labels": [
         {
@@ -841,6 +897,7 @@
       "durationMin": 30,
       "track": "stage",
       "room": "Main stage",
+      "roomFromLabel": true,
       "speakers": [],
       "labels": [
         {
@@ -870,6 +927,7 @@
       "durationMin": 30,
       "track": "stage",
       "room": "Main stage",
+      "roomFromLabel": true,
       "speakers": [],
       "labels": [
         {
@@ -903,6 +961,7 @@
       "durationMin": 30,
       "track": "stage",
       "room": "Main stage",
+      "roomFromLabel": true,
       "speakers": [],
       "labels": [
         {
@@ -936,6 +995,7 @@
       "durationMin": 30,
       "track": "stage",
       "room": "Main stage",
+      "roomFromLabel": true,
       "speakers": [],
       "labels": [
         {
@@ -969,6 +1029,7 @@
       "durationMin": 30,
       "track": "stage",
       "room": "Main stage",
+      "roomFromLabel": true,
       "speakers": [],
       "labels": [
         {
@@ -1002,6 +1063,7 @@
       "durationMin": 15,
       "track": "stage",
       "room": "Main stage",
+      "roomFromLabel": true,
       "speakers": [],
       "labels": [
         {
@@ -1031,6 +1093,7 @@
       "durationMin": null,
       "track": "floor",
       "room": "Expo floor",
+      "roomFromLabel": false,
       "speakers": [],
       "labels": [
         {
@@ -1060,6 +1123,7 @@
       "durationMin": null,
       "track": "floor",
       "room": "Expo floor",
+      "roomFromLabel": false,
       "speakers": [],
       "labels": [
         {
@@ -1089,6 +1153,7 @@
       "durationMin": null,
       "track": "floor",
       "room": "Expo floor",
+      "roomFromLabel": true,
       "speakers": [],
       "labels": [
         {
@@ -1118,6 +1183,7 @@
       "durationMin": null,
       "track": "floor",
       "room": "Expo floor",
+      "roomFromLabel": false,
       "speakers": [],
       "labels": [
         {
@@ -1143,6 +1209,7 @@
       "durationMin": null,
       "track": "floor",
       "room": "Expo floor",
+      "roomFromLabel": false,
       "speakers": [],
       "labels": [
         {
@@ -1172,6 +1239,7 @@
       "durationMin": null,
       "track": "floor",
       "room": "Expo floor",
+      "roomFromLabel": false,
       "speakers": [],
       "labels": [
         {
