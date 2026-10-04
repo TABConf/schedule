@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-04T21:47:41.079Z",
+  "generatedAt": "2026-10-04T22:23:41.364Z",
   "event": {
     "name": "TABConf 8",
     "start": "2026-10-12",
@@ -7,10 +7,10 @@
     "venue": "Georgia Tech Exhibition Hall, Atlanta"
   },
   "counts": {
-    "total": 46,
-    "scheduled": 40,
-    "unscheduled": 0,
-    "floor": 6,
+    "total": 47,
+    "scheduled": 41,
+    "unscheduled": -1,
+    "floor": 7,
     "stageMinutes": 1830
   },
   "clashes": [],
@@ -874,6 +874,36 @@
         }
       ],
       "summary": "Description What is this talk about? Give us as many details as possible. The recent Coldcard and Liquid exploits have put Bitcoin software security under renewed scrutiny. As AI makes code review and exploit prototyping cheaper, protocol t"
+    },
+    {
+      "number": 72,
+      "title": "Single Elimination Chess Tournament",
+      "url": "https://github.com/TABConf/8.tabconf.com/issues/72",
+      "date": "2026-10-14",
+      "start": "2:00 PM",
+      "end": "3:00 PM",
+      "startMin": 840,
+      "endMin": 900,
+      "durationMin": 60,
+      "track": "floor",
+      "room": "Expo floor",
+      "roomFromLabel": false,
+      "speakers": [],
+      "labels": [
+        {
+          "name": "Accepted",
+          "color": "#0e8a16"
+        },
+        {
+          "name": "Conference Suggestion",
+          "color": "#323fca"
+        },
+        {
+          "name": "floor space",
+          "color": "#9a1fad"
+        }
+      ],
+      "summary": "Description What is this event about? A single elimination chess tournament is a competitive event where players face off against each other in a series of matches, with each defeat resulting in immediate elimination until there is only one"
     },
     {
       "number": 84,
