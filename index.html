@@ -257,16 +257,20 @@ function detailsNode(s){
   return row;
 }
 
-/* Oct 12 and 13 run two rooms, so the calendar for those days is a real grid:
-   one column per room, one row per distinct start time. Oct 14 and 15 have a
-   single room and keep the flat table, because a one column grid is just a
-   table with a wasted header.
+/* A day with more than one room draws a real grid: one column per room, one row
+   per distinct start time. A day with a single room keeps the flat table,
+   because a one column grid is just a table with a wasted header. Oct 12 and 13
+   run the main stage and the hacker room; Oct 14 and 15 add BitLab Village
+   alongside the main stage.
 
    Rows are keyed on start time rather than drawn with rowspan. A 2 hour
    workshop therefore occupies one row and states its own end time. Rowspan
    would look tidier and would need every session in the day to share a tidy
-   grid of boundaries, which real schedules never do. */
-const ROOM_ORDER = ['Main stage', 'Hacker room', 'Expo floor'];
+   grid of boundaries, which real schedules never do.
+
+   AN UNLISTED ROOM STILL RENDERS, it just sorts to the far right, so this list
+   is reading order and not a list of which rooms exist. */
+const ROOM_ORDER = ['Main stage', 'Hacker room', 'BitLab Village', 'Expo floor'];
 const roomRank = r => { const i = ROOM_ORDER.indexOf(r); return i === -1 ? 99 : i; };
 
 function sessionCell(s){
