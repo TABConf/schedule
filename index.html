@@ -68,6 +68,14 @@ input[type=search]:focus{outline:2px solid var(--accent);outline-offset:-1px}
   font-weight:600;white-space:nowrap;line-height:1.6;vertical-align:1px}
 .who{font-family:var(--mono);font-size:11.5px;color:var(--muted)}
 .num{font-family:var(--mono);font-size:11px;color:var(--muted)}
+/* Speakers sit on their own line between the summary and the labels, so the
+   person reads as part of the session rather than as one more tag. */
+.speakers{display:flex;gap:14px;flex-wrap:wrap;align-items:center;margin-top:9px}
+.speaker{display:inline-flex;align-items:center;gap:7px;text-decoration:none;
+  font-size:13px;font-weight:600;color:var(--ink)}
+.speaker:hover{color:var(--accent)}
+.speaker .avatar{width:24px;height:24px;border-radius:50%;display:block;
+  background:var(--line);flex:none}
 
 /* ---------- calendar view ---------- */
 .grid{width:100%;border-collapse:collapse;font-size:13.5px}
@@ -205,10 +213,22 @@ function labelChip(label){
 }
 const SKIP_LABEL=/^accepted$|needs to be scheduled|^under consideration$|^details need to be confirmed$/i;
 
+/* SPEAKERS ARRIVE AS OBJECTS {login, name, avatarUrl} and used to arrive as
+   plain login strings. The export runs on its own cadence, so a deploy of this
+   page can land hours before the next export rewrites the data. Normalising on
+   read means neither shape breaks the page, and the whole rest of the file can
+   assume objects. */
+const speakerOf = x => typeof x === 'string' ? {login:x, name:'', avatarUrl:''}
+                     : {login:(x&&x.login)||'', name:(x&&x.name)||'', avatarUrl:(x&&x.avatarUrl)||''};
+/* The name when there is one, the handle when there is not. Never both: in a
+   dense row "Keith Mukai (@kdmukai)" is twice the width for no extra meaning. */
+const speakerLabel = p => p.name || ('@'+p.login);
+const speakerText  = s => (s.speakers||[]).map(p=>p.name+' @'+p.login).join(' ');
+
 function matches(s){
   const q=S.q.trim().toLowerCase();
   if(!q) return true;
-  return (s.title+' '+s.summary+' '+s.speakers.join(' ')+' '+s.labels.map(l=>l.name).join(' '))
+  return (s.title+' '+s.summary+' '+speakerText(s)+' '+s.labels.map(l=>l.name).join(' '))
     .toLowerCase().includes(q);
 }
 
@@ -248,9 +268,37 @@ function detailsNode(s){
   h.appendChild(a); body.appendChild(h);
   if(s.summary) body.appendChild(el('p','summary',s.summary));
 
+  /* SPEAKERS GET THEIR OWN LINE ABOVE THE LABELS. They used to be one more chip
+     in the tag row, which put a person between 'Workshop' and '#41' and read as
+     metadata about the session rather than as who is giving it. Avatar, name,
+     and a link to the profile, because an attendee deciding what to attend is
+     choosing a person as often as a topic. */
+  if(s.speakers.length){
+    const who=el('div','speakers');
+    s.speakers.forEach(p=>{
+      const a=el('a','speaker');
+      a.href='https://github.com/'+encodeURIComponent(p.login);
+      a.target='_blank'; a.rel='noopener';
+      a.title='@'+p.login;
+      if(p.avatarUrl){
+        const img=document.createElement('img');
+        // GitHub avatars come back as .../u/123?v=4, so the size goes on with
+        // an &. Checked rather than assumed, because a URL with no query would
+        // otherwise silently request a 404.
+        img.className='avatar';
+        img.src=p.avatarUrl+(p.avatarUrl.indexOf('?')===-1?'?':'&')+'s=48';
+        img.alt='';
+        img.loading='lazy'; img.width=24; img.height=24;
+        a.appendChild(img);
+      }
+      a.appendChild(el('span',null,speakerLabel(p)));
+      who.appendChild(a);
+    });
+    body.appendChild(who);
+  }
+
   const tags=el('div','tags');
   s.labels.filter(l=>!SKIP_LABEL.test(l.name)).forEach(l=>tags.appendChild(labelChip(l)));
-  if(s.speakers.length) tags.appendChild(el('span','who','@'+s.speakers.join(', @')));
   tags.appendChild(el('span','num','#'+s.number));
   body.appendChild(tags);
   row.appendChild(body);
@@ -281,7 +329,7 @@ function sessionCell(s){
   wrap.appendChild(line);
   const meta = [];
   if (s.start) meta.push(s.start + ' - ' + s.end);
-  if (s.speakers.length) meta.push('@' + s.speakers.join(', @'));
+  if (s.speakers.length) meta.push(s.speakers.map(speakerLabel).join(', '));
   if (meta.length) wrap.appendChild(el('div','cell-meta', meta.join('  ')));
   return wrap;
 }
@@ -302,7 +350,7 @@ function flatTable(items){
     td.appendChild(a);
     const k=kindOf(s); if(k) td.appendChild(labelChip(k));
     tr.appendChild(td);
-    tr.appendChild(el('td','c-who', s.speakers.length ? '@'+s.speakers.join(', @') : ''));
+    tr.appendChild(el('td','c-who', s.speakers.map(speakerLabel).join(', ')));
     tr.appendChild(el('td','c-loc', place(s)));
     tb.appendChild(tr);
   });
@@ -439,9 +487,15 @@ fetch('data/schedule.json?v='+Date.now())
   .then(r=>r.json())
   .then(d=>{
     S.data = Array.isArray(d) ? {clashes:[],sessions:d} : d;
-    S.data.sessions = (S.data.sessions||[]).map(s=>Object.assign(
-      {number:0,title:'',url:'#',date:'',start:'',end:'',startMin:null,endMin:null,
-       durationMin:null,track:'stage',room:'',speakers:[],labels:[],summary:''},s));
+    S.data.sessions = (S.data.sessions||[]).map(s=>{
+      const o = Object.assign(
+        {number:0,title:'',url:'#',date:'',start:'',end:'',startMin:null,endMin:null,
+         durationMin:null,track:'stage',room:'',speakers:[],labels:[],summary:''},s);
+      // One normalisation point for both speaker shapes, old and new. Do this
+      // here and nothing downstream has to ask which it got.
+      o.speakers = (o.speakers||[]).map(speakerOf).filter(p=>p.login);
+      return o;
+    });
     try{
       const v=localStorage.getItem('tabconf8-view');
       if(v==='calendar'){S.view='calendar';

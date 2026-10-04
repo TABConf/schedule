@@ -75,7 +75,7 @@ query($projectId: ID!, $after: String) {
               state
               body
               url
-              assignees(first: 10) { nodes { login } }
+              assignees(first: 10) { nodes { login name avatarUrl } }
               labels(first: 20) { nodes { name color } }
               issueFieldValues(first: 20) {
                 nodes {
@@ -303,7 +303,19 @@ function summarise(md) {
       // Kept so the run summary can separate "labelled Main stage" from
       // "labelled nothing and defaulted there". The page does not use it.
       roomFromLabel: roomLabel !== null,
-      speakers: ((c.assignees && c.assignees.nodes) || []).map(a => a.login),
+      // SPEAKERS ARE OBJECTS, NOT LOGIN STRINGS, as of 2026-10-04, so the page
+      // can show a person rather than a handle. Many assignees have a real name
+      // on their GitHub profile and '@kdmukai' tells an attendee nothing.
+      //
+      // name and avatarUrl are both optional: a profile with no name set gives
+      // null, and the page falls back to the login. The page also still accepts
+      // the old array of strings, because the export is not automatic and a
+      // deploy can land before the next run rewrites this file.
+      speakers: ((c.assignees && c.assignees.nodes) || []).map(a => ({
+        login: a.login,
+        name: a.name || '',
+        avatarUrl: a.avatarUrl || ''
+      })),
       labels: labels.map(l => ({ name: l.name, color: '#' + l.color })),
       summary: summarise(c.body)
     });
