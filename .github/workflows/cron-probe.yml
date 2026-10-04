@@ -1,0 +1,32 @@
+name: Cron probe
+
+# TEMPORARY. DELETE THIS ONCE IT HAS ANSWERED ITS QUESTION.
+#
+# On 2026-10-04 "Export Project Schedule" did not run a single scheduled job in
+# over three hours, across two cron expressions, while workflow_dispatch
+# succeeded every time. Everything checkable was checked and came back clean:
+# default branch, repo not archived or a fork, workflow state active, repo
+# Actions enabled with allowed_actions all, org policy fully permissive, public
+# repo so no minutes limit, and the file parses because dispatch runs from it.
+#
+# GITHUB HAS NO API THAT REPORTS WHETHER A SCHEDULE IS REGISTERED, so the only
+# way to tell our workflow apart from this repository or this account is a
+# second workflow that shares nothing with the first.
+#
+# THIS FILE IS DELIBERATELY TRIVIAL. No checkout, no secrets, no permissions, no
+# network, one echo. If this fires and the export does not, the fault is in the
+# export workflow. If NEITHER fires, the fault is above both of them and no
+# amount of editing the export will help.
+#
+# */5 is the fastest GitHub allows, which maximises the number of chances this
+# gets per hour of waiting.
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: '*/5 * * * *'
+
+jobs:
+  probe:
+    runs-on: ubuntu-latest
+    steps:
+    - run: echo "probe fired at $(date -u +%FT%TZ) via ${{ github.event_name }}"
