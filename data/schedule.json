@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-04T21:19:10.653Z",
+  "generatedAt": "2026-10-04T21:42:08.318Z",
   "event": {
     "name": "TABConf 8",
     "start": "2026-10-12",
@@ -7,11 +7,11 @@
     "venue": "Georgia Tech Exhibition Hall, Atlanta"
   },
   "counts": {
-    "total": 38,
-    "scheduled": 32,
+    "total": 46,
+    "scheduled": 40,
     "unscheduled": 0,
     "floor": 6,
-    "stageMinutes": 1380
+    "stageMinutes": 1830
   },
   "clashes": [],
   "sessions": [
@@ -600,6 +600,38 @@
       "summary": "What is this panel discussion about? Will there be multiple talking a points? Bitcoin was used during the November 2024 presidential elections by Stacy Scott in Screven County GA to protect her county election results. She then used it to p"
     },
     {
+      "number": 79,
+      "title": "⏩  Acceleration Kick-off",
+      "url": "https://github.com/TABConf/8.tabconf.com/issues/79",
+      "date": "2026-10-14",
+      "start": "9:00 AM",
+      "end": "9:30 AM",
+      "startMin": 540,
+      "endMin": 570,
+      "durationMin": 30,
+      "track": "stage",
+      "room": "BitLab Village",
+      "roomFromLabel": true,
+      "speakers": [
+        {
+          "login": "sbddesign",
+          "name": "Stephen DeLorme",
+          "avatarUrl": "https://avatars.githubusercontent.com/u/2414177?u=ed8218c071171ece0f9a5a27beb05b3aa1a9fa42&v=4"
+        }
+      ],
+      "labels": [
+        {
+          "name": "Accepted",
+          "color": "#0e8a16"
+        },
+        {
+          "name": "bitlab village",
+          "color": "#6a1b9a"
+        }
+      ],
+      "summary": "Kick-off to the Acceleration Village. Details TBD. Description What is this talk about? Give us as many details as possible. What would an attendee learn from this talk? Is there anything folks should read up on before they attend this talk"
+    },
+    {
       "number": 16,
       "title": "The State of Bitcoin Forks",
       "url": "https://github.com/TABConf/8.tabconf.com/issues/16",
@@ -632,6 +664,32 @@
         }
       ],
       "summary": "A talk about the history of hard forks and soft forks that we've had over the years in Bitcoin, and a reflection on the state of BIP110 and BIP300 which by the time of the conference will have split into individual chains. Also, very much i"
+    },
+    {
+      "number": 80,
+      "title": "⚽️ SatPicks - Building a prediction market with Nostr",
+      "url": "https://github.com/TABConf/8.tabconf.com/issues/80",
+      "date": "2026-10-14",
+      "start": "10:00 AM",
+      "end": "11:00 AM",
+      "startMin": 600,
+      "endMin": 660,
+      "durationMin": 60,
+      "track": "stage",
+      "room": "BitLab Village",
+      "roomFromLabel": true,
+      "speakers": [],
+      "labels": [
+        {
+          "name": "Accepted",
+          "color": "#0e8a16"
+        },
+        {
+          "name": "bitlab village",
+          "color": "#6a1b9a"
+        }
+      ],
+      "summary": "Details TBD Description What is this talk about? Give us as many details as possible. What would an attendee learn from this talk? Is there anything folks should read up on before they attend this talk? Relevant Links About the Speaker Soci"
     },
     {
       "number": 12,
@@ -736,6 +794,58 @@
       "summary": "Proposing a talk of over 30 minutes that will describe the following content --- One of the mistakes of Lightning's early days was exposing complexity to the user: managing channels, rebalancing, gossip propagation delays, and after that, t"
     },
     {
+      "number": 82,
+      "title": "⚡ The Alex Lewin Experience",
+      "url": "https://github.com/TABConf/8.tabconf.com/issues/82",
+      "date": "2026-10-14",
+      "start": "12:00 PM",
+      "end": "1:00 PM",
+      "startMin": 720,
+      "endMin": 780,
+      "durationMin": 60,
+      "track": "stage",
+      "room": "BitLab Village",
+      "roomFromLabel": true,
+      "speakers": [],
+      "labels": [
+        {
+          "name": "Accepted",
+          "color": "#0e8a16"
+        },
+        {
+          "name": "bitlab village",
+          "color": "#6a1b9a"
+        }
+      ],
+      "summary": "Details TBD Description What is this talk about? Give us as many details as possible. What would an attendee learn from this talk? Is there anything folks should read up on before they attend this talk? Relevant Links About the Speaker Soci"
+    },
+    {
+      "number": 83,
+      "title": "🚗  Nitesh, please come to the BitLab stage, your car is blocking the maintenance entrance",
+      "url": "https://github.com/TABConf/8.tabconf.com/issues/83",
+      "date": "2026-10-14",
+      "start": "1:00 PM",
+      "end": "2:00 PM",
+      "startMin": 780,
+      "endMin": 840,
+      "durationMin": 60,
+      "track": "stage",
+      "room": "BitLab Village",
+      "roomFromLabel": true,
+      "speakers": [],
+      "labels": [
+        {
+          "name": "Accepted",
+          "color": "#0e8a16"
+        },
+        {
+          "name": "bitlab village",
+          "color": "#6a1b9a"
+        }
+      ],
+      "summary": "Details TBD Description What is this talk about? Give us as many details as possible. What would an attendee learn from this talk? Is there anything folks should read up on before they attend this talk? Relevant Links About the Speaker Soci"
+    },
+    {
       "number": 43,
       "title": "Protocol security in the age of cyber AI",
       "url": "https://github.com/TABConf/8.tabconf.com/issues/43",
@@ -764,6 +874,32 @@
         }
       ],
       "summary": "Description What is this talk about? Give us as many details as possible. The recent Coldcard and Liquid exploits have put Bitcoin software security under renewed scrutiny. As AI makes code review and exploit prototyping cheaper, protocol t"
+    },
+    {
+      "number": 84,
+      "title": "🍑 Georgia Bitcoin Council",
+      "url": "https://github.com/TABConf/8.tabconf.com/issues/84",
+      "date": "2026-10-14",
+      "start": "2:00 PM",
+      "end": "3:00 PM",
+      "startMin": 840,
+      "endMin": 900,
+      "durationMin": 60,
+      "track": "stage",
+      "room": "BitLab Village",
+      "roomFromLabel": true,
+      "speakers": [],
+      "labels": [
+        {
+          "name": "Accepted",
+          "color": "#0e8a16"
+        },
+        {
+          "name": "bitlab village",
+          "color": "#6a1b9a"
+        }
+      ],
+      "summary": "Details TBD Description What is this talk about? Give us as many details as possible. What would an attendee learn from this talk? Is there anything folks should read up on before they attend this talk? Relevant Links About the Speaker Soci"
     },
     {
       "number": 37,
@@ -796,6 +932,32 @@
       "summary": "Description What is this talk about? Give us as many details as possible. From Solo Mining to Poolless Mining: The Evolution of Bitcoin Mining Protocols Bitcoin mining began with miners constructing their own blocks and mining directly agai"
     },
     {
+      "number": 85,
+      "title": "🫖 Kettle",
+      "url": "https://github.com/TABConf/8.tabconf.com/issues/85",
+      "date": "2026-10-14",
+      "start": "3:00 PM",
+      "end": "4:00 PM",
+      "startMin": 900,
+      "endMin": 960,
+      "durationMin": 60,
+      "track": "stage",
+      "room": "BitLab Village",
+      "roomFromLabel": true,
+      "speakers": [],
+      "labels": [
+        {
+          "name": "Accepted",
+          "color": "#0e8a16"
+        },
+        {
+          "name": "bitlab village",
+          "color": "#6a1b9a"
+        }
+      ],
+      "summary": "Details TBD Description What is this talk about? Give us as many details as possible. What would an attendee learn from this talk? Is there anything folks should read up on before they attend this talk? Relevant Links About the Speaker Soci"
+    },
+    {
       "number": 36,
       "title": "Talk: rust-bitcoin: The Road to 1.0",
       "url": "https://github.com/TABConf/8.tabconf.com/issues/36",
@@ -826,6 +988,32 @@
       "summary": "Speaker: Andrew Poelstra Github:  @apoelstra IRC: andytoshi Talk Details rust-bitcoin: The Road to 1.0 This talk will go over the last year or two of rust-bitcoin development as we attempt to release a 1.0 \"Production Ready\" version of the "
     },
     {
+      "number": 86,
+      "title": "👾  Neon Orbit",
+      "url": "https://github.com/TABConf/8.tabconf.com/issues/86",
+      "date": "2026-10-15",
+      "start": "9:00 AM",
+      "end": "10:00 AM",
+      "startMin": 540,
+      "endMin": 600,
+      "durationMin": 60,
+      "track": "stage",
+      "room": "BitLab Village",
+      "roomFromLabel": true,
+      "speakers": [],
+      "labels": [
+        {
+          "name": "Accepted",
+          "color": "#0e8a16"
+        },
+        {
+          "name": "bitlab village",
+          "color": "#6a1b9a"
+        }
+      ],
+      "summary": "Details TBD Description What is this talk about? Give us as many details as possible. What would an attendee learn from this talk? Is there anything folks should read up on before they attend this talk? Relevant Links About the Speaker Soci"
+    },
+    {
       "number": 50,
       "title": "Drinking from the firehose: bitcoin FOSS in a post-LLM world",
       "url": "https://github.com/TABConf/8.tabconf.com/issues/50",
@@ -854,6 +1042,32 @@
         }
       ],
       "summary": "Description What is this panel discussion about? Will there be multiple talking points? Would like to get other bitcoin FOSS maintainers together to discuss challenges and opportunities they're seen on their projects due to modern LLMs. Mul"
+    },
+    {
+      "number": 87,
+      "title": "🐝 Swarm Mechanics",
+      "url": "https://github.com/TABConf/8.tabconf.com/issues/87",
+      "date": "2026-10-15",
+      "start": "10:00 AM",
+      "end": "11:00 AM",
+      "startMin": 600,
+      "endMin": 660,
+      "durationMin": 60,
+      "track": "stage",
+      "room": "BitLab Village",
+      "roomFromLabel": true,
+      "speakers": [],
+      "labels": [
+        {
+          "name": "Accepted",
+          "color": "#0e8a16"
+        },
+        {
+          "name": "bitlab village",
+          "color": "#6a1b9a"
+        }
+      ],
+      "summary": "Details TBD Description What is this talk about? Give us as many details as possible. What would an attendee learn from this talk? Is there anything folks should read up on before they attend this talk? Relevant Links About the Speaker Soci"
     },
     {
       "number": 57,
