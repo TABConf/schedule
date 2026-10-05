@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-04T23:37:37.028Z",
+  "generatedAt": "2026-10-05T02:26:19.927Z",
   "event": {
     "name": "TABConf 8",
     "start": "2026-10-12",
@@ -791,7 +791,7 @@
           "color": "#c2185b"
         }
       ],
-      "summary": "Proposing a talk of over 30 minutes that will describe the following content --- One of the mistakes of Lightning's early days was exposing complexity to the user: managing channels, rebalancing, gossip propagation delays, and after that, t"
+      "summary": "One of the mistakes of Lightning's early days was exposing complexity to the user: managing channels, rebalancing, gossip propagation delays, and after that, the user was still not able to make the payments. Now we are in the era of 'Paymen"
     },
     {
       "number": 82,
