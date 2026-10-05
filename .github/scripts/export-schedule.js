@@ -349,8 +349,17 @@ function summarise(md) {
     }
   });
 
-  const scheduled = sessions.filter(s => s.date && s.startMin !== null).length;
+  // THESE THREE MUST PARTITION THE SESSIONS, and until 2026-10-05 they did not.
+  // 'scheduled' counted anything with a date and a time, and 'floor' counted
+  // anything on the floor, so a floor item that happened to carry a time was in
+  // both and 'unscheduled' came out NEGATIVE. #72, the chess tournament, was the
+  // first one: given 'floor space' and a time on the same day.
+  //
+  // Floor items are deliberately not laid out on the timeline, so the floor is
+  // the category that wins and 'scheduled' now means scheduled ON A TRACK.
   const floor = sessions.filter(s => s.track === 'floor').length;
+  const scheduled = sessions.filter(s => s.track !== 'floor'
+                                      && s.date && s.startMin !== null).length;
   const stageMinutes = sessions.reduce((n, s) => n + (s.track === 'stage' ? (s.durationMin || 0) : 0), 0);
 
   const payload = {
