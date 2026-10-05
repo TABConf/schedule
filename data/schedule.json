@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-05T16:49:58.870Z",
+  "generatedAt": "2026-10-05T17:29:05.813Z",
   "event": {
     "name": "TABConf 8",
     "start": "2026-10-12",
@@ -7,11 +7,11 @@
     "venue": "Georgia Tech Exhibition Hall, Atlanta"
   },
   "counts": {
-    "total": 60,
-    "scheduled": 45,
+    "total": 61,
+    "scheduled": 46,
     "unscheduled": 5,
     "floor": 10,
-    "stageMinutes": 2055
+    "stageMinutes": 2085
   },
   "clashes": [],
   "sessions": [
@@ -506,6 +506,36 @@
       "summary": "Description What is this talk about? Give us as many details as possible. Every mining pool runs a difficulty adjustment loop. It sets each miner's share difficulty from an estimate of that miner's hashrate, and the only input it has is the"
     },
     {
+      "number": 8,
+      "title": "Bolt12 is the new common interface to Bitcoin payments",
+      "url": "https://github.com/TABConf/8.tabconf.com/issues/8",
+      "date": "2026-10-13",
+      "start": "3:45 PM",
+      "end": "4:15 PM",
+      "startMin": 945,
+      "endMin": 975,
+      "durationMin": 30,
+      "track": "stage",
+      "room": "Main stage",
+      "roomFromLabel": true,
+      "speakers": [],
+      "labels": [
+        {
+          "name": "Accepted",
+          "color": "#0e8a16"
+        },
+        {
+          "name": "needs to be scheduled",
+          "color": "#859494"
+        },
+        {
+          "name": "main stage",
+          "color": "#c2185b"
+        }
+      ],
+      "summary": "One of the mistakes of Lightning's early days was exposing complexity to the user: managing channels, rebalancing, gossip propagation delays, and after that, the user was still not able to make the payments. Now we are in the era of 'Paymen"
+    },
+    {
       "number": 31,
       "title": "You Can’t Fix What You Can’t See: Monitoring the Bitcoin Network",
       "url": "https://github.com/TABConf/8.tabconf.com/issues/31",
@@ -538,6 +568,40 @@
         }
       ],
       "summary": "Description Bitcoin is decentralized, but much of what happens across its network is not visible from the blockchain or from a single node. This talk provides a high level overview of what is monitored across the Bitcoin network, including "
+    },
+    {
+      "number": 22,
+      "title": "Talk: Bridges in a Post-Quantum World",
+      "url": "https://github.com/TABConf/8.tabconf.com/issues/22",
+      "date": "2026-10-13",
+      "start": "4:30 PM",
+      "end": "5:00 PM",
+      "startMin": 990,
+      "endMin": 1020,
+      "durationMin": 30,
+      "track": "stage",
+      "room": "Main stage",
+      "roomFromLabel": true,
+      "speakers": [],
+      "labels": [
+        {
+          "name": "Accepted",
+          "color": "#0e8a16"
+        },
+        {
+          "name": "Talk or Demo",
+          "color": "#87a876"
+        },
+        {
+          "name": "needs to be scheduled",
+          "color": "#859494"
+        },
+        {
+          "name": "main stage",
+          "color": "#c2185b"
+        }
+      ],
+      "summary": "Description Modern trust-reducing bridges use a combination of classical and new cryptography for security and efficiency. Specifically, designs like Glock and BitVM3 make use of garbled circuits, zkVM-based proofs, adaptor signatures, and "
     },
     {
       "number": 59,
@@ -730,9 +794,9 @@
       "summary": "There's a handful of proposals for quantum address formats - P2MR, P2TRv2, P2MR-no-EC, P2TR-as-is, etc, etc. In this talk I'll walk through the proposals that exist, what the constraints and considerations are, what the options proposed are"
     },
     {
-      "number": 22,
-      "title": "Talk: Bridges in a Post-Quantum World",
-      "url": "https://github.com/TABConf/8.tabconf.com/issues/22",
+      "number": 91,
+      "title": "Fireside Chat: What the heck has Carl Dong been up to? [DRAFT]",
+      "url": "https://github.com/TABConf/8.tabconf.com/issues/91",
       "date": "2026-10-14",
       "start": "11:15 AM",
       "end": "11:45 AM",
@@ -741,57 +805,15 @@
       "durationMin": 30,
       "track": "stage",
       "room": "Main stage",
-      "roomFromLabel": true,
+      "roomFromLabel": false,
       "speakers": [],
       "labels": [
         {
           "name": "Accepted",
           "color": "#0e8a16"
-        },
-        {
-          "name": "Talk or Demo",
-          "color": "#87a876"
-        },
-        {
-          "name": "needs to be scheduled",
-          "color": "#859494"
-        },
-        {
-          "name": "main stage",
-          "color": "#c2185b"
         }
       ],
-      "summary": "Description Modern trust-reducing bridges use a combination of classical and new cryptography for security and efficiency. Specifically, designs like Glock and BitVM3 make use of garbled circuits, zkVM-based proofs, adaptor signatures, and "
-    },
-    {
-      "number": 8,
-      "title": "Bolt12 is the new common interface to Bitcoin payments",
-      "url": "https://github.com/TABConf/8.tabconf.com/issues/8",
-      "date": "2026-10-14",
-      "start": "12:00 PM",
-      "end": "12:30 PM",
-      "startMin": 720,
-      "endMin": 750,
-      "durationMin": 30,
-      "track": "stage",
-      "room": "Main stage",
-      "roomFromLabel": true,
-      "speakers": [],
-      "labels": [
-        {
-          "name": "Accepted",
-          "color": "#0e8a16"
-        },
-        {
-          "name": "needs to be scheduled",
-          "color": "#859494"
-        },
-        {
-          "name": "main stage",
-          "color": "#c2185b"
-        }
-      ],
-      "summary": "One of the mistakes of Lightning's early days was exposing complexity to the user: managing channels, rebalancing, gossip propagation delays, and after that, the user was still not able to make the payments. Now we are in the era of 'Paymen"
+      "summary": "Description What is this panel discussion about? Will there be multiple talking points? What would an attendee learn from this panel? Is there anything folks should read up on before they attend? Relevant Links <!-- leave blank if you are u"
     },
     {
       "number": 82,
@@ -824,10 +846,10 @@
       "title": "What the Fork is Happening with Bitcoin [DRAFT]",
       "url": "https://github.com/TABConf/8.tabconf.com/issues/89",
       "date": "2026-10-14",
-      "start": "12:30 PM",
-      "end": "1:30 PM",
-      "startMin": 750,
-      "endMin": 810,
+      "start": "12:00 PM",
+      "end": "1:00 PM",
+      "startMin": 720,
+      "endMin": 780,
       "durationMin": 60,
       "track": "stage",
       "room": "Main stage",
@@ -876,10 +898,10 @@
       "title": "WoT Panel: Where is the robust Identity WoT right now with all the AI deep fakes? [DRAFT]",
       "url": "https://github.com/TABConf/8.tabconf.com/issues/70",
       "date": "2026-10-14",
-      "start": "1:45 PM",
-      "end": "2:45 PM",
-      "startMin": 825,
-      "endMin": 885,
+      "start": "1:15 PM",
+      "end": "2:15 PM",
+      "startMin": 795,
+      "endMin": 855,
       "durationMin": 60,
       "track": "stage",
       "room": "Main stage",
@@ -954,10 +976,10 @@
       "title": "RED TEAM Panel - How *ucked Are We? [DRAFT]",
       "url": "https://github.com/TABConf/8.tabconf.com/issues/69",
       "date": "2026-10-14",
-      "start": "3:00 PM",
-      "end": "4:00 PM",
-      "startMin": 900,
-      "endMin": 960,
+      "start": "2:30 PM",
+      "end": "3:30 PM",
+      "startMin": 870,
+      "endMin": 930,
       "durationMin": 60,
       "track": "stage",
       "room": "Main stage",
