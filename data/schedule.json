@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-05T15:24:46.385Z",
+  "generatedAt": "2026-10-05T16:49:58.870Z",
   "event": {
     "name": "TABConf 8",
     "start": "2026-10-12",
@@ -7,11 +7,11 @@
     "venue": "Georgia Tech Exhibition Hall, Atlanta"
   },
   "counts": {
-    "total": 49,
-    "scheduled": 41,
-    "unscheduled": -1,
-    "floor": 9,
-    "stageMinutes": 1830
+    "total": 60,
+    "scheduled": 45,
+    "unscheduled": 5,
+    "floor": 10,
+    "stageMinutes": 2055
   },
   "clashes": [],
   "sessions": [
@@ -820,6 +820,32 @@
       "summary": "Details TBD Description What is this talk about? Give us as many details as possible. What would an attendee learn from this talk? Is there anything folks should read up on before they attend this talk? Relevant Links About the Speaker Soci"
     },
     {
+      "number": 89,
+      "title": "What the Fork is Happening with Bitcoin [DRAFT]",
+      "url": "https://github.com/TABConf/8.tabconf.com/issues/89",
+      "date": "2026-10-14",
+      "start": "12:30 PM",
+      "end": "1:30 PM",
+      "startMin": 750,
+      "endMin": 810,
+      "durationMin": 60,
+      "track": "stage",
+      "room": "Main stage",
+      "roomFromLabel": false,
+      "speakers": [],
+      "labels": [
+        {
+          "name": "Accepted",
+          "color": "#0e8a16"
+        },
+        {
+          "name": "Panel or Debate",
+          "color": "#935478"
+        }
+      ],
+      "summary": "Description What is this panel discussion about? Will there be multiple talking points? What would an attendee learn from this panel? Is there anything folks should read up on before they attend? Relevant Links <!-- leave blank if you are u"
+    },
+    {
       "number": 83,
       "title": "🚗  Nitesh, please come to the BitLab stage, your car is blocking the maintenance entrance",
       "url": "https://github.com/TABConf/8.tabconf.com/issues/83",
@@ -846,34 +872,26 @@
       "summary": "Details TBD Description What is this talk about? Give us as many details as possible. What would an attendee learn from this talk? Is there anything folks should read up on before they attend this talk? Relevant Links About the Speaker Soci"
     },
     {
-      "number": 43,
-      "title": "Protocol security in the age of cyber AI",
-      "url": "https://github.com/TABConf/8.tabconf.com/issues/43",
+      "number": 70,
+      "title": "WoT Panel: Where is the robust Identity WoT right now with all the AI deep fakes? [DRAFT]",
+      "url": "https://github.com/TABConf/8.tabconf.com/issues/70",
       "date": "2026-10-14",
-      "start": "1:30 PM",
-      "end": "2:00 PM",
-      "startMin": 810,
-      "endMin": 840,
-      "durationMin": 30,
+      "start": "1:45 PM",
+      "end": "2:45 PM",
+      "startMin": 825,
+      "endMin": 885,
+      "durationMin": 60,
       "track": "stage",
       "room": "Main stage",
-      "roomFromLabel": true,
+      "roomFromLabel": false,
       "speakers": [],
       "labels": [
         {
           "name": "Accepted",
           "color": "#0e8a16"
-        },
-        {
-          "name": "needs to be scheduled",
-          "color": "#859494"
-        },
-        {
-          "name": "main stage",
-          "color": "#c2185b"
         }
       ],
-      "summary": "Description What is this talk about? Give us as many details as possible. The recent Coldcard and Liquid exploits have put Bitcoin software security under renewed scrutiny. As AI makes code review and exploit prototyping cheaper, protocol t"
+      "summary": "Description What is this panel discussion about? Will there be multiple talking points? What would an attendee learn from this panel? Is there anything folks should read up on before they attend? Relevant Links <!-- leave blank if you are u"
     },
     {
       "number": 72,
@@ -932,34 +950,26 @@
       "summary": "Details TBD Description What is this talk about? Give us as many details as possible. What would an attendee learn from this talk? Is there anything folks should read up on before they attend this talk? Relevant Links About the Speaker Soci"
     },
     {
-      "number": 37,
-      "title": "Talk: From Solo Mining to Poolless Mining: The Evolution of Bitcoin Mining Protocols",
-      "url": "https://github.com/TABConf/8.tabconf.com/issues/37",
+      "number": 69,
+      "title": "RED TEAM Panel - How *ucked Are We? [DRAFT]",
+      "url": "https://github.com/TABConf/8.tabconf.com/issues/69",
       "date": "2026-10-14",
       "start": "3:00 PM",
-      "end": "3:30 PM",
+      "end": "4:00 PM",
       "startMin": 900,
-      "endMin": 930,
-      "durationMin": 30,
+      "endMin": 960,
+      "durationMin": 60,
       "track": "stage",
       "room": "Main stage",
-      "roomFromLabel": true,
+      "roomFromLabel": false,
       "speakers": [],
       "labels": [
         {
           "name": "Accepted",
           "color": "#0e8a16"
-        },
-        {
-          "name": "needs to be scheduled",
-          "color": "#859494"
-        },
-        {
-          "name": "main stage",
-          "color": "#c2185b"
         }
       ],
-      "summary": "Description What is this talk about? Give us as many details as possible. From Solo Mining to Poolless Mining: The Evolution of Bitcoin Mining Protocols Bitcoin mining began with miners constructing their own blocks and mining directly agai"
+      "summary": "Description What is this panel discussion about? Will there be multiple talking points? What would an attendee learn from this panel? Is there anything folks should read up on before they attend? Relevant Links <!-- leave blank if you are u"
     },
     {
       "number": 85,
@@ -986,6 +996,28 @@
         }
       ],
       "summary": "Details TBD Description What is this talk about? Give us as many details as possible. What would an attendee learn from this talk? Is there anything folks should read up on before they attend this talk? Relevant Links About the Speaker Soci"
+    },
+    {
+      "number": 90,
+      "title": "The Early Closing Ceremony - Reminiscing 10 years of TAB [DRAFT]",
+      "url": "https://github.com/TABConf/8.tabconf.com/issues/90",
+      "date": "2026-10-14",
+      "start": "4:15 PM",
+      "end": "5:00 PM",
+      "startMin": 975,
+      "endMin": 1020,
+      "durationMin": 45,
+      "track": "stage",
+      "room": "Main stage",
+      "roomFromLabel": false,
+      "speakers": [],
+      "labels": [
+        {
+          "name": "Accepted",
+          "color": "#0e8a16"
+        }
+      ],
+      "summary": "Description What is this panel discussion about? Will there be multiple talking points? What would an attendee learn from this panel? Is there anything folks should read up on before they attend? Relevant Links <!-- leave blank if you are u"
     },
     {
       "number": 36,
@@ -1296,6 +1328,66 @@
       "summary": "Description With the recent Coldcard hack, many people found themselves using private mempools to safely recover funds; in the future, this capability may be relevant to recover quantum insecure funds as well. In this short talk we will dis"
     },
     {
+      "number": 43,
+      "title": "Protocol security in the age of cyber AI",
+      "url": "https://github.com/TABConf/8.tabconf.com/issues/43",
+      "date": "2026-10-15",
+      "start": "3:30 PM",
+      "end": "4:00 PM",
+      "startMin": 930,
+      "endMin": 960,
+      "durationMin": 30,
+      "track": "stage",
+      "room": "Main stage",
+      "roomFromLabel": true,
+      "speakers": [],
+      "labels": [
+        {
+          "name": "Accepted",
+          "color": "#0e8a16"
+        },
+        {
+          "name": "needs to be scheduled",
+          "color": "#859494"
+        },
+        {
+          "name": "main stage",
+          "color": "#c2185b"
+        }
+      ],
+      "summary": "Description What is this talk about? Give us as many details as possible. The recent Coldcard and Liquid exploits have put Bitcoin software security under renewed scrutiny. As AI makes code review and exploit prototyping cheaper, protocol t"
+    },
+    {
+      "number": 37,
+      "title": "Talk: From Solo Mining to Poolless Mining: The Evolution of Bitcoin Mining Protocols",
+      "url": "https://github.com/TABConf/8.tabconf.com/issues/37",
+      "date": "2026-10-15",
+      "start": "4:15 PM",
+      "end": "4:45 PM",
+      "startMin": 975,
+      "endMin": 1005,
+      "durationMin": 30,
+      "track": "stage",
+      "room": "Main stage",
+      "roomFromLabel": true,
+      "speakers": [],
+      "labels": [
+        {
+          "name": "Accepted",
+          "color": "#0e8a16"
+        },
+        {
+          "name": "needs to be scheduled",
+          "color": "#859494"
+        },
+        {
+          "name": "main stage",
+          "color": "#c2185b"
+        }
+      ],
+      "summary": "Description What is this talk about? Give us as many details as possible. From Solo Mining to Poolless Mining: The Evolution of Bitcoin Mining Protocols Bitcoin mining began with miners constructing their own blocks and mining directly agai"
+    },
+    {
       "number": 15,
       "title": "Bitcoin Takeover Podcast Livestream in the Expo area",
       "url": "https://github.com/TABConf/8.tabconf.com/issues/15",
@@ -1442,6 +1534,54 @@
       "summary": "Description The Stacker News Live Podcast did a live show at TABConf 7. This year we want to do the same thing as last year. Last year episode as a reference: https://www.youtube.com/watch?v=EdlMeJ5e48I The setup from last year was TV, Tabl"
     },
     {
+      "number": 49,
+      "title": "Limbs, carries and reduction: field elements in libsecp256k1",
+      "url": "https://github.com/TABConf/8.tabconf.com/issues/49",
+      "date": "",
+      "start": "",
+      "end": "",
+      "startMin": null,
+      "endMin": null,
+      "durationMin": null,
+      "track": "stage",
+      "room": "Main stage",
+      "roomFromLabel": false,
+      "speakers": [],
+      "labels": [
+        {
+          "name": "Accepted",
+          "color": "#0e8a16"
+        }
+      ],
+      "summary": "<!-- Doing a non-interactive demo? That belongs here, not under \"Workshop Submission\". -- Description What is this talk about? For most Bitcoin devs, libsecp256k1 is kind of a black box that we just put numbers into to use the wonders of ma"
+    },
+    {
+      "number": 51,
+      "title": "Lightning Melee",
+      "url": "https://github.com/TABConf/8.tabconf.com/issues/51",
+      "date": "",
+      "start": "",
+      "end": "",
+      "startMin": null,
+      "endMin": null,
+      "durationMin": null,
+      "track": "floor",
+      "room": "Expo floor",
+      "roomFromLabel": false,
+      "speakers": [],
+      "labels": [
+        {
+          "name": "Accepted",
+          "color": "#0e8a16"
+        },
+        {
+          "name": "floor space",
+          "color": "#9a1fad"
+        }
+      ],
+      "summary": "Description Last year @dplusplus1024 did this: https://github.com/TABConf/7.tabconf.com/issues/21 It was fun. Since this is the last TABConf, I think we should do something equally fun. So I’ve been messing around with the idea of Lightning"
+    },
+    {
       "number": 54,
       "title": "Builder Days Project : Bitcoin Data Labs — Open Intelligence & Visual Tooling Station",
       "url": "https://github.com/TABConf/8.tabconf.com/issues/54",
@@ -1472,6 +1612,72 @@
       "summary": "Description: Bitcoin Data Labs (https://bitcoindatalabs.org) is an open-source non-profit building public analytical infrastructure, network visualizers, and data engines for the Bitcoin and Lightning ecosystems. At Builder Days, we will ho"
     },
     {
+      "number": 58,
+      "title": "Beyond the FFI Frontier: What It Actually Takes to Expose Rust Bitcoin Across Multiple Languages (kotlin,swift,python,dart...)",
+      "url": "https://github.com/TABConf/8.tabconf.com/issues/58",
+      "date": "",
+      "start": "",
+      "end": "",
+      "startMin": null,
+      "endMin": null,
+      "durationMin": null,
+      "track": "stage",
+      "room": "Main stage",
+      "roomFromLabel": false,
+      "speakers": [],
+      "labels": [
+        {
+          "name": "Accepted",
+          "color": "#0e8a16"
+        }
+      ],
+      "summary": "<!-- Doing a non-interactive demo? That belongs here, not under \"Workshop Submission\". -- Description What is this talk about? Give us as many details as possible. Writing Bitcoin wallet logic in Rust gives you correctness, memory safety, a"
+    },
+    {
+      "number": 63,
+      "title": "Shrinc-ray: Zapping obsolete EC pubkeys into the PQ future",
+      "url": "https://github.com/TABConf/8.tabconf.com/issues/63",
+      "date": "",
+      "start": "",
+      "end": "",
+      "startMin": null,
+      "endMin": null,
+      "durationMin": null,
+      "track": "stage",
+      "room": "Main stage",
+      "roomFromLabel": false,
+      "speakers": [],
+      "labels": [
+        {
+          "name": "Accepted",
+          "color": "#0e8a16"
+        }
+      ],
+      "summary": "<!-- Doing a non-interactive demo? That belongs here, not under \"Workshop Submission\". -- Description What is this talk about? Give us as many details as possible. How can we ensure safe migration in the event of an EC break?  The general i"
+    },
+    {
+      "number": 67,
+      "title": "Shielded Bitcoin: Private Transfers on the Bitcoin L1",
+      "url": "https://github.com/TABConf/8.tabconf.com/issues/67",
+      "date": "",
+      "start": "",
+      "end": "",
+      "startMin": null,
+      "endMin": null,
+      "durationMin": null,
+      "track": "stage",
+      "room": "Main stage",
+      "roomFromLabel": false,
+      "speakers": [],
+      "labels": [
+        {
+          "name": "Accepted",
+          "color": "#0e8a16"
+        }
+      ],
+      "summary": "<!-- Doing a non-interactive demo? That belongs here, not under \"Workshop Submission\". -- Description What is this talk about? Give us as many details as possible. This talk will be about Shielded Bitcoin, a protocol for private transfer of"
+    },
+    {
       "number": 68,
       "title": "Builder Days Project: Proof Of Print - Bitcoin mining 3D Printer hardware",
       "url": "https://github.com/TABConf/8.tabconf.com/issues/68",
@@ -1500,6 +1706,50 @@
         }
       ],
       "summary": "<!-- All software-based projects submitted must be open source and freely available for public use -- Proof Of Print Description: Proof Of Print integrates bitcoin mining into equipment that already requires electric heat. We will demonstra"
+    },
+    {
+      "number": 73,
+      "title": "Rose: A stateless light wallet for businesses: private by construction, attested at runtime",
+      "url": "https://github.com/TABConf/8.tabconf.com/issues/73",
+      "date": "",
+      "start": "",
+      "end": "",
+      "startMin": null,
+      "endMin": null,
+      "durationMin": null,
+      "track": "stage",
+      "room": "Main stage",
+      "roomFromLabel": false,
+      "speakers": [],
+      "labels": [
+        {
+          "name": "Accepted",
+          "color": "#0e8a16"
+        }
+      ],
+      "summary": "Description This talk introduces Rose, an open-source light wallet for self-custody and e-commerce. Rose exposes Bitcoin Core's RPC dialect, so existing payment integrations work unchanged. Unlike Electrum- and Esplora-backed wallets, Rose "
+    },
+    {
+      "number": 76,
+      "title": "Covenant Vault Designs",
+      "url": "https://github.com/TABConf/8.tabconf.com/issues/76",
+      "date": "",
+      "start": "",
+      "end": "",
+      "startMin": null,
+      "endMin": null,
+      "durationMin": null,
+      "track": "stage",
+      "room": "Main stage",
+      "roomFromLabel": false,
+      "speakers": [],
+      "labels": [
+        {
+          "name": "Accepted",
+          "color": "#0e8a16"
+        }
+      ],
+      "summary": "What is this talk about? Give us as many details as possible. This talk covers Bitcoin Möser-Eyal-Sirer type vaults, the different ways to construct such vaults using covenants, and the tradeoffs across the four covenant proposals CTV, CCV,"
     },
     {
       "number": 77,
