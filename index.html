@@ -401,6 +401,14 @@ function roomGrid(timed, rooms){
         const last=bounds.indexOf(end);
         td.rowSpan=Math.max(1,last-i);
         td.className='c-room span';
+        // Tint the card toward its type label's colour (Talk or Demo, Panel,
+        // Workshop...). No type label keeps the default card colour.
+        const k=kindOf(here[0]); const rgb=k && hexRGB(k.color);
+        if(rgb){
+          const c='rgba('+rgb.join(',')+',';
+          td.style.background='linear-gradient('+c+'.16),'+c+'.16)),var(--accent-soft)';
+          td.style.borderLeftColor=k.color.startsWith('#')?k.color:'#'+k.color;
+        }
         here.forEach(s=>td.appendChild(sessionCell(s)));
         covered[r]=last; holder[r]=td;
       }
