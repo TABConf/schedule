@@ -332,6 +332,11 @@ function summarise(md) {
   // so two sessions at 11am are the schedule working rather than failing. Keying
   // this on date alone, as it did until 2026-09-24, would flag every legitimate
   // parallel session and train everyone to ignore the warning.
+  // NESTED ON PURPOSE: a short moment that sits inside another session's slot.
+  // Michael, 2026-10-05: #21 is "a 5 minute thing on oct 14 ... during the
+  // beginning part of" the closing ceremony #90. Not a clash, and it must not
+  // put a 'Scheduling conflict' banner on the public page.
+  const NESTED = { 21: 90 };
   const clashes = [];
   const byDate = {};
   for (const s of sessions) {
@@ -343,6 +348,8 @@ function summarise(md) {
   Object.keys(byDate).forEach(date => {
     const list = byDate[date].sort((a, b) => a.startMin - b.startMin);
     for (let i = 1; i < list.length; i++) {
+      const x = list[i - 1], y = list[i];
+      if (NESTED[x.number] === y.number || NESTED[y.number] === x.number) continue;
       if (list[i - 1].endMin > list[i].startMin) {
         clashes.push(date + ': #' + list[i - 1].number + ' overlaps #' + list[i].number);
       }

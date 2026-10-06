@@ -116,6 +116,11 @@ input[type=search]:focus{outline:2px solid var(--accent);outline-offset:-1px}
 .sat-place{font-weight:400;color:var(--muted)}
 .sats-note{font-size:11.5px;color:var(--muted);margin-top:8px}
 .grid-rooms td.c-room:empty::after{content:"";display:block}
+.grid-rooms td.c-room{padding:0 4px;border-bottom:none}
+.grid-rooms td.c-time{border-bottom:none;font-size:11.5px;color:var(--muted)}
+.grid-rooms td.span{background:var(--accent-soft);border:1px solid var(--line);border-left:3px solid var(--accent);border-radius:6px;padding:6px 9px;vertical-align:top}
+.grid-rooms tbody tr:hover td{background:inherit}
+.grid-rooms tbody tr:hover td.span{background:var(--accent-soft)}
 
 .note{background:var(--accent-soft);border:1px solid var(--line);border-left:3px solid var(--accent);
   border-radius:6px;padding:12px 15px;margin:14px 0 0;font-size:13.5px}
@@ -311,10 +316,9 @@ function detailsNode(s){
    run the main stage and the hacker room; Oct 14 and 15 add BitLab Village
    alongside the main stage.
 
-   Rows are keyed on start time rather than drawn with rowspan. A 2 hour
-   workshop therefore occupies one row and states its own end time. Rowspan
-   would look tidier and would need every session in the day to share a tidy
-   grid of boundaries, which real schedules never do.
+   Rows are every start and end boundary in the day and each card spans the
+   rows it covers (Michael, 2026-10-06), so session length is visible at a
+   glance. See roomGrid.
 
    AN UNLISTED ROOM STILL RENDERS, it just sorts to the far right, so this list
    is reading order and not a list of which rooms exist. */
@@ -365,19 +369,44 @@ function roomGrid(timed, rooms){
   rooms.forEach(r=>{ const th=el('th',null,r); th.className='c-room'; hr.appendChild(th); });
   thead.appendChild(hr); t.appendChild(thead);
 
-  const starts=[...new Set(timed.map(s=>s.startMin))].sort((a,b)=>a-b);
+  /* CARDS SPAN THEIR LENGTH. Rows are every start and end boundary in the day,
+     each row is drawn at a height proportional to its minutes, and a session's
+     cell spans every row it covers, so a 2 hour workshop is visibly four times
+     a 30 minute talk. A session starting inside another one in the same room
+     (a short moment inside the closing ceremony) joins that card rather than
+     breaking the grid. */
+  const endOf = s => (s.endMin!=null && s.endMin>s.startMin) ? s.endMin : s.startMin+15;
+  const bounds=[...new Set(timed.flatMap(s=>[s.startMin, endOf(s)]))].sort((a,b)=>a-b);
+  const fmt = m => { const h=Math.floor(m/60), mm=m%60; return ((h+11)%12+1)+':'+String(mm).padStart(2,'0')+(h<12?' AM':' PM'); };
+  const startsAt = new Set(timed.map(s=>s.startMin));
+  const covered = {};          // room -> row index the current span runs until
+  const holder = {};           // room -> td of the current span
   const tb=el('tbody');
-  starts.forEach(mins=>{
+  for(let i=0;i<bounds.length-1;i++){
+    const a=bounds[i], b=bounds[i+1];
     const tr=el('tr');
-    const first=timed.find(s=>s.startMin===mins);
-    tr.appendChild(el('td','c-time', first ? first.start : ''));
+    tr.style.height=Math.max(26, Math.round((b-a)*1.6))+'px';
+    const tc=el('td','c-time', startsAt.has(a) ? fmt(a) : '');
+    tr.appendChild(tc);
     rooms.forEach(r=>{
+      const here = timed.filter(s=>s.startMin===a && place(s)===r).sort((x,y)=>endOf(y)-endOf(x));
+      if (covered[r]!==undefined && i<covered[r]){
+        here.forEach(s=>holder[r].appendChild(sessionCell(s)));
+        return;
+      }
       const td=el('td','c-room');
-      timed.filter(s=>s.startMin===mins && place(s)===r).forEach(s=>td.appendChild(sessionCell(s)));
+      if (here.length){
+        const end=endOf(here[0]);
+        const last=bounds.indexOf(end);
+        td.rowSpan=Math.max(1,last-i);
+        td.className='c-room span';
+        here.forEach(s=>td.appendChild(sessionCell(s)));
+        covered[r]=last; holder[r]=td;
+      }
       tr.appendChild(td);
     });
     tb.appendChild(tr);
-  });
+  }
   t.appendChild(tb);
   return t;
 }
