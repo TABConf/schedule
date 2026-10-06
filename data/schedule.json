@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-06T05:22:54.505Z",
+  "generatedAt": "2026-10-06T06:11:33.960Z",
   "event": {
     "name": "TABConf 8",
     "start": "2026-10-12",
@@ -7,8 +7,8 @@
     "venue": "Georgia Tech Exhibition Hall, Atlanta"
   },
   "counts": {
-    "total": 64,
-    "scheduled": 54,
+    "total": 65,
+    "scheduled": 55,
     "unscheduled": 0,
     "floor": 10,
     "stageMinutes": 2175
@@ -1466,6 +1466,38 @@
         }
       ],
       "summary": "Description What is this panel discussion about? Will there be multiple talking points? What would an attendee learn from this panel? Is there anything folks should read up on before they attend? Relevant Links <!-- leave blank if you are u"
+    },
+    {
+      "number": 93,
+      "title": "TABConf 8 After Party at The Painted Duck, brought to you by mempool.space",
+      "url": "https://github.com/TABConf/8.tabconf.com/issues/93",
+      "date": "2026-10-14",
+      "start": "6:30 PM",
+      "end": "10:30 PM",
+      "startMin": 1110,
+      "endMin": 1350,
+      "durationMin": 240,
+      "track": "satellite",
+      "room": "Offsite",
+      "roomFromLabel": false,
+      "speakers": [
+        {
+          "login": "miketwenty1",
+          "name": "Michael Tidwell",
+          "avatarUrl": "https://avatars.githubusercontent.com/u/7761473?u=b201191bd947ee4bc319e8ccd50d9e993199f002&v=4"
+        }
+      ],
+      "labels": [
+        {
+          "name": "Accepted",
+          "color": "#0e8a16"
+        },
+        {
+          "name": "Satellite Event",
+          "color": "#fbca04"
+        }
+      ],
+      "summary": "Description Event Description The official TABConf 8 After Party, brought to you by mempool.space. Wednesday, October 14, 6:30 PM to 10:30 PM at The Painted Duck, 976 Brady Avenue, Atlanta, GA 30318. About two miles from the Georgia Tech Ex"
     },
     {
       "number": 36,
