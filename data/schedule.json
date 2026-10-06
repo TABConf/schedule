@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-06T04:57:02.809Z",
+  "generatedAt": "2026-10-06T05:22:54.505Z",
   "event": {
     "name": "TABConf 8",
     "start": "2026-10-12",
@@ -28,7 +28,13 @@
       "track": "stage",
       "room": "Hacker room",
       "roomFromLabel": true,
-      "speakers": [],
+      "speakers": [
+        {
+          "login": "vnprc",
+          "name": "",
+          "avatarUrl": "https://avatars.githubusercontent.com/u/9425366?u=9c1887b350558b1345fd82ce7c476f091ccca9ed&v=4"
+        }
+      ],
       "labels": [
         {
           "name": "Accepted",
@@ -62,7 +68,13 @@
       "track": "stage",
       "room": "Main stage",
       "roomFromLabel": true,
-      "speakers": [],
+      "speakers": [
+        {
+          "login": "ItoroD",
+          "name": "Itoro Ukpong ",
+          "avatarUrl": "https://avatars.githubusercontent.com/u/17571526?u=b2d49fd88a2c689c7e68813f7e3cbda23aa2fcb5&v=4"
+        }
+      ],
       "labels": [
         {
           "name": "Accepted",
@@ -88,7 +100,13 @@
       "track": "stage",
       "room": "Main stage",
       "roomFromLabel": true,
-      "speakers": [],
+      "speakers": [
+        {
+          "login": "IsaqueFranklin",
+          "name": "Isaque Franklin ",
+          "avatarUrl": "https://avatars.githubusercontent.com/u/41648965?u=adcda2149baaad937d6fac9d5f95f7e9720268ab&v=4"
+        }
+      ],
       "labels": [
         {
           "name": "Accepted",
@@ -114,7 +132,13 @@
       "track": "stage",
       "room": "Hacker room",
       "roomFromLabel": true,
-      "speakers": [],
+      "speakers": [
+        {
+          "login": "dmrobotix",
+          "name": "Dr M Robotix",
+          "avatarUrl": "https://avatars.githubusercontent.com/u/10948188?u=c75fb4ba609aebf501c7f3bf386809c75e44e690&v=4"
+        }
+      ],
       "labels": [
         {
           "name": "Accepted",
@@ -144,7 +168,13 @@
       "track": "stage",
       "room": "Hacker room",
       "roomFromLabel": true,
-      "speakers": [],
+      "speakers": [
+        {
+          "login": "niftynei",
+          "name": "neil saitug",
+          "avatarUrl": "https://avatars.githubusercontent.com/u/1097769?u=cd06725e968113df79362c8eac9a528215919e98&v=4"
+        }
+      ],
       "labels": [
         {
           "name": "Accepted",
@@ -178,7 +208,13 @@
       "track": "stage",
       "room": "Main stage",
       "roomFromLabel": true,
-      "speakers": [],
+      "speakers": [
+        {
+          "login": "dplusplus1024",
+          "name": "D++",
+          "avatarUrl": "https://avatars.githubusercontent.com/u/82842780?u=beac94d56290f05ee1e83ae80d6c1730b8131624&v=4"
+        }
+      ],
       "labels": [
         {
           "name": "Accepted",
@@ -212,7 +248,13 @@
       "track": "stage",
       "room": "Hacker room",
       "roomFromLabel": true,
-      "speakers": [],
+      "speakers": [
+        {
+          "login": "nkohen",
+          "name": "Nadav Kohen",
+          "avatarUrl": "https://avatars.githubusercontent.com/u/22485603?u=96a21ac2d5b408aa2cc4f224fb66606ca06b81c1&v=4"
+        }
+      ],
       "labels": [
         {
           "name": "Accepted",
@@ -246,7 +288,13 @@
       "track": "stage",
       "room": "Main stage",
       "roomFromLabel": true,
-      "speakers": [],
+      "speakers": [
+        {
+          "login": "ekrembal",
+          "name": "Ekrem BAL",
+          "avatarUrl": "https://avatars.githubusercontent.com/u/29926881?u=8cdf847afd9264ba878c563cbca54670aef0fb18&v=4"
+        }
+      ],
       "labels": [
         {
           "name": "Accepted",
@@ -280,7 +328,13 @@
       "track": "stage",
       "room": "Main stage",
       "roomFromLabel": true,
-      "speakers": [],
+      "speakers": [
+        {
+          "login": "adiabat",
+          "name": "Tadge Dryja",
+          "avatarUrl": "https://avatars.githubusercontent.com/u/22841402?u=fff8e6dd2d7e9dfe11beda28e4c01e9d59ce640c&v=4"
+        }
+      ],
       "labels": [
         {
           "name": "Accepted",
@@ -306,7 +360,13 @@
       "track": "stage",
       "room": "Hacker room",
       "roomFromLabel": true,
-      "speakers": [],
+      "speakers": [
+        {
+          "login": "VladdyC",
+          "name": "Vlad Costea @ BTCTKVR.com",
+          "avatarUrl": "https://avatars.githubusercontent.com/u/56368755?u=a8a4f753c14de854856fc2266e12542424d7f87c&v=4"
+        }
+      ],
       "labels": [
         {
           "name": "Accepted",
@@ -340,7 +400,13 @@
       "track": "stage",
       "room": "Main stage",
       "roomFromLabel": true,
-      "speakers": [],
+      "speakers": [
+        {
+          "login": "HannahMR",
+          "name": "",
+          "avatarUrl": "https://avatars.githubusercontent.com/u/9088467?u=7ac8ee213dd7857fcd2edebf36b48a67df2f88dd&v=4"
+        }
+      ],
       "labels": [
         {
           "name": "Accepted",
@@ -374,7 +440,13 @@
       "track": "stage",
       "room": "Hacker room",
       "roomFromLabel": true,
-      "speakers": [],
+      "speakers": [
+        {
+          "login": "kdmukai",
+          "name": "",
+          "avatarUrl": "https://avatars.githubusercontent.com/u/934746?u=3b4fb268996aaec3de5a31b9287ba18218ef7a56&v=4"
+        }
+      ],
       "labels": [
         {
           "name": "Accepted",
@@ -408,7 +480,13 @@
       "track": "stage",
       "room": "Hacker room",
       "roomFromLabel": true,
-      "speakers": [],
+      "speakers": [
+        {
+          "login": "mvuk",
+          "name": "Matthew Vuk",
+          "avatarUrl": "https://avatars.githubusercontent.com/u/4932297?v=4"
+        }
+      ],
       "labels": [
         {
           "name": "Accepted",
@@ -438,7 +516,13 @@
       "track": "stage",
       "room": "Main stage",
       "roomFromLabel": true,
-      "speakers": [],
+      "speakers": [
+        {
+          "login": "afilini",
+          "name": "Alekos Filini",
+          "avatarUrl": "https://avatars.githubusercontent.com/u/3058409?u=5c02fcd942bf6844d79f93cc31d9df4f6a3710c0&v=4"
+        }
+      ],
       "labels": [
         {
           "name": "Accepted",
@@ -472,7 +556,13 @@
       "track": "stage",
       "room": "Hacker room",
       "roomFromLabel": true,
-      "speakers": [],
+      "speakers": [
+        {
+          "login": "sjreeves",
+          "name": "",
+          "avatarUrl": "https://avatars.githubusercontent.com/u/33945527?v=4"
+        }
+      ],
       "labels": [
         {
           "name": "Accepted",
@@ -506,7 +596,13 @@
       "track": "stage",
       "room": "Hacker room",
       "roomFromLabel": true,
-      "speakers": [],
+      "speakers": [
+        {
+          "login": "nemothenoone",
+          "name": "Misha Komarov",
+          "avatarUrl": "https://avatars.githubusercontent.com/u/2765860?v=4"
+        }
+      ],
       "labels": [
         {
           "name": "Accepted",
@@ -532,7 +628,13 @@
       "track": "stage",
       "room": "Main stage",
       "roomFromLabel": true,
-      "speakers": [],
+      "speakers": [
+        {
+          "login": "djkazic",
+          "name": "Kevin Cai",
+          "avatarUrl": "https://avatars.githubusercontent.com/u/3331929?u=3c60ae5c573ae90254905a256fe13aa62b5fe9b8&v=4"
+        }
+      ],
       "labels": [
         {
           "name": "Accepted",
@@ -562,7 +664,13 @@
       "track": "stage",
       "room": "Hacker room",
       "roomFromLabel": true,
-      "speakers": [],
+      "speakers": [
+        {
+          "login": "asherp",
+          "name": "Asher Pembroke",
+          "avatarUrl": "https://avatars.githubusercontent.com/u/1123706?u=f55ebc1b1b1bd554e7816306dc750fcde908ff42&v=4"
+        }
+      ],
       "labels": [
         {
           "name": "Accepted",
@@ -588,7 +696,13 @@
       "track": "stage",
       "room": "Hacker room",
       "roomFromLabel": true,
-      "speakers": [],
+      "speakers": [
+        {
+          "login": "renatoslopes",
+          "name": "Renato Schiavinato Lopez",
+          "avatarUrl": "https://avatars.githubusercontent.com/u/242995150?u=6a022c8db604f26a81227772bb10830ff42efd2f&v=4"
+        }
+      ],
       "labels": [
         {
           "name": "Accepted",
@@ -618,7 +732,13 @@
       "track": "stage",
       "room": "Main stage",
       "roomFromLabel": true,
-      "speakers": [],
+      "speakers": [
+        {
+          "login": "ekzyis",
+          "name": "ek",
+          "avatarUrl": "https://avatars.githubusercontent.com/u/27162016?u=df95e36f627de103d5db6d5d7be1dc404e6ad49c&v=4"
+        }
+      ],
       "labels": [
         {
           "name": "Accepted",
@@ -652,7 +772,13 @@
       "track": "stage",
       "room": "Hacker room",
       "roomFromLabel": true,
-      "speakers": [],
+      "speakers": [
+        {
+          "login": "januszgrze",
+          "name": "yanús",
+          "avatarUrl": "https://avatars.githubusercontent.com/u/82240624?v=4"
+        }
+      ],
       "labels": [
         {
           "name": "Accepted",
@@ -678,7 +804,13 @@
       "track": "stage",
       "room": "Hacker room",
       "roomFromLabel": true,
-      "speakers": [],
+      "speakers": [
+        {
+          "login": "gimballock",
+          "name": "Eric Price",
+          "avatarUrl": "https://avatars.githubusercontent.com/u/4082456?u=1fdf2698f0797ea81919bd3c8c78ba02226e452f&v=4"
+        }
+      ],
       "labels": [
         {
           "name": "Accepted",
@@ -712,7 +844,13 @@
       "track": "stage",
       "room": "Main stage",
       "roomFromLabel": true,
-      "speakers": [],
+      "speakers": [
+        {
+          "login": "vincenzopalazzo",
+          "name": "Vincenzo Palazzo",
+          "avatarUrl": "https://avatars.githubusercontent.com/u/17150045?u=ad52a04f992830b4d4bbe50d3fb6f89ee361537a&v=4"
+        }
+      ],
       "labels": [
         {
           "name": "Accepted",
@@ -742,7 +880,13 @@
       "track": "stage",
       "room": "Hacker room",
       "roomFromLabel": true,
-      "speakers": [],
+      "speakers": [
+        {
+          "login": "octaviolucca",
+          "name": "Octavio Lucca",
+          "avatarUrl": "https://avatars.githubusercontent.com/u/62975808?u=38aeca445bdd8c6e0e66a885abe6728d4b0f14bf&v=4"
+        }
+      ],
       "labels": [
         {
           "name": "Accepted",
@@ -776,7 +920,13 @@
       "track": "stage",
       "room": "Main stage",
       "roomFromLabel": true,
-      "speakers": [],
+      "speakers": [
+        {
+          "login": "AaronFeickert",
+          "name": "Aaron Feickert",
+          "avatarUrl": "https://avatars.githubusercontent.com/u/66188213?u=cd4b478ad4399a88c17869c2c4b49d797d439483&v=4"
+        }
+      ],
       "labels": [
         {
           "name": "Accepted",
@@ -810,7 +960,13 @@
       "track": "stage",
       "room": "Hacker room",
       "roomFromLabel": true,
-      "speakers": [],
+      "speakers": [
+        {
+          "login": "PraneethGunas",
+          "name": "Praneeth G",
+          "avatarUrl": "https://avatars.githubusercontent.com/u/38702642?v=4"
+        }
+      ],
       "labels": [
         {
           "name": "Accepted",
@@ -836,7 +992,13 @@
       "track": "satellite",
       "room": "Offsite",
       "roomFromLabel": false,
-      "speakers": [],
+      "speakers": [
+        {
+          "login": "sbddesign",
+          "name": "Stephen DeLorme",
+          "avatarUrl": "https://avatars.githubusercontent.com/u/2414177?u=ed8218c071171ece0f9a5a27beb05b3aa1a9fa42&v=4"
+        }
+      ],
       "labels": [
         {
           "name": "Accepted",
@@ -862,7 +1024,13 @@
       "track": "stage",
       "room": "Main stage",
       "roomFromLabel": true,
-      "speakers": [],
+      "speakers": [
+        {
+          "login": "carlossimpleproof",
+          "name": "",
+          "avatarUrl": "https://avatars.githubusercontent.com/u/230229102?v=4"
+        }
+      ],
       "labels": [
         {
           "name": "Accepted",
@@ -954,7 +1122,13 @@
       "track": "stage",
       "room": "Main stage",
       "roomFromLabel": true,
-      "speakers": [],
+      "speakers": [
+        {
+          "login": "TheBlueMatt",
+          "name": "Matt Corallo",
+          "avatarUrl": "https://avatars.githubusercontent.com/u/649246?v=4"
+        }
+      ],
       "labels": [
         {
           "name": "Accepted",
@@ -1126,7 +1300,13 @@
       "track": "floor",
       "room": "Expo floor",
       "roomFromLabel": false,
-      "speakers": [],
+      "speakers": [
+        {
+          "login": "ChrisKCBtcYolo",
+          "name": "ChrisKCBtcYolo",
+          "avatarUrl": "https://avatars.githubusercontent.com/u/98636091?v=4"
+        }
+      ],
       "labels": [
         {
           "name": "Accepted",
@@ -1234,7 +1414,13 @@
       "track": "stage",
       "room": "Main stage",
       "roomFromLabel": true,
-      "speakers": [],
+      "speakers": [
+        {
+          "login": "horologger",
+          "name": "",
+          "avatarUrl": "https://avatars.githubusercontent.com/u/153022461?v=4"
+        }
+      ],
       "labels": [
         {
           "name": "Accepted",
@@ -1294,7 +1480,13 @@
       "track": "stage",
       "room": "Main stage",
       "roomFromLabel": true,
-      "speakers": [],
+      "speakers": [
+        {
+          "login": "apoelstra",
+          "name": "Andrew Poelstra",
+          "avatarUrl": "https://avatars.githubusercontent.com/u/1351933?u=fb54e413f387c1a6d1bff29ca1209a1922e7b17d&v=4"
+        }
+      ],
       "labels": [
         {
           "name": "Accepted",
@@ -1350,7 +1542,13 @@
       "track": "stage",
       "room": "Main stage",
       "roomFromLabel": true,
-      "speakers": [],
+      "speakers": [
+        {
+          "login": "notmandatory",
+          "name": "Steve Myers",
+          "avatarUrl": "https://avatars.githubusercontent.com/u/4724730?u=a14756a60855fc2f6a94af14861fedef093f6281&v=4"
+        }
+      ],
       "labels": [
         {
           "name": "Accepted",
@@ -1406,7 +1604,13 @@
       "track": "stage",
       "room": "Main stage",
       "roomFromLabel": true,
-      "speakers": [],
+      "speakers": [
+        {
+          "login": "johnnyasantoss",
+          "name": "Johnny Santos",
+          "avatarUrl": "https://avatars.githubusercontent.com/u/14189387?u=467689477902bea8f78abca8d907876dec9a9ebf&v=4"
+        }
+      ],
       "labels": [
         {
           "name": "Accepted",
@@ -1436,7 +1640,13 @@
       "track": "stage",
       "room": "Main stage",
       "roomFromLabel": true,
-      "speakers": [],
+      "speakers": [
+        {
+          "login": "PatrickCamusoCPA",
+          "name": "",
+          "avatarUrl": "https://avatars.githubusercontent.com/u/176228033?v=4"
+        }
+      ],
       "labels": [
         {
           "name": "Accepted",
@@ -1470,7 +1680,13 @@
       "track": "stage",
       "room": "Main stage",
       "roomFromLabel": true,
-      "speakers": [],
+      "speakers": [
+        {
+          "login": "Kruwed",
+          "name": "Kruw",
+          "avatarUrl": "https://avatars.githubusercontent.com/u/118238055?u=ee0cd7b67c1cbd365ade963e12be7cf727866a42&v=4"
+        }
+      ],
       "labels": [
         {
           "name": "Accepted",
@@ -1504,7 +1720,13 @@
       "track": "stage",
       "room": "Main stage",
       "roomFromLabel": true,
-      "speakers": [],
+      "speakers": [
+        {
+          "login": "coreyphillips",
+          "name": "Corey",
+          "avatarUrl": "https://avatars.githubusercontent.com/u/8532651?u=a3461d3af4b7faeab01c7c06daae46d251693f75&v=4"
+        }
+      ],
       "labels": [
         {
           "name": "Accepted",
@@ -1538,7 +1760,13 @@
       "track": "stage",
       "room": "Main stage",
       "roomFromLabel": true,
-      "speakers": [],
+      "speakers": [
+        {
+          "login": "tcharding",
+          "name": "Tobin C. Harding",
+          "avatarUrl": "https://avatars.githubusercontent.com/u/12626037?u=97c771fe4dd55ee7c8cc3d47855c958b5c5bcdfa&v=4"
+        }
+      ],
       "labels": [
         {
           "name": "Accepted",
@@ -1572,7 +1800,13 @@
       "track": "stage",
       "room": "Main stage",
       "roomFromLabel": true,
-      "speakers": [],
+      "speakers": [
+        {
+          "login": "petertodd",
+          "name": "Peter Todd",
+          "avatarUrl": "https://avatars.githubusercontent.com/u/7042?u=57b50a05caa63fb86d8f910668719907e9ecf667&v=4"
+        }
+      ],
       "labels": [
         {
           "name": "Accepted",
@@ -1602,7 +1836,13 @@
       "track": "stage",
       "room": "Main stage",
       "roomFromLabel": true,
-      "speakers": [],
+      "speakers": [
+        {
+          "login": "storopoli",
+          "name": "Jose Storopoli",
+          "avatarUrl": "https://avatars.githubusercontent.com/u/43353831?u=0567bbe95711344e1bee49fcc96f8f82af4f561e&v=4"
+        }
+      ],
       "labels": [
         {
           "name": "Accepted",
@@ -1632,7 +1872,13 @@
       "track": "stage",
       "room": "Main stage",
       "roomFromLabel": true,
-      "speakers": [],
+      "speakers": [
+        {
+          "login": "Roasbeef",
+          "name": "Olaoluwa Osuntokun",
+          "avatarUrl": "https://avatars.githubusercontent.com/u/998190?v=4"
+        }
+      ],
       "labels": [
         {
           "name": "Accepted",
@@ -1662,7 +1908,13 @@
       "track": "stage",
       "room": "Main stage",
       "roomFromLabel": true,
-      "speakers": [],
+      "speakers": [
+        {
+          "login": "reardencode",
+          "name": "Brandon Black",
+          "avatarUrl": "https://avatars.githubusercontent.com/u/730881?v=4"
+        }
+      ],
       "labels": [
         {
           "name": "Accepted",
@@ -1692,7 +1944,13 @@
       "track": "floor",
       "room": "Expo floor",
       "roomFromLabel": false,
-      "speakers": [],
+      "speakers": [
+        {
+          "login": "VladdyC",
+          "name": "Vlad Costea @ BTCTKVR.com",
+          "avatarUrl": "https://avatars.githubusercontent.com/u/56368755?u=a8a4f753c14de854856fc2266e12542424d7f87c&v=4"
+        }
+      ],
       "labels": [
         {
           "name": "Accepted",
@@ -1722,7 +1980,13 @@
       "track": "floor",
       "room": "Expo floor",
       "roomFromLabel": false,
-      "speakers": [],
+      "speakers": [
+        {
+          "login": "horologger",
+          "name": "",
+          "avatarUrl": "https://avatars.githubusercontent.com/u/153022461?v=4"
+        }
+      ],
       "labels": [
         {
           "name": "Accepted",
@@ -1751,8 +2015,14 @@
       "durationMin": null,
       "track": "floor",
       "room": "Expo floor",
-      "roomFromLabel": true,
-      "speakers": [],
+      "roomFromLabel": false,
+      "speakers": [
+        {
+          "login": "CoderBoogs",
+          "name": "",
+          "avatarUrl": "https://avatars.githubusercontent.com/u/59458298?u=5d6ec3f49735976947e06648ce8a2c9665e5904b&v=4"
+        }
+      ],
       "labels": [
         {
           "name": "Accepted",
@@ -1763,8 +2033,8 @@
           "color": "#241929"
         },
         {
-          "name": "hacker room",
-          "color": "#00acc1"
+          "name": "floor space",
+          "color": "#9a1fad"
         }
       ],
       "summary": "Last year I had a Stacker News Theme table and I wish to do the same this year. Here is a recap of our experience last year: https://stacker.news/items/1258169/r/BlokchainB This year we want to do the same thing. Have a table with Stacker N"
@@ -1782,7 +2052,13 @@
       "track": "floor",
       "room": "Expo floor",
       "roomFromLabel": false,
-      "speakers": [],
+      "speakers": [
+        {
+          "login": "dplusplus1024",
+          "name": "D++",
+          "avatarUrl": "https://avatars.githubusercontent.com/u/82842780?u=beac94d56290f05ee1e83ae80d6c1730b8131624&v=4"
+        }
+      ],
       "labels": [
         {
           "name": "Accepted",
@@ -1808,7 +2084,13 @@
       "track": "floor",
       "room": "Expo floor",
       "roomFromLabel": false,
-      "speakers": [],
+      "speakers": [
+        {
+          "login": "WumboZap",
+          "name": "",
+          "avatarUrl": "https://avatars.githubusercontent.com/u/324537654?v=4"
+        }
+      ],
       "labels": [
         {
           "name": "Accepted",
@@ -1838,7 +2120,13 @@
       "track": "floor",
       "room": "Expo floor",
       "roomFromLabel": false,
-      "speakers": [],
+      "speakers": [
+        {
+          "login": "dannym-arx",
+          "name": "Danny M",
+          "avatarUrl": "https://avatars.githubusercontent.com/u/25923265?u=56c9f563b79377509fe8e28c1ec5454144b7a83c&v=4"
+        }
+      ],
       "labels": [
         {
           "name": "Accepted",
@@ -1864,7 +2152,13 @@
       "track": "floor",
       "room": "Expo floor",
       "roomFromLabel": false,
-      "speakers": [],
+      "speakers": [
+        {
+          "login": "sorukumar",
+          "name": "Saurabh Kumar",
+          "avatarUrl": "https://avatars.githubusercontent.com/u/2889411?v=4"
+        }
+      ],
       "labels": [
         {
           "name": "Accepted",
@@ -1894,7 +2188,13 @@
       "track": "floor",
       "room": "Expo floor",
       "roomFromLabel": false,
-      "speakers": [],
+      "speakers": [
+        {
+          "login": "PizzAndy",
+          "name": "PizzAndy",
+          "avatarUrl": "https://avatars.githubusercontent.com/u/200146805?u=3b10958dc508c801a27a91b4f1c7e8d5fee7b120&v=4"
+        }
+      ],
       "labels": [
         {
           "name": "Accepted",
@@ -1924,7 +2224,13 @@
       "track": "floor",
       "room": "Expo floor",
       "roomFromLabel": false,
-      "speakers": [],
+      "speakers": [
+        {
+          "login": "mandelmonkey",
+          "name": "Christian Moss",
+          "avatarUrl": "https://avatars.githubusercontent.com/u/6570295?u=0ce016c1308d47a8a3fe3c61ffa97fe6968562b8&v=4"
+        }
+      ],
       "labels": [
         {
           "name": "Accepted",
