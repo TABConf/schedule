@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-06T04:00:14.753Z",
+  "generatedAt": "2026-10-06T04:57:02.809Z",
   "event": {
     "name": "TABConf 8",
     "start": "2026-10-12",
@@ -11,7 +11,7 @@
     "scheduled": 54,
     "unscheduled": 0,
     "floor": 10,
-    "stageMinutes": 2160
+    "stageMinutes": 2175
   },
   "clashes": [],
   "sessions": [
@@ -1226,10 +1226,10 @@
       "title": "@TABConf: The mold is broken.",
       "url": "https://github.com/TABConf/8.tabconf.com/issues/21",
       "date": "2026-10-14",
-      "start": "4:15 PM",
-      "end": "4:30 PM",
-      "startMin": 975,
-      "endMin": 990,
+      "start": "4:00 PM",
+      "end": "4:15 PM",
+      "startMin": 960,
+      "endMin": 975,
       "durationMin": 15,
       "track": "stage",
       "room": "Main stage",
@@ -1260,11 +1260,11 @@
       "title": "The Early Closing Ceremony - Reminiscing 10 years of TAB [DRAFT]",
       "url": "https://github.com/TABConf/8.tabconf.com/issues/90",
       "date": "2026-10-14",
-      "start": "4:15 PM",
+      "start": "4:00 PM",
       "end": "5:00 PM",
-      "startMin": 975,
+      "startMin": 960,
       "endMin": 1020,
-      "durationMin": 45,
+      "durationMin": 60,
       "track": "stage",
       "room": "Main stage",
       "roomFromLabel": true,
