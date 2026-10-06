@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-05T18:48:59.188Z",
+  "generatedAt": "2026-10-06T00:24:10.223Z",
   "event": {
     "name": "TABConf 8",
     "start": "2026-10-12",
@@ -8,8 +8,8 @@
   },
   "counts": {
     "total": 61,
-    "scheduled": 46,
-    "unscheduled": 5,
+    "scheduled": 45,
+    "unscheduled": 6,
     "floor": 10,
     "stageMinutes": 2085
   },
