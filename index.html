@@ -104,6 +104,10 @@ input[type=search]:focus{outline:2px solid var(--accent);outline-offset:-1px}
 .cell-title .tag{margin-left:7px}
 .cell-title a{text-decoration:none}
 .cell-title a:hover{color:var(--accent);text-decoration:underline}
+.cell-who{display:flex;flex-wrap:wrap;gap:4px 10px;margin-top:4px}
+.cell-sp{display:inline-flex;align-items:center;gap:5px;font-size:11.5px;color:var(--muted);text-decoration:none}
+.cell-sp:hover{color:var(--accent)}
+.cell-sp img{width:18px;height:18px;border-radius:50%;display:block}
 .cell-meta{font-family:var(--mono);font-size:11.5px;color:var(--muted);margin-top:3px}
 
 /* Satellite events, one block per day */
@@ -332,10 +336,22 @@ function sessionCell(s){
   const line = el('div','cell-title'); line.appendChild(a);
   const k = kindOf(s); if(k) line.appendChild(labelChip(k));
   wrap.appendChild(line);
-  const meta = [];
-  if (s.start) meta.push(s.start + ' - ' + s.end);
-  if (s.speakers.length) meta.push(s.speakers.map(speakerLabel).join(', '));
-  if (meta.length) wrap.appendChild(el('div','cell-meta', meta.join('  ')));
+  if (s.start) wrap.appendChild(el('div','cell-meta', s.start + ' - ' + s.end));
+  // Tiny speaker avatars with names, linked to their GitHub profiles.
+  if (s.speakers.length){
+    const who = el('div','cell-who');
+    s.speakers.forEach(p=>{
+      const sp = el('a','cell-sp'); sp.href='https://github.com/'+p.login; sp.target='_blank'; sp.rel='noopener';
+      if (p.avatarUrl){
+        const img = document.createElement('img'); img.alt=''; img.loading='lazy';
+        img.src = p.avatarUrl+(p.avatarUrl.indexOf('?')===-1?'?':'&')+'s=36';
+        sp.appendChild(img);
+      }
+      sp.appendChild(el('span',null,speakerLabel(p)));
+      who.appendChild(sp);
+    });
+    wrap.appendChild(who);
+  }
   return wrap;
 }
 
