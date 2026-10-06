@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-06T03:33:24.287Z",
+  "generatedAt": "2026-10-06T03:34:31.187Z",
   "event": {
     "name": "TABConf 8",
     "start": "2026-10-12",
@@ -14,11 +14,6 @@
     "stageMinutes": 2160
   },
   "clashes": [
-    "2026-10-12 | Main stage: #63 overlaps #16",
-    "2026-10-13 | Main stage: #40 overlaps #67",
-    "2026-10-13 | Main stage: #6 overlaps #73",
-    "2026-10-13 | Main stage: #10 overlaps #92",
-    "2026-10-13 | Main stage: #22 overlaps #76",
     "2026-10-14 | Main stage: #21 overlaps #90"
   ],
   "sessions": [
@@ -68,12 +63,16 @@
       "durationMin": 15,
       "track": "stage",
       "room": "Main stage",
-      "roomFromLabel": false,
+      "roomFromLabel": true,
       "speakers": [],
       "labels": [
         {
           "name": "Accepted",
           "color": "#0e8a16"
+        },
+        {
+          "name": "main stage",
+          "color": "#c2185b"
         }
       ],
       "summary": "<!-- Doing a non-interactive demo? That belongs here, not under \"Workshop Submission\". -- Description What is this talk about? Give us as many details as possible. Writing Bitcoin wallet logic in Rust gives you correctness, memory safety, a"
@@ -90,12 +89,16 @@
       "durationMin": 15,
       "track": "stage",
       "room": "Main stage",
-      "roomFromLabel": false,
+      "roomFromLabel": true,
       "speakers": [],
       "labels": [
         {
           "name": "Accepted",
           "color": "#0e8a16"
+        },
+        {
+          "name": "main stage",
+          "color": "#c2185b"
         }
       ],
       "summary": "<!-- Doing a non-interactive demo? That belongs here, not under \"Workshop Submission\". -- Description What is this talk about? For most Bitcoin devs, libsecp256k1 is kind of a black box that we just put numbers into to use the wonders of ma"
@@ -278,12 +281,16 @@
       "durationMin": 30,
       "track": "stage",
       "room": "Main stage",
-      "roomFromLabel": false,
+      "roomFromLabel": true,
       "speakers": [],
       "labels": [
         {
           "name": "Accepted",
           "color": "#0e8a16"
+        },
+        {
+          "name": "main stage",
+          "color": "#c2185b"
         }
       ],
       "summary": "<!-- Doing a non-interactive demo? That belongs here, not under \"Workshop Submission\". -- Description What is this talk about? Give us as many details as possible. How can we ensure safe migration in the event of an EC break?  The general i"
@@ -299,7 +306,7 @@
       "endMin": 1020,
       "durationMin": 15,
       "track": "stage",
-      "room": "Main stage",
+      "room": "Hacker room",
       "roomFromLabel": true,
       "speakers": [],
       "labels": [
@@ -316,8 +323,8 @@
           "color": "#859494"
         },
         {
-          "name": "main stage",
-          "color": "#c2185b"
+          "name": "hacker room",
+          "color": "#00acc1"
         }
       ],
       "summary": "A talk about the history of hard forks and soft forks that we've had over the years in Bitcoin, and a reflection on the state of BIP110 and BIP300 which by the time of the conference will have split into individual chains. Also, very much i"
@@ -432,7 +439,7 @@
       "durationMin": 90,
       "track": "stage",
       "room": "Main stage",
-      "roomFromLabel": false,
+      "roomFromLabel": true,
       "speakers": [],
       "labels": [
         {
@@ -446,6 +453,10 @@
         {
           "name": "Workshop",
           "color": "#7a69e2"
+        },
+        {
+          "name": "main stage",
+          "color": "#c2185b"
         }
       ],
       "summary": "<!-- NOTE!! If you are intending to do a non-interactive demo, THIS IS NOT a workshop, please submit talk demo's under \"Solo Talks\". -- Description What is this workshop about? Provide as many details as possible. The workshop will be about"
@@ -495,13 +506,17 @@
       "endMin": 735,
       "durationMin": 30,
       "track": "stage",
-      "room": "Main stage",
-      "roomFromLabel": false,
+      "room": "Hacker room",
+      "roomFromLabel": true,
       "speakers": [],
       "labels": [
         {
           "name": "Accepted",
           "color": "#0e8a16"
+        },
+        {
+          "name": "hacker room",
+          "color": "#00acc1"
         }
       ],
       "summary": "<!-- Doing a non-interactive demo? That belongs here, not under \"Workshop Submission\". -- Description What is this talk about? Give us as many details as possible. This talk will be about Shielded Bitcoin, a protocol for private transfer of"
@@ -547,13 +562,17 @@
       "endMin": 780,
       "durationMin": 30,
       "track": "stage",
-      "room": "Main stage",
-      "roomFromLabel": false,
+      "room": "Hacker room",
+      "roomFromLabel": true,
       "speakers": [],
       "labels": [
         {
           "name": "Accepted",
           "color": "#0e8a16"
+        },
+        {
+          "name": "hacker room",
+          "color": "#00acc1"
         }
       ],
       "summary": "Description This talk introduces Rose, an open-source light wallet for self-custody and e-commerce. Rose exposes Bitcoin Core's RPC dialect, so existing payment integrations work unchanged. Unlike Electrum- and Esplora-backed wallets, Rose "
@@ -633,13 +652,17 @@
       "endMin": 885,
       "durationMin": 15,
       "track": "stage",
-      "room": "Main stage",
-      "roomFromLabel": false,
+      "room": "Hacker room",
+      "roomFromLabel": true,
       "speakers": [],
       "labels": [
         {
           "name": "Accepted",
           "color": "#0e8a16"
+        },
+        {
+          "name": "hacker room",
+          "color": "#00acc1"
         }
       ],
       "summary": "<!-- Doing a non-interactive demo? That belongs here, not under \"Workshop Submission\". -- Description What is this talk about? Give us as many details as possible. This talk will focus on an overview of newer bitcoin L2 & privacy protocol d"
@@ -787,13 +810,17 @@
       "endMin": 1005,
       "durationMin": 15,
       "track": "stage",
-      "room": "Main stage",
-      "roomFromLabel": false,
+      "room": "Hacker room",
+      "roomFromLabel": true,
       "speakers": [],
       "labels": [
         {
           "name": "Accepted",
           "color": "#0e8a16"
+        },
+        {
+          "name": "hacker room",
+          "color": "#00acc1"
         }
       ],
       "summary": "What is this talk about? Give us as many details as possible. This talk covers Bitcoin Möser-Eyal-Sirer type vaults, the different ways to construct such vaults using covenants, and the tradeoffs across the four covenant proposals CTV, CCV,"
@@ -966,12 +993,16 @@
       "durationMin": 30,
       "track": "stage",
       "room": "Main stage",
-      "roomFromLabel": false,
+      "roomFromLabel": true,
       "speakers": [],
       "labels": [
         {
           "name": "Accepted",
           "color": "#0e8a16"
+        },
+        {
+          "name": "main stage",
+          "color": "#c2185b"
         }
       ],
       "summary": "Description What is this panel discussion about? Will there be multiple talking points? What would an attendee learn from this panel? Is there anything folks should read up on before they attend? Relevant Links <!-- leave blank if you are u"
@@ -1014,7 +1045,7 @@
       "durationMin": 60,
       "track": "stage",
       "room": "Main stage",
-      "roomFromLabel": false,
+      "roomFromLabel": true,
       "speakers": [],
       "labels": [
         {
@@ -1024,6 +1055,10 @@
         {
           "name": "Panel or Debate",
           "color": "#935478"
+        },
+        {
+          "name": "main stage",
+          "color": "#c2185b"
         }
       ],
       "summary": "Description What is this panel discussion about? Will there be multiple talking points? What would an attendee learn from this panel? Is there anything folks should read up on before they attend? Relevant Links <!-- leave blank if you are u"
@@ -1066,12 +1101,16 @@
       "durationMin": 60,
       "track": "stage",
       "room": "Main stage",
-      "roomFromLabel": false,
+      "roomFromLabel": true,
       "speakers": [],
       "labels": [
         {
           "name": "Accepted",
           "color": "#0e8a16"
+        },
+        {
+          "name": "main stage",
+          "color": "#c2185b"
         }
       ],
       "summary": "Description What is this panel discussion about? Will there be multiple talking points? What would an attendee learn from this panel? Is there anything folks should read up on before they attend? Relevant Links <!-- leave blank if you are u"
@@ -1144,12 +1183,16 @@
       "durationMin": 60,
       "track": "stage",
       "room": "Main stage",
-      "roomFromLabel": false,
+      "roomFromLabel": true,
       "speakers": [],
       "labels": [
         {
           "name": "Accepted",
           "color": "#0e8a16"
+        },
+        {
+          "name": "main stage",
+          "color": "#c2185b"
         }
       ],
       "summary": "Description What is this panel discussion about? Will there be multiple talking points? What would an attendee learn from this panel? Is there anything folks should read up on before they attend? Relevant Links <!-- leave blank if you are u"
@@ -1192,7 +1235,7 @@
       "durationMin": 15,
       "track": "stage",
       "room": "Main stage",
-      "roomFromLabel": false,
+      "roomFromLabel": true,
       "speakers": [],
       "labels": [
         {
@@ -1206,6 +1249,10 @@
         {
           "name": "Details need to be confirmed",
           "color": "#662204"
+        },
+        {
+          "name": "main stage",
+          "color": "#c2185b"
         }
       ],
       "summary": "Some sort of final event demonstrating the \"Finality\" of a Spaces Protocol top-level name by committing to an unspendable address. I think it would be cool to actually break something as a symbolic gesture.  Still thinking on how that might"
@@ -1222,12 +1269,16 @@
       "durationMin": 45,
       "track": "stage",
       "room": "Main stage",
-      "roomFromLabel": false,
+      "roomFromLabel": true,
       "speakers": [],
       "labels": [
         {
           "name": "Accepted",
           "color": "#0e8a16"
+        },
+        {
+          "name": "main stage",
+          "color": "#c2185b"
         }
       ],
       "summary": "Description What is this panel discussion about? Will there be multiple talking points? What would an attendee learn from this panel? Is there anything folks should read up on before they attend? Relevant Links <!-- leave blank if you are u"
