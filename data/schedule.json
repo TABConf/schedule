@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-06T17:07:09.357Z",
+  "generatedAt": "2026-10-06T18:02:41.098Z",
   "event": {
     "name": "TABConf 8",
     "start": "2026-10-12",
@@ -7,11 +7,11 @@
     "venue": "Georgia Tech Exhibition Hall, Atlanta"
   },
   "counts": {
-    "total": 65,
-    "scheduled": 55,
+    "total": 66,
+    "scheduled": 56,
     "unscheduled": 0,
     "floor": 10,
-    "stageMinutes": 2175
+    "stageMinutes": 2190
   },
   "clashes": [],
   "sessions": [
@@ -582,6 +582,36 @@
         }
       ],
       "summary": "Format: Talk with live demo · Length: 30 min preferred, can do 20 · Days: Oct 14–15 BSMS (BIP-129) standardized the multisig setup file format, but nothing standardizes how remote participants exchange it. In practice, xpubs, descriptors, a"
+    },
+    {
+      "number": 94,
+      "title": "Muzi Works: off-grid mesh radios with Meshtastic",
+      "url": "https://github.com/TABConf/8.tabconf.com/issues/94",
+      "date": "2026-10-13",
+      "start": "11:30 AM",
+      "end": "11:45 AM",
+      "startMin": 690,
+      "endMin": 705,
+      "durationMin": 15,
+      "track": "stage",
+      "room": "Hacker room",
+      "roomFromLabel": true,
+      "speakers": [],
+      "labels": [
+        {
+          "name": "Accepted",
+          "color": "#0e8a16"
+        },
+        {
+          "name": "Talk or Demo",
+          "color": "#87a876"
+        },
+        {
+          "name": "hacker room",
+          "color": "#00acc1"
+        }
+      ],
+      "summary": "Description What is this talk about? Muzi Works on off-grid mesh radios: what Meshtastic and MeshCore are, how a mesh network works without cell towers or internet, and how to get your own node running. Muzi Works also runs a hands-on mesh "
     },
     {
       "number": 67,
