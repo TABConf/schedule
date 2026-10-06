@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-06T18:38:55.969Z",
+  "generatedAt": "2026-10-06T19:34:56.495Z",
   "event": {
     "name": "TABConf 8",
     "start": "2026-10-12",
@@ -602,38 +602,6 @@
       "summary": "<!-- Doing a non-interactive demo? That belongs here, not under \"Workshop Submission\". -- Description What is this talk about? Give us as many details as possible. This talk will be about Shielded Bitcoin, a protocol for private transfer of"
     },
     {
-      "number": 6,
-      "title": "ai: L402 and agents",
-      "url": "https://github.com/TABConf/8.tabconf.com/issues/6",
-      "date": "2026-10-13",
-      "start": "12:30 PM",
-      "end": "1:00 PM",
-      "startMin": 750,
-      "endMin": 780,
-      "durationMin": 30,
-      "track": "stage",
-      "room": "Main stage",
-      "roomFromLabel": true,
-      "speakers": [
-        {
-          "login": "djkazic",
-          "name": "Kevin Cai",
-          "avatarUrl": "https://avatars.githubusercontent.com/u/3331929?u=3c60ae5c573ae90254905a256fe13aa62b5fe9b8&v=4"
-        }
-      ],
-      "labels": [
-        {
-          "name": "Accepted",
-          "color": "#0e8a16"
-        },
-        {
-          "name": "main stage",
-          "color": "#c2185b"
-        }
-      ],
-      "summary": "This talk goes over agentic AI use-cases, how L402 factors into this brave new world, and what lies ahead for open source models. Bonus feature on agent to agent commerce. Speaker: Kevin Cai (Lightning Labs). Runtime: 30m. I will be the spe"
-    },
-    {
       "number": 73,
       "title": "Rose: A stateless light wallet for businesses: private by construction, attested at runtime",
       "url": "https://github.com/TABConf/8.tabconf.com/issues/73",
@@ -1040,6 +1008,38 @@
         }
       ],
       "summary": "Kick-off to the Acceleration Village. Details TBD. Description What is this talk about? Give us as many details as possible. What would an attendee learn from this talk? Is there anything folks should read up on before they attend this talk"
+    },
+    {
+      "number": 6,
+      "title": "ai: L402 and agents",
+      "url": "https://github.com/TABConf/8.tabconf.com/issues/6",
+      "date": "2026-10-14",
+      "start": "9:45 AM",
+      "end": "10:15 AM",
+      "startMin": 585,
+      "endMin": 615,
+      "durationMin": 30,
+      "track": "stage",
+      "room": "Main stage",
+      "roomFromLabel": true,
+      "speakers": [
+        {
+          "login": "djkazic",
+          "name": "Kevin Cai",
+          "avatarUrl": "https://avatars.githubusercontent.com/u/3331929?u=3c60ae5c573ae90254905a256fe13aa62b5fe9b8&v=4"
+        }
+      ],
+      "labels": [
+        {
+          "name": "Accepted",
+          "color": "#0e8a16"
+        },
+        {
+          "name": "main stage",
+          "color": "#c2185b"
+        }
+      ],
+      "summary": "This talk goes over agentic AI use-cases, how L402 factors into this brave new world, and what lies ahead for open source models. Bonus feature on agent to agent commerce. Speaker: Kevin Cai (Lightning Labs). Runtime: 30m. I will be the spe"
     },
     {
       "number": 80,
