@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-06T03:34:31.187Z",
+  "generatedAt": "2026-10-06T04:00:14.753Z",
   "event": {
     "name": "TABConf 8",
     "start": "2026-10-12",
@@ -13,9 +13,7 @@
     "floor": 10,
     "stageMinutes": 2160
   },
-  "clashes": [
-    "2026-10-14 | Main stage: #21 overlaps #90"
-  ],
+  "clashes": [],
   "sessions": [
     {
       "number": 11,
