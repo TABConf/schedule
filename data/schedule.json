@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-06T18:02:41.098Z",
+  "generatedAt": "2026-10-06T18:38:55.969Z",
   "event": {
     "name": "TABConf 8",
     "start": "2026-10-12",
@@ -43,10 +43,6 @@
         {
           "name": "Workshop",
           "color": "#7a69e2"
-        },
-        {
-          "name": "needs to be scheduled",
-          "color": "#859494"
         },
         {
           "name": "hacker room",
@@ -145,10 +141,6 @@
           "color": "#0e8a16"
         },
         {
-          "name": "needs to be scheduled",
-          "color": "#859494"
-        },
-        {
           "name": "hacker room",
           "color": "#00acc1"
         }
@@ -183,10 +175,6 @@
         {
           "name": "Workshop",
           "color": "#7a69e2"
-        },
-        {
-          "name": "needs to be scheduled",
-          "color": "#859494"
         },
         {
           "name": "hacker room",
@@ -225,10 +213,6 @@
           "color": "#7a69e2"
         },
         {
-          "name": "needs to be scheduled",
-          "color": "#859494"
-        },
-        {
           "name": "main stage",
           "color": "#c2185b"
         }
@@ -265,10 +249,6 @@
           "color": "#87a876"
         },
         {
-          "name": "needs to be scheduled",
-          "color": "#859494"
-        },
-        {
           "name": "hacker room",
           "color": "#00acc1"
         }
@@ -303,10 +283,6 @@
         {
           "name": "Workshop",
           "color": "#7a69e2"
-        },
-        {
-          "name": "needs to be scheduled",
-          "color": "#859494"
         },
         {
           "name": "main stage",
@@ -377,10 +353,6 @@
           "color": "#87a876"
         },
         {
-          "name": "needs to be scheduled",
-          "color": "#859494"
-        },
-        {
           "name": "hacker room",
           "color": "#00acc1"
         }
@@ -415,10 +387,6 @@
         {
           "name": "Workshop",
           "color": "#7a69e2"
-        },
-        {
-          "name": "needs to be scheduled",
-          "color": "#859494"
         },
         {
           "name": "main stage",
@@ -457,10 +425,6 @@
           "color": "#7a69e2"
         },
         {
-          "name": "needs to be scheduled",
-          "color": "#859494"
-        },
-        {
           "name": "hacker room",
           "color": "#00acc1"
         }
@@ -491,10 +455,6 @@
         {
           "name": "Accepted",
           "color": "#0e8a16"
-        },
-        {
-          "name": "needs to be scheduled",
-          "color": "#859494"
         },
         {
           "name": "hacker room",
@@ -571,10 +531,6 @@
         {
           "name": "Talk or Demo",
           "color": "#87a876"
-        },
-        {
-          "name": "needs to be scheduled",
-          "color": "#859494"
         },
         {
           "name": "hacker room",
@@ -669,10 +625,6 @@
         {
           "name": "Accepted",
           "color": "#0e8a16"
-        },
-        {
-          "name": "needs to be scheduled",
-          "color": "#859494"
         },
         {
           "name": "main stage",
@@ -779,10 +731,6 @@
           "color": "#7a69e2"
         },
         {
-          "name": "needs to be scheduled",
-          "color": "#859494"
-        },
-        {
           "name": "main stage",
           "color": "#c2185b"
         }
@@ -851,10 +799,6 @@
           "color": "#87a876"
         },
         {
-          "name": "needs to be scheduled",
-          "color": "#859494"
-        },
-        {
           "name": "hacker room",
           "color": "#00acc1"
         }
@@ -885,10 +829,6 @@
         {
           "name": "Accepted",
           "color": "#0e8a16"
-        },
-        {
-          "name": "needs to be scheduled",
-          "color": "#859494"
         },
         {
           "name": "main stage",
@@ -927,10 +867,6 @@
           "color": "#87a876"
         },
         {
-          "name": "needs to be scheduled",
-          "color": "#859494"
-        },
-        {
           "name": "hacker room",
           "color": "#00acc1"
         }
@@ -965,10 +901,6 @@
         {
           "name": "Talk or Demo",
           "color": "#87a876"
-        },
-        {
-          "name": "needs to be scheduled",
-          "color": "#859494"
         },
         {
           "name": "main stage",
@@ -1071,10 +1003,6 @@
           "color": "#935478"
         },
         {
-          "name": "needs to be scheduled",
-          "color": "#859494"
-        },
-        {
           "name": "main stage",
           "color": "#c2185b"
         }
@@ -1171,10 +1099,6 @@
         {
           "name": "Details need to be confirmed",
           "color": "#662204"
-        },
-        {
-          "name": "needs to be scheduled",
-          "color": "#859494"
         },
         {
           "name": "main stage",
@@ -1555,10 +1479,6 @@
           "color": "#0e8a16"
         },
         {
-          "name": "needs to be scheduled",
-          "color": "#859494"
-        },
-        {
           "name": "main stage",
           "color": "#c2185b"
         }
@@ -1615,10 +1535,6 @@
         {
           "name": "Accepted",
           "color": "#0e8a16"
-        },
-        {
-          "name": "needs to be scheduled",
-          "color": "#859494"
         },
         {
           "name": "main stage",
@@ -1679,10 +1595,6 @@
           "color": "#0e8a16"
         },
         {
-          "name": "needs to be scheduled",
-          "color": "#859494"
-        },
-        {
           "name": "main stage",
           "color": "#c2185b"
         }
@@ -1717,10 +1629,6 @@
         {
           "name": "Talk or Demo",
           "color": "#87a876"
-        },
-        {
-          "name": "needs to be scheduled",
-          "color": "#859494"
         },
         {
           "name": "main stage",
@@ -1759,10 +1667,6 @@
           "color": "#87a876"
         },
         {
-          "name": "needs to be scheduled",
-          "color": "#859494"
-        },
-        {
           "name": "main stage",
           "color": "#c2185b"
         }
@@ -1797,10 +1701,6 @@
         {
           "name": "Talk or Demo",
           "color": "#87a876"
-        },
-        {
-          "name": "needs to be scheduled",
-          "color": "#859494"
         },
         {
           "name": "main stage",
@@ -1911,10 +1811,6 @@
           "color": "#0e8a16"
         },
         {
-          "name": "needs to be scheduled",
-          "color": "#859494"
-        },
-        {
           "name": "main stage",
           "color": "#c2185b"
         }
@@ -1947,10 +1843,6 @@
           "color": "#0e8a16"
         },
         {
-          "name": "needs to be scheduled",
-          "color": "#859494"
-        },
-        {
           "name": "main stage",
           "color": "#c2185b"
         }
@@ -1981,10 +1873,6 @@
         {
           "name": "Accepted",
           "color": "#0e8a16"
-        },
-        {
-          "name": "needs to be scheduled",
-          "color": "#859494"
         },
         {
           "name": "main stage",
