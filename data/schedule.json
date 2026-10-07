@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-07T02:50:26.896Z",
+  "generatedAt": "2026-10-07T04:46:26.048Z",
   "event": {
     "name": "TABConf 8",
     "start": "2026-10-12",
@@ -1426,10 +1426,10 @@
       "title": "TABConf 8 After Party at The Painted Duck, brought to you by mempool.space",
       "url": "https://github.com/TABConf/8.tabconf.com/issues/93",
       "date": "2026-10-14",
-      "start": "6:30 PM",
-      "end": "10:30 PM",
-      "startMin": 1110,
-      "endMin": 1350,
+      "start": "7:00 PM",
+      "end": "11:00 PM",
+      "startMin": 1140,
+      "endMin": 1380,
       "durationMin": 240,
       "track": "satellite",
       "room": "Offsite",
@@ -1451,7 +1451,7 @@
           "color": "#fbca04"
         }
       ],
-      "summary": "Description Event Description The official TABConf 8 After Party, brought to you by mempool.space. Wednesday, October 14, 6:30 PM to 10:30 PM at The Painted Duck, 976 Brady Avenue, Atlanta, GA 30318. About two miles from the Georgia Tech Ex"
+      "summary": "Description Event Description The official TABConf 8 After Party, brought to you by mempool.space. Wednesday, October 14, 7:00 PM to 11:00 PM at The Painted Duck, 976 Brady Avenue, Atlanta, GA 30318. About two miles from the Georgia Tech Ex"
     },
     {
       "number": 36,
