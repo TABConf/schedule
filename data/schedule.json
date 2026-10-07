@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-07T02:48:22.686Z",
+  "generatedAt": "2026-10-07T02:50:26.896Z",
   "event": {
     "name": "TABConf 8",
     "start": "2026-10-12",
@@ -1161,7 +1161,7 @@
     },
     {
       "number": 89,
-      "title": "What the Fork is Happening with Bitcoin [DRAFT]",
+      "title": "What the Fork is Happening with Bitcoin",
       "url": "https://github.com/TABConf/8.tabconf.com/issues/89",
       "date": "2026-10-14",
       "start": "12:00 PM",
@@ -1217,7 +1217,7 @@
     },
     {
       "number": 70,
-      "title": "WoT Panel: Where is the robust Identity WoT right now with all the AI deep fakes? [DRAFT]",
+      "title": "WoT Panel: Where is the robust Identity WoT right now with all the AI deep fakes?",
       "url": "https://github.com/TABConf/8.tabconf.com/issues/70",
       "date": "2026-10-14",
       "start": "1:15 PM",
@@ -1305,7 +1305,7 @@
     },
     {
       "number": 69,
-      "title": "RED TEAM Panel - How *ucked Are We? [DRAFT]",
+      "title": "RED TEAM Panel - How *ucked Are We?",
       "url": "https://github.com/TABConf/8.tabconf.com/issues/69",
       "date": "2026-10-14",
       "start": "2:30 PM",
