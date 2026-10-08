@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-08T19:18:32.496Z",
+  "generatedAt": "2026-10-08T19:20:43.190Z",
   "event": {
     "name": "TABConf 8",
     "start": "2026-10-12",
@@ -1084,10 +1084,10 @@
       "title": "Talk: Quantum Address Format Zoo",
       "url": "https://github.com/TABConf/8.tabconf.com/issues/12",
       "date": "2026-10-14",
-      "start": "10:30 AM",
-      "end": "11:00 AM",
-      "startMin": 630,
-      "endMin": 660,
+      "start": "10:15 AM",
+      "end": "10:45 AM",
+      "startMin": 615,
+      "endMin": 645,
       "durationMin": 30,
       "track": "stage",
       "room": "Main stage",
@@ -1118,6 +1118,38 @@
         }
       ],
       "summary": "There's a handful of proposals for quantum address formats - P2MR, P2TRv2, P2MR-no-EC, P2TR-as-is, etc, etc. In this talk I'll walk through the proposals that exist, what the constraints and considerations are, what the options proposed are"
+    },
+    {
+      "number": 63,
+      "title": "Shrinc-ray: Zapping obsolete EC pubkeys into the PQ future",
+      "url": "https://github.com/TABConf/8.tabconf.com/issues/63",
+      "date": "2026-10-14",
+      "start": "10:45 AM",
+      "end": "11:15 AM",
+      "startMin": 645,
+      "endMin": 675,
+      "durationMin": 30,
+      "track": "stage",
+      "room": "Main stage",
+      "roomFromLabel": true,
+      "speakers": [
+        {
+          "login": "adiabat",
+          "name": "Tadge Dryja",
+          "avatarUrl": "https://avatars.githubusercontent.com/u/22841402?u=fff8e6dd2d7e9dfe11beda28e4c01e9d59ce640c&v=4"
+        }
+      ],
+      "labels": [
+        {
+          "name": "Accepted",
+          "color": "#0e8a16"
+        },
+        {
+          "name": "main stage",
+          "color": "#c2185b"
+        }
+      ],
+      "summary": "Description What is this talk about? Give us as many details as possible. How can we ensure safe migration in the event of an EC break?  The general idea is that if you haven't re-used an address, your \"pub\"key is still secret, and you can "
     },
     {
       "number": 91,
@@ -1522,38 +1554,6 @@
         }
       ],
       "summary": "Details TBD Description What is this talk about? Give us as many details as possible. What would an attendee learn from this talk? Is there anything folks should read up on before they attend this talk? Relevant Links About the Speaker Soci"
-    },
-    {
-      "number": 63,
-      "title": "Shrinc-ray: Zapping obsolete EC pubkeys into the PQ future",
-      "url": "https://github.com/TABConf/8.tabconf.com/issues/63",
-      "date": "2026-10-15",
-      "start": "9:15 AM",
-      "end": "9:45 AM",
-      "startMin": 555,
-      "endMin": 585,
-      "durationMin": 30,
-      "track": "stage",
-      "room": "Main stage",
-      "roomFromLabel": true,
-      "speakers": [
-        {
-          "login": "adiabat",
-          "name": "Tadge Dryja",
-          "avatarUrl": "https://avatars.githubusercontent.com/u/22841402?u=fff8e6dd2d7e9dfe11beda28e4c01e9d59ce640c&v=4"
-        }
-      ],
-      "labels": [
-        {
-          "name": "Accepted",
-          "color": "#0e8a16"
-        },
-        {
-          "name": "main stage",
-          "color": "#c2185b"
-        }
-      ],
-      "summary": "Description What is this talk about? Give us as many details as possible. How can we ensure safe migration in the event of an EC break?  The general idea is that if you haven't re-used an address, your \"pub\"key is still secret, and you can "
     },
     {
       "number": 50,
