@@ -390,7 +390,7 @@ function roomGrid(timed, rooms){
      each row is drawn at a height proportional to its minutes, and a session's
      cell spans every row it covers, so a 2 hour workshop is visibly four times
      a 30 minute talk. A session starting inside another one in the same room
-     (a short moment inside the closing ceremony) joins that card rather than
+     (a short moment inside the early closing ceremony) joins that card rather than
      breaking the grid. */
   const endOf = s => (s.endMin!=null && s.endMin>s.startMin) ? s.endMin : s.startMin+15;
   const bounds=[...new Set(timed.flatMap(s=>[s.startMin, endOf(s)]))].sort((a,b)=>a-b);

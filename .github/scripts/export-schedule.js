@@ -235,6 +235,8 @@ function toISODate(raw) {
 
 function summarise(md) {
   return String(md || '')
+    .replace(/<!-- schedule:start -->[\s\S]*?<!-- schedule:end -->/g, '')
+    .replace(/<!--[\s\S]*?-->/g, '')
     .replace(/<img[^>]*>/gi, '')
     .replace(/!\[[^\]]*\]\([^)]*\)/g, '')
     .replace(/```[\s\S]*?```/g, '')
