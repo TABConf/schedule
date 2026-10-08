@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-08T19:52:54.592Z",
+  "generatedAt": "2026-10-08T19:54:06.502Z",
   "event": {
     "name": "TABConf 8",
     "start": "2026-10-12",
@@ -1556,28 +1556,6 @@
       "summary": "Details TBD Description What is this talk about? Give us as many details as possible. What would an attendee learn from this talk? Is there anything folks should read up on before they attend this talk? Relevant Links About the Speaker Soci"
     },
     {
-      "number": 60,
-      "title": "Self-Hosting Without Being a Tech Expert",
-      "url": "https://github.com/TABConf/8.tabconf.com/issues/60",
-      "date": "2026-10-15",
-      "start": "9:15 AM",
-      "end": "9:45 AM",
-      "startMin": 555,
-      "endMin": 585,
-      "durationMin": 30,
-      "track": "stage",
-      "room": "Main stage",
-      "roomFromLabel": false,
-      "speakers": [],
-      "labels": [
-        {
-          "name": "Accepted",
-          "color": "#0e8a16"
-        }
-      ],
-      "summary": "Description What is this talk about? Give us as many details as possible. This will be a practical talk about one of the main barriers to self-sovereignty beyond running a bitcoin node: running useful infrastructure yourself is still too ha"
-    },
-    {
       "number": 50,
       "title": "Drinking from the firehose: bitcoin FOSS in a post-LLM world",
       "url": "https://github.com/TABConf/8.tabconf.com/issues/50",
@@ -1672,10 +1650,10 @@
       "title": "The Compliance Era: How Tax Reporting Infrastructure & Policy Are Reshaping Bitcoin Markets",
       "url": "https://github.com/TABConf/8.tabconf.com/issues/2",
       "date": "2026-10-15",
-      "start": "11:15 AM",
-      "end": "11:30 AM",
-      "startMin": 675,
-      "endMin": 690,
+      "start": "11:00 AM",
+      "end": "11:15 AM",
+      "startMin": 660,
+      "endMin": 675,
       "durationMin": 15,
       "track": "stage",
       "room": "Main stage",
@@ -1702,6 +1680,28 @@
         }
       ],
       "summary": "What attendees will learn: - How Form 1099-DA works, what it reports now, and what's coming in subsequent years - The account-based methodology under Revenue Procedure 2024-28 and why most Bitcoin holders are non-compliant - How the IRS aut"
+    },
+    {
+      "number": 60,
+      "title": "Self-Hosting Without Being a Tech Expert",
+      "url": "https://github.com/TABConf/8.tabconf.com/issues/60",
+      "date": "2026-10-15",
+      "start": "11:15 AM",
+      "end": "11:45 AM",
+      "startMin": 675,
+      "endMin": 705,
+      "durationMin": 30,
+      "track": "stage",
+      "room": "Main stage",
+      "roomFromLabel": false,
+      "speakers": [],
+      "labels": [
+        {
+          "name": "Accepted",
+          "color": "#0e8a16"
+        }
+      ],
+      "summary": "Description What is this talk about? Give us as many details as possible. This will be a practical talk about one of the main barriers to self-sovereignty beyond running a bitcoin node: running useful infrastructure yourself is still too ha"
     },
     {
       "number": 97,
