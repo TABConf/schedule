@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-08T15:20:11.714Z",
+  "generatedAt": "2026-10-08T15:32:03.826Z",
   "event": {
     "name": "TABConf 8",
     "start": "2026-10-12",
@@ -11,7 +11,7 @@
     "scheduled": 60,
     "unscheduled": 0,
     "floor": 10,
-    "stageMinutes": 2280
+    "stageMinutes": 2295
   },
   "clashes": [],
   "sessions": [
@@ -49,7 +49,7 @@
           "color": "#00acc1"
         }
       ],
-      "summary": "Agentic Engineering for Bitcoin Developers Format: Workshop (talk + hands-on interactive session) Length: 60 minutes Summary Coding agents are no longer experimental tech; they are now indispensable software development tools. But most work"
+      "summary": "<!-- schedule:start -- | Day | Date | Start | End | |---|---|---|---| | Monday | Oct 12 | 11:30 AM | 12:30 PM | <!-- schedule:end -- Agentic Engineering for Bitcoin Developers Format: Workshop (talk + hands-on interactive session) Length: 6"
     },
     {
       "number": 58,
@@ -81,7 +81,7 @@
           "color": "#c2185b"
         }
       ],
-      "summary": "<!-- Doing a non-interactive demo? That belongs here, not under \"Workshop Submission\". -- Description What is this talk about? Give us as many details as possible. Writing Bitcoin wallet logic in Rust gives you correctness, memory safety, a"
+      "summary": "<!-- schedule:start -- | Day | Date | Start | End | |---|---|---|---| | Monday | Oct 12 | 11:30 AM | 11:45 AM | <!-- schedule:end -- <!-- Doing a non-interactive demo? That belongs here, not under \"Workshop Submission\". -- Description What "
     },
     {
       "number": 49,
@@ -113,7 +113,7 @@
           "color": "#c2185b"
         }
       ],
-      "summary": "<!-- Doing a non-interactive demo? That belongs here, not under \"Workshop Submission\". -- Description What is this talk about? For most Bitcoin devs, libsecp256k1 is kind of a black box that we just put numbers into to use the wonders of ma"
+      "summary": "<!-- schedule:start -- | Day | Date | Start | End | |---|---|---|---| | Monday | Oct 12 | 12:00 PM | 12:15 PM | <!-- schedule:end -- <!-- Doing a non-interactive demo? That belongs here, not under \"Workshop Submission\". -- Description What "
     },
     {
       "number": 52,
@@ -135,7 +135,7 @@
           "color": "#0e8a16"
         }
       ],
-      "summary": "<!-- Doing a non-interactive demo? That belongs here, not under \"Workshop Submission\". -- Description What is this talk about? Give us as many details as possible. Beyond Zaps: Building Bitcoin Infrastructure on NOSTR This session presents "
+      "summary": "<!-- schedule:start -- | Day | Date | Start | End | |---|---|---|---| | Monday | Oct 12 | 12:30 PM | 12:45 PM | <!-- schedule:end -- <!-- Doing a non-interactive demo? That belongs here, not under \"Workshop Submission\". -- Description What "
     },
     {
       "number": 45,
@@ -167,7 +167,7 @@
           "color": "#00acc1"
         }
       ],
-      "summary": "Description What is this talk about? Give us as many details as possible. For several years, there have been a lot of jokes and serious discussions around the concept of the mullet data center. The concept is simple: AI business in the fron"
+      "summary": "<!-- schedule:start -- | Day | Date | Start | End | |---|---|---|---| | Monday | Oct 12 | 12:45 PM | 1:00 PM | <!-- schedule:end -- Description What is this talk about? Give us as many details as possible. For several years, there have been"
     },
     {
       "number": 4,
@@ -203,7 +203,7 @@
           "color": "#00acc1"
         }
       ],
-      "summary": "(aka the Bitcoin LARP) In this interactive, 2-hr long workshop participants walk through how the Bitcoin protocol works. Using just pens, paper, and some string we learn how the protocol works. Join us for this live-action learning session "
+      "summary": "<!-- schedule:start -- | Day | Date | Start | End | |---|---|---|---| | Monday | Oct 12 | 1:15 PM | 3:15 PM | <!-- schedule:end -- (aka the Bitcoin LARP) In this interactive, 2-hr long workshop participants walk through how the Bitcoin prot"
     },
     {
       "number": 33,
@@ -239,7 +239,7 @@
           "color": "#c2185b"
         }
       ],
-      "summary": "In 2021, at my first TABConf, I gave my first-ever talk at a bitcoin conference. We used coin flips to create a BIP39 wallet, then went from seed to receive address, learning each step in the derivation process. Five years later, I’m hoping"
+      "summary": "<!-- schedule:start -- | Day | Date | Start | End | |---|---|---|---| | Monday | Oct 12 | 1:30 PM | 3:30 PM | <!-- schedule:end -- In 2021, at my first TABConf, I gave my first-ever talk at a bitcoin conference. We used coin flips to create"
     },
     {
       "number": 30,
@@ -275,7 +275,7 @@
           "color": "#00acc1"
         }
       ],
-      "summary": "<!-- Doing a non-interactive demo? That belongs here, not under \"Workshop Submission\". -- Description What is this talk about? Give us as many details as possible. I will be introducing bitcoiners to the basics of isogeny-based digital sign"
+      "summary": "<!-- schedule:start -- | Day | Date | Start | End | |---|---|---|---| | Monday | Oct 12 | 3:30 PM | 4:30 PM | <!-- schedule:end -- <!-- Doing a non-interactive demo? That belongs here, not under \"Workshop Submission\". -- Description What is"
     },
     {
       "number": 42,
@@ -311,7 +311,7 @@
           "color": "#c2185b"
         }
       ],
-      "summary": "Description What is this workshop about? Provide as many details as possible. We are building tools that make it easier for AI agents to conduct Bitcoin research. This workshop is about experimenting with some of these tools hands-on. What "
+      "summary": "<!-- schedule:start -- | Day | Date | Start | End | |---|---|---|---| | Monday | Oct 12 | 3:45 PM | 4:15 PM | <!-- schedule:end -- Description What is this workshop about? Provide as many details as possible. We are building tools that make"
     },
     {
       "number": 63,
@@ -343,7 +343,7 @@
           "color": "#c2185b"
         }
       ],
-      "summary": "<!-- Doing a non-interactive demo? That belongs here, not under \"Workshop Submission\". -- Description What is this talk about? Give us as many details as possible. How can we ensure safe migration in the event of an EC break?  The general i"
+      "summary": "<!-- schedule:start -- | Day | Date | Start | End | |---|---|---|---| | Monday | Oct 12 | 4:30 PM | 5:00 PM | <!-- schedule:end -- <!-- Doing a non-interactive demo? That belongs here, not under \"Workshop Submission\". -- Description What is"
     },
     {
       "number": 16,
@@ -379,7 +379,7 @@
           "color": "#00acc1"
         }
       ],
-      "summary": "A talk about the history of hard forks and soft forks that we've had over the years in Bitcoin, and a reflection on the state of BIP110 and BIP300 which by the time of the conference will have split into individual chains. Also, very much i"
+      "summary": "<!-- schedule:start -- | Day | Date | Start | End | |---|---|---|---| | Monday | Oct 12 | 4:45 PM | 5:00 PM | <!-- schedule:end -- A talk about the history of hard forks and soft forks that we've had over the years in Bitcoin, and a reflect"
     },
     {
       "number": 29,
@@ -415,7 +415,7 @@
           "color": "#c2185b"
         }
       ],
-      "summary": "Workshop Wavelength Wavelength: Building Self-Custodial Bitcoin and Lightning Apps Wavelength is Lightning Labs' toolkit for embedding a self-custodial Bitcoin and Lightning wallet directly into a web or mobile app — no node to run, no chan"
+      "summary": "<!-- schedule:start -- | Day | Date | Start | End | |---|---|---|---| | Tuesday | Oct 13 | 9:00 AM | 10:30 AM | <!-- schedule:end -- Workshop Wavelength Wavelength: Building Self-Custodial Bitcoin and Lightning Apps Wavelength is Lightning "
     },
     {
       "number": 41,
@@ -451,7 +451,7 @@
           "color": "#00acc1"
         }
       ],
-      "summary": "Description The DIY signing device ecosystem (SeedSigner, Krux, Specter DIY, Kern) started across a variety of different hardware: Pi Zero, stm32, k210. But we are all now working to expand to newer microcontrollers, specifically the esp32-"
+      "summary": "<!-- schedule:start -- | Day | Date | Start | End | |---|---|---|---| | Tuesday | Oct 13 | 9:00 AM | 10:00 AM | <!-- schedule:end -- Description The DIY signing device ecosystem (SeedSigner, Krux, Specter DIY, Kern) started across a variety"
     },
     {
       "number": 48,
@@ -483,7 +483,7 @@
           "color": "#00acc1"
         }
       ],
-      "summary": "<!-- NOTE!! If you are intending to do a non-interactive demo, THIS IS NOT a workshop, please submit talk demo's under \"Solo Talks\". -- Description What is this workshop about? Provide as many details as possible. Load sats into Noah, then "
+      "summary": "<!-- schedule:start -- | Day | Date | Start | End | |---|---|---|---| | Tuesday | Oct 13 | 10:15 AM | 10:45 AM | <!-- schedule:end -- <!-- NOTE!! If you are intending to do a non-interactive demo, THIS IS NOT a workshop, please submit talk "
     },
     {
       "number": 40,
@@ -523,7 +523,7 @@
           "color": "#c2185b"
         }
       ],
-      "summary": "<!-- NOTE!! If you are intending to do a non-interactive demo, THIS IS NOT a workshop, please submit talk demo's under \"Solo Talks\". -- Description What is this workshop about? Provide as many details as possible. The workshop will be about"
+      "summary": "<!-- schedule:start -- | Day | Date | Start | End | |---|---|---|---| | Tuesday | Oct 13 | 10:45 AM | 12:15 PM | <!-- schedule:end -- <!-- NOTE!! If you are intending to do a non-interactive demo, THIS IS NOT a workshop, please submit talk "
     },
     {
       "number": 13,
@@ -559,7 +559,7 @@
           "color": "#00acc1"
         }
       ],
-      "summary": "Format: Talk with live demo · Length: 30 min preferred, can do 20 · Days: Oct 14–15 BSMS (BIP-129) standardized the multisig setup file format, but nothing standardizes how remote participants exchange it. In practice, xpubs, descriptors, a"
+      "summary": "<!-- schedule:start -- | Day | Date | Start | End | |---|---|---|---| | Tuesday | Oct 13 | 11:00 AM | 11:15 AM | <!-- schedule:end -- Format: Talk with live demo · Length: 30 min preferred, can do 20 · Days: Oct 14–15 BSMS (BIP-129) standar"
     },
     {
       "number": 94,
@@ -589,7 +589,7 @@
           "color": "#00acc1"
         }
       ],
-      "summary": "Description What is this talk about? Muzi Works on off-grid mesh radios: what Meshtastic and MeshCore are, how a mesh network works without cell towers or internet, and how to get your own node running. Muzi Works also runs a hands-on mesh "
+      "summary": "<!-- schedule:start -- | Day | Date | Start | End | |---|---|---|---| | Tuesday | Oct 13 | 11:30 AM | 11:45 AM | <!-- schedule:end -- Description What is this talk about? Muzi Works on off-grid mesh radios: what Meshtastic and MeshCore are,"
     },
     {
       "number": 67,
@@ -621,7 +621,7 @@
           "color": "#00acc1"
         }
       ],
-      "summary": "<!-- Doing a non-interactive demo? That belongs here, not under \"Workshop Submission\". -- Description What is this talk about? Give us as many details as possible. This talk will be about Shielded Bitcoin, a protocol for private transfer of"
+      "summary": "<!-- schedule:start -- | Day | Date | Start | End | |---|---|---|---| | Tuesday | Oct 13 | 11:45 AM | 12:15 PM | <!-- schedule:end -- <!-- Doing a non-interactive demo? That belongs here, not under \"Workshop Submission\". -- Description What"
     },
     {
       "number": 73,
@@ -653,7 +653,7 @@
           "color": "#00acc1"
         }
       ],
-      "summary": "Description This talk introduces Rose, an open-source light wallet for self-custody and e-commerce. Rose exposes Bitcoin Core's RPC dialect, so existing payment integrations work unchanged. Unlike Electrum- and Esplora-backed wallets, Rose "
+      "summary": "<!-- schedule:start -- | Day | Date | Start | End | |---|---|---|---| | Tuesday | Oct 13 | 12:30 PM | 1:00 PM | <!-- schedule:end -- Description This talk introduces Rose, an open-source light wallet for self-custody and e-commerce. Rose ex"
     },
     {
       "number": 26,
@@ -689,7 +689,7 @@
           "color": "#00acc1"
         }
       ],
-      "summary": "Workshop DuraShare DuraShare: BIP39-Native Threshold Backup over GF(2053) with Full Manual Fallback and Per-Share Audit DuraShare uses Shamir secret sharing to split a standard BIP39 recovery phrase into k-of-n durable, human-readable share"
+      "summary": "<!-- schedule:start -- | Day | Date | Start | End | |---|---|---|---| | Tuesday | Oct 13 | 1:15 PM | 2:15 PM | <!-- schedule:end -- Workshop DuraShare DuraShare: BIP39-Native Threshold Backup over GF(2053) with Full Manual Fallback and Per-"
     },
     {
       "number": 10,
@@ -725,7 +725,7 @@
           "color": "#c2185b"
         }
       ],
-      "summary": "Hello, I have volunteered to run [Warnet: The Wrath Of Nalo](https://github.com/bitcoin-dev-project/wrath-of-nalo) at TABConf 8. This was run before at TABConf 7, see https://github.com/TABConf/7.tabconf.com/issues/42: This workshop is a co"
+      "summary": "<!-- schedule:start -- | Day | Date | Start | End | |---|---|---|---| | Tuesday | Oct 13 | 1:30 PM | 3:30 PM | <!-- schedule:end -- Hello, I have volunteered to run [Warnet: The Wrath Of Nalo](https://github.com/bitcoin-dev-project/wrath-of"
     },
     {
       "number": 92,
@@ -757,7 +757,7 @@
           "color": "#00acc1"
         }
       ],
-      "summary": "<!-- Doing a non-interactive demo? That belongs here, not under \"Workshop Submission\". -- Description What is this talk about? Give us as many details as possible. This talk will focus on an overview of newer bitcoin L2 & privacy protocol d"
+      "summary": "<!-- schedule:start -- | Day | Date | Start | End | |---|---|---|---| | Tuesday | Oct 13 | 2:30 PM | 2:45 PM | <!-- schedule:end -- <!-- Doing a non-interactive demo? That belongs here, not under \"Workshop Submission\". -- Description What i"
     },
     {
       "number": 32,
@@ -793,7 +793,7 @@
           "color": "#00acc1"
         }
       ],
-      "summary": "Description What is this talk about? Give us as many details as possible. Every mining pool runs a difficulty adjustment loop. It sets each miner's share difficulty from an estimate of that miner's hashrate, and the only input it has is the"
+      "summary": "<!-- schedule:start -- | Day | Date | Start | End | |---|---|---|---| | Tuesday | Oct 13 | 3:00 PM | 3:15 PM | <!-- schedule:end -- Description What is this talk about? Give us as many details as possible. Every mining pool runs a difficult"
     },
     {
       "number": 8,
@@ -825,7 +825,7 @@
           "color": "#c2185b"
         }
       ],
-      "summary": "One of the mistakes of Lightning's early days was exposing complexity to the user: managing channels, rebalancing, gossip propagation delays, and after that, the user was still not able to make the payments. Now we are in the era of 'Paymen"
+      "summary": "<!-- schedule:start -- | Day | Date | Start | End | |---|---|---|---| | Tuesday | Oct 13 | 3:45 PM | 4:15 PM | <!-- schedule:end -- One of the mistakes of Lightning's early days was exposing complexity to the user: managing channels, rebala"
     },
     {
       "number": 31,
@@ -861,7 +861,7 @@
           "color": "#00acc1"
         }
       ],
-      "summary": "Description Bitcoin is decentralized, but much of what happens across its network is not visible from the blockchain or from a single node. This talk provides a high level overview of what is monitored across the Bitcoin network, including "
+      "summary": "<!-- schedule:start -- | Day | Date | Start | End | |---|---|---|---| | Tuesday | Oct 13 | 3:45 PM | 4:00 PM | <!-- schedule:end -- Description Bitcoin is decentralized, but much of what happens across its network is not visible from the bl"
     },
     {
       "number": 22,
@@ -869,10 +869,10 @@
       "url": "https://github.com/TABConf/8.tabconf.com/issues/22",
       "date": "2026-10-13",
       "start": "4:30 PM",
-      "end": "4:45 PM",
+      "end": "5:00 PM",
       "startMin": 990,
-      "endMin": 1005,
-      "durationMin": 15,
+      "endMin": 1020,
+      "durationMin": 30,
       "track": "stage",
       "room": "Main stage",
       "roomFromLabel": true,
@@ -897,7 +897,7 @@
           "color": "#c2185b"
         }
       ],
-      "summary": "Description Modern trust-reducing bridges use a combination of classical and new cryptography for security and efficiency. Specifically, designs like Glock and BitVM3 make use of garbled circuits, zkVM-based proofs, adaptor signatures, and "
+      "summary": "<!-- schedule:start -- | Day | Date | Start | End | |---|---|---|---| | Tuesday | Oct 13 | 4:30 PM | 4:45 PM | <!-- schedule:end -- Description Modern trust-reducing bridges use a combination of classical and new cryptography for security a"
     },
     {
       "number": 76,
@@ -929,7 +929,7 @@
           "color": "#00acc1"
         }
       ],
-      "summary": "What is this talk about? Give us as many details as possible. This talk covers Bitcoin Möser-Eyal-Sirer type vaults, the different ways to construct such vaults using covenants, and the tradeoffs across the four covenant proposals CTV, CCV,"
+      "summary": "<!-- schedule:start -- | Day | Date | Start | End | |---|---|---|---| | Tuesday | Oct 13 | 4:30 PM | 4:45 PM | <!-- schedule:end -- What is this talk about? Give us as many details as possible. This talk covers Bitcoin Möser-Eyal-Sirer type"
     },
     {
       "number": 59,
@@ -961,7 +961,7 @@
           "color": "#fbca04"
         }
       ],
-      "summary": "Description Event Description Bitcoin. Barbecue. A room full of builders. Kick off TABConf week with Atlanta BitDevs Socratic Seminar 55 + BBQ at ATL BitLab, Atlanta’s Bitcoin hackerspace. Dig into the latest developments in Bitcoin and Lig"
+      "summary": "<!-- schedule:start -- | Day | Date | Start | End | |---|---|---|---| | Tuesday | Oct 13 | 6:00 PM | 9:00 PM | <!-- schedule:end -- Description Event Description Bitcoin. Barbecue. A room full of builders. Kick off TABConf week with Atlanta"
     },
     {
       "number": 9,
@@ -997,7 +997,7 @@
           "color": "#c2185b"
         }
       ],
-      "summary": "What is this panel discussion about? Will there be multiple talking a points? Bitcoin was used during the November 2024 presidential elections by Stacy Scott in Screven County GA to protect her county election results. She then used it to p"
+      "summary": "<!-- schedule:start -- | Day | Date | Start | End | |---|---|---|---| | Wednesday | Oct 14 | 9:00 AM | 9:30 AM | <!-- schedule:end -- What is this panel discussion about? Will there be multiple talking a points? Bitcoin was used during the "
     },
     {
       "number": 79,
@@ -1029,7 +1029,7 @@
           "color": "#6a1b9a"
         }
       ],
-      "summary": "Kick-off to the Acceleration Village. Details TBD. Description What is this talk about? Give us as many details as possible. What would an attendee learn from this talk? Is there anything folks should read up on before they attend this talk"
+      "summary": "<!-- schedule:start -- | Day | Date | Start | End | |---|---|---|---| | Wednesday | Oct 14 | 9:00 AM | 9:30 AM | <!-- schedule:end -- Kick-off to the Acceleration Village. Details TBD. Description What is this talk about? Give us as many de"
     },
     {
       "number": 6,
@@ -1061,7 +1061,7 @@
           "color": "#c2185b"
         }
       ],
-      "summary": "This talk goes over agentic AI use-cases, how L402 factors into this brave new world, and what lies ahead for open source models. Bonus feature on agent to agent commerce. Speaker: Kevin Cai (Lightning Labs). Runtime: 30m. I will be the spe"
+      "summary": "<!-- schedule:start -- | Day | Date | Start | End | |---|---|---|---| | Wednesday | Oct 14 | 9:45 AM | 10:15 AM | <!-- schedule:end -- This talk goes over agentic AI use-cases, how L402 factors into this brave new world, and what lies ahead"
     },
     {
       "number": 80,
@@ -1087,7 +1087,7 @@
           "color": "#6a1b9a"
         }
       ],
-      "summary": "Details TBD Description What is this talk about? Give us as many details as possible. What would an attendee learn from this talk? Is there anything folks should read up on before they attend this talk? Relevant Links About the Speaker Soci"
+      "summary": "<!-- schedule:start -- | Day | Date | Start | End | |---|---|---|---| | Wednesday | Oct 14 | 10:00 AM | 11:00 AM | <!-- schedule:end -- Details TBD Description What is this talk about? Give us as many details as possible. What would an atte"
     },
     {
       "number": 12,
@@ -1127,7 +1127,7 @@
           "color": "#c2185b"
         }
       ],
-      "summary": "There's a handful of proposals for quantum address formats - P2MR, P2TRv2, P2MR-no-EC, P2TR-as-is, etc, etc. In this talk I'll walk through the proposals that exist, what the constraints and considerations are, what the options proposed are"
+      "summary": "<!-- schedule:start -- | Day | Date | Start | End | |---|---|---|---| | Wednesday | Oct 14 | 10:30 AM | 11:00 AM | <!-- schedule:end -- There's a handful of proposals for quantum address formats - P2MR, P2TRv2, P2MR-no-EC, P2TR-as-is, etc, "
     },
     {
       "number": 91,
@@ -1153,7 +1153,7 @@
           "color": "#c2185b"
         }
       ],
-      "summary": "Description What is this panel discussion about? Will there be multiple talking points? What would an attendee learn from this panel? Is there anything folks should read up on before they attend? Relevant Links <!-- leave blank if you are u"
+      "summary": "<!-- schedule:start -- | Day | Date | Start | End | |---|---|---|---| | Wednesday | Oct 14 | 11:15 AM | 11:45 AM | <!-- schedule:end -- Description What is this panel discussion about? Will there be multiple talking points? What would an at"
     },
     {
       "number": 82,
@@ -1179,7 +1179,7 @@
           "color": "#6a1b9a"
         }
       ],
-      "summary": "Details TBD Description What is this talk about? Give us as many details as possible. What would an attendee learn from this talk? Is there anything folks should read up on before they attend this talk? Relevant Links About the Speaker Soci"
+      "summary": "<!-- schedule:start -- | Day | Date | Start | End | |---|---|---|---| | Wednesday | Oct 14 | 12:00 PM | 1:00 PM | <!-- schedule:end -- Details TBD Description What is this talk about? Give us as many details as possible. What would an atten"
     },
     {
       "number": 89,
@@ -1209,7 +1209,7 @@
           "color": "#c2185b"
         }
       ],
-      "summary": "Description What is this panel discussion about? Will there be multiple talking points? Open debate. Paul Sztorc presents for 15 minutes, then 45 minutes of open Q&A and debate with the room. What would an attendee learn from this panel? Is"
+      "summary": "<!-- schedule:start -- | Day | Date | Start | End | |---|---|---|---| | Wednesday | Oct 14 | 12:00 PM | 1:00 PM | <!-- schedule:end -- Description What is this panel discussion about? Will there be multiple talking points? Open debate. Paul"
     },
     {
       "number": 83,
@@ -1235,7 +1235,7 @@
           "color": "#6a1b9a"
         }
       ],
-      "summary": "Details TBD Description What is this talk about? Give us as many details as possible. What would an attendee learn from this talk? Is there anything folks should read up on before they attend this talk? Relevant Links About the Speaker Soci"
+      "summary": "<!-- schedule:start -- | Day | Date | Start | End | |---|---|---|---| | Wednesday | Oct 14 | 1:00 PM | 2:00 PM | <!-- schedule:end -- Details TBD Description What is this talk about? Give us as many details as possible. What would an attend"
     },
     {
       "number": 70,
@@ -1261,7 +1261,7 @@
           "color": "#c2185b"
         }
       ],
-      "summary": "Description What is this panel discussion about? Will there be multiple talking points? What would an attendee learn from this panel? Is there anything folks should read up on before they attend? Relevant Links <!-- leave blank if you are u"
+      "summary": "<!-- schedule:start -- | Day | Date | Start | End | |---|---|---|---| | Wednesday | Oct 14 | 1:15 PM | 2:15 PM | <!-- schedule:end -- Description What is this panel discussion about? Will there be multiple talking points? What would an atte"
     },
     {
       "number": 72,
@@ -1297,7 +1297,7 @@
           "color": "#9a1fad"
         }
       ],
-      "summary": "Description What is this event about? A single elimination chess tournament is a competitive event where players face off against each other in a series of matches, with each defeat resulting in immediate elimination until there is only one"
+      "summary": "<!-- schedule:start -- | Day | Date | Start | End | |---|---|---|---| | Throughout the conference | Oct 12-15 | All day | All day | <!-- schedule:end -- Description What is this event about? A single elimination chess tournament is a compet"
     },
     {
       "number": 84,
@@ -1323,7 +1323,7 @@
           "color": "#6a1b9a"
         }
       ],
-      "summary": "Details TBD Description What is this talk about? Give us as many details as possible. What would an attendee learn from this talk? Is there anything folks should read up on before they attend this talk? Relevant Links About the Speaker Soci"
+      "summary": "<!-- schedule:start -- | Day | Date | Start | End | |---|---|---|---| | Wednesday | Oct 14 | 2:00 PM | 3:00 PM | <!-- schedule:end -- Details TBD Description What is this talk about? Give us as many details as possible. What would an attend"
     },
     {
       "number": 69,
@@ -1349,7 +1349,7 @@
           "color": "#c2185b"
         }
       ],
-      "summary": "Description What is this panel discussion about? Will there be multiple talking points? What would an attendee learn from this panel? Is there anything folks should read up on before they attend? Relevant Links <!-- leave blank if you are u"
+      "summary": "<!-- schedule:start -- | Day | Date | Start | End | |---|---|---|---| | Wednesday | Oct 14 | 2:30 PM | 3:30 PM | <!-- schedule:end -- Description What is this panel discussion about? Will there be multiple talking points? What would an atte"
     },
     {
       "number": 85,
@@ -1375,7 +1375,7 @@
           "color": "#6a1b9a"
         }
       ],
-      "summary": "Details TBD Description What is this talk about? Give us as many details as possible. What would an attendee learn from this talk? Is there anything folks should read up on before they attend this talk? Relevant Links About the Speaker Soci"
+      "summary": "<!-- schedule:start -- | Day | Date | Start | End | |---|---|---|---| | Wednesday | Oct 14 | 3:00 PM | 4:00 PM | <!-- schedule:end -- Details TBD Description What is this talk about? Give us as many details as possible. What would an attend"
     },
     {
       "number": 21,
@@ -1415,7 +1415,7 @@
           "color": "#c2185b"
         }
       ],
-      "summary": "Some sort of final event demonstrating the \"Finality\" of a Spaces Protocol top-level name by committing to an unspendable address. I think it would be cool to actually break something as a symbolic gesture.  Still thinking on how that might"
+      "summary": "<!-- schedule:start -- | Day | Date | Start | End | |---|---|---|---| | Wednesday | Oct 14 | 4:00 PM | 4:15 PM | <!-- schedule:end -- Some sort of final event demonstrating the \"Finality\" of a Spaces Protocol top-level name by committing to"
     },
     {
       "number": 90,
@@ -1441,7 +1441,7 @@
           "color": "#c2185b"
         }
       ],
-      "summary": "Description What is this panel discussion about? Will there be multiple talking points? What would an attendee learn from this panel? Is there anything folks should read up on before they attend? Relevant Links <!-- leave blank if you are u"
+      "summary": "<!-- schedule:start -- | Day | Date | Start | End | |---|---|---|---| | Wednesday | Oct 14 | 4:00 PM | 5:00 PM | <!-- schedule:end -- Description What is this panel discussion about? Will there be multiple talking points? What would an atte"
     },
     {
       "number": 93,
@@ -1473,7 +1473,7 @@
           "color": "#fbca04"
         }
       ],
-      "summary": "Description Event Description The official TABConf 8 After Party, brought to you by mempool.space. Wednesday, October 14, 7:00 PM to 11:00 PM at The Painted Duck, 976 Brady Avenue, Atlanta, GA 30318. About two miles from the Georgia Tech Ex"
+      "summary": "<!-- schedule:start -- | Day | Date | Start | End | |---|---|---|---| | Wednesday | Oct 14 | 7:00 PM | 11:00 PM | <!-- schedule:end -- Description Event Description The official TABConf 8 After Party, brought to you by mempool.space. Wednes"
     },
     {
       "number": 36,
@@ -1505,7 +1505,7 @@
           "color": "#c2185b"
         }
       ],
-      "summary": "Speaker: Andrew Poelstra Github:  @apoelstra IRC: andytoshi Talk Details rust-bitcoin: The Road to 1.0 This talk will go over the last year or two of rust-bitcoin development as we attempt to release a 1.0 \"Production Ready\" version of the "
+      "summary": "<!-- schedule:start -- | Day | Date | Start | End | |---|---|---|---| | Thursday | Oct 15 | 9:00 AM | 9:15 AM | <!-- schedule:end -- Speaker: Andrew Poelstra Github:  @apoelstra IRC: andytoshi Talk Details rust-bitcoin: The Road to 1.0 This"
     },
     {
       "number": 86,
@@ -1531,7 +1531,7 @@
           "color": "#6a1b9a"
         }
       ],
-      "summary": "Details TBD Description What is this talk about? Give us as many details as possible. What would an attendee learn from this talk? Is there anything folks should read up on before they attend this talk? Relevant Links About the Speaker Soci"
+      "summary": "<!-- schedule:start -- | Day | Date | Start | End | |---|---|---|---| | Thursday | Oct 15 | 9:00 AM | 10:00 AM | <!-- schedule:end -- Details TBD Description What is this talk about? Give us as many details as possible. What would an attend"
     },
     {
       "number": 50,
@@ -1563,7 +1563,7 @@
           "color": "#c2185b"
         }
       ],
-      "summary": "Description What is this panel discussion about? Will there be multiple talking points? Would like to get other bitcoin FOSS maintainers together to discuss challenges and opportunities they're seen on their projects due to modern LLMs. Mul"
+      "summary": "<!-- schedule:start -- | Day | Date | Start | End | |---|---|---|---| | Thursday | Oct 15 | 9:45 AM | 10:15 AM | <!-- schedule:end -- Description What is this panel discussion about? Will there be multiple talking points? Would like to get "
     },
     {
       "number": 87,
@@ -1589,7 +1589,7 @@
           "color": "#6a1b9a"
         }
       ],
-      "summary": "Details TBD Description What is this talk about? Give us as many details as possible. What would an attendee learn from this talk? Is there anything folks should read up on before they attend this talk? Relevant Links About the Speaker Soci"
+      "summary": "<!-- schedule:start -- | Day | Date | Start | End | |---|---|---|---| | Thursday | Oct 15 | 10:00 AM | 11:00 AM | <!-- schedule:end -- Details TBD Description What is this talk about? Give us as many details as possible. What would an atten"
     },
     {
       "number": 37,
@@ -1621,7 +1621,7 @@
           "color": "#c2185b"
         }
       ],
-      "summary": "Description What is this talk about? Give us as many details as possible. From Solo Mining to Poolless Mining: The Evolution of Bitcoin Mining Protocols Bitcoin mining began with miners constructing their own blocks and mining directly agai"
+      "summary": "<!-- schedule:start -- | Day | Date | Start | End | |---|---|---|---| | Thursday | Oct 15 | 10:30 AM | 11:00 AM | <!-- schedule:end -- Description What is this talk about? Give us as many details as possible. From Solo Mining to Poolless Mi"
     },
     {
       "number": 2,
@@ -1657,7 +1657,7 @@
           "color": "#c2185b"
         }
       ],
-      "summary": "What attendees will learn: - How Form 1099-DA works, what it reports now, and what's coming in subsequent years - The account-based methodology under Revenue Procedure 2024-28 and why most Bitcoin holders are non-compliant - How the IRS aut"
+      "summary": "<!-- schedule:start -- | Day | Date | Start | End | |---|---|---|---| | Thursday | Oct 15 | 11:15 AM | 11:30 AM | <!-- schedule:end -- What attendees will learn: - How Form 1099-DA works, what it reports now, and what's coming in subsequent"
     },
     {
       "number": 97,
@@ -1679,7 +1679,7 @@
           "color": "#0e8a16"
         }
       ],
-      "summary": "Description What is this talk about? Give us as many details as possible. A 15-minute data talk on what the public Lightning graph and the chain actually did during the cluster of 2026 client advisories and shutdowns. The story is still bei"
+      "summary": "<!-- schedule:start -- | Day | Date | Start | End | |---|---|---|---| | Thursday | Oct 15 | 11:45 AM | 12:00 PM | <!-- schedule:end -- Description What is this talk about? Give us as many details as possible. A 15-minute data talk on what t"
     },
     {
       "number": 14,
@@ -1715,7 +1715,7 @@
           "color": "#c2185b"
         }
       ],
-      "summary": "Described on Delving: https://delvingbitcoin.org/t/the-four-horsemen/2728 When comparing different coinjoin protocols, I was somewhat surprised to see that the weaknesses of any individual protocol were solvable by combining a second one."
+      "summary": "<!-- schedule:start -- | Day | Date | Start | End | |---|---|---|---| | Thursday | Oct 15 | 12:00 PM | 12:30 PM | <!-- schedule:end -- Described on Delving: https://delvingbitcoin.org/t/the-four-horsemen/2728 When comparing different coinjo"
     },
     {
       "number": 98,
@@ -1737,7 +1737,7 @@
           "color": "#0e8a16"
         }
       ],
-      "summary": "Description of talk The current Bitcoin base layer rests on consensus rules defined via a reference implementation of the Bitcoin protocol which evolved out of a mere prototype. In order to become an established, standard, mature protocol, "
+      "summary": "<!-- schedule:start -- | Day | Date | Start | End | |---|---|---|---| | Thursday | Oct 15 | 12:30 PM | 1:15 PM | <!-- schedule:end -- Description of talk The current Bitcoin base layer rests on consensus rules defined via a reference implem"
     },
     {
       "number": 17,
@@ -1773,7 +1773,7 @@
           "color": "#c2185b"
         }
       ],
-      "summary": "Beignet: Reimagining the Bitcoin Wallet Through Reckless Experimentation Beignet is a new Lightning implementation written in TypeScript, built as an environment for rapidly experimenting with ways to improve the Lightning user experience. "
+      "summary": "<!-- schedule:start -- | Day | Date | Start | End | |---|---|---|---| | Thursday | Oct 15 | 1:30 PM | 1:45 PM | <!-- schedule:end -- Beignet: Reimagining the Bitcoin Wallet Through Reckless Experimentation Beignet is a new Lightning impleme"
     },
     {
       "number": 28,
@@ -1813,7 +1813,7 @@
           "color": "#c2185b"
         }
       ],
-      "summary": "Why we do what we do and how we do it well are questions that concern me. I will talk about Neurodivergence, why its the reason I can do what I do and why its also the reason I can't. I'm not a psychologist and what I say may or may not be "
+      "summary": "<!-- schedule:start -- | Day | Date | Start | End | |---|---|---|---| | Thursday | Oct 15 | 2:00 PM | 2:15 PM | <!-- schedule:end -- Why we do what we do and how we do it well are questions that concern me. I will talk about Neurodivergence"
     },
     {
       "number": 96,
@@ -1835,7 +1835,7 @@
           "color": "#0e8a16"
         }
       ],
-      "summary": "<!-- Doing a non-interactive demo? That belongs here, not under \"Workshop Submission\". -- Description What is this talk about? Give us as many details as possible. What is the bitcoiner as a type of human, and what is the broader cultural i"
+      "summary": "<!-- schedule:start -- | Day | Date | Start | End | |---|---|---|---| | Thursday | Oct 15 | 2:30 PM | 2:45 PM | <!-- schedule:end -- <!-- Doing a non-interactive demo? That belongs here, not under \"Workshop Submission\". -- Description What "
     },
     {
       "number": 56,
@@ -1871,7 +1871,7 @@
           "color": "#c2185b"
         }
       ],
-      "summary": "Description With the recent Coldcard hack, many people found themselves using private mempools to safely recover funds; in the future, this capability may be relevant to recover quantum insecure funds as well. In this short talk we will dis"
+      "summary": "<!-- schedule:start -- | Day | Date | Start | End | |---|---|---|---| | Thursday | Oct 15 | 2:45 PM | 3:00 PM | <!-- schedule:end -- Description With the recent Coldcard hack, many people found themselves using private mempools to safely re"
     },
     {
       "number": 43,
@@ -1903,7 +1903,7 @@
           "color": "#c2185b"
         }
       ],
-      "summary": "Description What is this talk about? Give us as many details as possible. The recent Coldcard and Liquid exploits have put Bitcoin software security under renewed scrutiny. As AI makes code review and exploit prototyping cheaper, protocol t"
+      "summary": "<!-- schedule:start -- | Day | Date | Start | End | |---|---|---|---| | Thursday | Oct 15 | 3:15 PM | 3:45 PM | <!-- schedule:end -- Description What is this talk about? Give us as many details as possible. The recent Coldcard and Liquid ex"
     },
     {
       "number": 57,
@@ -1935,7 +1935,7 @@
           "color": "#c2185b"
         }
       ],
-      "summary": "Description What is this talk about? Give us as many details as possible. Various types of trees (typically as authenticated data structures) are widely used in cryptographic protocol design for: scale, privacy, and audibility. Bitcoin is n"
+      "summary": "<!-- schedule:start -- | Day | Date | Start | End | |---|---|---|---| | Thursday | Oct 15 | 4:00 PM | 4:30 PM | <!-- schedule:end -- Description What is this talk about? Give us as many details as possible. Various types of trees (typically"
     },
     {
       "number": 44,
@@ -1967,7 +1967,7 @@
           "color": "#c2185b"
         }
       ],
-      "summary": "Description I've had the fascinating experience of building my own full node implementation in just a couple of months and want to share that experience with TABconf. Questions which this helps answer: how has AI fundamentally changed softw"
+      "summary": "<!-- schedule:start -- | Day | Date | Start | End | |---|---|---|---| | Thursday | Oct 15 | 4:45 PM | 5:00 PM | <!-- schedule:end -- Description I've had the fascinating experience of building my own full node implementation in just a coupl"
     },
     {
       "number": 15,
@@ -2003,7 +2003,7 @@
           "color": "#9a1fad"
         }
       ],
-      "summary": "Date: October 14th or 15th Location: Outside the expo area, where booths will be set up Gears needed: a tripod for the camera, fast + stable internet (preferably ethernet cable, if possible), maybe some backup XLR cables just in case Purpos"
+      "summary": "<!-- schedule:start -- | Day | Date | Start | End | |---|---|---|---| | Throughout the conference | Oct 12-15 | All day | All day | <!-- schedule:end -- Date: October 14th or 15th Location: Outside the expo area, where booths will be set up"
     },
     {
       "number": 19,
@@ -2039,7 +2039,7 @@
           "color": "#9a1fad"
         }
       ],
-      "summary": "Project Job Board Description: Physical Job Board where folks looking to hire Bitcoin developer talent can make their needs known and folks looking for contract or full-time work can make their desires known. Link(s) to source Repos: Potent"
+      "summary": "<!-- schedule:start -- | Day | Date | Start | End | |---|---|---|---| | Throughout the conference | Oct 12-15 | All day | All day | <!-- schedule:end -- Project Job Board Description: Physical Job Board where folks looking to hire Bitcoin d"
     },
     {
       "number": 25,
@@ -2075,7 +2075,7 @@
           "color": "#9a1fad"
         }
       ],
-      "summary": "Last year I had a Stacker News Theme table and I wish to do the same this year. Here is a recap of our experience last year: https://stacker.news/items/1258169/r/BlokchainB This year we want to do the same thing. Have a table with Stacker N"
+      "summary": "<!-- schedule:start -- | Day | Date | Start | End | |---|---|---|---| | Throughout the conference | Oct 12-15 | All day | All day | <!-- schedule:end -- Last year I had a Stacker News Theme table and I wish to do the same this year. Here is"
     },
     {
       "number": 35,
@@ -2107,7 +2107,7 @@
           "color": "#9a1fad"
         }
       ],
-      "summary": "For the final TABConf, may I suggest the LABConf Village: a dedicated space running throughout the conference for hands-on bitcoin experimentation, collaborative learning, and building in public. At the center will be EntropyLab (https://en"
+      "summary": "<!-- schedule:start -- | Day | Date | Start | End | |---|---|---|---| | Throughout the conference | Oct 12-15 | All day | All day | <!-- schedule:end -- For the final TABConf, may I suggest the LABConf Village: a dedicated space running thr"
     },
     {
       "number": 38,
@@ -2143,7 +2143,7 @@
           "color": "#9a1fad"
         }
       ],
-      "summary": "Description The Stacker News Live Podcast did a live show at TABConf 7. This year we want to do the same thing as last year. Last year episode as a reference: https://www.youtube.com/watch?v=EdlMeJ5e48I The setup from last year was TV, Tabl"
+      "summary": "<!-- schedule:start -- | Day | Date | Start | End | |---|---|---|---| | Throughout the conference | Oct 12-15 | All day | All day | <!-- schedule:end -- Description The Stacker News Live Podcast did a live show at TABConf 7. This year we wa"
     },
     {
       "number": 51,
@@ -2175,7 +2175,7 @@
           "color": "#9a1fad"
         }
       ],
-      "summary": "Description Last year @dplusplus1024 did this: https://github.com/TABConf/7.tabconf.com/issues/21 It was fun. Since this is the last TABConf, I think we should do something equally fun. So I’ve been messing around with the idea of Lightning"
+      "summary": "<!-- schedule:start -- | Day | Date | Start | End | |---|---|---|---| | Throughout the conference | Oct 12-15 | All day | All day | <!-- schedule:end -- Description Last year @dplusplus1024 did this: https://github.com/TABConf/7.tabconf.com"
     },
     {
       "number": 54,
@@ -2211,7 +2211,7 @@
           "color": "#9a1fad"
         }
       ],
-      "summary": "Description: Bitcoin Data Labs (https://bitcoindatalabs.org) is an open-source non-profit building public analytical infrastructure, network visualizers, and data engines for the Bitcoin and Lightning ecosystems. At Builder Days, we will ho"
+      "summary": "<!-- schedule:start -- | Day | Date | Start | End | |---|---|---|---| | Throughout the conference | Oct 12-15 | All day | All day | <!-- schedule:end -- Description: Bitcoin Data Labs (https://bitcoindatalabs.org) is an open-source non-prof"
     },
     {
       "number": 68,
@@ -2247,7 +2247,7 @@
           "color": "#9a1fad"
         }
       ],
-      "summary": "<!-- All software-based projects submitted must be open source and freely available for public use -- Proof Of Print Description: Proof Of Print integrates bitcoin mining into equipment that already requires electric heat. We will demonstra"
+      "summary": "<!-- schedule:start -- | Day | Date | Start | End | |---|---|---|---| | Throughout the conference | Oct 12-15 | All day | All day | <!-- schedule:end -- <!-- All software-based projects submitted must be open source and freely available for"
     },
     {
       "number": 77,
@@ -2279,7 +2279,7 @@
           "color": "#9a1fad"
         }
       ],
-      "summary": "GoldenPie — a playable Lightning arcade booth Dates: October 14-15 (conference days — I can't make Builder Days, so this is an Expo-area booth rather than a Builder Days table) Location: Expo area / wherever booths are set up Format: Walk-u"
+      "summary": "<!-- schedule:start -- | Day | Date | Start | End | |---|---|---|---| | Throughout the conference | Oct 12-15 | All day | All day | <!-- schedule:end -- GoldenPie — a playable Lightning arcade booth Dates: October 14-15 (conference days — I"
     }
   ]
 }
