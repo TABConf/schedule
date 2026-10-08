@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-08T16:37:50.142Z",
+  "generatedAt": "2026-10-08T16:40:36.153Z",
   "event": {
     "name": "TABConf 8",
     "start": "2026-10-12",
@@ -1131,7 +1131,7 @@
     },
     {
       "number": 91,
-      "title": "Fireside Chat: What the heck has Carl Dong been up to? [DRAFT]",
+      "title": "Fireside Chat: What the heck has Carl Dong been up to?",
       "url": "https://github.com/TABConf/8.tabconf.com/issues/91",
       "date": "2026-10-14",
       "start": "11:15 AM",
@@ -1153,7 +1153,7 @@
           "color": "#c2185b"
         }
       ],
-      "summary": "Description What is this panel discussion about? Will there be multiple talking points? What would an attendee learn from this panel? Is there anything folks should read up on before they attend? Relevant Links Moderator: Panelists: Who wil"
+      "summary": "Description A fireside chat with Carl Dong, longtime Bitcoin Core contributor, now building Obscura. What he has been up to, and where he thinks privacy tooling for Bitcoiners goes next. Moderator: Michael Tidwell (GitHub: miketwenty1) Gues"
     },
     {
       "number": 82,
@@ -1419,7 +1419,7 @@
     },
     {
       "number": 90,
-      "title": "The Early Closing Ceremony - Reminiscing 10 years of TAB [DRAFT]",
+      "title": "The Early Closing Ceremony: Reminiscing 10 years of TAB",
       "url": "https://github.com/TABConf/8.tabconf.com/issues/90",
       "date": "2026-10-14",
       "start": "4:00 PM",
@@ -1441,7 +1441,7 @@
           "color": "#c2185b"
         }
       ],
-      "summary": "Description What is this panel discussion about? Will there be multiple talking points? What would an attendee learn from this panel? Is there anything folks should read up on before they attend? Relevant Links Moderator: Panelists: Who wil"
+      "summary": "Description TABConf's early closing ceremony, held on Wednesday so as many people as possible are still in the room. Thursday runs a full day afterwards. A look back at 10 years of TAB. Host: Michael Tidwell (GitHub: miketwenty1) Details Le"
     },
     {
       "number": 93,
