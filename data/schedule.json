@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-08T22:29:26.671Z",
+  "generatedAt": "2026-10-08T22:39:37.201Z",
   "event": {
     "name": "TABConf 8",
     "start": "2026-10-12",
@@ -523,10 +523,6 @@
         {
           "name": "Accepted",
           "color": "#0e8a16"
-        },
-        {
-          "name": "Under Consideration",
-          "color": "#b60205"
         },
         {
           "name": "Workshop",
@@ -1221,6 +1217,10 @@
         {
           "name": "Accepted",
           "color": "#0e8a16"
+        },
+        {
+          "name": "Panel or Debate",
+          "color": "#935478"
         },
         {
           "name": "main stage",
