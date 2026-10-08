@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-07T23:59:06.106Z",
+  "generatedAt": "2026-10-08T00:00:00.793Z",
   "event": {
     "name": "TABConf 8",
     "start": "2026-10-12",
@@ -7,9 +7,9 @@
     "venue": "Georgia Tech Exhibition Hall, Atlanta"
   },
   "counts": {
-    "total": 66,
+    "total": 69,
     "scheduled": 56,
-    "unscheduled": 0,
+    "unscheduled": 3,
     "floor": 10,
     "stageMinutes": 2190
   },
@@ -2192,6 +2192,72 @@
         }
       ],
       "summary": "GoldenPie — a playable Lightning arcade booth Dates: October 14-15 (conference days — I can't make Builder Days, so this is an Expo-area booth rather than a Builder Days table) Location: Expo area / wherever booths are set up Format: Walk-u"
+    },
+    {
+      "number": 96,
+      "title": "Bitcoiners are Gay Moralists who need Nietzsche",
+      "url": "https://github.com/TABConf/8.tabconf.com/issues/96",
+      "date": "",
+      "start": "",
+      "end": "",
+      "startMin": null,
+      "endMin": null,
+      "durationMin": null,
+      "track": "stage",
+      "room": "Main stage",
+      "roomFromLabel": false,
+      "speakers": [],
+      "labels": [
+        {
+          "name": "Accepted",
+          "color": "#0e8a16"
+        }
+      ],
+      "summary": "<!-- Doing a non-interactive demo? That belongs here, not under \"Workshop Submission\". -- Description What is this talk about? Give us as many details as possible. What is the bitcoiner as a type of human, and what is the broader cultural i"
+    },
+    {
+      "number": 97,
+      "title": "Lightning over the Summer, by the Numbers",
+      "url": "https://github.com/TABConf/8.tabconf.com/issues/97",
+      "date": "",
+      "start": "",
+      "end": "",
+      "startMin": null,
+      "endMin": null,
+      "durationMin": null,
+      "track": "stage",
+      "room": "Main stage",
+      "roomFromLabel": false,
+      "speakers": [],
+      "labels": [
+        {
+          "name": "Accepted",
+          "color": "#0e8a16"
+        }
+      ],
+      "summary": "Description What is this talk about? Give us as many details as possible. A 15-minute data talk on what the public Lightning graph and the chain actually did during the cluster of 2026 client advisories and shutdowns. The story is still bei"
+    },
+    {
+      "number": 98,
+      "title": "Hornet: A minimal, executable specification of Bitcoin consensus rules",
+      "url": "https://github.com/TABConf/8.tabconf.com/issues/98",
+      "date": "",
+      "start": "",
+      "end": "",
+      "startMin": null,
+      "endMin": null,
+      "durationMin": null,
+      "track": "stage",
+      "room": "Main stage",
+      "roomFromLabel": false,
+      "speakers": [],
+      "labels": [
+        {
+          "name": "Accepted",
+          "color": "#0e8a16"
+        }
+      ],
+      "summary": "Description of talk The current Bitcoin base layer rests on consensus rules currently only defined in a reference implementation of the Bitcoin protocol which evolved out of a mere prototype. In order to fully become an established, standar"
     }
   ]
 }
