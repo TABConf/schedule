@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-08T15:14:35.427Z",
+  "generatedAt": "2026-10-08T15:20:11.714Z",
   "event": {
     "name": "TABConf 8",
     "start": "2026-10-12",
@@ -7,11 +7,11 @@
     "venue": "Georgia Tech Exhibition Hall, Atlanta"
   },
   "counts": {
-    "total": 69,
-    "scheduled": 59,
+    "total": 70,
+    "scheduled": 60,
     "unscheduled": 0,
     "floor": 10,
-    "stageMinutes": 2265
+    "stageMinutes": 2280
   },
   "clashes": [],
   "sessions": [
@@ -114,6 +114,28 @@
         }
       ],
       "summary": "<!-- Doing a non-interactive demo? That belongs here, not under \"Workshop Submission\". -- Description What is this talk about? For most Bitcoin devs, libsecp256k1 is kind of a black box that we just put numbers into to use the wonders of ma"
+    },
+    {
+      "number": 52,
+      "title": "Beyond Zaps: Building Bitcoin Infrastructure on NOSTR",
+      "url": "https://github.com/TABConf/8.tabconf.com/issues/52",
+      "date": "2026-10-12",
+      "start": "12:30 PM",
+      "end": "12:45 PM",
+      "startMin": 750,
+      "endMin": 765,
+      "durationMin": 15,
+      "track": "stage",
+      "room": "Main stage",
+      "roomFromLabel": false,
+      "speakers": [],
+      "labels": [
+        {
+          "name": "Accepted",
+          "color": "#0e8a16"
+        }
+      ],
+      "summary": "<!-- Doing a non-interactive demo? That belongs here, not under \"Workshop Submission\". -- Description What is this talk about? Give us as many details as possible. Beyond Zaps: Building Bitcoin Infrastructure on NOSTR This session presents "
     },
     {
       "number": 45,
