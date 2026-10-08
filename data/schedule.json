@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-08T00:00:00.793Z",
+  "generatedAt": "2026-10-08T00:09:41.395Z",
   "event": {
     "name": "TABConf 8",
     "start": "2026-10-12",
@@ -8,10 +8,10 @@
   },
   "counts": {
     "total": 69,
-    "scheduled": 56,
-    "unscheduled": 3,
+    "scheduled": 59,
+    "unscheduled": 0,
     "floor": 10,
-    "stageMinutes": 2190
+    "stageMinutes": 2265
   },
   "clashes": [],
   "sessions": [
@@ -1638,6 +1638,28 @@
       "summary": "What attendees will learn: - How Form 1099-DA works, what it reports now, and what's coming in subsequent years - The account-based methodology under Revenue Procedure 2024-28 and why most Bitcoin holders are non-compliant - How the IRS aut"
     },
     {
+      "number": 97,
+      "title": "Lightning over the Summer, by the Numbers",
+      "url": "https://github.com/TABConf/8.tabconf.com/issues/97",
+      "date": "2026-10-15",
+      "start": "11:45 AM",
+      "end": "12:00 PM",
+      "startMin": 705,
+      "endMin": 720,
+      "durationMin": 15,
+      "track": "stage",
+      "room": "Main stage",
+      "roomFromLabel": false,
+      "speakers": [],
+      "labels": [
+        {
+          "name": "Accepted",
+          "color": "#0e8a16"
+        }
+      ],
+      "summary": "Description What is this talk about? Give us as many details as possible. A 15-minute data talk on what the public Lightning graph and the chain actually did during the cluster of 2026 client advisories and shutdowns. The story is still bei"
+    },
+    {
       "number": 14,
       "title": "Talk: The Black Hole",
       "url": "https://github.com/TABConf/8.tabconf.com/issues/14",
@@ -1672,6 +1694,28 @@
         }
       ],
       "summary": "Described on Delving: https://delvingbitcoin.org/t/the-four-horsemen/2728 When comparing different coinjoin protocols, I was somewhat surprised to see that the weaknesses of any individual protocol were solvable by combining a second one."
+    },
+    {
+      "number": 98,
+      "title": "Hornet: A minimal, executable specification of Bitcoin consensus rules",
+      "url": "https://github.com/TABConf/8.tabconf.com/issues/98",
+      "date": "2026-10-15",
+      "start": "12:30 PM",
+      "end": "1:15 PM",
+      "startMin": 750,
+      "endMin": 795,
+      "durationMin": 45,
+      "track": "stage",
+      "room": "Main stage",
+      "roomFromLabel": false,
+      "speakers": [],
+      "labels": [
+        {
+          "name": "Accepted",
+          "color": "#0e8a16"
+        }
+      ],
+      "summary": "Description of talk The current Bitcoin base layer rests on consensus rules defined via a reference implementation of the Bitcoin protocol which evolved out of a mere prototype. In order to become an established, standard, mature protocol, "
     },
     {
       "number": 17,
@@ -1748,6 +1792,28 @@
         }
       ],
       "summary": "Why we do what we do and how we do it well are questions that concern me. I will talk about Neurodivergence, why its the reason I can do what I do and why its also the reason I can't. I'm not a psychologist and what I say may or may not be "
+    },
+    {
+      "number": 96,
+      "title": "Bitcoiners are Gay Moralists who need Nietzsche",
+      "url": "https://github.com/TABConf/8.tabconf.com/issues/96",
+      "date": "2026-10-15",
+      "start": "2:30 PM",
+      "end": "2:45 PM",
+      "startMin": 870,
+      "endMin": 885,
+      "durationMin": 15,
+      "track": "stage",
+      "room": "Main stage",
+      "roomFromLabel": false,
+      "speakers": [],
+      "labels": [
+        {
+          "name": "Accepted",
+          "color": "#0e8a16"
+        }
+      ],
+      "summary": "<!-- Doing a non-interactive demo? That belongs here, not under \"Workshop Submission\". -- Description What is this talk about? Give us as many details as possible. What is the bitcoiner as a type of human, and what is the broader cultural i"
     },
     {
       "number": 56,
@@ -2192,72 +2258,6 @@
         }
       ],
       "summary": "GoldenPie — a playable Lightning arcade booth Dates: October 14-15 (conference days — I can't make Builder Days, so this is an Expo-area booth rather than a Builder Days table) Location: Expo area / wherever booths are set up Format: Walk-u"
-    },
-    {
-      "number": 96,
-      "title": "Bitcoiners are Gay Moralists who need Nietzsche",
-      "url": "https://github.com/TABConf/8.tabconf.com/issues/96",
-      "date": "",
-      "start": "",
-      "end": "",
-      "startMin": null,
-      "endMin": null,
-      "durationMin": null,
-      "track": "stage",
-      "room": "Main stage",
-      "roomFromLabel": false,
-      "speakers": [],
-      "labels": [
-        {
-          "name": "Accepted",
-          "color": "#0e8a16"
-        }
-      ],
-      "summary": "<!-- Doing a non-interactive demo? That belongs here, not under \"Workshop Submission\". -- Description What is this talk about? Give us as many details as possible. What is the bitcoiner as a type of human, and what is the broader cultural i"
-    },
-    {
-      "number": 97,
-      "title": "Lightning over the Summer, by the Numbers",
-      "url": "https://github.com/TABConf/8.tabconf.com/issues/97",
-      "date": "",
-      "start": "",
-      "end": "",
-      "startMin": null,
-      "endMin": null,
-      "durationMin": null,
-      "track": "stage",
-      "room": "Main stage",
-      "roomFromLabel": false,
-      "speakers": [],
-      "labels": [
-        {
-          "name": "Accepted",
-          "color": "#0e8a16"
-        }
-      ],
-      "summary": "Description What is this talk about? Give us as many details as possible. A 15-minute data talk on what the public Lightning graph and the chain actually did during the cluster of 2026 client advisories and shutdowns. The story is still bei"
-    },
-    {
-      "number": 98,
-      "title": "Hornet: A minimal, executable specification of Bitcoin consensus rules",
-      "url": "https://github.com/TABConf/8.tabconf.com/issues/98",
-      "date": "",
-      "start": "",
-      "end": "",
-      "startMin": null,
-      "endMin": null,
-      "durationMin": null,
-      "track": "stage",
-      "room": "Main stage",
-      "roomFromLabel": false,
-      "speakers": [],
-      "labels": [
-        {
-          "name": "Accepted",
-          "color": "#0e8a16"
-        }
-      ],
-      "summary": "Description of talk The current Bitcoin base layer rests on consensus rules currently only defined in a reference implementation of the Bitcoin protocol which evolved out of a mere prototype. In order to fully become an established, standar"
     }
   ]
 }
