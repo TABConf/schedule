@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-08T16:40:36.153Z",
+  "generatedAt": "2026-10-08T19:00:13.942Z",
   "event": {
     "name": "TABConf 8",
     "start": "2026-10-12",
@@ -7,11 +7,11 @@
     "venue": "Georgia Tech Exhibition Hall, Atlanta"
   },
   "counts": {
-    "total": 70,
-    "scheduled": 60,
+    "total": 71,
+    "scheduled": 61,
     "unscheduled": 0,
     "floor": 10,
-    "stageMinutes": 2295
+    "stageMinutes": 2310
   },
   "clashes": [],
   "sessions": [
@@ -82,6 +82,28 @@
         }
       ],
       "summary": "Description What is this talk about? Give us as many details as possible. Writing Bitcoin wallet logic in Rust gives you correctness, memory safety, and battle-tested cryptographic primitives. But when you need to ship a mobile wallet, that"
+    },
+    {
+      "number": 46,
+      "title": "A New Centre of Gravity: Bitcoin Open Source Development in the Global South",
+      "url": "https://github.com/TABConf/8.tabconf.com/issues/46",
+      "date": "2026-10-12",
+      "start": "11:45 AM",
+      "end": "12:00 PM",
+      "startMin": 705,
+      "endMin": 720,
+      "durationMin": 15,
+      "track": "stage",
+      "room": "Main stage",
+      "roomFromLabel": false,
+      "speakers": [],
+      "labels": [
+        {
+          "name": "Accepted",
+          "color": "#0e8a16"
+        }
+      ],
+      "summary": "Description What is this talk about? Give us as many details as possible. Bitcoin open source development is becoming more geographically decentralized not simply because developers from the Global South are contributing to existing project"
     },
     {
       "number": 49,
