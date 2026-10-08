@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-08T19:54:06.502Z",
+  "generatedAt": "2026-10-08T22:25:50.670Z",
   "event": {
     "name": "TABConf 8",
     "start": "2026-10-12",
@@ -7,10 +7,10 @@
     "venue": "Georgia Tech Exhibition Hall, Atlanta"
   },
   "counts": {
-    "total": 72,
+    "total": 73,
     "scheduled": 62,
     "unscheduled": 0,
-    "floor": 10,
+    "floor": 11,
     "stageMinutes": 2340
   },
   "clashes": [],
@@ -2324,6 +2324,36 @@
         }
       ],
       "summary": "GoldenPie — a playable Lightning arcade booth Dates: October 14-15 (conference days — I can't make Builder Days, so this is an Expo-area booth rather than a Builder Days table) Location: Expo area / wherever booths are set up Format: Walk-u"
+    },
+    {
+      "number": 99,
+      "title": "Builder Days Project: Self-Sovereign Identity with did:btcr2 and Rolohex",
+      "url": "https://github.com/TABConf/8.tabconf.com/issues/99",
+      "date": "",
+      "start": "",
+      "end": "",
+      "startMin": null,
+      "endMin": null,
+      "durationMin": null,
+      "track": "floor",
+      "room": "Expo floor",
+      "roomFromLabel": false,
+      "speakers": [],
+      "labels": [
+        {
+          "name": "Accepted",
+          "color": "#0e8a16"
+        },
+        {
+          "name": "Builders Day Project",
+          "color": "#241929"
+        },
+        {
+          "name": "floor space",
+          "color": "#9a1fad"
+        }
+      ],
+      "summary": "Project Self-Sovereign Identity with did:btcr2 and Rolohex Description: Rather than tying your identity to the chip in your phone or your account with a major tech provider, self-sovereign identity (SSI) makes you the direct owner of your d"
     }
   ]
 }
