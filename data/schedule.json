@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-08T19:20:43.190Z",
+  "generatedAt": "2026-10-08T19:52:54.592Z",
   "event": {
     "name": "TABConf 8",
     "start": "2026-10-12",
@@ -7,11 +7,11 @@
     "venue": "Georgia Tech Exhibition Hall, Atlanta"
   },
   "counts": {
-    "total": 71,
-    "scheduled": 61,
+    "total": 72,
+    "scheduled": 62,
     "unscheduled": 0,
     "floor": 10,
-    "stageMinutes": 2310
+    "stageMinutes": 2340
   },
   "clashes": [],
   "sessions": [
@@ -1554,6 +1554,28 @@
         }
       ],
       "summary": "Details TBD Description What is this talk about? Give us as many details as possible. What would an attendee learn from this talk? Is there anything folks should read up on before they attend this talk? Relevant Links About the Speaker Soci"
+    },
+    {
+      "number": 60,
+      "title": "Self-Hosting Without Being a Tech Expert",
+      "url": "https://github.com/TABConf/8.tabconf.com/issues/60",
+      "date": "2026-10-15",
+      "start": "9:15 AM",
+      "end": "9:45 AM",
+      "startMin": 555,
+      "endMin": 585,
+      "durationMin": 30,
+      "track": "stage",
+      "room": "Main stage",
+      "roomFromLabel": false,
+      "speakers": [],
+      "labels": [
+        {
+          "name": "Accepted",
+          "color": "#0e8a16"
+        }
+      ],
+      "summary": "Description What is this talk about? Give us as many details as possible. This will be a practical talk about one of the main barriers to self-sovereignty beyond running a bitcoin node: running useful infrastructure yourself is still too ha"
     },
     {
       "number": 50,
