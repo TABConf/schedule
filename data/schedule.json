@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-08T22:25:50.670Z",
+  "generatedAt": "2026-10-08T22:29:26.671Z",
   "event": {
     "name": "TABConf 8",
     "start": "2026-10-12",
@@ -77,6 +77,10 @@
           "color": "#0e8a16"
         },
         {
+          "name": "Talk or Demo",
+          "color": "#87a876"
+        },
+        {
           "name": "main stage",
           "color": "#c2185b"
         }
@@ -101,6 +105,10 @@
         {
           "name": "Accepted",
           "color": "#0e8a16"
+        },
+        {
+          "name": "Talk or Demo",
+          "color": "#87a876"
         }
       ],
       "summary": "Description What is this talk about? Give us as many details as possible. Bitcoin open source development is becoming more geographically decentralized not simply because developers from the Global South are contributing to existing project"
@@ -131,6 +139,10 @@
           "color": "#0e8a16"
         },
         {
+          "name": "Talk or Demo",
+          "color": "#87a876"
+        },
+        {
           "name": "main stage",
           "color": "#c2185b"
         }
@@ -155,6 +167,10 @@
         {
           "name": "Accepted",
           "color": "#0e8a16"
+        },
+        {
+          "name": "Talk or Demo",
+          "color": "#87a876"
         }
       ],
       "summary": "Description What is this talk about? Give us as many details as possible. Beyond Zaps: Building Bitcoin Infrastructure on NOSTR This session presents a practical application of NOSTR for managing physical machines that accept cash and dispe"
@@ -183,6 +199,10 @@
         {
           "name": "Accepted",
           "color": "#0e8a16"
+        },
+        {
+          "name": "Talk or Demo",
+          "color": "#87a876"
         },
         {
           "name": "hacker room",
@@ -469,6 +489,10 @@
           "color": "#0e8a16"
         },
         {
+          "name": "Workshop",
+          "color": "#7a69e2"
+        },
+        {
           "name": "hacker room",
           "color": "#00acc1"
         }
@@ -607,6 +631,10 @@
           "color": "#0e8a16"
         },
         {
+          "name": "Talk or Demo",
+          "color": "#87a876"
+        },
+        {
           "name": "hacker room",
           "color": "#00acc1"
         }
@@ -637,6 +665,10 @@
         {
           "name": "Accepted",
           "color": "#0e8a16"
+        },
+        {
+          "name": "Talk or Demo",
+          "color": "#87a876"
         },
         {
           "name": "hacker room",
@@ -743,6 +775,10 @@
           "color": "#0e8a16"
         },
         {
+          "name": "Talk or Demo",
+          "color": "#87a876"
+        },
+        {
           "name": "hacker room",
           "color": "#00acc1"
         }
@@ -809,6 +845,10 @@
         {
           "name": "Accepted",
           "color": "#0e8a16"
+        },
+        {
+          "name": "Talk or Demo",
+          "color": "#87a876"
         },
         {
           "name": "main stage",
@@ -913,6 +953,10 @@
         {
           "name": "Accepted",
           "color": "#0e8a16"
+        },
+        {
+          "name": "Talk or Demo",
+          "color": "#87a876"
         },
         {
           "name": "hacker room",
@@ -1047,6 +1091,10 @@
           "color": "#0e8a16"
         },
         {
+          "name": "Talk or Demo",
+          "color": "#87a876"
+        },
+        {
           "name": "main stage",
           "color": "#c2185b"
         }
@@ -1145,6 +1193,10 @@
           "color": "#0e8a16"
         },
         {
+          "name": "Talk or Demo",
+          "color": "#87a876"
+        },
+        {
           "name": "main stage",
           "color": "#c2185b"
         }
@@ -1223,6 +1275,10 @@
           "color": "#0e8a16"
         },
         {
+          "name": "Debate",
+          "color": "#5319e7"
+        },
+        {
           "name": "Panel or Debate",
           "color": "#935478"
         },
@@ -1277,6 +1333,10 @@
         {
           "name": "Accepted",
           "color": "#0e8a16"
+        },
+        {
+          "name": "Panel or Debate",
+          "color": "#935478"
         },
         {
           "name": "main stage",
@@ -1365,6 +1425,10 @@
         {
           "name": "Accepted",
           "color": "#0e8a16"
+        },
+        {
+          "name": "Panel or Debate",
+          "color": "#935478"
         },
         {
           "name": "main stage",
@@ -1523,6 +1587,10 @@
           "color": "#0e8a16"
         },
         {
+          "name": "Talk or Demo",
+          "color": "#87a876"
+        },
+        {
           "name": "main stage",
           "color": "#c2185b"
         }
@@ -1581,6 +1649,10 @@
           "color": "#0e8a16"
         },
         {
+          "name": "Panel or Debate",
+          "color": "#935478"
+        },
+        {
           "name": "main stage",
           "color": "#c2185b"
         }
@@ -1637,6 +1709,10 @@
         {
           "name": "Accepted",
           "color": "#0e8a16"
+        },
+        {
+          "name": "Talk or Demo",
+          "color": "#87a876"
         },
         {
           "name": "main stage",
@@ -1699,6 +1775,10 @@
         {
           "name": "Accepted",
           "color": "#0e8a16"
+        },
+        {
+          "name": "Talk or Demo",
+          "color": "#87a876"
         }
       ],
       "summary": "Description What is this talk about? Give us as many details as possible. This will be a practical talk about one of the main barriers to self-sovereignty beyond running a bitcoin node: running useful infrastructure yourself is still too ha"
@@ -1721,6 +1801,10 @@
         {
           "name": "Accepted",
           "color": "#0e8a16"
+        },
+        {
+          "name": "Talk or Demo",
+          "color": "#87a876"
         }
       ],
       "summary": "Description What is this talk about? Give us as many details as possible. A 15-minute data talk on what the public Lightning graph and the chain actually did during the cluster of 2026 client advisories and shutdowns. The story is still bei"
@@ -1779,6 +1863,10 @@
         {
           "name": "Accepted",
           "color": "#0e8a16"
+        },
+        {
+          "name": "Talk or Demo",
+          "color": "#87a876"
         }
       ],
       "summary": "Description of talk The current Bitcoin base layer rests on consensus rules defined via a reference implementation of the Bitcoin protocol which evolved out of a mere prototype. In order to become an established, standard, mature protocol, "
@@ -1877,6 +1965,10 @@
         {
           "name": "Accepted",
           "color": "#0e8a16"
+        },
+        {
+          "name": "Talk or Demo",
+          "color": "#87a876"
         }
       ],
       "summary": "Description What is this talk about? Give us as many details as possible. What is the bitcoiner as a type of human, and what is the broader cultural influence shaping his style of thinking as to moral imperatives of \"good\" and \"bad\"? How do"
@@ -1943,6 +2035,10 @@
           "color": "#0e8a16"
         },
         {
+          "name": "Talk or Demo",
+          "color": "#87a876"
+        },
+        {
           "name": "main stage",
           "color": "#c2185b"
         }
@@ -1975,6 +2071,10 @@
           "color": "#0e8a16"
         },
         {
+          "name": "Talk or Demo",
+          "color": "#87a876"
+        },
+        {
           "name": "main stage",
           "color": "#c2185b"
         }
@@ -2005,6 +2105,10 @@
         {
           "name": "Accepted",
           "color": "#0e8a16"
+        },
+        {
+          "name": "Talk or Demo",
+          "color": "#87a876"
         },
         {
           "name": "main stage",
