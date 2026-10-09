@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-09T04:34:08.703Z",
+  "generatedAt": "2026-10-09T05:32:50.009Z",
   "event": {
     "name": "TABConf 8",
     "start": "2026-10-12",
@@ -7,11 +7,11 @@
     "venue": "Georgia Tech Exhibition Hall, Atlanta"
   },
   "counts": {
-    "total": 76,
-    "scheduled": 65,
+    "total": 77,
+    "scheduled": 66,
     "unscheduled": 0,
     "floor": 11,
-    "stageMinutes": 2520
+    "stageMinutes": 2550
   },
   "clashes": [
     "2026-10-15 | BitLab Village: #20 overlaps #84"
@@ -1518,6 +1518,28 @@
         }
       ],
       "summary": "Description AI agents are great right up until you shut your laptop. [Kettle](https://kettle.bot) gives your Buzz agents a server of their own that keeps them running day and night, powered by the Claude, Codex, or Grok plan you already pay"
+    },
+    {
+      "number": 100,
+      "title": "Shielded Bitcoin Payments at Planetary Scale",
+      "url": "https://github.com/TABConf/8.tabconf.com/issues/100",
+      "date": "2026-10-14",
+      "start": "3:30 PM",
+      "end": "4:00 PM",
+      "startMin": 930,
+      "endMin": 960,
+      "durationMin": 30,
+      "track": "stage",
+      "room": "Main stage",
+      "roomFromLabel": false,
+      "speakers": [],
+      "labels": [
+        {
+          "name": "Accepted",
+          "color": "#0e8a16"
+        }
+      ],
+      "summary": "Description What is this talk about? Give us as many details as possible. Bitcoin can achieve nearly Visa-level payment throughput without a consensus change. Starting from Shielded CSV’s 100 Tx/s, nullifier aggregation increases throughput"
     },
     {
       "number": 21,
