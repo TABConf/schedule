@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-09T17:04:28.477Z",
+  "generatedAt": "2026-10-09T17:15:37.521Z",
   "event": {
     "name": "TABConf 8",
     "start": "2026-10-12",
@@ -7,11 +7,11 @@
     "venue": "Georgia Tech Exhibition Hall, Atlanta"
   },
   "counts": {
-    "total": 77,
-    "scheduled": 66,
+    "total": 76,
+    "scheduled": 65,
     "unscheduled": 0,
     "floor": 11,
-    "stageMinutes": 2550
+    "stageMinutes": 2535
   },
   "clashes": [
     "2026-10-15 | BitLab Village: #20 overlaps #84"
@@ -1804,42 +1804,6 @@
         }
       ],
       "summary": "Description What is this talk about? Give us as many details as possible. From Solo Mining to Poolless Mining: The Evolution of Bitcoin Mining Protocols Bitcoin mining began with miners constructing their own blocks and mining directly agai"
-    },
-    {
-      "number": 2,
-      "title": "The Compliance Era: How Tax Reporting Infrastructure & Policy Are Reshaping Bitcoin Markets",
-      "url": "https://github.com/TABConf/8.tabconf.com/issues/2",
-      "date": "2026-10-15",
-      "start": "11:00 AM",
-      "end": "11:15 AM",
-      "startMin": 660,
-      "endMin": 675,
-      "durationMin": 15,
-      "track": "stage",
-      "room": "Main stage",
-      "roomFromLabel": true,
-      "speakers": [
-        {
-          "login": "PatrickCamusoCPA",
-          "name": "",
-          "avatarUrl": "https://avatars.githubusercontent.com/u/176228033?v=4"
-        }
-      ],
-      "labels": [
-        {
-          "name": "Accepted",
-          "color": "#0e8a16"
-        },
-        {
-          "name": "Talk or Demo",
-          "color": "#87a876"
-        },
-        {
-          "name": "main stage",
-          "color": "#c2185b"
-        }
-      ],
-      "summary": "What attendees will learn: - How Form 1099-DA works, what it reports now, and what's coming in subsequent years - The account-based methodology under Revenue Procedure 2024-28 and why most Bitcoin holders are non-compliant - How the IRS aut"
     },
     {
       "number": 20,
