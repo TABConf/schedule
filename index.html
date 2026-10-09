@@ -10,7 +10,7 @@
 :root{
   color-scheme: light dark;
   --bg:#faf8f5; --card:#fff; --ink:#161615; --muted:#6c6862;
-  --line:#e6e1d9; --accent:#c2410c; --accent-soft:#fdf1e7;
+  --line:#e6e1d9; --card-edge:#cfc7ba; --accent:#c2410c; --accent-soft:#fdf1e7;
   --allday:#0f766e; --allday-soft:#e6f4f1;
   --mono:ui-monospace,SFMono-Regular,"SF Mono",Menlo,monospace;
   --sans:-apple-system,BlinkMacSystemFont,"Segoe UI",system-ui,sans-serif;
@@ -18,7 +18,7 @@
 @media (prefers-color-scheme:dark){
   :root:not([data-theme=light]){
     --bg:#14131a; --card:#1d1c24; --ink:#eceaf0; --muted:#9b97a6;
-    --line:#2f2d3a; --accent:#fb923c; --accent-soft:#2a1d14;
+    --line:#2f2d3a; --card-edge:#5a5668; --accent:#fb923c; --accent-soft:#2a1d14;
     --allday:#5eead4; --allday-soft:#14302c;
   }
 }
@@ -94,7 +94,7 @@ input[type=search]:focus{outline:2px solid var(--accent);outline-offset:-1px}
 /* Two room days. One column per room, so a reader can see what is on opposite
    a session rather than inferring it from a Location column. */
 .gridwrap{overflow-x:auto}
-.grid-rooms{table-layout:fixed;min-width:560px}
+.grid-rooms{table-layout:fixed;min-width:560px;border-collapse:separate;border-spacing:0 6px}
 .grid-rooms .c-room{width:auto;vertical-align:top}
 .grid-rooms thead .c-room{color:var(--accent);font-size:11px}
 .grid-rooms .c-time{width:92px}
@@ -123,7 +123,7 @@ input[type=search]:focus{outline:2px solid var(--accent);outline-offset:-1px}
 .grid-rooms td.c-room:empty::after{content:"";display:block}
 .grid-rooms td.c-room{padding:0 4px;border-bottom:none}
 .grid-rooms td.c-time{border-bottom:none;font-size:11.5px;color:var(--muted)}
-.grid-rooms td.span{background:var(--accent-soft);border:1px solid var(--line);border-left:3px solid var(--accent);border-radius:6px;padding:6px 9px;vertical-align:top}
+.grid-rooms td.span{background:var(--accent-soft);border:1px solid var(--card-edge);border-left:3px solid var(--accent);border-radius:6px;padding:6px 9px;vertical-align:top;box-shadow:0 1px 3px rgba(0,0,0,.28)}
 .grid-rooms tbody tr:hover td{background:inherit}
 .grid-rooms tbody tr:hover td.span{background:var(--accent-soft)}
 
