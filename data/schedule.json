@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-09T20:27:36.690Z",
+  "generatedAt": "2026-10-09T21:54:15.551Z",
   "event": {
     "name": "TABConf 8",
     "start": "2026-10-12",
@@ -11,7 +11,7 @@
     "scheduled": 65,
     "unscheduled": 0,
     "floor": 11,
-    "stageMinutes": 2535
+    "stageMinutes": 2565
   },
   "clashes": [
     "2026-10-15 | BitLab Village: #20 overlaps #84"
@@ -640,6 +640,42 @@
       "summary": "Description What is this talk about? Give us as many details as possible. This talk will be about Shielded Bitcoin, a protocol for private transfer of Bitcoin directly on the Bitcoin L1, requiring no changes to Bitcoin consensus. Its design"
     },
     {
+      "number": 76,
+      "title": "Covenant Vault Designs",
+      "url": "https://github.com/TABConf/8.tabconf.com/issues/76",
+      "date": "2026-10-13",
+      "start": "12:15 PM",
+      "end": "12:30 PM",
+      "startMin": 735,
+      "endMin": 750,
+      "durationMin": 15,
+      "track": "stage",
+      "room": "Hacker room",
+      "roomFromLabel": true,
+      "speakers": [
+        {
+          "login": "PraneethGunas",
+          "name": "Praneeth G",
+          "avatarUrl": "https://avatars.githubusercontent.com/u/38702642?v=4"
+        }
+      ],
+      "labels": [
+        {
+          "name": "Accepted",
+          "color": "#0e8a16"
+        },
+        {
+          "name": "Talk or Demo",
+          "color": "#87a876"
+        },
+        {
+          "name": "hacker room",
+          "color": "#00acc1"
+        }
+      ],
+      "summary": "What is this talk about? Give us as many details as possible. This talk covers Bitcoin Möser-Eyal-Sirer type vaults, the different ways to construct such vaults using covenants, and the tradeoffs across the four covenant proposals CTV, CCV,"
+    },
+    {
       "number": 73,
       "title": "Rose: A stateless light wallet for businesses: private by construction, attested at runtime",
       "url": "https://github.com/TABConf/8.tabconf.com/issues/73",
@@ -676,23 +712,23 @@
       "summary": "Description This talk introduces Rose, an open-source light wallet for self-custody and e-commerce. Rose exposes Bitcoin Core's RPC dialect, so existing payment integrations work unchanged. Unlike Electrum- and Esplora-backed wallets, Rose "
     },
     {
-      "number": 26,
-      "title": "Workshop DuraShare: create, audit and recover a Shamir backup using software and manually (pen, paper and calculator)",
-      "url": "https://github.com/TABConf/8.tabconf.com/issues/26",
+      "number": 31,
+      "title": "You Can’t Fix What You Can’t See: Monitoring the Bitcoin Network",
+      "url": "https://github.com/TABConf/8.tabconf.com/issues/31",
       "date": "2026-10-13",
-      "start": "1:15 PM",
-      "end": "2:15 PM",
-      "startMin": 795,
-      "endMin": 855,
-      "durationMin": 60,
+      "start": "1:00 PM",
+      "end": "1:15 PM",
+      "startMin": 780,
+      "endMin": 795,
+      "durationMin": 15,
       "track": "stage",
       "room": "Hacker room",
       "roomFromLabel": true,
       "speakers": [
         {
-          "login": "renatoslopes",
-          "name": "Renato Schiavinato Lopez",
-          "avatarUrl": "https://avatars.githubusercontent.com/u/242995150?u=6a022c8db604f26a81227772bb10830ff42efd2f&v=4"
+          "login": "octaviolucca",
+          "name": "Octavio Lucca",
+          "avatarUrl": "https://avatars.githubusercontent.com/u/62975808?u=38aeca445bdd8c6e0e66a885abe6728d4b0f14bf&v=4"
         }
       ],
       "labels": [
@@ -701,15 +737,15 @@
           "color": "#0e8a16"
         },
         {
-          "name": "Workshop",
-          "color": "#7a69e2"
+          "name": "Talk or Demo",
+          "color": "#87a876"
         },
         {
           "name": "hacker room",
           "color": "#00acc1"
         }
       ],
-      "summary": "Workshop DuraShare DuraShare: BIP39-Native Threshold Backup over GF(2053) with Full Manual Fallback and Per-Share Audit DuraShare uses Shamir secret sharing to split a standard BIP39 recovery phrase into k-of-n durable, human-readable share"
+      "summary": "Description Bitcoin is decentralized, but much of what happens across its network is not visible from the blockchain or from a single node. This talk provides a high level overview of what is monitored across the Bitcoin network, including "
     },
     {
       "number": 10,
@@ -820,6 +856,42 @@
       "summary": "Description What is this talk about? Give us as many details as possible. Every mining pool runs a difficulty adjustment loop. It sets each miner's share difficulty from an estimate of that miner's hashrate, and the only input it has is the"
     },
     {
+      "number": 26,
+      "title": "Workshop DuraShare: create, audit and recover a Shamir backup using software and manually (pen, paper and calculator)",
+      "url": "https://github.com/TABConf/8.tabconf.com/issues/26",
+      "date": "2026-10-13",
+      "start": "3:30 PM",
+      "end": "5:00 PM",
+      "startMin": 930,
+      "endMin": 1020,
+      "durationMin": 90,
+      "track": "stage",
+      "room": "Hacker room",
+      "roomFromLabel": true,
+      "speakers": [
+        {
+          "login": "renatoslopes",
+          "name": "Renato Schiavinato Lopez",
+          "avatarUrl": "https://avatars.githubusercontent.com/u/242995150?u=6a022c8db604f26a81227772bb10830ff42efd2f&v=4"
+        }
+      ],
+      "labels": [
+        {
+          "name": "Accepted",
+          "color": "#0e8a16"
+        },
+        {
+          "name": "Workshop",
+          "color": "#7a69e2"
+        },
+        {
+          "name": "hacker room",
+          "color": "#00acc1"
+        }
+      ],
+      "summary": "Workshop DuraShare DuraShare: BIP39-Native Threshold Backup over GF(2053) with Full Manual Fallback and Per-Share Audit DuraShare uses Shamir secret sharing to split a standard BIP39 recovery phrase into k-of-n durable, human-readable share"
+    },
+    {
       "number": 8,
       "title": "Bolt12 is the new common interface to Bitcoin payments",
       "url": "https://github.com/TABConf/8.tabconf.com/issues/8",
@@ -856,42 +928,6 @@
       "summary": "One of the mistakes of Lightning's early days was exposing complexity to the user: managing channels, rebalancing, gossip propagation delays, and after that, the user was still not able to make the payments. Now we are in the era of 'Paymen"
     },
     {
-      "number": 31,
-      "title": "You Can’t Fix What You Can’t See: Monitoring the Bitcoin Network",
-      "url": "https://github.com/TABConf/8.tabconf.com/issues/31",
-      "date": "2026-10-13",
-      "start": "3:45 PM",
-      "end": "4:00 PM",
-      "startMin": 945,
-      "endMin": 960,
-      "durationMin": 15,
-      "track": "stage",
-      "room": "Hacker room",
-      "roomFromLabel": true,
-      "speakers": [
-        {
-          "login": "octaviolucca",
-          "name": "Octavio Lucca",
-          "avatarUrl": "https://avatars.githubusercontent.com/u/62975808?u=38aeca445bdd8c6e0e66a885abe6728d4b0f14bf&v=4"
-        }
-      ],
-      "labels": [
-        {
-          "name": "Accepted",
-          "color": "#0e8a16"
-        },
-        {
-          "name": "Talk or Demo",
-          "color": "#87a876"
-        },
-        {
-          "name": "hacker room",
-          "color": "#00acc1"
-        }
-      ],
-      "summary": "Description Bitcoin is decentralized, but much of what happens across its network is not visible from the blockchain or from a single node. This talk provides a high level overview of what is monitored across the Bitcoin network, including "
-    },
-    {
       "number": 22,
       "title": "Talk: Bridges in a Post-Quantum World",
       "url": "https://github.com/TABConf/8.tabconf.com/issues/22",
@@ -926,42 +962,6 @@
         }
       ],
       "summary": "Description Modern trust-reducing bridges use a combination of classical and new cryptography for security and efficiency. Specifically, designs like Glock and BitVM3 make use of garbled circuits, zkVM-based proofs, adaptor signatures, and "
-    },
-    {
-      "number": 76,
-      "title": "Covenant Vault Designs",
-      "url": "https://github.com/TABConf/8.tabconf.com/issues/76",
-      "date": "2026-10-13",
-      "start": "4:30 PM",
-      "end": "4:45 PM",
-      "startMin": 990,
-      "endMin": 1005,
-      "durationMin": 15,
-      "track": "stage",
-      "room": "Hacker room",
-      "roomFromLabel": true,
-      "speakers": [
-        {
-          "login": "PraneethGunas",
-          "name": "Praneeth G",
-          "avatarUrl": "https://avatars.githubusercontent.com/u/38702642?v=4"
-        }
-      ],
-      "labels": [
-        {
-          "name": "Accepted",
-          "color": "#0e8a16"
-        },
-        {
-          "name": "Talk or Demo",
-          "color": "#87a876"
-        },
-        {
-          "name": "hacker room",
-          "color": "#00acc1"
-        }
-      ],
-      "summary": "What is this talk about? Give us as many details as possible. This talk covers Bitcoin Möser-Eyal-Sirer type vaults, the different ways to construct such vaults using covenants, and the tradeoffs across the four covenant proposals CTV, CCV,"
     },
     {
       "number": 59,
