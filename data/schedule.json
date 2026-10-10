@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-10T15:56:23.191Z",
+  "generatedAt": "2026-10-10T16:08:29.467Z",
   "event": {
     "name": "TABConf 8",
     "start": "2026-10-12",
@@ -1311,6 +1311,11 @@
           "login": "miketwenty1",
           "name": "Michael Tidwell",
           "avatarUrl": "https://avatars.githubusercontent.com/u/7761473?u=b201191bd947ee4bc319e8ccd50d9e993199f002&v=4"
+        },
+        {
+          "login": "dongcarl",
+          "name": "Carl Dong",
+          "avatarUrl": "https://avatars.githubusercontent.com/dongcarl"
         }
       ],
       "labels": [
@@ -1379,6 +1384,11 @@
           "login": "miketwenty1",
           "name": "Michael Tidwell",
           "avatarUrl": "https://avatars.githubusercontent.com/u/7761473?u=b201191bd947ee4bc319e8ccd50d9e993199f002&v=4"
+        },
+        {
+          "login": "psztorc",
+          "name": "Paul Sztorc",
+          "avatarUrl": "https://avatars.githubusercontent.com/psztorc"
         }
       ],
       "labels": [
@@ -1451,6 +1461,26 @@
           "login": "miketwenty1",
           "name": "Michael Tidwell",
           "avatarUrl": "https://avatars.githubusercontent.com/u/7761473?u=b201191bd947ee4bc319e8ccd50d9e993199f002&v=4"
+        },
+        {
+          "login": "ChristopherA",
+          "name": "Christopher Allen",
+          "avatarUrl": "https://avatars.githubusercontent.com/ChristopherA"
+        },
+        {
+          "login": "developerofwebxr-oss",
+          "name": "Ryta",
+          "avatarUrl": "https://avatars.githubusercontent.com/developerofwebxr-oss"
+        },
+        {
+          "login": "horologger",
+          "name": "horologger",
+          "avatarUrl": "https://avatars.githubusercontent.com/horologger"
+        },
+        {
+          "login": "OV1-Kenobi",
+          "name": "OV1-Kenobi",
+          "avatarUrl": "https://avatars.githubusercontent.com/OV1-Kenobi"
         }
       ],
       "labels": [
@@ -1559,6 +1589,31 @@
           "login": "miketwenty1",
           "name": "Michael Tidwell",
           "avatarUrl": "https://avatars.githubusercontent.com/u/7761473?u=b201191bd947ee4bc319e8ccd50d9e993199f002&v=4"
+        },
+        {
+          "login": "Rob1Ham",
+          "name": "Rob Hamilton",
+          "avatarUrl": "https://avatars.githubusercontent.com/Rob1Ham"
+        },
+        {
+          "login": "stutxo",
+          "name": "stutxo",
+          "avatarUrl": "https://avatars.githubusercontent.com/stutxo"
+        },
+        {
+          "login": "reardencode",
+          "name": "Rearden, Brandon Black",
+          "avatarUrl": "https://avatars.githubusercontent.com/reardencode"
+        },
+        {
+          "login": "rot13maxi",
+          "name": "Rijndael",
+          "avatarUrl": "https://avatars.githubusercontent.com/rot13maxi"
+        },
+        {
+          "login": "KLoaec",
+          "name": "Kevin Loaec",
+          "avatarUrl": "https://avatars.githubusercontent.com/KLoaec"
         }
       ],
       "labels": [
