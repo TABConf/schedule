@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-10T17:49:41.582Z",
+  "generatedAt": "2026-10-10T17:50:49.548Z",
   "event": {
     "name": "TABConf 8",
     "start": "2026-10-12",
@@ -778,7 +778,13 @@
       "track": "stage",
       "room": "Hacker room",
       "roomFromLabel": true,
-      "speakers": [],
+      "speakers": [
+        {
+          "login": "renatoslopes",
+          "name": "Renato Schiavinato Lopez",
+          "avatarUrl": "https://avatars.githubusercontent.com/u/242995150?u=6a022c8db604f26a81227772bb10830ff42efd2f&v=4"
+        }
+      ],
       "labels": [
         {
           "name": "Accepted",
