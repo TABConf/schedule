@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-09T23:27:07.491Z",
+  "generatedAt": "2026-10-10T00:32:24.534Z",
   "event": {
     "name": "TABConf 8",
     "start": "2026-10-12",
@@ -7,11 +7,11 @@
     "venue": "Georgia Tech Exhibition Hall, Atlanta"
   },
   "counts": {
-    "total": 76,
-    "scheduled": 65,
+    "total": 77,
+    "scheduled": 66,
     "unscheduled": 0,
     "floor": 11,
-    "stageMinutes": 2565
+    "stageMinutes": 2580
   },
   "clashes": [
     "2026-10-15 | BitLab Village: #20 overlaps #84"
@@ -1062,6 +1062,36 @@
         }
       ],
       "summary": "Description Opening the Acceleration Village: the theme for two days in the ATL BitLab room, and why it's worth your time. AI is changing what a small team, or one determined builder, can ship. The Bitcoin application layer has never had mo"
+    },
+    {
+      "number": 102,
+      "title": "Binohash: Transaction Introspection and Quantum Safe Bitcoin without a Soft Fork",
+      "url": "https://github.com/TABConf/8.tabconf.com/issues/102",
+      "date": "2026-10-14",
+      "start": "9:30 AM",
+      "end": "9:45 AM",
+      "startMin": 570,
+      "endMin": 585,
+      "durationMin": 15,
+      "track": "stage",
+      "room": "Main stage",
+      "roomFromLabel": true,
+      "speakers": [],
+      "labels": [
+        {
+          "name": "Accepted",
+          "color": "#0e8a16"
+        },
+        {
+          "name": "Talk or Demo",
+          "color": "#87a876"
+        },
+        {
+          "name": "main stage",
+          "color": "#c2185b"
+        }
+      ],
+      "summary": "Description What is this talk about? Give us as many details as possible. We present Binohash, a collision-resistant hash function for Bitcoin Script that enables limited transaction introspection without consensus changes. By exploiting th"
     },
     {
       "number": 6,
