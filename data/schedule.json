@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-10T19:22:35.560Z",
+  "generatedAt": "2026-10-10T22:53:35.993Z",
   "event": {
     "name": "TABConf 8",
     "start": "2026-10-12",
@@ -7,11 +7,11 @@
     "venue": "Georgia Tech Exhibition Hall, Atlanta"
   },
   "counts": {
-    "total": 78,
-    "scheduled": 67,
+    "total": 77,
+    "scheduled": 66,
     "unscheduled": 0,
     "floor": 11,
-    "stageMinutes": 2655
+    "stageMinutes": 2535
   },
   "clashes": [
     "2026-10-15 | BitLab Village: #20 overlaps #84"
@@ -260,42 +260,6 @@
         }
       ],
       "summary": "(aka the Bitcoin LARP) In this interactive, 2-hr long workshop participants walk through how the Bitcoin protocol works. Using just pens, paper, and some string we learn how the protocol works. Join us for this live-action learning session "
-    },
-    {
-      "number": 33,
-      "title": "D++ Entropy Workshop Featuring EntropyLab: Roll Your Own Bitcoin Wallet 🎲",
-      "url": "https://github.com/TABConf/8.tabconf.com/issues/33",
-      "date": "2026-10-12",
-      "start": "1:30 PM",
-      "end": "3:30 PM",
-      "startMin": 810,
-      "endMin": 930,
-      "durationMin": 120,
-      "track": "stage",
-      "room": "Main stage",
-      "roomFromLabel": true,
-      "speakers": [
-        {
-          "login": "dplusplus1024",
-          "name": "D++",
-          "avatarUrl": "https://avatars.githubusercontent.com/u/82842780?u=beac94d56290f05ee1e83ae80d6c1730b8131624&v=4"
-        }
-      ],
-      "labels": [
-        {
-          "name": "Accepted",
-          "color": "#0e8a16"
-        },
-        {
-          "name": "Workshop",
-          "color": "#7a69e2"
-        },
-        {
-          "name": "main stage",
-          "color": "#c2185b"
-        }
-      ],
-      "summary": "In 2021, at my first TABConf, I gave my first-ever talk at a bitcoin conference. We used coin flips to create a BIP39 wallet, then went from seed to receive address, learning each step in the derivation process. Five years later, I’m hoping"
     },
     {
       "number": 30,
