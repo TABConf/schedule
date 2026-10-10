@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-10T23:02:00.571Z",
+  "generatedAt": "2026-10-10T23:06:56.507Z",
   "event": {
     "name": "TABConf 8",
     "start": "2026-10-12",
@@ -586,42 +586,6 @@
       "summary": "Description What is this talk about? Muzi Works on off-grid mesh radios: what Meshtastic and MeshCore are, how a mesh network works without cell towers or internet, and how to get your own node running. Muzi Works also runs a hands-on mesh "
     },
     {
-      "number": 67,
-      "title": "Shielded Bitcoin: Private Transfers on the Bitcoin L1",
-      "url": "https://github.com/TABConf/8.tabconf.com/issues/67",
-      "date": "2026-10-13",
-      "start": "11:45 AM",
-      "end": "12:15 PM",
-      "startMin": 705,
-      "endMin": 735,
-      "durationMin": 30,
-      "track": "stage",
-      "room": "Hacker room",
-      "roomFromLabel": true,
-      "speakers": [
-        {
-          "login": "nemothenoone",
-          "name": "Misha Komarov",
-          "avatarUrl": "https://avatars.githubusercontent.com/u/2765860?v=4"
-        }
-      ],
-      "labels": [
-        {
-          "name": "Accepted",
-          "color": "#0e8a16"
-        },
-        {
-          "name": "Talk or Demo",
-          "color": "#87a876"
-        },
-        {
-          "name": "hacker room",
-          "color": "#00acc1"
-        }
-      ],
-      "summary": "Description What is this talk about? Give us as many details as possible. This talk will be about Shielded Bitcoin, a protocol for private transfer of Bitcoin directly on the Bitcoin L1, requiring no changes to Bitcoin consensus. Its design"
-    },
-    {
       "number": 76,
       "title": "Covenant Vault Designs",
       "url": "https://github.com/TABConf/8.tabconf.com/issues/76",
@@ -656,6 +620,42 @@
         }
       ],
       "summary": "What is this talk about? Give us as many details as possible. This talk covers Bitcoin Möser-Eyal-Sirer type vaults, the different ways to construct such vaults using covenants, and the tradeoffs across the four covenant proposals CTV, CCV,"
+    },
+    {
+      "number": 67,
+      "title": "Shielded Bitcoin: Private Transfers on the Bitcoin L1",
+      "url": "https://github.com/TABConf/8.tabconf.com/issues/67",
+      "date": "2026-10-13",
+      "start": "12:30 PM",
+      "end": "1:00 PM",
+      "startMin": 750,
+      "endMin": 780,
+      "durationMin": 30,
+      "track": "stage",
+      "room": "Main stage",
+      "roomFromLabel": true,
+      "speakers": [
+        {
+          "login": "nemothenoone",
+          "name": "Misha Komarov",
+          "avatarUrl": "https://avatars.githubusercontent.com/u/2765860?v=4"
+        }
+      ],
+      "labels": [
+        {
+          "name": "Accepted",
+          "color": "#0e8a16"
+        },
+        {
+          "name": "Talk or Demo",
+          "color": "#87a876"
+        },
+        {
+          "name": "main stage",
+          "color": "#c2185b"
+        }
+      ],
+      "summary": "Description What is this talk about? Give us as many details as possible. This talk will be about Shielded Bitcoin, a protocol for private transfer of Bitcoin directly on the Bitcoin L1, requiring no changes to Bitcoin consensus. Its design"
     },
     {
       "number": 73,
