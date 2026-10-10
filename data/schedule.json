@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-10T15:19:36.237Z",
+  "generatedAt": "2026-10-10T15:56:23.191Z",
   "event": {
     "name": "TABConf 8",
     "start": "2026-10-12",
@@ -102,7 +102,13 @@
       "track": "stage",
       "room": "Main stage",
       "roomFromLabel": false,
-      "speakers": [],
+      "speakers": [
+        {
+          "login": "kelvinator07",
+          "name": "Kelvin",
+          "avatarUrl": "https://avatars.githubusercontent.com/u/37830553?u=4696d41e637eb82cc57506534d630a0013399f7c&v=4"
+        }
+      ],
       "labels": [
         {
           "name": "Accepted",
@@ -164,7 +170,13 @@
       "track": "stage",
       "room": "Main stage",
       "roomFromLabel": false,
-      "speakers": [],
+      "speakers": [
+        {
+          "login": "ww49",
+          "name": "will wohler",
+          "avatarUrl": "https://avatars.githubusercontent.com/u/60155995?v=4"
+        }
+      ],
       "labels": [
         {
           "name": "Accepted",
@@ -586,7 +598,13 @@
       "track": "stage",
       "room": "Hacker room",
       "roomFromLabel": true,
-      "speakers": [],
+      "speakers": [
+        {
+          "login": "simon-muzi",
+          "name": "",
+          "avatarUrl": "https://avatars.githubusercontent.com/u/182564538?u=1746263d366769fbcf073461e2d5fb1aff349831&v=4"
+        }
+      ],
       "labels": [
         {
           "name": "Accepted",
@@ -1076,7 +1094,13 @@
       "track": "stage",
       "room": "Main stage",
       "roomFromLabel": true,
-      "speakers": [],
+      "speakers": [
+        {
+          "login": "RobinLinus",
+          "name": "Robin Linus",
+          "avatarUrl": "https://avatars.githubusercontent.com/u/12780394?u=3b98227d81c6b425a0c2610c66359396f1335661&v=4"
+        }
+      ],
       "labels": [
         {
           "name": "Accepted",
@@ -1142,7 +1166,13 @@
       "track": "stage",
       "room": "BitLab Village",
       "roomFromLabel": true,
-      "speakers": [],
+      "speakers": [
+        {
+          "login": "Jimmy-Hernandez",
+          "name": "Jimmy Hernandez",
+          "avatarUrl": "https://avatars.githubusercontent.com/u/10274241?u=384d085b6c854b9708cc78e7e34430bd70756e7a&v=4"
+        }
+      ],
       "labels": [
         {
           "name": "Accepted",
@@ -1276,7 +1306,13 @@
       "track": "stage",
       "room": "Main stage",
       "roomFromLabel": true,
-      "speakers": [],
+      "speakers": [
+        {
+          "login": "miketwenty1",
+          "name": "Michael Tidwell",
+          "avatarUrl": "https://avatars.githubusercontent.com/u/7761473?u=b201191bd947ee4bc319e8ccd50d9e993199f002&v=4"
+        }
+      ],
       "labels": [
         {
           "name": "Accepted",
@@ -1306,7 +1342,13 @@
       "track": "stage",
       "room": "BitLab Village",
       "roomFromLabel": true,
-      "speakers": [],
+      "speakers": [
+        {
+          "login": "alexlwn123",
+          "name": "Alex Lewin",
+          "avatarUrl": "https://avatars.githubusercontent.com/u/43247027?u=c0dfde04f9e859a7df89c4383056d2cb9d94db80&v=4"
+        }
+      ],
       "labels": [
         {
           "name": "Accepted",
@@ -1332,7 +1374,13 @@
       "track": "stage",
       "room": "Main stage",
       "roomFromLabel": true,
-      "speakers": [],
+      "speakers": [
+        {
+          "login": "miketwenty1",
+          "name": "Michael Tidwell",
+          "avatarUrl": "https://avatars.githubusercontent.com/u/7761473?u=b201191bd947ee4bc319e8ccd50d9e993199f002&v=4"
+        }
+      ],
       "labels": [
         {
           "name": "Accepted",
@@ -1398,7 +1446,13 @@
       "track": "stage",
       "room": "Main stage",
       "roomFromLabel": true,
-      "speakers": [],
+      "speakers": [
+        {
+          "login": "miketwenty1",
+          "name": "Michael Tidwell",
+          "avatarUrl": "https://avatars.githubusercontent.com/u/7761473?u=b201191bd947ee4bc319e8ccd50d9e993199f002&v=4"
+        }
+      ],
       "labels": [
         {
           "name": "Accepted",
@@ -1500,7 +1554,13 @@
       "track": "stage",
       "room": "Main stage",
       "roomFromLabel": true,
-      "speakers": [],
+      "speakers": [
+        {
+          "login": "miketwenty1",
+          "name": "Michael Tidwell",
+          "avatarUrl": "https://avatars.githubusercontent.com/u/7761473?u=b201191bd947ee4bc319e8ccd50d9e993199f002&v=4"
+        }
+      ],
       "labels": [
         {
           "name": "Accepted",
@@ -1562,7 +1622,13 @@
       "track": "stage",
       "room": "Main stage",
       "roomFromLabel": false,
-      "speakers": [],
+      "speakers": [
+        {
+          "login": "RobinLinus",
+          "name": "Robin Linus",
+          "avatarUrl": "https://avatars.githubusercontent.com/u/12780394?u=3b98227d81c6b425a0c2610c66359396f1335661&v=4"
+        }
+      ],
       "labels": [
         {
           "name": "Accepted",
@@ -1624,7 +1690,13 @@
       "track": "stage",
       "room": "Main stage",
       "roomFromLabel": true,
-      "speakers": [],
+      "speakers": [
+        {
+          "login": "miketwenty1",
+          "name": "Michael Tidwell",
+          "avatarUrl": "https://avatars.githubusercontent.com/u/7761473?u=b201191bd947ee4bc319e8ccd50d9e993199f002&v=4"
+        }
+      ],
       "labels": [
         {
           "name": "Accepted",
@@ -1786,7 +1858,13 @@
       "track": "stage",
       "room": "BitLab Village",
       "roomFromLabel": true,
-      "speakers": [],
+      "speakers": [
+        {
+          "login": "sbddesign",
+          "name": "Stephen DeLorme",
+          "avatarUrl": "https://avatars.githubusercontent.com/u/2414177?u=ed8218c071171ece0f9a5a27beb05b3aa1a9fa42&v=4"
+        }
+      ],
       "labels": [
         {
           "name": "Accepted",
@@ -1880,7 +1958,13 @@
       "track": "stage",
       "room": "BitLab Village",
       "roomFromLabel": true,
-      "speakers": [],
+      "speakers": [
+        {
+          "login": "sbddesign",
+          "name": "Stephen DeLorme",
+          "avatarUrl": "https://avatars.githubusercontent.com/u/2414177?u=ed8218c071171ece0f9a5a27beb05b3aa1a9fa42&v=4"
+        }
+      ],
       "labels": [
         {
           "name": "Accepted",
@@ -1906,7 +1990,13 @@
       "track": "stage",
       "room": "Main stage",
       "roomFromLabel": false,
-      "speakers": [],
+      "speakers": [
+        {
+          "login": "JesseMarkowitz",
+          "name": "Jesse",
+          "avatarUrl": "https://avatars.githubusercontent.com/u/1650462?v=4"
+        }
+      ],
       "labels": [
         {
           "name": "Accepted",
@@ -1932,7 +2022,13 @@
       "track": "stage",
       "room": "Main stage",
       "roomFromLabel": false,
-      "speakers": [],
+      "speakers": [
+        {
+          "login": "sorukumar",
+          "name": "Saurabh Kumar",
+          "avatarUrl": "https://avatars.githubusercontent.com/u/2889411?v=4"
+        }
+      ],
       "labels": [
         {
           "name": "Accepted",
@@ -1994,7 +2090,13 @@
       "track": "stage",
       "room": "Main stage",
       "roomFromLabel": false,
-      "speakers": [],
+      "speakers": [
+        {
+          "login": "CodeShark",
+          "name": "Eric Lombrozo",
+          "avatarUrl": "https://avatars.githubusercontent.com/u/894059?v=4"
+        }
+      ],
       "labels": [
         {
           "name": "Accepted",
@@ -2096,7 +2198,13 @@
       "track": "stage",
       "room": "Main stage",
       "roomFromLabel": false,
-      "speakers": [],
+      "speakers": [
+        {
+          "login": "DeltaClimbs",
+          "name": "",
+          "avatarUrl": "https://avatars.githubusercontent.com/u/272284955?v=4"
+        }
+      ],
       "labels": [
         {
           "name": "Accepted",
@@ -2578,7 +2686,13 @@
       "track": "floor",
       "room": "Expo floor",
       "roomFromLabel": false,
-      "speakers": [],
+      "speakers": [
+        {
+          "login": "jintekc",
+          "name": "",
+          "avatarUrl": "https://avatars.githubusercontent.com/u/191409983?u=9821528a1ad2e20f3fba3e2ff67f123483c67dd8&v=4"
+        }
+      ],
       "labels": [
         {
           "name": "Accepted",
