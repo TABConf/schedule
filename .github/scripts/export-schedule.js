@@ -233,6 +233,25 @@ function toISODate(raw) {
   return '';
 }
 
+// PANELISTS LIVE IN THE ISSUE BODY, NOT IN ASSIGNEES. GitHub refuses to assign
+// anyone who has not commented on the issue, so a panel guest cannot be an
+// assignee until they speak up there. Michael, 2026-10-10: "for panels can we
+// show more than 1 assignee icon please." So read "Name (GitHub: handle)" lines
+// under a Moderator / Panelists / Guest / Host / Speakers heading. Only those
+// sections, so a talk body that cites someone else's work adds nobody.
+function bodySpeakers(md) {
+  const out = [];
+  let inSection = false;
+  for (const line of String(md || '').split('\n')) {
+    const h = line.match(/^#{1,6}\s*(.*)$/);
+    if (h) { inSection = /^(moderator|panelists?|guests?|hosts?|speakers?)\b/i.test(h[1].trim()); continue; }
+    if (!inSection) continue;
+    const m = line.match(/^\s*(?:[-*]\s*)?(.+?)\s*\(GitHub:\s*@?([A-Za-z0-9-]+)\)/i);
+    if (m) out.push({ login: m[2], name: m[1].trim(), avatarUrl: `https://avatars.githubusercontent.com/${m[2]}` });
+  }
+  return out;
+}
+
 function summarise(md) {
   return String(md || '')
     .replace(/<!-- schedule:start -->[\s\S]*?<!-- schedule:end -->/g, '')
@@ -317,7 +336,8 @@ function summarise(md) {
         login: a.login,
         name: a.name || '',
         avatarUrl: a.avatarUrl || ''
-      })),
+      })).concat(bodySpeakers(c.body)).filter((p, i, all) =>
+        all.findIndex(q => q.login.toLowerCase() === p.login.toLowerCase()) === i),
       labels: labels.map(l => ({ name: l.name, color: '#' + l.color })),
       summary: summarise(c.body)
     });
