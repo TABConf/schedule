@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-10T16:08:29.467Z",
+  "generatedAt": "2026-10-10T17:49:41.582Z",
   "event": {
     "name": "TABConf 8",
     "start": "2026-10-12",
@@ -7,11 +7,11 @@
     "venue": "Georgia Tech Exhibition Hall, Atlanta"
   },
   "counts": {
-    "total": 77,
-    "scheduled": 66,
+    "total": 78,
+    "scheduled": 67,
     "unscheduled": 0,
     "floor": 11,
-    "stageMinutes": 2580
+    "stageMinutes": 2655
   },
   "clashes": [
     "2026-10-15 | BitLab Village: #20 overlaps #84"
@@ -764,6 +764,36 @@
         }
       ],
       "summary": "Description Bitcoin is decentralized, but much of what happens across its network is not visible from the blockchain or from a single node. This talk provides a high level overview of what is monitored across the Bitcoin network, including "
+    },
+    {
+      "number": 78,
+      "title": "Workshop: How to Score a Bitcoin Setup Across Seven Domains — Build the SeReCoLiPrInGo Questionnaire",
+      "url": "https://github.com/TABConf/8.tabconf.com/issues/78",
+      "date": "2026-10-13",
+      "start": "1:15 PM",
+      "end": "2:30 PM",
+      "startMin": 795,
+      "endMin": 870,
+      "durationMin": 75,
+      "track": "stage",
+      "room": "Hacker room",
+      "roomFromLabel": true,
+      "speakers": [],
+      "labels": [
+        {
+          "name": "Accepted",
+          "color": "#0e8a16"
+        },
+        {
+          "name": "Workshop",
+          "color": "#7a69e2"
+        },
+        {
+          "name": "hacker room",
+          "color": "#00acc1"
+        }
+      ],
+      "summary": "Description What is this workshop about? Provide as many details as possible. Most self-custody checklists ask one question in many different ways: is this safe from hackers? The SeReCoLiPrInGo framework says a setup has to answer seven que"
     },
     {
       "number": 10,
