@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-12T19:16:50.547Z",
+  "generatedAt": "2026-10-12T21:09:56.687Z",
   "event": {
     "name": "TABConf 8",
     "start": "2026-10-12",
@@ -7,15 +7,13 @@
     "venue": "Georgia Tech Exhibition Hall, Atlanta"
   },
   "counts": {
-    "total": 80,
-    "scheduled": 68,
+    "total": 81,
+    "scheduled": 69,
     "unscheduled": 1,
     "floor": 11,
-    "stageMinutes": 2775
+    "stageMinutes": 2685
   },
-  "clashes": [
-    "2026-10-15 | BitLab Village: #20 overlaps #84"
-  ],
+  "clashes": [],
   "sessions": [
     {
       "number": 11,
@@ -1865,6 +1863,42 @@
       "summary": "Description Bring your laptop: this one is hands-on. [Neon Orbit](https://neon-orbit-eight.vercel.app) is a low-poly neon space dogfight in orbit above a lush green world, with Star Fox 64 silhouettes, Quake grime, and cyberpunk neon. It ru"
     },
     {
+      "number": 104,
+      "title": "The Book of Bitcoin",
+      "url": "https://github.com/TABConf/8.tabconf.com/issues/104",
+      "date": "2026-10-15",
+      "start": "9:15 AM",
+      "end": "9:45 AM",
+      "startMin": 555,
+      "endMin": 585,
+      "durationMin": 30,
+      "track": "stage",
+      "room": "Main stage",
+      "roomFromLabel": true,
+      "speakers": [
+        {
+          "login": "asherp",
+          "name": "Asher Pembroke",
+          "avatarUrl": "https://avatars.githubusercontent.com/u/1123706?u=f55ebc1b1b1bd554e7816306dc750fcde908ff42&v=4"
+        }
+      ],
+      "labels": [
+        {
+          "name": "Accepted",
+          "color": "#0e8a16"
+        },
+        {
+          "name": "Talk or Demo",
+          "color": "#87a876"
+        },
+        {
+          "name": "main stage",
+          "color": "#c2185b"
+        }
+      ],
+      "summary": "Description The Book of Bitcoin (BoB) is the blockchain in e-book format. It captures the same information as a block explorer but in a legible format amenable to bookkeeping, discovery, consensus, and commentary. We employed several tricks"
+    },
+    {
       "number": 50,
       "title": "Drinking from the firehose: bitcoin FOSS in a post-LLM world",
       "url": "https://github.com/TABConf/8.tabconf.com/issues/50",
@@ -1967,38 +2001,6 @@
         }
       ],
       "summary": "Description What is this talk about? Give us as many details as possible. From Solo Mining to Poolless Mining: The Evolution of Bitcoin Mining Protocols Bitcoin mining began with miners constructing their own blocks and mining directly agai"
-    },
-    {
-      "number": 20,
-      "title": "Sovereign Name, Certain Destiny",
-      "url": "https://github.com/TABConf/8.tabconf.com/issues/20",
-      "date": "2026-10-15",
-      "start": "11:00 AM",
-      "end": "2:00 PM",
-      "startMin": 660,
-      "endMin": 840,
-      "durationMin": 180,
-      "track": "stage",
-      "room": "BitLab Village",
-      "roomFromLabel": true,
-      "speakers": [
-        {
-          "login": "horologger",
-          "name": "",
-          "avatarUrl": "https://avatars.githubusercontent.com/u/153022461?v=4"
-        }
-      ],
-      "labels": [
-        {
-          "name": "Accepted",
-          "color": "#0e8a16"
-        },
-        {
-          "name": "bitlab village",
-          "color": "#6a1b9a"
-        }
-      ],
-      "summary": "Description The names we use in the cyber world should be property we control not ephemeral place keepers that we rent for a time. What is this workshop about? Provide as many details as possible. Spaces empowers users with a sovereign Bitc"
     },
     {
       "number": 84,
@@ -2251,6 +2253,38 @@
         }
       ],
       "summary": "Beignet: Reimagining the Bitcoin Wallet Through Reckless Experimentation Beignet is a new Lightning implementation written in TypeScript, built as an environment for rapidly experimenting with ways to improve the Lightning user experience. "
+    },
+    {
+      "number": 20,
+      "title": "Sovereign Name, Certain Destiny",
+      "url": "https://github.com/TABConf/8.tabconf.com/issues/20",
+      "date": "2026-10-15",
+      "start": "2:00 PM",
+      "end": "3:00 PM",
+      "startMin": 840,
+      "endMin": 900,
+      "durationMin": 60,
+      "track": "stage",
+      "room": "BitLab Village",
+      "roomFromLabel": true,
+      "speakers": [
+        {
+          "login": "horologger",
+          "name": "",
+          "avatarUrl": "https://avatars.githubusercontent.com/u/153022461?v=4"
+        }
+      ],
+      "labels": [
+        {
+          "name": "Accepted",
+          "color": "#0e8a16"
+        },
+        {
+          "name": "bitlab village",
+          "color": "#6a1b9a"
+        }
+      ],
+      "summary": "Description The names we use in the cyber world should be property we control not ephemeral place keepers that we rent for a time. What is this workshop about? Provide as many details as possible. Spaces empowers users with a sovereign Bitc"
     },
     {
       "number": 28,
