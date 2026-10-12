@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-12T09:26:40.709Z",
+  "generatedAt": "2026-10-12T16:33:48.269Z",
   "event": {
     "name": "TABConf 8",
     "start": "2026-10-12",
@@ -7,11 +7,11 @@
     "venue": "Georgia Tech Exhibition Hall, Atlanta"
   },
   "counts": {
-    "total": 77,
-    "scheduled": 66,
-    "unscheduled": 0,
+    "total": 80,
+    "scheduled": 68,
+    "unscheduled": 1,
     "floor": 11,
-    "stageMinutes": 2535
+    "stageMinutes": 2775
   },
   "clashes": [
     "2026-10-15 | BitLab Village: #20 overlaps #84"
@@ -1974,10 +1974,10 @@
       "url": "https://github.com/TABConf/8.tabconf.com/issues/20",
       "date": "2026-10-15",
       "start": "11:00 AM",
-      "end": "12:00 PM",
+      "end": "2:00 PM",
       "startMin": 660,
-      "endMin": 720,
-      "durationMin": 60,
+      "endMin": 840,
+      "durationMin": 180,
       "track": "stage",
       "room": "BitLab Village",
       "roomFromLabel": true,
@@ -2133,6 +2133,32 @@
       "summary": "Described on Delving: https://delvingbitcoin.org/t/the-four-horsemen/2728 When comparing different coinjoin protocols, I was somewhat surprised to see that the weaknesses of any individual protocol were solvable by combining a second one."
     },
     {
+      "number": 39,
+      "title": "Satrium & the Open WebXR Stack: Money, Owned Items and Identity Inside Any World — No Platforms, No Permission ",
+      "url": "https://github.com/TABConf/8.tabconf.com/issues/39",
+      "date": "2026-10-15",
+      "start": "12:00 PM",
+      "end": "1:00 PM",
+      "startMin": 720,
+      "endMin": 780,
+      "durationMin": 60,
+      "track": "stage",
+      "room": "BitLab Village",
+      "roomFromLabel": true,
+      "speakers": [],
+      "labels": [
+        {
+          "name": "Accepted",
+          "color": "#0e8a16"
+        },
+        {
+          "name": "bitlab village",
+          "color": "#6a1b9a"
+        }
+      ],
+      "summary": "I do have interactive demos so I can do either keynote or workshop format. Description What is this talk about? Give us as many details as possible. Bitcoin already conquered us through the flat screen. The spatial web is next - and it's ju"
+    },
+    {
       "number": 98,
       "title": "Hornet: A minimal, executable specification of Bitcoin consensus rules",
       "url": "https://github.com/TABConf/8.tabconf.com/issues/98",
@@ -2163,6 +2189,32 @@
         }
       ],
       "summary": "Description of talk The current Bitcoin base layer rests on consensus rules defined via a reference implementation of the Bitcoin protocol which evolved out of a mere prototype. In order to become an established, standard, mature protocol, "
+    },
+    {
+      "number": 103,
+      "title": "🤖 Control your lightning node with AI",
+      "url": "https://github.com/TABConf/8.tabconf.com/issues/103",
+      "date": "2026-10-15",
+      "start": "1:00 PM",
+      "end": "2:00 PM",
+      "startMin": 780,
+      "endMin": 840,
+      "durationMin": 60,
+      "track": "stage",
+      "room": "BitLab Village",
+      "roomFromLabel": true,
+      "speakers": [],
+      "labels": [
+        {
+          "name": "Accepted",
+          "color": "#0e8a16"
+        },
+        {
+          "name": "bitlab village",
+          "color": "#6a1b9a"
+        }
+      ],
+      "summary": "Description What is this talk about? Give us as many details as possible. What would an attendee learn from this talk? Is there anything folks should read up on before they attend this talk? Relevant Links About the Speaker Social Links Git"
     },
     {
       "number": 17,
@@ -2594,7 +2646,7 @@
     },
     {
       "number": 51,
-      "title": "Lightning Melee",
+      "title": "Tabconf Melee",
       "url": "https://github.com/TABConf/8.tabconf.com/issues/51",
       "date": "",
       "start": "",
@@ -2763,6 +2815,32 @@
         }
       ],
       "summary": "Project Self-Sovereign Identity with did:btcr2 and Rolohex Description: Rather than tying your identity to the chip in your phone or your account with a major tech provider, self-sovereign identity (SSI) makes you the direct owner of your d"
+    },
+    {
+      "number": 101,
+      "title": "🎨 Live Portrait Sessions - Wednesday + Thursday",
+      "url": "https://github.com/TABConf/8.tabconf.com/issues/101",
+      "date": "",
+      "start": "",
+      "end": "",
+      "startMin": null,
+      "endMin": null,
+      "durationMin": null,
+      "track": "stage",
+      "room": "BitLab Village",
+      "roomFromLabel": true,
+      "speakers": [],
+      "labels": [
+        {
+          "name": "Accepted",
+          "color": "#0e8a16"
+        },
+        {
+          "name": "bitlab village",
+          "color": "#6a1b9a"
+        }
+      ],
+      "summary": "Description Local Atlanta artist Mia Jyoti draws blind contour portraits of attendees: one continuous line, eyes on you, never on the paper. The results are loose, strange, and surprisingly true to the person, finished with a splash of wate"
     }
   ]
 }
