@@ -325,10 +325,11 @@ function detailsNode(s){
    rows it covers (Michael, 2026-10-06), so session length is visible at a
    glance. See roomGrid.
 
-   AN UNLISTED ROOM STILL RENDERS, it just sorts to the far right, so this list
-   is reading order and not a list of which rooms exist. */
-const ROOM_ORDER = ['Main stage', 'Hacker room', 'BitLab Village', 'Expo floor'];
-const roomRank = r => { const i = ROOM_ORDER.indexOf(r); return i === -1 ? 99 : i; };
+   MAIN STAGE IS ALWAYS THE RIGHTMOST COLUMN (Michael, 2026-10-12). An unlisted
+   room still renders, just left of the main stage, so this list is reading
+   order and not a list of which rooms exist. */
+const ROOM_ORDER = ['Hacker room', 'BitLab Village', 'Expo floor'];
+const roomRank = r => { if (r === 'Main stage') return 100; const i = ROOM_ORDER.indexOf(r); return i === -1 ? 99 : i; };
 
 function sessionCell(s){
   const wrap = el('div','cell');
