@@ -98,6 +98,11 @@ input[type=search]:focus{outline:2px solid var(--accent);outline-offset:-1px}
 .grid-rooms .c-room{width:auto;vertical-align:top}
 .grid-rooms thead .c-room{color:var(--accent);font-size:11px}
 .grid-rooms .c-time{width:92px}
+/* Room names stay frozen under the day heading while the grid scrolls
+   (Michael, 2026-10-12). --roomhead-top is measured in JS, see syncStick. */
+.grid-rooms thead th{position:sticky;top:var(--roomhead-top,108px);z-index:5;background:var(--bg);
+  box-shadow:0 1px 0 var(--line)}
+@media(min-width:641px){.gridwrap{overflow:visible}}
 .cell{padding:2px 0 6px}
 .cell + .cell{border-top:1px dashed var(--line);margin-top:6px;padding-top:8px}
 .cell-title{font-weight:600;line-height:1.35}
@@ -145,6 +150,10 @@ footer{margin-top:40px;padding-top:18px;border-top:1px solid var(--line);color:v
   /* The room columns are the point of that view, so it scrolls sideways in its
      own container rather than dropping a column the way the flat table does. */
   .grid-rooms{min-width:520px}
+  /* Sideways scroll makes .gridwrap the sticky container, so it scrolls
+     vertically itself and the header sticks to its top. */
+  .gridwrap{max-height:calc(100vh - var(--roomhead-top,104px));overflow:auto}
+  .grid-rooms thead th{top:0}
   .grid-rooms .c-time{width:74px}
   .grid .c-time{width:auto}
 }
@@ -520,7 +529,16 @@ function render(){
     else items.forEach(s=>sec.appendChild(detailsNode(s)));
     out.appendChild(sec);
   }
+  syncStick();
 }
+
+// Room header sits just below the sticky controls bar and day heading.
+function syncStick(){
+  const d=document.querySelector('.dayhead'); if(!d) return;
+  const top=(parseFloat(getComputedStyle(d).top)||0)+d.offsetHeight;
+  document.documentElement.style.setProperty('--roomhead-top', top+'px');
+}
+addEventListener('resize', syncStick);
 
 function bind(){
   document.getElementById('q').addEventListener('input',e=>{S.q=e.target.value;render();});
