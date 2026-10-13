@@ -176,8 +176,8 @@ footer{margin-top:40px;padding-top:18px;border-top:1px solid var(--line);color:v
   <div class="controls">
     <input type="search" id="q" placeholder="Search sessions, speakers, topics…" autocomplete="off">
     <span class="seg" role="group" aria-label="View">
-      <button id="v-details" aria-pressed="true">Details</button>
-      <button id="v-calendar" aria-pressed="false">Calendar</button>
+      <button id="v-details" aria-pressed="false">Details</button>
+      <button id="v-calendar" aria-pressed="true">Calendar</button>
     </span>
   </div>
   <div id="out"><p class="empty">Loading the schedule…</p></div>
@@ -189,7 +189,7 @@ footer{margin-top:40px;padding-top:18px;border-top:1px solid var(--line);color:v
    in the export script, so this file only decides what things look like.
    The export still calls all-day items track:"floor"; they are presented as
    "All day" because that is what they are to somebody reading a schedule. */
-const S = { data:null, q:"", track:"all", view:"details" };
+const S = { data:null, q:"", track:"all", view:"calendar" };
 const el = (t,c,x)=>{const e=document.createElement(t); if(c)e.className=c; if(x!=null)e.textContent=x; return e;};
 const isAllDay = s => s.track === 'floor';
 const isSatellite = s => s.track === 'satellite';
@@ -271,6 +271,7 @@ function dayHead(key){
 
 function detailsNode(s){
   const row=el('div','session');
+  if(s.startMin!=null) row.dataset.min=s.startMin;
   const when=el('div','when');
   if(s.start){
     when.appendChild(el('span','s',s.start));
@@ -411,7 +412,7 @@ function roomGrid(timed, rooms){
   const tb=el('tbody');
   for(let i=0;i<bounds.length-1;i++){
     const a=bounds[i], b=bounds[i+1];
-    const tr=el('tr');
+    const tr=el('tr'); tr.dataset.min=a;
     tr.style.height=Math.max(26, Math.round((b-a)*1.6))+'px';
     const tc=el('td','c-time', startsAt.has(a) ? fmt(a) : '');
     tr.appendChild(tc);
@@ -523,7 +524,7 @@ function render(){
   }
 
   for(const [key,items] of groupsOf(list)){
-    const sec=el('section','day');
+    const sec=el('section','day'); sec.dataset.date=key;
     sec.appendChild(dayHead(key));
     if(S.view==='calendar') sec.appendChild(calendarTable(items));
     else items.forEach(s=>sec.appendChild(detailsNode(s)));
@@ -539,6 +540,42 @@ function syncStick(){
   document.documentElement.style.setProperty('--roomhead-top', top+'px');
 }
 addEventListener('resize', syncStick);
+
+/* JUMP TO NOW, ONCE PER PAGE LOAD (Michael, 2026-10-13). On a fresh load or a
+   refresh during the event, scroll to what is on right now in Atlanta: the
+   earliest start among sessions in progress, else the next one up. Re-renders
+   from search or the view toggle never jump again. Outside the event days it
+   does nothing. */
+let jumped=false;
+function nowET(){
+  const p={}; new Intl.DateTimeFormat('en-CA',{timeZone:'America/New_York',year:'numeric',month:'2-digit',
+    day:'2-digit',hour:'2-digit',minute:'2-digit',hourCycle:'h23'}).formatToParts(new Date()).forEach(x=>p[x.type]=x.value);
+  return {date:p.year+'-'+p.month+'-'+p.day, min:(+p.hour)*60+(+p.minute)};
+}
+function jumpToNow(){
+  if(jumped) return; jumped=true;
+  const n=nowET();
+  const sec=document.querySelector('section.day[data-date="'+n.date+'"]'); if(!sec) return;
+  const timed=S.data.sessions.filter(s=>s.date===n.date && s.startMin!=null && !isAllDay(s) && matches(s));
+  const endOf=s=>(s.endMin!=null && s.endMin>s.startMin) ? s.endMin : s.startMin+15;
+  const live=timed.filter(s=>s.startMin<=n.min && n.min<endOf(s)).map(s=>s.startMin);
+  const next=timed.filter(s=>s.startMin>n.min).map(s=>s.startMin);
+  const want=live.length ? Math.min(...live) : next.length ? Math.min(...next) : null;
+  const target=(want!=null && [...sec.querySelectorAll('[data-min="'+want+'"]')].find(e=>e.offsetParent!==null)) || sec;
+  const head=sec.querySelector('.grid-rooms thead');
+  const headH=(head && target!==sec) ? head.offsetHeight : 0;
+  const stickTop=parseFloat(getComputedStyle(document.documentElement).getPropertyValue('--roomhead-top'))||0;
+  const wrap=target.closest && target.closest('.gridwrap');
+  if(wrap && wrap.scrollHeight>wrap.clientHeight+1 && getComputedStyle(wrap).overflowY!=='visible'){
+    // Phone: the grid scrolls inside its own box. Park the box under the day
+    // heading, then scroll the box to the row.
+    scrollTo(0, wrap.getBoundingClientRect().top+scrollY-stickTop);
+    wrap.scrollTop=target.getBoundingClientRect().top-wrap.getBoundingClientRect().top+wrap.scrollTop-headH;
+  } else {
+    const off=target===sec ? 0 : stickTop+headH+6;
+    scrollTo(0, target.getBoundingClientRect().top+scrollY-off);
+  }
+}
 
 function bind(){
   document.getElementById('q').addEventListener('input',e=>{S.q=e.target.value;render();});
@@ -571,11 +608,12 @@ fetch('data/schedule.json?v='+Date.now())
     });
     try{
       const v=localStorage.getItem('tabconf8-view');
-      if(v==='calendar'){S.view='calendar';
-        document.getElementById('v-calendar').setAttribute('aria-pressed','true');
-        document.getElementById('v-details').setAttribute('aria-pressed','false');}
+      if(v==='details'){S.view='details';
+        document.getElementById('v-details').setAttribute('aria-pressed','true');
+        document.getElementById('v-calendar').setAttribute('aria-pressed','false');}
     }catch(e){}
     bind(); render();
+    requestAnimationFrame(jumpToNow);
     const g=S.data.generatedAt ? new Date(S.data.generatedAt).toLocaleString() : 'unknown';
     document.getElementById('foot').textContent='Updated '+g+'. Sessions are curated from public submissions on GitHub.';
   })
