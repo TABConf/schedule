@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-13T19:01:58.005Z",
+  "generatedAt": "2026-10-13T19:05:45.031Z",
   "event": {
     "name": "TABConf 8",
     "start": "2026-10-12",
@@ -7,11 +7,11 @@
     "venue": "Georgia Tech Exhibition Hall, Atlanta"
   },
   "counts": {
-    "total": 81,
-    "scheduled": 69,
+    "total": 82,
+    "scheduled": 70,
     "unscheduled": 1,
     "floor": 11,
-    "stageMinutes": 2685
+    "stageMinutes": 2700
   },
   "clashes": [],
   "sessions": [
@@ -2253,6 +2253,42 @@
         }
       ],
       "summary": "Beignet: Reimagining the Bitcoin Wallet Through Reckless Experimentation Beignet is a new Lightning implementation written in TypeScript, built as an environment for rapidly experimenting with ways to improve the Lightning user experience. "
+    },
+    {
+      "number": 65,
+      "title": "Bitcoin and Credit Unions: Beyond the Buy Button",
+      "url": "https://github.com/TABConf/8.tabconf.com/issues/65",
+      "date": "2026-10-15",
+      "start": "1:45 PM",
+      "end": "2:00 PM",
+      "startMin": 825,
+      "endMin": 840,
+      "durationMin": 15,
+      "track": "stage",
+      "room": "Main stage",
+      "roomFromLabel": true,
+      "speakers": [
+        {
+          "login": "JesseMarkowitz",
+          "name": "Jesse",
+          "avatarUrl": "https://avatars.githubusercontent.com/u/1650462?v=4"
+        }
+      ],
+      "labels": [
+        {
+          "name": "Accepted",
+          "color": "#0e8a16"
+        },
+        {
+          "name": "Talk or Demo",
+          "color": "#87a876"
+        },
+        {
+          "name": "main stage",
+          "color": "#c2185b"
+        }
+      ],
+      "summary": "Description What is this talk about? Give us as many details as possible. Credit unions are unusual financial institutions: they are cooperatives owned by their members rather than outside shareholders. Bitcoin is an unusual financial asset"
     },
     {
       "number": 20,
