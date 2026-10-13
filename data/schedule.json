@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-13T01:26:06.151Z",
+  "generatedAt": "2026-10-13T08:22:32.216Z",
   "event": {
     "name": "TABConf 8",
     "start": "2026-10-12",
@@ -1968,7 +1968,7 @@
     },
     {
       "number": 37,
-      "title": "Talk: From Solo Mining to Poolless Mining: The Evolution of Bitcoin Mining Protocols",
+      "title": "From Solo Mining to Poolless Mining: The Evolution of Bitcoin Mining Protocols",
       "url": "https://github.com/TABConf/8.tabconf.com/issues/37",
       "date": "2026-10-15",
       "start": "10:30 AM",
