@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-14T12:02:52.313Z",
+  "generatedAt": "2026-10-14T12:05:54.881Z",
   "event": {
     "name": "TABConf 8",
     "start": "2026-10-12",
@@ -7,11 +7,11 @@
     "venue": "Georgia Tech Exhibition Hall, Atlanta"
   },
   "counts": {
-    "total": 83,
-    "scheduled": 71,
+    "total": 84,
+    "scheduled": 72,
     "unscheduled": 1,
     "floor": 11,
-    "stageMinutes": 2790
+    "stageMinutes": 2805
   },
   "clashes": [],
   "sessions": [
@@ -1732,7 +1732,7 @@
     },
     {
       "number": 90,
-      "title": "The Early Closing Ceremony: Reminiscing 10 years of TAB",
+      "title": "Town Hall: Reminiscing 10 years of TAB",
       "url": "https://github.com/TABConf/8.tabconf.com/issues/90",
       "date": "2026-10-14",
       "start": "4:00 PM",
@@ -1760,7 +1760,7 @@
           "color": "#c2185b"
         }
       ],
-      "summary": "Description TABConf's early closing ceremony, held on Wednesday so as many people as possible are still in the room. Thursday runs a full day afterwards. A look back at 10 years of TAB. Host: Michael Tidwell (GitHub: miketwenty1) Details Le"
+      "summary": "Description TABConf's town hall, held on Wednesday so as many people as possible are still in the room. Thursday runs a full day afterwards. A look back at 10 years of TAB. Host: Michael Tidwell (GitHub: miketwenty1) Details Length: 60 minu"
     },
     {
       "number": 93,
@@ -2575,6 +2575,38 @@
         }
       ],
       "summary": "Description I've had the fascinating experience of building my own full node implementation in just a couple of months and want to share that experience with TABconf. Questions which this helps answer: how has AI fundamentally changed softw"
+    },
+    {
+      "number": 106,
+      "title": "Closing Ceremony",
+      "url": "https://github.com/TABConf/8.tabconf.com/issues/106",
+      "date": "2026-10-15",
+      "start": "5:00 PM",
+      "end": "5:15 PM",
+      "startMin": 1020,
+      "endMin": 1035,
+      "durationMin": 15,
+      "track": "stage",
+      "room": "Main stage",
+      "roomFromLabel": true,
+      "speakers": [
+        {
+          "login": "miketwenty1",
+          "name": "Michael Tidwell",
+          "avatarUrl": "https://avatars.githubusercontent.com/u/7761473?u=b201191bd947ee4bc319e8ccd50d9e993199f002&v=4"
+        }
+      ],
+      "labels": [
+        {
+          "name": "Accepted",
+          "color": "#0e8a16"
+        },
+        {
+          "name": "main stage",
+          "color": "#c2185b"
+        }
+      ],
+      "summary": "Description TABConf closing ceremony. The last session on the main stage. Host: Michael Tidwell (GitHub: miketwenty1) Details Length: 15 minutes"
     },
     {
       "number": 15,
