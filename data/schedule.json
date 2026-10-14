@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-14T15:15:36.000Z",
+  "generatedAt": "2026-10-14T19:28:57.992Z",
   "event": {
     "name": "TABConf 8",
     "start": "2026-10-12",
@@ -11,7 +11,7 @@
     "scheduled": 72,
     "unscheduled": 1,
     "floor": 11,
-    "stageMinutes": 2805
+    "stageMinutes": 2775
   },
   "clashes": [],
   "sessions": [
@@ -1410,9 +1410,9 @@
       "summary": "Description What is this panel discussion about? Will there be multiple talking points? Open debate. Paul Sztorc presents for 15 minutes, then 45 minutes of open Q&A and debate with the room. What would an attendee learn from this panel? Is"
     },
     {
-      "number": 83,
-      "title": "🛶 Noah: a mobile wallet for Bitcoin's Ark protocol",
-      "url": "https://github.com/TABConf/8.tabconf.com/issues/83",
+      "number": 85,
+      "title": "🫖 Kettle: always-on AI agents, built by AI agents",
+      "url": "https://github.com/TABConf/8.tabconf.com/issues/85",
       "date": "2026-10-14",
       "start": "1:00 PM",
       "end": "2:00 PM",
@@ -1424,9 +1424,9 @@
       "roomFromLabel": true,
       "speakers": [
         {
-          "login": "niteshbalusu11",
-          "name": "Nitesh",
-          "avatarUrl": "https://avatars.githubusercontent.com/u/84944042?u=f8110ed948deaa73a6fb1452cd7d1edffec5fcf8&v=4"
+          "login": "sbddesign",
+          "name": "Stephen DeLorme",
+          "avatarUrl": "https://avatars.githubusercontent.com/u/2414177?u=ed8218c071171ece0f9a5a27beb05b3aa1a9fa42&v=4"
         }
       ],
       "labels": [
@@ -1439,7 +1439,7 @@
           "color": "#6a1b9a"
         }
       ],
-      "summary": "Description [Noah](https://alpha.noahwallet.io) is an open-source, trust-minimized mobile wallet for Bitcoin's Ark protocol. Ark is a second layer that aims for easy onboarding, instant payments, low and predictable fees, and Lightning inte"
+      "summary": "Description AI agents are great right up until you shut your laptop. [Kettle](https://kettle.bot) gives your Buzz agents a server of their own that keeps them running day and night, powered by the Claude, Codex, or Grok plan you already pay"
     },
     {
       "number": 70,
@@ -1631,23 +1631,23 @@
       "summary": "Description What is this panel discussion about? Will there be multiple talking points? What would an attendee learn from this panel? Is there anything folks should read up on before they attend? Relevant Links Moderator: Michael Tidwell (G"
     },
     {
-      "number": 85,
-      "title": "🫖 Kettle: always-on AI agents, built by AI agents",
-      "url": "https://github.com/TABConf/8.tabconf.com/issues/85",
+      "number": 83,
+      "title": "🛶 Noah: a mobile wallet for Bitcoin's Ark protocol",
+      "url": "https://github.com/TABConf/8.tabconf.com/issues/83",
       "date": "2026-10-14",
       "start": "3:00 PM",
-      "end": "4:00 PM",
+      "end": "3:30 PM",
       "startMin": 900,
-      "endMin": 960,
-      "durationMin": 60,
+      "endMin": 930,
+      "durationMin": 30,
       "track": "stage",
       "room": "BitLab Village",
       "roomFromLabel": true,
       "speakers": [
         {
-          "login": "sbddesign",
-          "name": "Stephen DeLorme",
-          "avatarUrl": "https://avatars.githubusercontent.com/u/2414177?u=ed8218c071171ece0f9a5a27beb05b3aa1a9fa42&v=4"
+          "login": "niteshbalusu11",
+          "name": "Nitesh",
+          "avatarUrl": "https://avatars.githubusercontent.com/u/84944042?u=f8110ed948deaa73a6fb1452cd7d1edffec5fcf8&v=4"
         }
       ],
       "labels": [
@@ -1660,7 +1660,7 @@
           "color": "#6a1b9a"
         }
       ],
-      "summary": "Description AI agents are great right up until you shut your laptop. [Kettle](https://kettle.bot) gives your Buzz agents a server of their own that keeps them running day and night, powered by the Claude, Codex, or Grok plan you already pay"
+      "summary": "Description [Noah](https://alpha.noahwallet.io) is an open-source, trust-minimized mobile wallet for Bitcoin's Ark protocol. Ark is a second layer that aims for easy onboarding, instant payments, low and predictable fees, and Lightning inte"
     },
     {
       "number": 100,
@@ -2136,7 +2136,7 @@
     },
     {
       "number": 39,
-      "title": "Satrium & the Open WebXR Stack: Money, Owned Items and Identity Inside Any World — No Platforms, No Permission ",
+      "title": "Satrium & WebXR Stack - Pocket Money, Owned Items and Portable Identity Inside Any World: A Proposed Interoperability Layer for the Extended Reality Web. No Platforms, No Permission.",
       "url": "https://github.com/TABConf/8.tabconf.com/issues/39",
       "date": "2026-10-15",
       "start": "12:00 PM",
@@ -2164,7 +2164,7 @@
           "color": "#6a1b9a"
         }
       ],
-      "summary": "I do have interactive demos so I can do either keynote or workshop format. Description What is this talk about? Give us as many details as possible. Bitcoin already conquered us through the flat screen. The spatial web is next - and it's ju"
+      "summary": "I have some interactive demos so I will do talk + workshop format. Description Pay, own and be someone inside any open spatial website without breaking immersion - three layers any WebXR world can adopt from a link, built with Bitcoin's pri"
     },
     {
       "number": 98,
