@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-14T10:21:04.742Z",
+  "generatedAt": "2026-10-14T12:02:52.313Z",
   "event": {
     "name": "TABConf 8",
     "start": "2026-10-12",
@@ -7,11 +7,11 @@
     "venue": "Georgia Tech Exhibition Hall, Atlanta"
   },
   "counts": {
-    "total": 82,
-    "scheduled": 70,
+    "total": 83,
+    "scheduled": 71,
     "unscheduled": 1,
     "floor": 11,
-    "stageMinutes": 2700
+    "stageMinutes": 2790
   },
   "clashes": [],
   "sessions": [
@@ -1053,10 +1053,10 @@
       "url": "https://github.com/TABConf/8.tabconf.com/issues/79",
       "date": "2026-10-14",
       "start": "9:00 AM",
-      "end": "9:30 AM",
+      "end": "10:00 AM",
       "startMin": 540,
-      "endMin": 570,
-      "durationMin": 30,
+      "endMin": 600,
+      "durationMin": 60,
       "track": "stage",
       "room": "BitLab Village",
       "roomFromLabel": true,
@@ -1936,7 +1936,7 @@
     },
     {
       "number": 87,
-      "title": "🐝 Swarm Mechanics",
+      "title": "🐝 Swarm Mechanics: How to Make Your Freedom-Tech Software Factory",
       "url": "https://github.com/TABConf/8.tabconf.com/issues/87",
       "date": "2026-10-15",
       "start": "10:00 AM",
@@ -2147,7 +2147,13 @@
       "track": "stage",
       "room": "BitLab Village",
       "roomFromLabel": true,
-      "speakers": [],
+      "speakers": [
+        {
+          "login": "developerofwebxr-oss",
+          "name": "Ryta",
+          "avatarUrl": "https://avatars.githubusercontent.com/u/291392507?u=da8fef4a331fef22201de2d60462bacc24419766&v=4"
+        }
+      ],
       "labels": [
         {
           "name": "Accepted",
@@ -2429,6 +2435,38 @@
         }
       ],
       "summary": "Description With the recent Coldcard hack, many people found themselves using private mempools to safely recover funds; in the future, this capability may be relevant to recover quantum insecure funds as well. In this short talk we will dis"
+    },
+    {
+      "number": 105,
+      "title": "Building an AI-Powered, Bitcoin-Centric Investment Business",
+      "url": "https://github.com/TABConf/8.tabconf.com/issues/105",
+      "date": "2026-10-15",
+      "start": "3:00 PM",
+      "end": "4:00 PM",
+      "startMin": 900,
+      "endMin": 960,
+      "durationMin": 60,
+      "track": "stage",
+      "room": "BitLab Village",
+      "roomFromLabel": true,
+      "speakers": [
+        {
+          "login": "doug-leonhardt",
+          "name": "Doug Leonhardt",
+          "avatarUrl": "https://avatars.githubusercontent.com/u/88954668?v=4"
+        }
+      ],
+      "labels": [
+        {
+          "name": "Accepted",
+          "color": "#0e8a16"
+        },
+        {
+          "name": "bitlab village",
+          "color": "#6a1b9a"
+        }
+      ],
+      "summary": "Description What is this talk about? Give us as many details as possible. A builder's tour of a one-person, Bitcoin-centric investment business run by a team of AI agents, a \"Viking warband\" that writes, tests, reviews and ships nearly ever"
     },
     {
       "number": 43,
