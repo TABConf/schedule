@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-14T05:19:40.770Z",
+  "generatedAt": "2026-10-14T10:21:04.742Z",
   "event": {
     "name": "TABConf 8",
     "start": "2026-10-12",
@@ -1896,7 +1896,7 @@
           "color": "#c2185b"
         }
       ],
-      "summary": "Description The Book of Bitcoin (BoB) is the blockchain in e-book format. It captures the same information as a block explorer but in a legible format amenable to bookkeeping, discovery, consensus, and commentary. We employed several tricks"
+      "summary": "The Book of Bitcoin Description The Book of Bitcoin (BoB) presents the Bitcoin blockchain as an e-book. It contains the same information as a block explorer, but in a legible, manuscript-style format designed for bookkeeping, exploration, a"
     },
     {
       "number": 50,
