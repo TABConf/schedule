@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-15T13:06:50.780Z",
+  "generatedAt": "2026-10-15T13:07:53.471Z",
   "event": {
     "name": "TABConf 8",
     "start": "2026-10-12",
@@ -7,11 +7,11 @@
     "venue": "Georgia Tech Exhibition Hall, Atlanta"
   },
   "counts": {
-    "total": 83,
-    "scheduled": 71,
+    "total": 84,
+    "scheduled": 72,
     "unscheduled": 1,
     "floor": 11,
-    "stageMinutes": 2745
+    "stageMinutes": 2775
   },
   "clashes": [],
   "sessions": [
@@ -2129,6 +2129,42 @@
         }
       ],
       "summary": "I have some interactive demos so I will do talk + workshop format. Description Pay, own and be someone inside any open spatial website without breaking immersion - three layers any WebXR world can adopt from a link, built with Bitcoin's pri"
+    },
+    {
+      "number": 107,
+      "title": "Does bitcoin point to God?",
+      "url": "https://github.com/TABConf/8.tabconf.com/issues/107",
+      "date": "2026-10-15",
+      "start": "12:00 PM",
+      "end": "12:30 PM",
+      "startMin": 720,
+      "endMin": 750,
+      "durationMin": 30,
+      "track": "stage",
+      "room": "Main stage",
+      "roomFromLabel": true,
+      "speakers": [
+        {
+          "login": "PeagCafe",
+          "name": "",
+          "avatarUrl": "https://avatars.githubusercontent.com/u/133600769?v=4"
+        }
+      ],
+      "labels": [
+        {
+          "name": "Accepted",
+          "color": "#0e8a16"
+        },
+        {
+          "name": "Talk or Demo",
+          "color": "#87a876"
+        },
+        {
+          "name": "main stage",
+          "color": "#c2185b"
+        }
+      ],
+      "summary": "Description This talk will reflect on money and bitcoin from a Christian theological perspective, walking through the line of though of Psalm 19, to see what we can learn about money. Where does money fit into a Christian understanding of n"
     },
     {
       "number": 98,
