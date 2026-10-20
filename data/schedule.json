@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-20T00:43:50.976Z",
+  "generatedAt": "2026-10-20T05:25:08.979Z",
   "event": {
     "name": "TABConf 8",
     "start": "2026-10-12",
@@ -7,50 +7,14 @@
     "venue": "Georgia Tech Exhibition Hall, Atlanta"
   },
   "counts": {
-    "total": 84,
-    "scheduled": 72,
+    "total": 83,
+    "scheduled": 71,
     "unscheduled": 1,
     "floor": 11,
-    "stageMinutes": 2775
+    "stageMinutes": 2715
   },
   "clashes": [],
   "sessions": [
-    {
-      "number": 11,
-      "title": "Agentic Engineering for Bitcoin Developers",
-      "url": "https://github.com/TABConf/8.tabconf.com/issues/11",
-      "date": "2026-10-12",
-      "start": "11:30 AM",
-      "end": "12:30 PM",
-      "startMin": 690,
-      "endMin": 750,
-      "durationMin": 60,
-      "track": "stage",
-      "room": "Hacker room",
-      "roomFromLabel": true,
-      "speakers": [
-        {
-          "login": "vnprc",
-          "name": "",
-          "avatarUrl": "https://avatars.githubusercontent.com/u/9425366?u=9c1887b350558b1345fd82ce7c476f091ccca9ed&v=4"
-        }
-      ],
-      "labels": [
-        {
-          "name": "Accepted",
-          "color": "#0e8a16"
-        },
-        {
-          "name": "Workshop",
-          "color": "#7a69e2"
-        },
-        {
-          "name": "hacker room",
-          "color": "#00acc1"
-        }
-      ],
-      "summary": "Agentic Engineering for Bitcoin Developers Format: Workshop (talk + hands-on interactive session) Length: 60 minutes Summary Coding agents are no longer experimental tech; they are now indispensable software development tools. But most work"
-    },
     {
       "number": 58,
       "title": "Beyond the FFI Frontier: What It Actually Takes to Expose Rust Bitcoin Across Multiple Languages (kotlin,swift,python,dart...)",
